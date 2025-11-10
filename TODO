@@ -1,0 +1,109 @@
+18 Feb:
+    Images:
+        dhaulagiri
+        thanserku
+        everest
+        ...
+        makalu
+
+    Navbar heirarchy
+    Expe
+    Trek
+    Acti
+    service
+    contact
+
+    Font: seven summit
+
+    Remove underline but highlight
+
+    At a glimpse removed
+
+    Remove from service:
+    Laundry
+    Accomodation
+
+Final:
+    ✔ Tour navigation @done(25-02-08 14:59)
+    ✔ Company setting @done(25-02-08 15:22)
+    ✔ Privacy, T&C @done(25-02-09 11:06)
+    ☐ cookie settings (Legal settings)
+    ☐ Repeater translation
+    ☐ Animation
+    ✔ Transition speed @done(25-02-09 10:29)
+    ✔ Sound track upload @done(25-02-09 10:29)
+    ✔ Website translation @done(25-02-08 16:21)
+    ✔ Service UI @done(25-02-08 18:14)
+    ✔ Our Sherpa UI @done(25-02-08 18:14)
+    ✔ Search UI @done(25-02-08 18:14)
+
+Neema Dai:
+    ☐ our sherpas
+    ✘ destination page @cancelled(25-02-04 19:42)
+    ☐ Translation @started(25-02-04 19:54)
+    ☐ Sound in home page carousel
+    ✔ Whatsapp @done(25-02-04 19:42)
+
+
+Umanga:
+    ☐ Booking / Inquiry success and error handling
+    ✔ Whatsapp @done(25-02-04 19:42)
+    ✔ Website Setting Seeder: @done(25-02-02 23:43)
+    ✔ Testimonial @done(25-01-31 19:48)
+    ✔ Home page carousel (Featured) @done(25-02-03 08:08)
+    ✔ URL and redirects for trek, expedition ... @done(25-02-03 15:33)
+        - tour
+        - trek
+        - expedition
+        - peak
+        - service
+    ✔ Booking and Inquiry @done(25-02-04 19:05)
+        - tour
+        - trek
+        - expedition
+        - peak
+        - service
+    ✔ About Us @done(25-02-03 15:36)
+    ✔ Breadcrumb and description card @done(25-02-04 00:20)
+    ✔ Website setting frontend @done(25-02-03 00:22)
+    ✔ Navbar: Tour [Counters] @done(25-02-02 23:43)
+    ☐ FAQ : description is showing twice
+    ☐ Animation has multiple images on every slide
+
+Subin:
+    ✔ Recommendation @done(25-02-04 19:43)
+    ✔ Internal link @done(25-02-16 21:54)
+    ✔ gallery clickable modal @done(25-02-16 21:54)
+    ✔ overall design @done(25-02-16 21:54)
+    ✔ Our sherpas @done(25-02-16 21:54)
+    ✔ icons in sm nav @done(25-02-04 00:20)
+    ✔ contact ma image @done(25-02-04 00:20)
+    ✔ searchbar remove @done(25-02-04 00:20)
+    ✔ mobile booking section @done(25-02-04 00:20)
+    ✔ Book trip and inquiry position to bottom @done(25-02-04 00:20)
+    ✔ infinite homepage carousel @done(25-02-04 00:20)
+    ✔ Nav Bar :: responsive @done(25-03-05 13:53)
+    ✔ OurSherpa :: fonts texts @done(25-03-05 14:31)
+    ✔ About Us :: fonts texts Legal Certificates responsive @done(25-03-05 14:31)
+    ✔ Service  :: fonts texts landing page cleanupd @done(25-03-05 14:41)
+    ✔ Expedition & Trek :: landing pagema break the title and altitude @done(25-03-05 14:41)
+    ☐ search page
+
+new final:
+    ☐ sound animation
+    ☐ peak expedition relation
+    ☐ color theme and typography
+    ☐ services menu
+    ☐ navbar should be theme matching color (Example: https://www.sevensummittreks.com/expedition/8000ers.html)
+
+    ☐ pagesetting description for home page top-section,about-us,our-sherpas, services pages
+    ☐ company documents
+    ☐ about us
+    ✔ internal links @done(25-02-15 21:34)
+    ☐ margins
+    ☐ card fonts
+    ☐ service icons
+
+
+New Required Update:
+    ☐ about-us legal documents gallery-section
