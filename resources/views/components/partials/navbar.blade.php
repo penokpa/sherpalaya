@@ -46,40 +46,41 @@
                     </ul>
                     <div class="dropdown relative inline-flex rtl:[--placement:bottom-end]">
                         <button id="nested-dropdown" type="button"
-                            class="dropdown-toggle btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content text-base "
+                            class="dropdown-toggle hover:text-warning btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content text-base @class([
+                                'text-warning' => request()->is('about_us', 'sherpas'),
+                            ])"
                             aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
                             {{ __('navbar.company') }}
                             <span class="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span>
                         </button>
-                        <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60  rounded-none" role="menu"
+                        <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60 rounded-none" role="menu"
                             aria-orientation="vertical" aria-labelledby="nested-dropdown">
                             <li
-                                class="text-black text-base  teacking-normal  hover:text-warning hover:underline decoration-1">
-                                <a class="dropdown-item" href="/about_us">
+                                class="text-black text-base teacking-normal hover:text-warning hover:underline decoration-1">
+                                <a class="dropdown-item @class(['text-warning' => request()->is('about_us')])" href="/about_us">
                                     {{ __('navbar.about-us') }}
                                 </a>
                             </li>
                             {{-- <li
-                                class="text-black text-base  teacking-normal  hover:text-warning hover:underline decoration-1">
+                                class="text-black text-base teacking-normal hover:text-warning hover:underline decoration-1">
                                 <a class="dropdown-item" href="/">
                                     Legal Documents
                                 </a>
                             </li> --}}
                             <li
-                                class="text-black text-base  teacking-normal  hover:text-warning hover:underline decoration-1">
-                                <a class="dropdown-item" href="/sherpas">
+                                class="text-black text-base teacking-normal hover:text-warning hover:underline decoration-1">
+                                <a class="dropdown-item @class(['text-warning' => request()->is('sherpas')])" href="/sherpas">
                                     {{ __('navbar.our-team') }}
                                 </a>
                             </li>
                         </ul>
                     </div>
 
-
                     {{-- expedition start --}}
                     <div
                         class="dropdown [--adaptive:none] [--auto-close:inside] [--strategy:static]  lg:[--strategy:absolute]">
                         <button type="button"
-                            class="dropdown-toggle btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content text-base  font-bold "
+                            class="dropdown-toggle btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content text-base  font-bold hover:text-warning"
                             aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
                             {{ __('navbar.expeditions') }}
                             <span class="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span>
@@ -185,7 +186,7 @@
                     <div
                         class="dropdown [--adaptive:none] [--auto-close:inside] [--strategy:static]  lg:[--strategy:absolute]">
                         <button type="button"
-                            class="dropdown-toggle btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content text-base "
+                            class="dropdown-toggle btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content text-base hover:text-warning"
                             aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
                             {{ __('navbar.treks') }}
                             <span class="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span>
@@ -290,7 +291,7 @@
                     <div
                         class="dropdown [--adaptive:none] [--auto-close:inside] [--strategy:static]  lg:[--strategy:absolute]">
                         <button type="button"
-                            class="dropdown-toggle btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content text-base "
+                            class="dropdown-toggle btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content text-base hover:text-warning "
                             aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
                             {{ __('navbar.activities') }}
                             <span class="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span>

@@ -21,7 +21,7 @@
                             class="card rounded-none px-4 py-14 col-span-3 hidden md:block group justify-center items-center bg-blue-100/60">
                             <a href="{{ route('show_expedition', $featuredExpedition->id) }}">
                                 <h5
-                                    class=" text-2xl  line-clamp-2  tracking-tight font-body font-medium text-black lg:text-left  uppercase group-hover:underline  decoration-4 decoration-warning   group-hover:underline-offset-4">
+                                    class=" text-2xl  line-clamp-2  tracking-tight font-body font-medium text-black lg:text-left  uppercase decoration-4 decoration-warning">
                                     {{ $featuredExpedition->title }}
                                 </h5>
                             </a>
@@ -47,11 +47,11 @@
                                 <div class="card-body absolute inset-0 justify-end md:justify-center px-2 pb-2">
                                     <div class="md:text-center " data-aos="flip-up" data-aos-duration="800">
                                         <h2
-                                            class="font-normal tracking-wide font-oswald text-blue-50 text-2xl md:text-3xl uppercase group-hover:text-warning ">
+                                            class="font-normal tracking-wide font-oswald text-blue-50 text-2xl md:text-3xl uppercase">
                                             {{ $featuredExpedition->title }}
                                         </h2>
                                         <h2
-                                            class="font-normal tracking-wide font-oswald text-blue-50 uppercase line-clamp-2 text-2xl md:text-3xl group-hover:text-warning">
+                                            class="font-normal tracking-wide font-oswald text-blue-50 uppercase line-clamp-2 text-2xl md:text-3xl">
                                             {{ $featuredExpedition->highest_altitude }} m
                                         </h2>
                                     </div>
@@ -99,7 +99,7 @@
                             class="card rounded-none px-4 py-14 col-span-3 hidden md:block group justify-center items-center bg-transparent">
                             <a href="{{ route('show_expedition', $featuredExpedition->id) }}">
                                 <h5
-                                    class=" text-2xl  line-clamp-2 font-medium tracking-tighter font-body text-black lg:text-left  uppercase group-hover:underline  decoration-4 decoration-warning   group-hover:underline-offset-4">
+                                    class=" text-2xl  line-clamp-2 font-medium tracking-tighter font-body text-black lg:text-left  uppercase decoration-4 decoration-warning ">
                                     {{ $featuredExpedition->title }}
                                 </h5>
                             </a>

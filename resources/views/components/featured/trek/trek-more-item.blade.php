@@ -22,7 +22,7 @@
                             class="card rounded-none px-8 py-14 col-span-1 hidden md:block group justify-center items-center bg-blue-50">
                             <a href="{{ route('show_trek', $featuredTrek->id) }}">
                                 <h5
-                                    class=" text-2xl  line-clamp-2 font-medium tracking-tight font-body text-black lg:text-left  uppercase group-hover:underline  decoration-8 decoration-warning   group-hover:underline-offset-4">
+                                    class=" text-2xl  line-clamp-2 font-medium tracking-tight font-body text-black lg:text-left  uppercase  decoration-8 decoration-warning ">
                                     {{ $featuredTrek->title }}
                                 </h5>
                             </a>
@@ -102,7 +102,7 @@
                             class="card rounded-none px-8 py-14 col-span-1 hidden md:block group justify-center items-center bg-blue-50">
                             <a href="{{ route('show_trek', $featuredTrek->id) }}">
                                 <h5
-                                    class=" text-2xl  line-clamp-2 font-medium tracking-tighter font-body text-black lg:text-left  uppercase group-hover:underline  decoration-8 decoration-warning   group-hover:underline-offset-4">
+                                    class=" text-2xl  line-clamp-2 font-medium tracking-tighter font-body text-black lg:text-left  uppercase decoration-8 decoration-warning ">
                                     {{ $featuredTrek->title }}
                                 </h5>
                             </a>
