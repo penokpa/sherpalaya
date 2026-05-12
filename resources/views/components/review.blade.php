@@ -22,7 +22,7 @@
                         <div class="flex gap-4">
                             <div class="avatar">
                                 <div class="size-12 rounded-full">
-                                    <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-2.png" alt="avatar" loading="lazy"/>
+                                    <img loading="lazy" decoding="async" src="https://cdn.flyonui.com/fy-assets/avatar/avatar-2.png" alt="avatar" loading="lazy"/>
                                 </div>
                             </div>
                             <div>

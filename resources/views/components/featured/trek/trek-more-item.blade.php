@@ -41,7 +41,7 @@
                         <div
                             class="card rounded-none font-body image-full w-full h-full relative flex items-center card-side group hover:shadow border">
                             <figure class="h-[60vh] w-full ">
-                                <img src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                <img loading="lazy" decoding="async" src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                     alt="{{ $featuredTrek->title }} Cover Image"
                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-[60vh] w-full object-cover" />
                             </figure>
@@ -81,7 +81,7 @@
                         <div
                             class="card rounded-none font-body image-full w-full h-full relative flex items-center card-side group hover:shadow border bg-blue-100">
                             <figure class="h-[60vh] w-full">
-                                <img src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                <img loading="lazy" decoding="async" src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                     alt="{{ $featuredTrek->title }} Cover Image"
                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-[60vh] w-full object-cover" />
                             </figure>
@@ -146,7 +146,7 @@
                     <div
                         class="card rounded-none font-body image-full w-full h-full relative flex items-center card-side group hover:shadow border col-span-1 ">
                         <figure class="h-[60vh] w-full ">
-                            <img src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                            <img loading="lazy" decoding="async" src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                 alt="{{ $featuredTrek->title }} Cover Image"
                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-[60vh] w-full object-cover" />
                         </figure>
@@ -181,7 +181,7 @@
                                     <div
                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                         <figure class="h-[60vh] max-w-sm">
-                                            <img src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                            <img loading="lazy" decoding="async" src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                 alt="{{ $featuredTrek->title }} Cover Image"
                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
                                         </figure>

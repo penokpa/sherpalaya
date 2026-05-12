@@ -4,7 +4,7 @@
         <div class="w-full min-h-96 flex flex-col justify-center items-center ">
             <div class="max-w-md">
                 <div class="card w-full h-full bg-blue-100/60">
-                    <img src="{{ asset('photos/logo.png') }}" alt=""
+                    <img loading="lazy" decoding="async" src="{{ asset('photos/logo.png') }}" alt=""
                         class="rounded-md shadow-lg shadow-indigo-500/50 w-25 absolute -right-10 -top-10 p-1">
 
                     <div class="w-full card-header">
@@ -32,7 +32,7 @@
         {{-- <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh] w-full">
             <figure class="h-[80dvh] w-full">
                 
-                <img src="{{ asset('/photos/mountain1.jpg') }}"
+                <img loading="lazy" decoding="async" src="{{ asset('/photos/mountain1.jpg') }}"
                     class="h-[80dvh] w-full object-cover object-center brightness-75" alt="">
             </figure>
             <div class="card-body">
@@ -51,7 +51,7 @@
         </div> --}}
         <div class="card--rounded-none image-full  h-[80dvh] relative">
             <figure class="h-[80dvh] w-full">
-                <img src="{{ asset('/photos/mountain1.jpg') }}"
+                <img loading="lazy" decoding="async" src="{{ asset('/photos/mountain1.jpg') }}"
                     class="h-[80dvh] w-full object-cover object-center brightness-75" alt="background-image">
             </figure>
             <div class="card-body absolute inset-0 flex items-center justify-start">

@@ -2,7 +2,7 @@
 
     <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh]">
         <figure class="h-[80dvh] w-full">
-            <img src="{{ $trek->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
+            <img loading="lazy" decoding="async" src="{{ $trek->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
                 class="h-[80dvh] w-full object-cover brightness-75" />
         </figure>
         <div class="card-body relative">
@@ -68,7 +68,7 @@
                             <a href="{{ route('show_service', $service->id) }}">
 
                                 <figure>
-                                    <img src="{{ $service->coverImage?->url ?? asset('photos/P1030127.JPG') }}"
+                                    <img loading="lazy" decoding="async" src="{{ $service->coverImage?->url ?? asset('photos/P1030127.JPG') }}"
                                         alt="{{ $service->title }} Cover Image" class="h-60 object-cover" />
                                 </figure>
                             </a>
@@ -113,7 +113,7 @@
                                         <div class="card w-full ">
                                             <a href="{{ route('show_service', $service->id) }}">
                                                 <figure>
-                                                    <img src="{{ $service->coverImage->url ?? asset('photos/P1030127.JPG') }}"
+                                                    <img loading="lazy" decoding="async" src="{{ $service->coverImage->url ?? asset('photos/P1030127.JPG') }}"
                                                         alt="{{ $service->title }} Cover Image"
                                                         class="h-[20rem] object-cover" />
                                                 </figure>

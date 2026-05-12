@@ -26,7 +26,7 @@
                                         <div
                                             class="card--rounded-none image-full h-4/5 w-full relative flex items-center justify-end card-side group hover:shadow border-none">
                                             <figure class="h-full w-full">
-                                                <img src="{{ $featuredPeak->featureImage->url ?? asset('photos/mountain1.jpg') }}"
+                                                <img loading="lazy" decoding="async" src="{{ $featuredPeak->featureImage->url ?? asset('photos/mountain1.jpg') }}"
                                                     alt="{{ $featuredPeak->title }} Cover Image"
                                                     class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover brightness-75" />
                                             </figure>
@@ -51,7 +51,7 @@
                             <div
                                 class="carousel-pagination  absolute bottom-0 end-0 start-0 z-[1] h-1/5 flex justify-center gap-0 overflow-x-auto ">
                                 @foreach ($peaks->where('is_featured', true) as $featuredPeak)
-                                    <img src="{{ $featuredPeak->featureImage->url ?? asset('photos/DSCF4385.JPG') }}"
+                                    <img loading="lazy" decoding="async" src="{{ $featuredPeak->featureImage->url ?? asset('photos/DSCF4385.JPG') }}"
                                         alt="{{ $featuredPeak->title }} Cover Image"
                                         class="carousel-pagination-item carousel-active:opacity-100 object-cover object-top opacity-50">
                                 @endforeach
@@ -84,7 +84,7 @@
                         <div
                             class="card--rounded-none image-full h-[30rem] w-full relative flex items-center justify-end card-side group hover:shadow border-none">
                             <figure class="h-full w-full">
-                                <img src="{{ $featuredPeak->featureImage->url ?? asset('photos/DSCF4385.JPG') }}"
+                                <img loading="lazy" decoding="async" src="{{ $featuredPeak->featureImage->url ?? asset('photos/DSCF4385.JPG') }}"
                                     alt="{{ $featuredPeak->title }} Cover Image"
                                     class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover brightness-75" />
                             </figure>
@@ -139,7 +139,7 @@
                         <div
                             class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border-none">
                             <figure class="h-[28rem] w-full">
-                                <img src="{{ optional($featuredPeak->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                <img loading="lazy" decoding="async" src="{{ optional($featuredPeak->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                     alt="{{ $featuredPeak->title }} Cover Image"
                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                             </figure>
@@ -191,7 +191,7 @@
                         <div
                             class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border-none">
                             <figure class="h-[28rem] w-full">
-                                <img src="{{ optional($featuredPeak->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                <img loading="lazy" decoding="async" src="{{ optional($featuredPeak->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                     alt="{{ $featuredPeak->title }} Cover Image"
                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                             </figure>

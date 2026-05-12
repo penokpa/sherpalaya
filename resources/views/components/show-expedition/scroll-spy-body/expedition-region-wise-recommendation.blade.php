@@ -12,7 +12,7 @@
                     <a href="{{ route('show_expedition', $recommendedExpedition->id) }}">
 
                         <figure class="h-44">
-                            <img src="{{ $recommendedExpedition->coverImage?->url }}"
+                            <img loading="lazy" decoding="async" src="{{ $recommendedExpedition->coverImage?->url }}"
                                 alt="{{ $recommendedExpedition->title }} Cover Image"
                                 class="transition-transform duration-500 group-hover:scale-110 h-44 object-cover" />
                         </figure>

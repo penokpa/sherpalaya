@@ -11,7 +11,7 @@
                     <div
                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border col-span-2">
                         <figure class="h-[28rem] w-full">
-                            <img src="{{ optional($featuredTour->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                            <img loading="lazy" decoding="async" src="{{ optional($featuredTour->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                 alt="{{ $featuredTour->title }} Cover Image"
                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                         </figure>

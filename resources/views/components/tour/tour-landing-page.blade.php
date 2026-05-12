@@ -1,7 +1,7 @@
 <div class="bg-blue-100/50">
     <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh]">
         <figure class="h-[80dvh] w-full">
-            <img src="{{ $tour->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
+            <img loading="lazy" decoding="async" src="{{ $tour->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
                 class="h-[80dvh] w-full object-cover brightness-75" />
         </figure>
         <div class="card-body relative">
@@ -81,7 +81,7 @@
                                                         <div class="bg-base-200/50 flex h-full justify-center">
                                                             <span class="self-start w-full ">
                                                                 <figure>
-                                                                    <img src="{{ $tour->coverImage->url ?? asset('photos/P1030127.JPG') }}"
+                                                                    <img loading="lazy" decoding="async" src="{{ $tour->coverImage->url ?? asset('photos/P1030127.JPG') }}"
                                                                         alt="{{ $tour->title }} Cover Image"
                                                                         class="h-60 object-cover" />
                                                                 </figure>
@@ -155,7 +155,7 @@
                                             <div class="card w-full ">
                                                 <a href="{{ route('show_tour', ['id'=>$tour->id, 'locale'=>app()->currentLocale()]) }}">
                                                     <figure>
-                                                        <img src="{{ $tour->coverImage?->url ?? asset('photos/P1030127.JPG') }}"
+                                                        <img loading="lazy" decoding="async" src="{{ $tour->coverImage?->url ?? asset('photos/P1030127.JPG') }}"
                                                             alt="{{ $tour->title }} Cover Image"
                                                             class="h-[20rem] object-cover" />
                                                     </figure>

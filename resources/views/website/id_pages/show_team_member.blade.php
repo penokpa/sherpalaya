@@ -1,6 +1,6 @@
 {{-- <div class="card--rounded-none image-full h-[80dvh] relative ">
             <figure class="h-[80dvh] w-full ">
-                <img src="{{ asset('/photos/mountain2.jpg') }}" alt="Trekking background image"
+                <img loading="lazy" decoding="async" src="{{ asset('/photos/mountain2.jpg') }}" alt="Trekking background image"
                     class="h-[80dvh] w-full object-cover brightness-75" />
             </figure>
             <div
@@ -279,7 +279,7 @@
                                         @foreach ($sherpa->awardsAndCertificates as $award)
                                             <div class="carousel-slide">
                                                 <div class="flex h-full justify-center ">
-                                                    <img src="{{ $award->url }}"
+                                                    <img loading="lazy" decoding="async" src="{{ $award->url }}"
                                                         class="h-[90vh] w-full object-contain  " alt="game" />
                                                 </div>
                                             </div>

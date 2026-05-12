@@ -1,7 +1,7 @@
 <div class="bg-blue-100/50">
     <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh]">
         <figure class="h-[80dvh] w-full">
-            <img src="{{ $peak->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
+            <img loading="lazy" decoding="async" src="{{ $peak->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
                 class="h-[80dvh] w-full object-cover brightness-75" />
         </figure>
         <div class="card-body relative">
@@ -73,7 +73,7 @@
                             <div
                                 class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                 <figure class="h-[25rem] max-w-sm">
-                                    <img src="{{ optional($peak->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                    <img loading="lazy" decoding="async" src="{{ optional($peak->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                         alt="{{ $peak->title }} Cover Image"
                                         class="transition-transform brightness-75 h-[25rem] duration-500 group-hover:scale-110  max-w-sm object-cover" />
                                 </figure>
@@ -106,7 +106,7 @@
                                         <div
                                             class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                             <figure class="h-[28rem] max-w-sm">
-                                                <img src="{{ optional($peak->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                <img loading="lazy" decoding="async" src="{{ optional($peak->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                     alt="{{ $peak->title }} Cover Image"
                                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
                                             </figure>

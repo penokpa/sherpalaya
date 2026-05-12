@@ -79,7 +79,7 @@
                     <div class="card w-full h-full">
                         <a href="{{ route('show_service',['id'=> $serviceData->service->id, 'locale'=>app()->currentLocale()]) }}">
                             <figure>
-                                <img src="{{ $serviceData->service->coverImage?->url ?? asset('photos/P1030127.JPG') }}"
+                                <img loading="lazy" decoding="async" src="{{ $serviceData->service->coverImage?->url ?? asset('photos/P1030127.JPG') }}"
                                     alt="{{ $serviceData->service->title }} Cover Image" class="h-60 object-cover" />
                             </figure>
                         </a>

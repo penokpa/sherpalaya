@@ -17,7 +17,7 @@
             <div class="flex items-center justify-between xl:ml-32 mx-4 ">
                 <a class="link text-base-content link-neutral text-lg font-semibold no-underline "
                     href="/{{ app()->currentLocale() }}/home">
-                    <img src="{{ asset('photos/logo.png') }}" alt="Sherpalaya Logo" class=" w-12 lg:w-24">
+                    <img loading="lazy" decoding="async" src="{{ asset('photos/logo.png') }}" alt="Sherpalaya Logo" class=" w-12 lg:w-24">
                 </a>
                 <div class="lg:hidden">
                     <div class="dropdown relative inline-flex [--placement:bottom-end] px-2 ">
@@ -131,7 +131,7 @@
                                                     <div
                                                         class="card rounded-none image-full w-full relative flex items-center border-none group hover:shadow shadow-md shadow-black ">
                                                         <figure class="h-[15rem] w-full">
-                                                            <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                            <img loading="lazy" decoding="async" src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                                 alt="{{ $expedition->title }} Cover Image"
                                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                         </figure>
@@ -166,7 +166,7 @@
                                                     <div
                                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border-none shadow-md shadow-black ">
                                                         <figure class="h-[15rem] w-full">
-                                                            <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                            <img loading="lazy" decoding="async" src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                                 alt="{{ $expedition->title }} Cover Image"
                                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                         </figure>
@@ -238,7 +238,7 @@
                                                     <div
                                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border-none shadow-md shadow-black">
                                                         <figure class="h-[15rem] w-full ">
-                                                            <img src="{{ optional($catTrek->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                            <img loading="lazy" decoding="async" src="{{ optional($catTrek->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                                 alt="{{ $catTrek->title }} Cover Image"
                                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                         </figure>
@@ -273,7 +273,7 @@
                                                     <div
                                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border-none shadow-md shadow-black">
                                                         <figure class="h-[15rem] w-full">
-                                                            <img src="{{ optional($trek->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                            <img loading="lazy" decoding="async" src="{{ optional($trek->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                                 alt="{{ $trek->title }} Cover Image"
                                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                         </figure>
@@ -346,7 +346,7 @@
                                                     <div
                                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border-none shadow-md shadow-black ">
                                                         <figure class="h-[15rem] w-full">
-                                                            <img src="{{ optional($tour->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                            <img loading="lazy" decoding="async" src="{{ optional($tour->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                                 alt="{{ $tour->title }} Cover Image"
                                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                         </figure>
@@ -381,7 +381,7 @@
                                                     <div
                                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border-none shadow-md shadow-black ">
                                                         <figure class="h-[15rem] w-full">
-                                                            <img src="{{ optional($tour->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                            <img loading="lazy" decoding="async" src="{{ optional($tour->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                                 alt="{{ $tour->title }} Cover Image"
                                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                         </figure>

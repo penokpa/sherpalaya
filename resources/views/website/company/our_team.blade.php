@@ -62,7 +62,7 @@
                 @foreach ($allSherpas as $allSherpa)
                     <a href="{{ route('show_team_member', ['id'=>$allSherpa->id,'locale'=>app()->currentLocale()]) }}">
                         <div class="card w-full h-full ">
-                            <img src="{{ $allSherpa->profilePicture->url ?? asset('photos/P1030127.JPG') }}"
+                            <img loading="lazy" decoding="async" src="{{ $allSherpa->profilePicture->url ?? asset('photos/P1030127.JPG') }}"
                                 alt="{{ $allSherpa->title }} Cover Image" class="h-[20rem] object-cover " />
                             <div class="card-body bg-blue-100/50 px-2 py-2 text-left">
                                 <h5

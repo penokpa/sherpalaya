@@ -28,7 +28,7 @@
                                                 <div
                                                     class="card rounded-none  image-full  w-full relative flex items-center  card-side group hover:shadow border ">
                                                     <figure class="h-[28rem] w-full">
-                                                        <img src="{{ $featuredExpedition->featureImage->url ?? asset('photos/mountain3.jpg') }}"
+                                                        <img loading="lazy" decoding="async" src="{{ $featuredExpedition->featureImage->url ?? asset('photos/mountain3.jpg') }}"
                                                             alt="{{ $featuredExpedition->title }} Cover Image"
                                                             class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                     </figure>

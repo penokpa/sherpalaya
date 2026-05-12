@@ -67,7 +67,7 @@
                             <div
                                 class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                 <figure class="h-[25rem] max-w-sm">
-                                    <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                    <img loading="lazy" decoding="async" src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                         alt="{{ $expedition->title }} Cover Image"
                                         class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
                                 </figure>
@@ -100,7 +100,7 @@
                                         <div
                                             class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                             <figure class="h-[28rem] max-w-sm">
-                                                <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                <img loading="lazy" decoding="async" src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                     alt="{{ $expedition->title }} Cover Image"
                                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
                                             </figure>

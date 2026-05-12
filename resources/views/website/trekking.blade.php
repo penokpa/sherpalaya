@@ -76,7 +76,7 @@
                                 <div
                                     class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border ">
                                     <figure class="h-[40vh] w-full">
-                                        <img src="{{ optional($catTrek->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                        <img loading="lazy" decoding="async" src="{{ optional($catTrek->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                             alt="{{ $catTrek->title }} Cover Image"
                                             class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                     </figure>
@@ -108,7 +108,7 @@
                                 <div
                                     class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border ">
                                     <figure class="h-[40vh] w-full">
-                                        <img src="{{ optional($trek->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                        <img loading="lazy" decoding="async" src="{{ optional($trek->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                             alt="{{ $trek->title }} Cover Image"
                                             class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                     </figure>

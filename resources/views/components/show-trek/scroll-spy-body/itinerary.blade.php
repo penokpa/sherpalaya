@@ -97,7 +97,7 @@
                                                             class="px-8 sm:grid sm:grid-cols-2 md:grid-cols-3 flex flex-col gap-1 mb-6">
                                                             @foreach ($destinationImages as $image)
                                                                 <figure>
-                                                                    <img src="{{ $image->url }}"
+                                                                    <img loading="lazy" decoding="async" src="{{ $image->url }}"
                                                                         alt="{{ $itineraryDestination->name }} Cover Image"
                                                                         class="h-48 w-full object-cover" />
                                                                 </figure>

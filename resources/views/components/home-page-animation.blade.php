@@ -2,7 +2,7 @@
     {{-- Ask for animations --}}
     <div id="ask-for-animation" class="w-[100vw] h-dvh card image-full flex-col-reverse rounded-none">
         <figure class="overflow-hidden rounded-none">
-            <img src="{{ $animationMediaUrls[$askForAnimation['image_id']] }}" alt="overlay image" />
+            <img loading="lazy" decoding="async" src="{{ $animationMediaUrls[$askForAnimation['image_id']] }}" alt="overlay image" />
         </figure>
 
         <div class="card-body justify-center items-center">
@@ -52,10 +52,10 @@
                 @if ($loop->remaining == 0)
                     <div class="absolute bottom-20">
                         <p class="text-xl text-white text-center w-full cursor-pointer hidden" id="scroll-down-wrapper">
-                            <img src="{{ $animationMediaUrls[$animationButton['icon_id']] }}"
+                            <img loading="lazy" decoding="async" src="{{ $animationMediaUrls[$animationButton['icon_id']] }}"
                                 class="inline size-8 text-white animated-scroll-down-icon" alt="Scroll down">
                             {{ $animationButton['text'] }}
-                            <img src="{{ $animationMediaUrls[$animationButton['icon_id']] }}"
+                            <img loading="lazy" decoding="async" src="{{ $animationMediaUrls[$animationButton['icon_id']] }}"
                                 class="inline size-8 text-white animated-scroll-down-icon" alt="Scroll down">
                         </p>
                     </div>

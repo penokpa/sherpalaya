@@ -16,7 +16,7 @@
     <div class="bg-blue-100/10 font-body">
         {{-- <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh]">
             <figure class="h-[80dvh] w-full">
-                <img src="{{ $service->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
+                <img loading="lazy" decoding="async" src="{{ $service->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
                     class="h-[80dvh] w-full object-cover brightness-75" />
             </figure>
             <div class="card-body absolute inset-0 flex items-center justify-start font-oswald">
@@ -32,7 +32,7 @@
 
         <div class="card--rounded-none image-full bg-blue-100/50 h-[80dvh] relative">
             <figure class="h-[80dvh] w-full">
-                <img src="{{ $service->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
+                <img loading="lazy" decoding="async" src="{{ $service->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
                     class="h-[80dvh] w-full object-cover brightness-75" />
             </figure>
             <div class="absolute bottom-1/4 left-4 lg:left-4 xl:left-32 transform translate-y-1/2 overflow-hidden w-[90%] md:w-[60%]"
@@ -106,7 +106,7 @@
                                                                         class="bg-base-200/50 flex h-full justify-center">
                                                                         <span class="self-start w-full">
                                                                             <figure>
-                                                                                <img src="{{ $destinationImage?->url ?? asset('/photos/banner.jpg') }}"
+                                                                                <img loading="lazy" decoding="async" src="{{ $destinationImage?->url ?? asset('/photos/banner.jpg') }}"
                                                                                     alt="{{ $destination->name }} Cover Image"
                                                                                     class="h-44 object-cover brightness-75" />
                                                                             </figure>

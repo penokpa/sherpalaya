@@ -82,7 +82,7 @@
                                                             <div class="bg-base-200/50 flex h-full justify-center">
                                                                 <span class="self-start w-full ">
                                                                     <figure>
-                                                                        <img src="{{ $image->url ?? asset('photos/P1030127.JPG') }}"
+                                                                        <img loading="lazy" decoding="async" src="{{ $image->url ?? asset('photos/P1030127.JPG') }}"
                                                                             alt="{{ $trek->title }} Cover Image"
                                                                             class="h-72 object-cover" />
                                                                     </figure>
@@ -157,7 +157,7 @@
                                     <div class="carousel-slide  bg-blue-100">
                                         <div class="card w-full ">
                                             <a href="{{ route('show_trek', ['id'=>$trek->id, 'locale'=>app()->currentLocale()]) }}">
-                                                <img src="{{ $trek->coverImage->url ?? asset('photos/P1030127.JPG') }}"
+                                                <img loading="lazy" decoding="async" src="{{ $trek->coverImage->url ?? asset('photos/P1030127.JPG') }}"
                                                     alt="{{ $trek->title }} Cover Image"
                                                     class="h-[20rem] object-cover" />
                                             </a>

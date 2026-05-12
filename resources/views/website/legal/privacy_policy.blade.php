@@ -2,7 +2,7 @@
     <div class="bg-blue-100/10 font-body">
         <header class="card--rounded-none image-full  bg-blue-100/50 h-[70dvh]">
             <figure class="h-[70dvh] w-full">
-                <img src="{{ asset('/photos/mountain2.jpg') }}" alt="Privacy Policy image"
+                <img loading="lazy" decoding="async" src="{{ asset('/photos/mountain2.jpg') }}" alt="Privacy Policy image"
                     class="h-[70dvh] w-full object-cover brightness-75" />
             </figure>
             <div class="card-body">

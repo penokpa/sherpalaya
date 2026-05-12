@@ -1,6 +1,6 @@
 <div class="card--rounded-none image-full h-screen w-screen">
     <figure class="h-full w-full">
-        <img src="{{ asset('photos/mountain4.jpg') }}" alt="Trekking background image" class="h-full w-full object-cover" />
+        <img loading="lazy" decoding="async" src="{{ asset('photos/mountain4.jpg') }}" alt="Trekking background image" class="h-full w-full object-cover" />
     </figure>
     <div class="card-body relative md:max-w-[50%]">
         <div class="absolute md:bottom-36 md:left-44 bottom-56 left-18 px-2 backdrop-brightness-95">

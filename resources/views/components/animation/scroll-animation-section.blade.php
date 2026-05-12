@@ -13,10 +13,10 @@
     <figure class="overflow-hidden rounded-none">
         @if (is_array($images) && count($images) != 0)
             @foreach ($images as $image)
-                <img src="{{ $image }}" alt="overlay image" class="hidden" />
+                <img loading="lazy" decoding="async" src="{{ $image }}" alt="overlay image" class="hidden" />
             @endforeach
         @else
-            <img src="{{ $image }}" alt="overlay image" />
+            <img loading="lazy" decoding="async" src="{{ $image }}" alt="overlay image" />
         @endif
     </figure>
     <div class="card-body justify-center items-center">
@@ -27,7 +27,7 @@
                         {{ $title }}
                     </h2>
                 </div>
-                <img src="{{ $icon }}" class="size-14 lg:size-28 animated-icon justify-self-end" />
+                <img loading="lazy" decoding="async" src="{{ $icon }}" class="size-14 lg:size-28 animated-icon justify-self-end" />
             </div>
             <p class="text-white animated-content font-animation-content text-2xl lg:text-4xl text-justify">
                 @foreach (explode(' ', $content) as $unitContent)

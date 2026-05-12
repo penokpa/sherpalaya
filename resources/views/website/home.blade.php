@@ -2,7 +2,7 @@
     {{-- Page Loading Screen --}}
     <div id="homepage-loading-container"
         class="fixed top-0 left-0 w-screen h-screen flex flex-col justify-center items-center bg-white z-50">
-        <img src="{{ asset('photos/logo.png') }}" alt="Logo" class="w-1/4 h-1/3 animate-pulse" />
+        <img loading="lazy" decoding="async" src="{{ asset('photos/logo.png') }}" alt="Logo" class="w-1/4 h-1/3 animate-pulse" />
     </div>
     <div id="main-content" class="opacity-0">
         <x-home-page-animation />

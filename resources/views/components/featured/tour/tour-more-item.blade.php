@@ -24,7 +24,7 @@
                                 <div
                                     class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                     <figure class="h-[28rem] max-w-sm">
-                                        <img src="{{ optional($featuredTour->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                        <img loading="lazy" decoding="async" src="{{ optional($featuredTour->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                             alt="{{ $featuredTour->title }} Cover Image"
                                             class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
                                     </figure>
@@ -95,7 +95,7 @@
                         <a class="xl:w-1/2 "
                             href="{{ route('show_tour', ['id' => $featuredTour->id, 'locale' => app()->currentLocale()]) }}">
                             <figure>
-                                <img src="{{ optional($featuredTour->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                <img loading="lazy" decoding="async" src="{{ optional($featuredTour->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                     alt="{{ $featuredTour->title }} Cover Image"
                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-[50vh] object-cover" />
                             </figure>

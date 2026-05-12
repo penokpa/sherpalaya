@@ -17,7 +17,7 @@
                                     <div
                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border ">
                                         <figure class="h-[30rem] w-full">
-                                            <img src="{{ $recommendation->coverImage }}"
+                                            <img loading="lazy" decoding="async" src="{{ $recommendation->coverImage }}"
                                                 alt="{{ $recommendation->title }} Cover Image"
                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                         </figure>
@@ -47,7 +47,7 @@
                                     <div
                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border ">
                                         <figure class="h-[20rem] w-full">
-                                            <img src="{{ $recommendation->coverImage }}"
+                                            <img loading="lazy" decoding="async" src="{{ $recommendation->coverImage }}"
                                                 alt="{{ $recommendation->title }} Cover Image"
                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                         </figure>
@@ -78,7 +78,7 @@
                                     <div
                                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border ">
                                         <figure class="h-[20rem] w-full">
-                                            <img src="{{ $recommendation->coverImage }}"
+                                            <img loading="lazy" decoding="async" src="{{ $recommendation->coverImage }}"
                                                 alt="{{ $recommendation->title }} Cover Image"
                                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                         </figure>
@@ -110,7 +110,7 @@
                                                 <div
                                                     class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                                     <figure class="h-[28rem] max-w-sm">
-                                                        <img src="{{ $recommendation->coverImage }}"
+                                                        <img loading="lazy" decoding="async" src="{{ $recommendation->coverImage }}"
                                                             alt="{{ $recommendation->title }} Cover Image"
                                                             class="transition-transform duration-500 group-hover:scale-110 h-44 object-cover brightness-75" />
                                                     </figure>
@@ -164,7 +164,7 @@
                                                 <div
                                                     class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                                     <figure class="h-[28rem] max-w-sm">
-                                                        <img src="{{ $recommendation->coverImage }}"
+                                                        <img loading="lazy" decoding="async" src="{{ $recommendation->coverImage }}"
                                                             alt="{{ $recommendation->title }} Cover Image"
                                                             class="transition-transform duration-500 group-hover:scale-110 h-44 object-cover brightness-75" />
                                                     </figure>
