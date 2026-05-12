@@ -325,6 +325,47 @@ class ManageLandingPage extends SettingsPage
                                     ->label('Parallax Image')
                                     ->required(),
                             ]),
+
+                        Tabs\Tab::make('Reviews')
+                            ->schema([
+                                Grid::make(2)
+                                    ->schema([
+                                        Section::make('English')
+                                            ->columnSpan(1)
+                                            ->schema([
+                                                TextInput::make('review_section_title_en')
+                                                    ->label('Section Heading'),
+                                                Textarea::make('review_section_subtitle_en')
+                                                    ->label('Section Subtitle')
+                                                    ->autosize(),
+                                            ]),
+                                        Section::make('French')
+                                            ->columnSpan(1)
+                                            ->schema([
+                                                TextInput::make('review_section_title_fr')
+                                                    ->label('Section Heading'),
+                                                Textarea::make('review_section_subtitle_fr')
+                                                    ->label('Section Subtitle')
+                                                    ->autosize(),
+                                            ]),
+                                    ]),
+                                Section::make('Review Platform URLs')
+                                    ->description('Public URLs to your business profile on each platform. Used for the "For more reviews" links below the cards. Leave blank to hide that link.')
+                                    ->schema([
+                                        TextInput::make('google_reviews_url')
+                                            ->label('Google Reviews URL')
+                                            ->url()
+                                            ->placeholder('https://g.page/...'),
+                                        TextInput::make('tripadvisor_url')
+                                            ->label('TripAdvisor URL')
+                                            ->url()
+                                            ->placeholder('https://www.tripadvisor.com/...'),
+                                        TextInput::make('trustpilot_url')
+                                            ->label('Trustpilot URL')
+                                            ->url()
+                                            ->placeholder('https://www.trustpilot.com/review/sherpalaya.com'),
+                                    ]),
+                            ]),
                     ]),
             ]);
     }

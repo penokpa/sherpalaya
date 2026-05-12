@@ -70,6 +70,15 @@ class LandingPageSetting extends Settings
 
     public ?string $parallax_image_id;
 
+    // Review section
+    public ?string $review_section_title_en;
+    public ?string $review_section_title_fr;
+    public ?string $review_section_subtitle_en;
+    public ?string $review_section_subtitle_fr;
+    public ?string $tripadvisor_url;
+    public ?string $google_reviews_url;
+    public ?string $trustpilot_url;
+
     public static function group(): string
     {
         return 'landing_page';

@@ -2,11 +2,14 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\ReviewPlatform;
 use App\Filament\Fields\CuratorPicker;
 use App\Filament\Resources\ReviewResource\Pages;
 use App\Filament\Resources\ReviewResource\RelationManagers;
 use App\Models\Review;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
@@ -47,15 +50,28 @@ class ReviewResource extends Resource
                     ->columns(2)
                     ->schema([
                         Section::make()
-                            ->columns(5)
+                            ->columns(6)
                             ->columnSpan(1)
                             ->schema([
                                 TextInput::make('name')
-                                    ->columnSpan(3)
+                                    ->columnSpan(4)
                                     ->required(),
                                 Toggle::make('display_in_home_page')
                                     ->inline(false)
                                     ->default(false)
+                                    ->columnSpan(2),
+                                Select::make('platform')
+                                    ->options(ReviewPlatform::class)
+                                    ->required()
+                                    ->columnSpan(2),
+                                Select::make('rating')
+                                    ->options([1 => '1 ★', 2 => '2 ★★', 3 => '3 ★★★', 4 => '4 ★★★★', 5 => '5 ★★★★★'])
+                                    ->default(5)
+                                    ->required()
+                                    ->columnSpan(2),
+                                DatePicker::make('reviewed_at')
+                                    ->label('Review Date')
+                                    ->native(false)
                                     ->columnSpan(2),
                                 Textarea::make('title')
                                     ->rows(1)
@@ -65,21 +81,24 @@ class ReviewResource extends Resource
                                     ->required()
                                     ->columnSpanFull()
                                     ->toolbarButtons([
-                                        // 'attachFiles',
                                         'blockquote',
                                         'bold',
                                         'bulletList',
-                                        // 'codeBlock',
                                         'h2',
                                         'h3',
                                         'italic',
                                         'link',
                                         'orderedList',
                                         'redo',
-                                        // 'strike',
                                         'underline',
                                         'undo',
                                     ]),
+                                TextInput::make('review_url')
+                                    ->label('Original Review URL')
+                                    ->url()
+                                    ->placeholder('https://...')
+                                    ->helperText('Link to the original review on Google / TripAdvisor / Trustpilot for verification')
+                                    ->columnSpanFull(),
                             ]),
                         Section::make()
                             ->columnSpan(1)
