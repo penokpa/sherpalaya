@@ -70,7 +70,7 @@ return [
     ],
     'should_preserve_filenames' => false,
     'should_register_navigation' => true,
-    'should_check_exists' => true,
+    'should_check_exists' => env('CURATOR_CHECK_EXISTS', true),
     'visibility' => 'public',
     'tabs' => [
         'display_curation' => true,
