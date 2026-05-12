@@ -113,6 +113,7 @@ class ReviewResource extends Resource
                     ]),
                 ])->collapsible()
             ])
+            ->defaultSort('created_at','desc')
             ->filters([
                 //
             ])

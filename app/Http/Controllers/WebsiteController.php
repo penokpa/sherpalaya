@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ContactUs;
 use App\Models\Faq;
 use App\Settings\AboutUsSetting;
+use App\Settings\LandingPageSetting;
 use App\Settings\ContactUsSetting;
 use App\Settings\PageSetting;
 use Illuminate\Http\Request;
@@ -16,8 +17,15 @@ class WebsiteController extends Controller
     public function home(Request $request){
         return view('website.home');
     }
+    public function homePage(Request $request){
+        $landingPageSetting = app(LandingPageSetting::class);
 
-    public function contactUs(Request $request, bool $contactUsSubmitted = false){
+        return view('components.carousel.all-cards',[
+            'landingPageSetting' => $landingPageSetting,
+        ]);
+    }
+
+    public function contactUs(Request $request, string $locale, bool $contactUsSubmitted = false){
         $contactUsSetting = app(ContactUsSetting::class);
         return view('website.contact_us', [
             'contactUsSubmitted' => $contactUsSubmitted,
@@ -25,7 +33,7 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function contactUsSubmit(Request $request){
+    public function contactUsSubmit(Request $request, string $locale){
         $validatedData = $request->validate([
             'full_name' => [
                 'required', 'string'
@@ -44,6 +52,7 @@ class WebsiteController extends Controller
         ContactUs::create($validatedData);
         return $this->contactUs(
             $request,
+            $locale,
             true
         );
     }
@@ -74,6 +83,11 @@ class WebsiteController extends Controller
         App::setLocale($locale);
         Session::put('current_locale', $locale);
 
-        return redirect()->back();
+        $returnUrl = redirect()->back()->getTargetUrl();
+
+        $returnUrl = str_replace("/en/", "/" . $locale . "/", $returnUrl);
+        $returnUrl = str_replace("/fr/", "/" . $locale . "/", $returnUrl);
+
+        return redirect()->to($returnUrl);
     }
 }

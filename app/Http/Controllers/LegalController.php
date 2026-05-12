@@ -15,7 +15,7 @@ class LegalController extends Controller
         return view(
             'website.legal.term_and_condition',
             [
-                'termsAndCondition' => $legalSetting->terms_and_condition
+                'termsAndCondition' => app()->currentLocale() == 'fr' ? $legalSetting->terms_and_condition_fr : $legalSetting->terms_and_condition_en,
             ]
         );
     }
@@ -28,7 +28,7 @@ class LegalController extends Controller
         return view(
             'website.legal.privacy_policy',
             [
-                'privacyPolicy' => $legalSetting->privacy_policy
+                'privacyPolicy' => app()->currentLocale() == 'fr' ? $legalSetting->privacy_policy_fr : $legalSetting->privacy_policy_en,
             ]
         );
     }
@@ -40,7 +40,7 @@ class LegalController extends Controller
         return view(
             'website.legal.cookie_policy',
             [
-                'cookiePolicy' => $legalSetting->cookie_policy
+                'cookiePolicy' => app()->currentLocale() == 'fr' ? $legalSetting->cookie_policy_fr : $legalSetting->cookie_policy_en,
             ]
         );
     }

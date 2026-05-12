@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Enums\ItineraryTypes;
+use App\Enums\ItineraryType;
 use App\Models\Itinerary;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +20,7 @@ class ItineraryDetailFactory extends Factory
     {
         return [
             'itinerary_id' => Itinerary::factory(),  // Associate with an itinerary
-            'type' => $this->faker->randomElement(ItineraryTypes::class),  // Random type from enum
+            'type' => $this->faker->randomElement(ItineraryType::class),  // Random type from enum
             'description' => $this->faker->paragraph(),  // Random itinerary description
         ];
     }

@@ -6,7 +6,7 @@
         aria-controls="mobile-booking-section-inquiry-modal"
         data-overlay="#mobile-booking-section-inquiry-modal">Inquiry</button>
     <a href="{{ $bookingFor->getWhatsappUrl() }}" class="btn btn-success uppercase text-white" target="_blank">
-        <span class="icon-[tabler--brand-whatsapp]"></span>
+        <span class="icon-[tabler--brand-whatsapp] size-8"></span>
         Whatsapp
     </a>
     @push('modals')
@@ -21,7 +21,7 @@
                             aria-label="Close" data-overlay="#mobile-booking-section-booking-modal"><span
                                 class="icon-[tabler--x] size-4"></span></button>
                     </div>
-                    <form action="/bookings/booking" method="POST">
+                    <form action="/{{ app()->currentLocale() }}/bookings/booking" method="POST">
                         @csrf
                         <input type="hidden" name="inquiriable_id" value="{{ $bookingFor->getKey() }}">
                         <input type="hidden" name="inquiriable_type" value="{{ get_class($bookingFor) }}">
@@ -62,7 +62,7 @@
                             aria-label="Close" data-overlay="#mobile-booking-section-inquiry-modal"><span
                                 class="icon-[tabler--x] size-4"></span></button>
                     </div>
-                    <form action="/bookings/inquiry" method="POST">
+                    <form action="/{{ app()->currentLocale() }}/bookings/inquiry" method="POST">
                         @csrf
                         <input type="hidden" name="inquiriable_id" value="{{ $bookingFor->getKey() }}">
                         <input type="hidden" name="inquiriable_type" value="{{ get_class($bookingFor) }}">

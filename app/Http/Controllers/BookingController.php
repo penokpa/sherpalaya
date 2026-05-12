@@ -44,9 +44,10 @@ class BookingController extends Controller
             ->back()
             ->getTargetUrl();
 
-        $url = Arr::last(
+        $url = Arr::first(
             explode('?', $previousUrl)
         );
+
 
         return redirect()
             ->to(
@@ -90,7 +91,7 @@ class BookingController extends Controller
             ->back()
             ->getTargetUrl();
 
-        $url = Arr::last(
+        $url = Arr::first(
             explode('?', $previousUrl)
         );
 

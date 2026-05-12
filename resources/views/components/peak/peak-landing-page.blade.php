@@ -1,12 +1,12 @@
 <div class="bg-blue-100/50">
-    <div class="card--rounded-none image-full  bg-blue-100/50 h-[80vh]">
-        <figure class="h-[80vh] w-full">
-            <img src="{{ $peak->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
-                class="h-[80vh] w-full object-cover brightness-50" />
+    <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh]">
+        <figure class="h-[80dvh] w-full">
+            <img loading="lazy" decoding="async" src="{{ $peak->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
+                class="h-[80dvh] w-full object-cover brightness-75" />
         </figure>
         <div class="card-body relative">
             <div
-                class="absolute 2xl:bottom-52 2xl:left-32  bottom-40 left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
+                class="absolute 2xl:bottom-52 xl:left-32  bottom-40 left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
                 <div class="">
                     {{-- <h5 class="card-title mb-2.5 text-warning text-2xl md:text-5xl uppercase font-extrabold ">
                         Explore
@@ -25,7 +25,7 @@
 
     <div class="bg-blue-100/50">
         <div class="h-8 "></div>
-        <div class="2xl:mx-32 mx-4 text-left">
+        <div class="xl:mx-32 mx-4 text-left">
             <h1
                 class="text-2xl lg:text-4xl  font-light  line-clamp-2 tracking-wider text-primary uppercase wrap text-pretty">
                 Peaks In Nepal
@@ -49,7 +49,7 @@
     <x-breadcrumb :breadcrumbs="[
         [
             'name' => 'Home',
-            'url' => url('/home'),
+            'url' => url('/' . app()->currentLocale() . '/home'),
         ],
         [
             'name' => 'Expedition',
@@ -60,7 +60,7 @@
 
 
     {{-- Showing <strong>{{ $peakRegion->peaks->count() }}</strong> --}}
-    <div class="2xl:mx-32 mx-4">
+    <div class="xl:mx-32 mx-4">
         @foreach ($peaksRegion as $peakRegion)
             @if ($peakRegion->peaks->isNotEmpty())
                 <div id="region-{{ $peakRegion->id }}">
@@ -73,7 +73,7 @@
                             <div
                                 class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                 <figure class="h-[25rem] max-w-sm">
-                                    <img src="{{ optional($peak->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                    <img loading="lazy" decoding="async" src="{{ optional($peak->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                         alt="{{ $peak->title }} Cover Image"
                                         class="transition-transform brightness-75 h-[25rem] duration-500 group-hover:scale-110  max-w-sm object-cover" />
                                 </figure>
@@ -106,7 +106,7 @@
                                         <div
                                             class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                             <figure class="h-[28rem] max-w-sm">
-                                                <img src="{{ optional($peak->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                <img loading="lazy" decoding="async" src="{{ optional($peak->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                     alt="{{ $peak->title }} Cover Image"
                                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
                                             </figure>

@@ -48,10 +48,9 @@ class FaqResource extends Resource
                 Section::make()
                     ->schema([
                         Textarea::make('question')
-                            ->rows(1)
-                            ->required(),
+                            ->required()
+                            ->translatable(),
                         RichEditor::make('answer')
-                            ->columnSpan(3)
                             ->required()
                             ->toolbarButtons([
                                 // 'attachFiles',
@@ -68,7 +67,8 @@ class FaqResource extends Resource
                                 // 'strike',
                                 'underline',
                                 'undo',
-                            ]),
+                            ])
+                            ->translatable(),
                     ]),
             ]);
     }

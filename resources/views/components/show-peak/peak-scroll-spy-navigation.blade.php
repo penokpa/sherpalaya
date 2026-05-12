@@ -1,6 +1,6 @@
 <div class="bg-white sticky top-0  z-10 mt-0 ">
     <nav id="dropdown-navbar-collapse" data-scrollspy="#scrollspy-1"
-        class="tabs  horizontal-scrollbar  lg:gap-2 2xl:mx-32 mx-4" aria-label="Scrollspy navbar" role="tablist"
+        class="tabs  horizontal-scrollbar  lg:gap-2 xl:mx-32 mx-4" aria-label="Scrollspy navbar" role="tablist"
         aria-orientation="horizontal">
 
         <button href="#key_highlights" type="button"

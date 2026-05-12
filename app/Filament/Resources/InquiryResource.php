@@ -7,7 +7,6 @@ use App\Filament\Resources\InquiryResource\Pages;
 use App\Filament\Resources\InquiryResource\RelationManagers;
 use App\Models\Expedition;
 use App\Models\Inquiry;
-use App\Models\Service;
 use App\Models\Tour;
 use App\Models\Trek;
 use Filament\Forms;
@@ -51,11 +50,14 @@ class InquiryResource extends Resource
                     ->columnSpan(1)
                     ->schema([
                         TextInput::make('full_name')
-                            ->required(),
+                            ->required()
+                            ->columnSpan(2),
                         TextInput::make('email')
                             ->required()
                             ->email()
+                            ->columnSpan(2)
                             ->prefixIcon('heroicon-m-envelope'),
+                        
                         RichEditor::make('message')
                             ->required()
                             ->columnSpan(3)
@@ -75,24 +77,32 @@ class InquiryResource extends Resource
                                 'underline',
                                 'undo',
                             ]),
-                        Select::make('type')
-                            ->options(InquiryType::class)
+
                     ]),
                 Section::make()
-                    ->hiddenOn(['create', 'edit'])
                     ->columnSpan(1)
+                    ->columns(2)
                     ->schema([
+                        Select::make('type')
+                            ->options(InquiryType::class)
+                            ->label('Inquiry or Booking?')
+                            ->native(false)
+                            ->columnSpan(1),
                         Select::make('inquiriable_type')
                             ->required()
+                            ->label('Type')
                             ->reactive()
+                            ->native(false)
+                            ->columnSpan(1)
                             ->options([
                                 Expedition::class => 'Expedition',
                                 Trek::class => 'Trek',
-                                Service::class => 'Service',
                                 Tour::class => 'Tour',
 
                             ]),
                         Select::make('inquiriable_id')
+                            ->label('For')
+                            ->columnSpanFull()
                             ->options(function (Get $get) {
                                 $type = $get('inquiriable_type');
                                 if (is_null($type)) {
@@ -125,6 +135,7 @@ class InquiryResource extends Resource
                     ]),
                 ])->collapsible()
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])

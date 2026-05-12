@@ -1,12 +1,12 @@
 <div class="bg-blue-100/50">
-    <div class="card--rounded-none image-full  bg-blue-100/50 h-[80vh]">
-        <figure class="h-[80vh] w-full">
-            <img src="{{ $tour->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
-                class="h-[80vh] w-full object-cover brightness-50" />
+    <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh]">
+        <figure class="h-[80dvh] w-full">
+            <img loading="lazy" decoding="async" src="{{ $tour->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
+                class="h-[80dvh] w-full object-cover brightness-75" />
         </figure>
         <div class="card-body relative">
             <div
-                class="absolute 2xl:bottom-52 2xl:left-32  bottom-40 left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
+                class="absolute 2xl:bottom-52 xl:left-32  bottom-40 left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
                 <div class="">
                     <h5 class="card-title mb-2.5 text-warning text-2xl md:text-4xl uppercase font-extrabold ">
                         Sherpalaya
@@ -25,7 +25,7 @@
 
     <div class="bg-blue-100/50">
         <div class="h-10 "></div>
-        <div class="2xl:mx-32 mx-4 text-left">
+        <div class="xl:mx-32 mx-4 text-left">
             <h1
                 class="text-2xl lg:text-5xl  font-light  line-clamp-2 tracking-wider text-primary uppercase wrap text-pretty">
                 tour Adventure In Nepal
@@ -46,7 +46,7 @@
     <x-breadcrumb :breadcrumbs="[
         [
             'name' => 'Home',
-            'url' => url('/home'),
+            'url' => url('/' . app()->currentLocale() . '/home'),
         ],
         [
             'name' => 'Tours',
@@ -54,7 +54,7 @@
     ]" />
 
     {{-- Showing <strong>{{ $tourRegion->tours->count() }}</strong> --}}
-    <div class="2xl:mx-32 mx-4">
+    <div class="xl:mx-32 mx-4">
         @foreach ($tourTypes as $type => $tours)
             @php
                 $typeLabel = \App\Enums\TourType::tryFrom($type)?->getLabel() ?? 'Unknown';
@@ -77,11 +77,11 @@
                                             <div class="carousel-body h-full opacity-0">
                                                 {{-- @foreach ($tour->images as $image) --}}
                                                 <div class="carousel-slide">
-                                                    <a href="{{ route('show_tour', $tour->id) }}">
+                                                    <a href="{{ route('show_tour', ['id'=>$tour->id, 'locale'=>app()->currentLocale()]) }}">
                                                         <div class="bg-base-200/50 flex h-full justify-center">
                                                             <span class="self-start w-full ">
                                                                 <figure>
-                                                                    <img src="{{ $tour->coverImage->url ?? asset('photos/P1030127.JPG') }}"
+                                                                    <img loading="lazy" decoding="async" src="{{ $tour->coverImage->url ?? asset('photos/P1030127.JPG') }}"
                                                                         alt="{{ $tour->title }} Cover Image"
                                                                         class="h-60 object-cover" />
                                                                 </figure>
@@ -124,7 +124,7 @@
                                 </div>
 
                                 <div class="card-body px-2 pt-2 bg-blue-100/30 ">
-                                    <a href="{{ route('show_tour', $tour->id) }}">
+                                    <a href="{{ route('show_tour', ['id'=>$tour->id, 'locale'=>app()->currentLocale()]) }}">
                                         <h5
                                             class="card-title mb-1 line-clamp-2 uppercase text-lg text-blue-700 font-semibold">
                                             {{ $tour->title }}</h5>
@@ -153,16 +153,16 @@
                                     @foreach ($tours as $tour)
                                         <div class="carousel-slide max-w-sm px-1">
                                             <div class="card w-full ">
-                                                <a href="{{ route('show_tour', $tour->id) }}">
+                                                <a href="{{ route('show_tour', ['id'=>$tour->id, 'locale'=>app()->currentLocale()]) }}">
                                                     <figure>
-                                                        <img src="{{ $tour->coverImage?->url ?? asset('photos/P1030127.JPG') }}"
+                                                        <img loading="lazy" decoding="async" src="{{ $tour->coverImage?->url ?? asset('photos/P1030127.JPG') }}"
                                                             alt="{{ $tour->title }} Cover Image"
                                                             class="h-[20rem] object-cover" />
                                                     </figure>
                                                 </a>
                                             </div>
                                             <div class="card-body bg-blue-100/30 ">
-                                                <a href="{{ route('show_tour', $tour->id) }}">
+                                                <a href="{{ route('show_tour', ['id'=>$tour->id, 'locale'=>app()->currentLocale()]) }}">
                                                     <h5
                                                         class="card-title mb-2.5 line-clamp-2 uppercase text-lg text-primary font-normal">
                                                         {{ $tour->title }}</h5>

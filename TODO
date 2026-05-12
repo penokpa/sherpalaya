@@ -28,8 +28,8 @@ Final:
     ✔ Company setting @done(25-02-08 15:22)
     ✔ Privacy, T&C @done(25-02-09 11:06)
     ☐ cookie settings (Legal settings)
-    ☐ Repeater translation
-    ☐ Animation
+    ✔ Repeater translation @done(25-03-22 22:06)
+    ✔ Animation @done(25-03-22 22:06)
     ✔ Transition speed @done(25-02-09 10:29)
     ✔ Sound track upload @done(25-02-09 10:29)
     ✔ Website translation @done(25-02-08 16:21)
@@ -38,14 +38,15 @@ Final:
     ✔ Search UI @done(25-02-08 18:14)
 
 Neema Dai:
-    ☐ our sherpas
+    ✔ our sherpsas @done(25-03-22 22:06)
     ✘ destination page @cancelled(25-02-04 19:42)
-    ☐ Translation @started(25-02-04 19:54)
-    ☐ Sound in home page carousel
+    ✔ Translation @done(25-03-22 22:06)
+    ✔ Sound in home page carousel @done(25-03-22 22:06)
     ✔ Whatsapp @done(25-02-04 19:42)
 
 
 Umanga:
+    ☐ Roles in adminpanel
     ☐ Booking / Inquiry success and error handling
     ✔ Whatsapp @done(25-02-04 19:42)
     ✔ Website Setting Seeder: @done(25-02-02 23:43)
@@ -67,8 +68,10 @@ Umanga:
     ✔ Breadcrumb and description card @done(25-02-04 00:20)
     ✔ Website setting frontend @done(25-02-03 00:22)
     ✔ Navbar: Tour [Counters] @done(25-02-02 23:43)
-    ☐ FAQ : description is showing twice
-    ☐ Animation has multiple images on every slide
+    ✔ FAQ : description is showing twice @done(25-03-22 20:09)
+    ✔ search result cover image @done(25-03-23 00:09)
+    ✔ Animation has multiple images on every slide @done(25-03-22 22:06)
+    ✔ Redirect urls on show pages .. Booking and Inquiry @done(25-03-22 22:11)
 
 Subin:
     ✔ Recommendation @done(25-02-04 19:43)
@@ -106,4 +109,21 @@ new final:
 
 
 New Required Update:
-    ☐ about-us legal documents gallery-section
+    ✔ about-us legal documents gallery-section @done(25-03-30 18:11)
+    ☐ whatsapp icon on every page
+    ☐ repeater translation on keyhights,essential tips, itinerary, costinfo 
+
+
+
+Dynamics:
+    ✔ About Us @done(25-03-21 19:42)
+    ✔ Homepage @done(25-03-27 17:44)
+    ✔ Our Team @done(25-03-21 19:44)
+
+    ✔ Expedition Landing @done(25-03-21 19:50)
+    ✔ Trek Landing @done(25-03-21 19:58)
+    ✔ Activity Landing @done(25-03-21 19:59)
+    ✔ Service Landing @done(25-03-21 20:00)
+
+    ✔ COntact Page @done(25-03-21 20:02)
+    ✔ Company @done(25-03-21 20:04)

@@ -5,7 +5,7 @@
 @if ($featuredExpeditions->isNotEmpty())
     <div class="bg-blue-100/50">
         <div class="h-10 "></div>
-        <div class="2xl:mx-32 mx-4 ">
+        <div class="xl:mx-32 mx-4 ">
             <h5 class="text-5xl font-light text-left line-clamp-2 tracking-wider text-black">Expeditions
             </h5>
             <h3 class="text-3xl tracking-widest text-accent "> With Sherpalaya</h3>
@@ -28,7 +28,7 @@
                                                 <div
                                                     class="card rounded-none  image-full  w-full relative flex items-center  card-side group hover:shadow border ">
                                                     <figure class="h-[28rem] w-full">
-                                                        <img src="{{ $featuredExpedition->featureImage->url ?? asset('photos/mountain3.jpg') }}"
+                                                        <img loading="lazy" decoding="async" src="{{ $featuredExpedition->featureImage->url ?? asset('photos/mountain3.jpg') }}"
                                                             alt="{{ $featuredExpedition->title }} Cover Image"
                                                             class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                     </figure>
@@ -79,7 +79,7 @@
 
 
 
-<x-featured.expedition.one-item />
+{{-- <x-featured.expedition.one-item /> --}}
 <x-featured.expedition.two-item />
 {{-- <x-featured.expedition.three-item />
 <x-featured.expedition.four-item />

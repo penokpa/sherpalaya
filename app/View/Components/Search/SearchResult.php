@@ -14,18 +14,17 @@ class SearchResult extends Component
 {
 
     public CanBeEasySearched $searchedResult;
-    public object $result;
+    public Collection $result;
 
     /**
      * Create a new component instance.
      */
     public function __construct(
         CanBeEasySearched $searchedResult,
-        
-    )
-    {
+
+    ) {
         $this->searchedResult = $searchedResult;
-        $this->result = (object) $searchedResult->toSearchResult()->toArray();
+        $this->result = $searchedResult->toSearchResult();
     }
 
     /**

@@ -2194,7 +2194,7 @@ class TrekSeeder extends Seeder
             'starting_altitude' => 1400, // Add if known
             'highest_altitude' => 4000, // Add if known
             'region_id' => Region::find(7)->id, // Manaslu Region ID - ALREADY CORRECT#
-            'category_id' => Category::find(9)->id,
+            'category_id' => Category::find(10)->id,
             'trek_difficulty' => TrekDifficulty::MODERATE, // Verify
             'costs_include' => [
                 [

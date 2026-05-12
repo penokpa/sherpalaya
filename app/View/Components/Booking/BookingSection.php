@@ -17,8 +17,7 @@ class BookingSection extends Component
      */
     public function __construct(
         CanBeInquiried $bookingFor,
-    )
-    {
+    ) {
         $this->bookingFor = $bookingFor;
     }
 
@@ -27,6 +26,8 @@ class BookingSection extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.booking.booking-section');
+        return view(
+            'components.booking.booking-section'
+        );
     }
 }

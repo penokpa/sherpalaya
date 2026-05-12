@@ -4,7 +4,6 @@ namespace App\Filament\Resources\DestinationResource\Pages;
 
 use App\Filament\Resources\DestinationResource;
 use App\Filament\Resources\DestinationResource\Widgets\DestinationMultiWidget;
-use App\Filament\Resources\DestinationResource\Widgets\DestinationServiceTable;
 use App\Filament\Resources\DestinationResource\Widgets\DestinationToursTable;
 use App\Traits\Filament\TranslatableViewRecord;
 use Filament\Actions;

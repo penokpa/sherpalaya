@@ -1,9 +1,10 @@
 <div>
     {{-- Ask for animations --}}
-    <div id="ask-for-animation" class="w-[100vw] h-[100vh] card image-full flex-col-reverse rounded-none">
+    <div id="ask-for-animation" class="w-[100vw] h-dvh card image-full flex-col-reverse rounded-none">
         <figure class="overflow-hidden rounded-none">
-            <img src="{{ $animationMediaUrls[$askForAnimation['image_id']] }}" alt="overlay image" />
+            <img loading="lazy" decoding="async" src="{{ $animationMediaUrls[$askForAnimation['image_id']] }}" alt="overlay image" />
         </figure>
+
         <div class="card-body justify-center items-center">
 
             {{-- <span class="icon-[mynaui--{{ $icon }}] size-28 text-white animated-icon"></span> --}}
@@ -20,6 +21,19 @@
                 <button class="btn btn-soft btn-error" id="ask-for-animation-negative-response">
                     {{ $askForAnimation['negative_response'] }}
                 </button>
+
+                {{-- Language selection --}}
+                <div class="dropdown relative inline-flex [--placement:bottom-end] px-2 ">
+                    <button id="language-select-dropdown-drawer-animation" type="button" class="btn btn-soft btn-info dropdown-toggle"
+                        aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                        <span class="icon-[tabler--language-hiragana] size-5"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60" role="menu"
+                        aria-orientation="vertical" aria-labelledby="language-select-dropdown-drawer-animation">
+                        <li><a class="dropdown-item text-black" href="/change-locale/en"> English</a></li>
+                        <li><a class="dropdown-item text-black" href="/change-locale/fr"> French</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -38,10 +52,10 @@
                 @if ($loop->remaining == 0)
                     <div class="absolute bottom-20">
                         <p class="text-xl text-white text-center w-full cursor-pointer hidden" id="scroll-down-wrapper">
-                            <img src="{{ $animationMediaUrls[$animationButton['icon_id']] }}"
+                            <img loading="lazy" decoding="async" src="{{ $animationMediaUrls[$animationButton['icon_id']] }}"
                                 class="inline size-8 text-white animated-scroll-down-icon" alt="Scroll down">
                             {{ $animationButton['text'] }}
-                            <img src="{{ $animationMediaUrls[$animationButton['icon_id']] }}"
+                            <img loading="lazy" decoding="async" src="{{ $animationMediaUrls[$animationButton['icon_id']] }}"
                                 class="inline size-8 text-white animated-scroll-down-icon" alt="Scroll down">
                         </p>
                     </div>
@@ -63,6 +77,7 @@
         document.addEventListener("DOMContentLoaded", function() {
 
             let audio = document.getElementById("background-audio");
+            let whatsappIcon = document.getElementById("whatsapp-icon");
 
             let askedForHomepageAnimation = sessionStorage.getItem("asked-for-homepage-animation");
             let showHomepageAnimation = sessionStorage.getItem("shown-homepage-animation");
@@ -135,10 +150,13 @@
                 navbar.classList.remove('hidden');
                 bodyElement.classList.remove('overflow-y-hidden');
 
+                whatsappIcon.classList.remove("hidden");
+
                 window.AOS.init();
             }
 
             function askForHomepageAnimation(showAnimation = true) {
+                whatsappIcon.classList.add("hidden");
                 sessionStorage.setItem("asked-for-homepage-animation", true);
                 askForAnimationSection.remove();
                 if (!showAnimation) {

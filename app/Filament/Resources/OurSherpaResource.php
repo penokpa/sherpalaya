@@ -9,13 +9,17 @@ use App\Filament\Resources\OurSherpaResource\Widgets\SherpaExpeditionsTableWidge
 use App\Filament\Resources\OurSherpaResource\Widgets\SherpaMultiWidget;
 use App\Filament\Resources\OurSherpaResource\Widgets\SherpaToursTableWidget;
 use App\Filament\Resources\OurSherpaResource\Widgets\SherpaTreksTableWidget;
+use App\Models\Expedition;
 use App\Models\OurSherpa;
 use App\Traits\Filament\TranslatableResource;
 use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TagsInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -41,14 +45,21 @@ class OurSherpaResource extends Resource
     protected static ?string $navigationLabel = 'Our Sherpas';
 
 
-    protected static ?string $navigationGroup = 'Site';
+    protected static ?string $navigationGroup = 'Content';
 
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 5;
 
-    public static function getNavigationBadge(): ?string
-    {
-        return static::getModel()::count();
-    }
+    // public static function getRepeaterFields(): array
+    // {
+    //     return [
+    //         'experience',
+    //     ];
+    // }
+
+    // public static function getNavigationBadge(): ?string
+    // {
+    //     return static::getModel()::count();
+    // }
     public static function form(Form $form): Form
     {
         return $form
@@ -56,67 +67,105 @@ class OurSherpaResource extends Resource
                 Section::make('General')
                     ->columns(2)
                     ->schema([
-                        Section::make('')
+                        Section::make('Info')
                             ->columnSpan(1)
                             ->schema([
+
+                                TextInput::make('name')
+                                    ->columnSpan(2)
+                                    ->required(),
+                                TagsInput::make('language')
+                                    ->columnSpan(2)
+                                    ->label('Languages')
+                                    ->hint('Press \'Enter\'')
+                                    ->suggestions([
+                                        'Nepali',
+                                        'English',
+                                        'French'
+                                    ]),
                                 CuratorPicker::make('profile_picture_id')
                                     ->color('primary')
                                     ->label('Profile Picture')
                                     ->hint('for profile page')
                                     ->relationship('profilePicture', 'id'),
+
                             ]),
-                        Section::make('')
-                            ->columnSpan(1)
-                            ->schema([
-                                TextInput::make('name')
-                                    ->columnSpan(2)
-                                    ->required(),
-                                TextInput::make('title')
-                                    ->columnSpan(2)
-                                    ->required(),
-                                RichEditor::make('description')
-                                    ->toolbarButtons([
-                                        // 'attachFiles',
-                                        'blockquote',
-                                        'bold',
-                                        'bulletList',
-                                        // 'codeBlock',
-                                        'h2',
-                                        'h3',
-                                        'italic',
-                                        'link',
-                                        'orderedList',
-                                        'redo',
-                                        // 'strike',
-                                        'underline',
-                                        'undo',
+                            Section::make('Page')
+                                    ->columnSpan(1)
+                                    ->schema([
+
+                                        TextInput::make('title')
+                                            ->required()
+                                            ->translatable()
+                                            ->columnSpan(2),
+
+                                        RichEditor::make('description')
+                                            ->toolbarButtons([
+                                                // 'attachFiles',
+                                                'blockquote',
+                                                'bold',
+                                                'bulletList',
+                                                // 'codeBlock',
+                                                'h2',
+                                                'h3',
+                                                'italic',
+                                                'link',
+                                                'orderedList',
+                                                'redo',
+                                                // 'strike',
+                                                'underline',
+                                                'undo',
+                                            ])
+                                            ->translatable(),
                                     ]),
+                        Section::make('Sherpa Experience')
+                            // ->hiddenOn('view')
+                            ->columns(2)
+                            ->columnSpan(2)
+                            ->schema([
+
+                                Repeater::make('expedition_experience')
+                                    ->relationship('expidetionOurSherpas')
+                                    ->columnSpan(1)
+                                    ->label('Expeditions')
+                                    ->addActionLabel('Add Expedition')
+                                    ->orderColumn('order')
+                                    ->schema([
+                                        Select::make('expedition_id')
+                                            ->options(Expedition::all()->pluck('title', 'id'))
+                                            ->preload()
+                                            ->label('Expedition')
+                                            ->native(false),
+                                        TextInput::make('count')
+                                            ->numeric()
+                                            ->minValue(1)
+                                            ->required()
+                                    ])
+                                    ->columns(2),
+
+
+                                Repeater::make('experience')
+                                ->simple(Textarea::make('experience')
+                                    ->autosize())
+                                ->label('Experiences'),
+
+                                Select::make('treks')
+                                    // ->hiddenLabel()
+                                    ->multiple()
+                                    ->relationship(titleAttribute: 'title')
+                                    ->preload()
+                                    ->searchable(['title', 'region'])
+                                    ->native(false),
+                                Select::make('tours')
+                                    // ->hiddenLabel()
+                                    ->multiple()
+                                    ->relationship(titleAttribute: 'title')
+                                    ->preload()
+                                    ->searchable(['title', 'region'])
+                                    ->native(false),
                             ]),
                     ]),
-                    Section::make('Sherpa Experience')
-                    ->hiddenOn('view')
-                    ->columns(2)
-                    ->schema([
-                        Select::make('expeditions')
-                            ->relationship(titleAttribute: 'title')
-                            ->multiple()
-                            ->preload()
-                            ->native(false),
-                        Select::make('treks')
-                            // ->hiddenLabel()
-                            ->multiple()
-                            ->relationship(titleAttribute: 'title')
-                            ->preload()
-                            ->searchable(['title', 'region'])
-                            ->native(false),
-                        Select::make('tours')
-                            // ->hiddenLabel()
-                            ->multiple()
-                            ->relationship(titleAttribute: 'title')
-                            ->preload()
-                            ->searchable(['title', 'region'])
-                            ->native(false),
-                    ]),
+
                 Section::make('Recognition')
                     ->schema([
                         CuratorPicker::make('awardsAndCertificates')
@@ -125,7 +174,6 @@ class OurSherpaResource extends Resource
                             ->hint('rewarded to Sherpa')
                             ->relationship('awardsAndCertificates', 'id'),
                     ]),
-
             ]);
     }
 
@@ -143,10 +191,13 @@ class OurSherpaResource extends Resource
                             ->weight(FontWeight::Bold),
                         TextColumn::make('title')
                             ->size(TextColumn\TextColumnSize::Large)
-                            ->description(fn(?OurSherpa $record): HtmlString => new HtmlString($record?->description ?? ''))
+                            ->color('info'),
+                        TextColumn::make('description')
+                            ->size(TextColumn\TextColumnSize::Medium)
+                            ->weight(FontWeight::ExtraLight)
+                            ->limit(200),
                     ]),
                 ]),
-
             ])
             ->contentGrid([
                 'sm' => 1,

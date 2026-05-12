@@ -12,7 +12,7 @@
                     <a href="{{ route('show_trek', $recommendedTrek->id) }}">
 
                         <figure class="h-44">
-                            <img src="{{ $recommendedTrek->coverImage?->url }}"
+                            <img loading="lazy" decoding="async" src="{{ $recommendedTrek->coverImage?->url }}"
                                 alt="{{ $recommendedTrek->title }} Cover Image"
                                 class="transition-transform duration-500 group-hover:scale-110 h-44 object-cover" />
                         </figure>

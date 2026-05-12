@@ -3,19 +3,19 @@
         <div id="gallery" class="card-header pb-4 px-0 ">
             <div class="h-6">
             </div>
-            <h5 class="card-title text-center pb-2 text-black uppercase font-medium font-body tracking-normal text-3xl" data-aos="fade-down" data-aos-duration="1200">
-                Gallery
-            </h5>
+            <h3 class="card-title text-left p-2 text-black uppercase font-bold font-body tracking-wide text-3xl" data-aos="fade-down" data-aos-duration="1200">
+                {{__('show-page.gallery')}}
+            </h3>
             <div class="h-6">
             </div>
-            <div id="all-expeditions" class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-1 px-2 skeleton animate-pulse">
+            <div id="all-expeditions" class="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-1 px-2 skeleton animate-pulse">
                 @foreach ($expedition->images->slice(0, 8) as $galleryImage)
                     <button
-                        class="card cursor-pointer rounded-none image-full h-52 w-full relative items-end  card-side group hover:shadow border single-expedition hidden"
+                        class="card cursor-pointer rounded-xl image-full h-52 w-full relative items-end  card-side group hover:shadow border single-expedition hidden"
                         aria-haspopup="dialog" aria-expanded="false" aria-controls="expedition-gallery-modal"
-                        data-overlay="#expedition-gallery-modal" onclick="changeCarouselSlide({{ $loop->index }})" data-aos="fade-down" data-aos-duration="1200">
-                        <figure class="h-full w-full brightness-90">
-                            <img src="{{ $galleryImage->url }}" alt="overlay image"
+                        data-overlay="#expedition-gallery-modal" onclick="changeCarouselSlide({{ $loop->index }})">
+                        <figure class="h-full w-full brightness-75">
+                            <img loading="lazy" decoding="async" src="{{ $galleryImage->url }}" alt="overlay image"
                                 class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover brightness-95 contrast-120" />
                         </figure>
                     </button>

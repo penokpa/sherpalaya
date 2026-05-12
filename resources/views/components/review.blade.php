@@ -1,12 +1,13 @@
-<div class="bg-blue-100/20 font-body">
+<section class="bg-blue-100/20 font-body">
 
     <div class="h-20"></div>
 
-    <div class="2xl:mx-32 mx-4">
+    <div class="xl:mx-32 mx-4">
         <div class="">
-            <h5 class="text-3xl md:text-4xl font-body font-medium uppercase tracking-normal text-black text-left md:text-left"
+            <h3 class="text-3xl font-body font-medium uppercase tracking-normal text-black text-left md:text-left text-balance"
                 data-aos="fade-down" data-aos-duration="1200">
-                Real Stories, Real Adventures!</h5>
+                {{__('review.review')}}
+            </h3>
             <div class="h-6 md:h-12"></div>
         </div>
         <div class="accordion accordion-shadow max-w-full ">
@@ -21,7 +22,7 @@
                         <div class="flex gap-4">
                             <div class="avatar">
                                 <div class="size-12 rounded-full">
-                                    <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-2.png" alt="avatar" />
+                                    <img loading="lazy" decoding="async" src="https://cdn.flyonui.com/fy-assets/avatar/avatar-2.png" alt="avatar" loading="lazy"/>
                                 </div>
                             </div>
                             <div>
@@ -60,5 +61,5 @@
     </div>
     <div class="h-20"></div>
 
-    {{-- {{ route('show_trek', $trek->id) }} --}}
-</div>
+    {{-- {{ route('show_trek', ['id'=>$trek->id, 'locale'=>app()->currentLocale()]) }} --}}
+</section>

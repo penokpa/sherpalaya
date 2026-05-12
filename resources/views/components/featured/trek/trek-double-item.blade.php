@@ -1,7 +1,7 @@
 @if ($featuredTreks->count() === 2)
 
     <div class="bg-blue-100/60" data-aos="fade-down" data-aos-duration="1200">
-        <div class="2xl:mx-32 mx-4 ">
+        <div class="xl:mx-32 mx-4 ">
             <div class="h-14"></div>
 
 
@@ -12,7 +12,7 @@
                     <p
                         class="text-md mt-2 text-preety text-slate-800 lg:text-right lg:text-wrap
                          first-line:uppercase first-line:font-light">
-                        {{ $landingPageSetting->trek_activity_content }}
+                        {{ app()->currentLocale() == 'fr' ? $landingPageSetting->trek_activity_content_fr : $landingPageSetting->trek_activity_content_en }}
                     </p>
                     <div class="h-4"></div>
 
@@ -22,11 +22,11 @@
                     <div
                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                         <figure class="h-[28rem] w-full">
-                            <img src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                            <img loading="lazy" decoding="async" src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                 alt="{{ $featuredTrek->title }} Cover Image"
                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                         </figure>
-                        <a href="{{ route('show_trek', $featuredTrek->id) }}">
+                        <a href="{{ route('show_trek', ['id'=>$featuredTrek->id, 'locale'=>app()->currentLocale()]) }}">
                             <div class="card-body absolute inset-0 justify-end">
                                 <div class="text-center">
                                     <h2 class="font-bold text-white text-2xl uppercase">
@@ -71,11 +71,11 @@
                                             <div
                                                 class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                                 <figure class="h-[28rem] w-full">
-                                                    <img src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                    <img loading="lazy" decoding="async" src="{{ optional($featuredTrek->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                         alt="{{ $featuredTrek->title }} Cover Image"
                                                         class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                 </figure>
-                                                <a href="{{ route('show_trek', $featuredTrek->id) }}">
+                                                <a href="{{ route('show_trek', ['id'=>$featuredTrek->id, 'locale'=>app()->currentLocale()]) }}">
                                                     <div class="card-body absolute inset-0 justify-end">
                                                         <div class="text-center">
                                                             <h2 class="font-bold text-white text-2xl uppercase">

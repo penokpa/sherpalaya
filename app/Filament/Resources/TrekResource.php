@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources;
 
-use App\Enums\CategoryTypes;
-use App\Enums\ItineraryTypes;
+use App\Enums\CategoryType;
+use App\Enums\ItineraryType;
 use App\Enums\TrekDifficulty;
 use App\Filament\Fields\CuratorPicker;
+use App\Filament\Fields\TranslatableRepeater;
 use App\Filament\Resources\TrekResource\Pages;
 use App\Filament\Resources\TrekResource\RelationManagers;
 use App\Models\Trek;
@@ -32,7 +33,6 @@ use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
-use Icetalker\FilamentTableRepeater\Forms\Components\TableRepeater;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use RalphJSmit\Filament\Components\Forms\Sidebar;
@@ -45,10 +45,17 @@ class TrekResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
-
     protected static ?string $navigationIcon = 'heroicon-o-eye';
 
     protected static ?string $navigationGroup = 'Content';
+
+    public static function getRepeaterFields(): array
+    {
+        return [
+            'costs_include',
+            'costs_exclude',
+        ];
+    }
 
     public static function form(Form $form): Form
     {
@@ -65,26 +72,11 @@ class TrekResource extends Resource
                                         ->columns(6)
                                         ->schema([
                                             TextInput::make('title')
-                                                ->columnSpanFull()
                                                 ->required()
+                                                ->translatable()
+                                                ->columnSpanFull(),
 
-                                                ->hiddenOn('view'),
-                                            Select::make('region_id')
-                                                ->required()
-                                                ->label('Region')
-                                                ->relationship('region', 'name')
-                                                ->native(false)
-                                                ->columnSpan(3),
-                                            Select::make('category_id')
-                                                ->relationship(
-                                                    'category',
-                                                    'name',
-                                                    modifyQueryUsing: fn ($query) => $query->where('type', CategoryTypes::TREK)
-                                                    )
-                                                ->native(false)
-                                                ->columnSpan(3),
                                             RichEditor::make('description')
-                                                ->columnSpanFull()
                                                 ->required()
                                                 ->toolbarButtons([
                                                     // 'attachFiles',
@@ -101,7 +93,24 @@ class TrekResource extends Resource
                                                     // 'strike',
                                                     'underline',
                                                     'undo',
-                                                ]),
+                                                ])
+                                                ->translatable()
+                                                ->columnSpanFull(),
+
+                                            Select::make('region_id')
+                                                ->required()
+                                                ->label('Region')
+                                                ->relationship('region', 'name')
+                                                ->native(false)
+                                                ->columnSpan(3),
+                                            Select::make('category_id')
+                                                ->relationship(
+                                                    'category',
+                                                    'name',
+                                                    modifyQueryUsing: fn($query) => $query->where('type', CategoryType::TREK)
+                                                )
+                                                ->native(false)
+                                                ->columnSpan(3),
                                         ]),
                                 ], [
                                     Section::make('')
@@ -141,34 +150,46 @@ class TrekResource extends Resource
                                         ]),
                                     Section::make('Key Highlights')
                                         ->schema([
-                                            TableRepeater::make('key_highlights')
+                                            Repeater::make('keyHighlights')
                                                 ->label('Key Highlights')
                                                 ->relationship('keyHighlights')
-                                                ->schema([
-                                                    TextInput::make('title')->label('Title')->required(),
-                                                    TextArea::make('description')->label('Description')->autosize()->required(),
-                                                ])
                                                 ->reorderable()
+                                                ->schema([
+                                                    TextInput::make('title')
+                                                        ->required()
+                                                        ->translatable(),
+                                                    TextArea::make('description')
+                                                        ->required()
+                                                        ->autosize()
+                                                        ->translatable(),
+                                                ]),
                                         ]),
                                     Section::make('Essential Tips')
                                         ->schema([
-                                            TableRepeater::make('essential_tips')
+                                            Repeater::make('essentialTips')
                                                 ->label('Essential Tips')
                                                 ->relationship('essentialTips')
-                                                ->schema([
-                                                    TextInput::make('title')->label('Title')->required(),
-                                                    TextArea::make('description')->label('Description')->autosize()->required(),
-                                                ])
                                                 ->reorderable()
+                                                ->schema([
+                                                    TextInput::make('title')
+                                                        ->required()
+                                                        ->translatable(),
+                                                    TextArea::make('description')
+                                                        ->required()
+                                                        ->autosize()
+                                                        ->translatable(),
+
+                                                ]),
                                         ]),
                                 ], [
                                     Section::make()
                                         ->columns(2)
                                         ->schema([
                                             TextArea::make('best_time_for_trek')
-                                                ->columnSpanFull()
                                                 ->required()
-                                                ->label('Best Time For Trek'),
+                                                ->label('Best Time For Trek')
+                                                ->translatable()
+                                                ->columnSpanFull(),
                                             Select::make('trek_difficulty')
                                                 ->options(TrekDifficulty::class)
                                                 ->default(TrekDifficulty::MODERATE)
@@ -226,23 +247,25 @@ class TrekResource extends Resource
                             ->schema([
                                 Section::make('Costs Include')
                                     ->schema([
-                                        Repeater::make('costs_include')
-                                            ->hiddenLabel()
-                                            ->simple(
-                                                TextInput::make('costs_include')
+                                        TranslatableRepeater::make('costs_include')
+                                            ->field(function ($field) {
+                                                return $field
                                                     ->prefixIcon('heroicon-o-check-badge')
-                                                    ->prefixIconColor('success')
-                                            )
+                                                    ->prefixIconColor('success');
+                                            })
+                                            ->simple(TextInput::class)
+                                            ->hiddenLabel(),
                                     ]),
                                 Section::make('Costs Exclude')
                                     ->schema([
-                                        Repeater::make('costs_exclude')
-                                            ->hiddenLabel()
-                                            ->simple(
-                                                TextInput::make('costs_exclude')
+                                        TranslatableRepeater::make('costs_exclude')
+                                            ->field(function ($field) {
+                                                return $field
                                                     ->prefixIcon('heroicon-o-x-circle')
-                                                    ->prefixIconColor('danger')
-                                            )
+                                                    ->prefixIconColor('danger');
+                                            })
+                                            ->simple(TextInput::class)
+                                            ->hiddenLabel()
                                     ]),
                             ]),
                         Tabs\Tab::make('Itinerary')
@@ -256,9 +279,11 @@ class TrekResource extends Resource
                                             ->relationship('itineraries')
                                             ->columns(7)
                                             ->schema([
-                                                TextInput::make('title')
-                                                    ->columnSpan(3)
-                                                    ->required(),
+                                                Textarea::make('title')
+                                                    ->required()
+                                                    ->autosize()
+                                                    ->translatable()
+                                                    ->columnSpan(3),
                                                 Select::make('destinations')
                                                     ->relationship('destinations', 'name')
                                                     ->multiple()
@@ -266,18 +291,22 @@ class TrekResource extends Resource
                                                     ->searchable()
                                                     ->columnSpan(4)
                                                     ->native(false),
-                                                TableRepeater::make('itineraryDetails')
+                                                Repeater::make('itineraryDetails')
                                                     ->relationship('itineraryDetails')
-                                                    ->schema([
-                                                        Select::make('type')
-                                                            ->options(ItineraryTypes::class)
-                                                            ->native(false),
-                                                        Textarea::make('description')
-                                                            ->rows(1)
-                                                            ->autosize()
-                                                    ])
                                                     ->reorderable()
                                                     ->cloneable()
+                                                    ->columnSpanFull()
+                                                    ->schema([
+                                                        Select::make('type')
+                                                            ->options(ItineraryType::class)
+                                                            ->native(false)
+                                                            ->required(),
+                                                        Textarea::make('description')
+                                                            ->required()
+                                                            ->rows(1)
+                                                            ->autosize()
+                                                            ->translatable(),
+                                                    ])->columnSpanFull(),
                                             ])
                                     ]),
                             ]),

@@ -12,7 +12,7 @@
                     <a href="{{ route('show_peak', $recommendedPeak->id) }}">
 
                         <figure class="h-44">
-                            <img src="{{ $recommendedPeak->coverImage?->url }}"
+                            <img loading="lazy" decoding="async" src="{{ $recommendedPeak->coverImage?->url }}"
                                 alt="{{ $recommendedPeak->title }} Cover Image"
                                 class="transition-transform duration-500 group-hover:scale-110 h-44 object-cover" />
                         </figure>

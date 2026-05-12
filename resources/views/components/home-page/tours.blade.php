@@ -10,7 +10,7 @@
         <div class="card card-side group hover:shadow border border-gray-200 rounded-none overflow-hidden border-none shadow-none bg-transparent"
             dir="ltr">
             <figure class="w-1/2">
-                <img src="{{ asset('photos/mountain1.jpg') }}" alt="Shoes"
+                <img loading="lazy" decoding="async" src="{{ asset('photos/mountain1.jpg') }}" alt="Shoes"
                     class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover" />
             </figure>
             <div class="card-body w-1/2 p-4 flex flex-col justify-between">
@@ -19,7 +19,7 @@
                     signature
                     Air
                     cushioning technology in the sole.</p>
-                <a href="/tours">
+                <a href="/{{ app()->currentLocale() }}/tours">
                     <div class="card-actions flex gap-5 flex-row items-center">
                         <span class="text-primary font-medium">Explore</span>
                         <span class="icon-[material-symbols--arrow-right-alt-rounded] link link-primary"
@@ -33,7 +33,7 @@
         <div class="card card-side group hover:shadow border border-gray-200 rounded-none overflow-hidden border-none shadow-none bg-transparent"
             dir="rtl">
             <figure class="w-1/2">
-                <img src="{{ asset('photos/mountain2.jpg') }}" alt="Shoes"
+                <img loading="lazy" decoding="async" src="{{ asset('photos/mountain2.jpg') }}" alt="Shoes"
                     class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover" />
             </figure>
             <div class="card-body w-1/2 p-4 flex flex-col justify-between">
@@ -42,7 +42,7 @@
                     signature
                     Air
                     cushioning technology in the sole.</p>
-                <a href="/tours">
+                <a href="/{{ app()->currentLocale() }}/tours">
                     <div class="card-actions flex gap-5 flex-row items-center">
                         <span class="text-primary font-medium">Explore</span>
                         <span class="icon-[material-symbols--arrow-right-alt-rounded] link link-primary"
@@ -58,7 +58,7 @@
         <div
             class="card--rounded-none image-full h-full w-full relative flex items-center justify-center card-side group hover:shadow border bg-transparent">
             <figure class="h-full w-full">
-                <img src="{{ asset('photos/mountain3.jpg') }}" alt="overlay image"
+                <img loading="lazy" decoding="async" src="{{ asset('photos/mountain3.jpg') }}" alt="overlay image"
                     class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover" />
             </figure>
             <div class="card-body absolute inset-0 flex items-center justify-center">
@@ -75,7 +75,7 @@
         <div
             class="card--rounded-none image-full h-full w-full relative flex items-center justify-center card-side group hover:shadow border bg-transparent">
             <figure class="h-full w-full">
-                <img src="{{ asset('photos/mountain4.jpg') }}" alt="overlay image"
+                <img loading="lazy" decoding="async" src="{{ asset('photos/mountain4.jpg') }}" alt="overlay image"
                     class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover" />
             </figure>
             <div class="card-body absolute inset-0 flex items-center justify-center">
@@ -92,7 +92,7 @@
         <div
             class="card--rounded-none image-full h-full w-full relative flex items-center justify-center card-side group hover:shadow border bg-transparent">
             <figure class="h-full w-full">
-                <img src="{{ asset('photos/culture2.jpg') }}" alt="overlay image"
+                <img loading="lazy" decoding="async" src="{{ asset('photos/culture2.jpg') }}" alt="overlay image"
                     class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover" />
             </figure>
             <div class="card-body absolute inset-0 flex items-center justify-center">

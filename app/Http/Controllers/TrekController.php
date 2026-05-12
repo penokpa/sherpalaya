@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\CategoryTypes;
+use App\Enums\CategoryType;
 use App\Models\Category;
 use App\Models\Region;
 use App\Models\Trek;
@@ -20,7 +20,7 @@ class TrekController extends Controller
 
         $allTreks = Category::with([
             'treks',
-        ])->where('type', CategoryTypes::TREK)
+        ])->where('type', CategoryType::TREK)
             ->get();
 
         // dd($allTreks);
@@ -33,7 +33,7 @@ class TrekController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, string $id)
+    public function show(Request $request, string $locale, string $id)
     {
         $trek = Trek::with([
             'coverImage',
@@ -43,30 +43,9 @@ class TrekController extends Controller
         ])
             ->where('id', $id)
             ->firstOrFail();
-        return view('website.id_pages.show_trek', compact('trek'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('website.id_pages.show_trek', [
+            'trek' => $trek,
+            'seoData' => $trek->getDynamicSEOData(),
+        ]);
     }
 }

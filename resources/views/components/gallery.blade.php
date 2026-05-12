@@ -10,7 +10,7 @@
         </div>
         <div class="flex pt-2 space-x-2 max-h-1/4s">
             @foreach ($medias as $media)
-                <img src="{{ $media }}" class="w-1/3 h-20 object-cover cursor-pointer"
+                <img loading="lazy" decoding="async" src="{{ $media }}" class="w-1/3 h-20 object-cover cursor-pointer"
                     onclick="changeImage(this.src)">
             @endforeach
         </div>
@@ -53,7 +53,7 @@
             @foreach ($medias as $media)
                 <div class="carousel-slide" >
                     <div class="flex h-full justify-center ">
-                        <img src="{{ $media }}" class="h-[90vh] w-full object-contain  " alt="game" />
+                        <img loading="lazy" decoding="async" src="{{ $media }}" class="h-[90vh] w-full object-contain  " alt="game" />
                     </div>
                 </div>
             @endforeach

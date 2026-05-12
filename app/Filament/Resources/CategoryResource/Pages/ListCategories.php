@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\CategoryResource\Pages;
 
-use App\Enums\CategoryTypes;
+use App\Enums\CategoryType;
 use App\Filament\Resources\CategoryResource;
 use App\Traits\Filament\TranslatableListRecords;
 use Filament\Actions;
@@ -28,11 +28,11 @@ class ListCategories extends ListRecords
     return [
         // 'all' => Tab::make('All'),
         'expedition' => Tab::make('Expedition')
-            ->modifyQueryUsing(fn (Builder $query) => $query->where('type', CategoryTypes::EXPEDITION)),
+            ->modifyQueryUsing(fn (Builder $query) => $query->where('type', CategoryType::EXPEDITION)),
         'trek' => Tab::make('Trek')
-            ->modifyQueryUsing(fn (Builder $query) => $query->where('type', CategoryTypes::TREK)),
-        'tour' => Tab::make('Tour')
-            ->modifyQueryUsing(fn (Builder $query) => $query->where('type', CategoryTypes::TOUR)),
+            ->modifyQueryUsing(fn (Builder $query) => $query->where('type', CategoryType::TREK)),
+        'tour' => Tab::make('Activity')
+            ->modifyQueryUsing(fn (Builder $query) => $query->where('type', CategoryType::TOUR)),
     ];
 }
 }

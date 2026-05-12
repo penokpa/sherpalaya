@@ -1,7 +1,7 @@
-@if ($featuredExpeditions->count()>1)
+@if ($featuredExpeditions->count() > 1)
 
     <div class="bg-blue-100/60">
-        <div class="2xl:mx-32 mx-4 ">
+        <div class="xl:mx-32 mx-4 ">
             <div class="h-14"></div>
 
             <div class="col-span-1 ">
@@ -10,7 +10,7 @@
                 <p
                     class="text-md mt-2 text-preety text-slate-800 md:text-center md:text-wrap
                          first-line:uppercase first-line:tracking-widest first-line:font-light">
-                    {{ $landingPageSetting->expedition_activity_content }}
+                    {{ app()->currentLocale() == 'fr' ? $landingPageSetting->expedition_activity_content_fr : $landingPageSetting->expedition_activity_content_en }}
                 </p>
             </div>
 
@@ -21,11 +21,11 @@
                     <div
                         class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                         <figure class="h-[28rem] w-full">
-                            <img src="{{ optional($featuredExpedition->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                            <img loading="lazy" decoding="async" src="{{ optional($featuredExpedition->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                 alt="{{ $featuredExpedition->title }} Cover Image"
                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                         </figure>
-                        <a href="{{ route('show_expedition', $featuredExpedition->id) }}">
+                        <a href="{{ route('show_expedition', ['id'=>$featuredExpedition->id, 'locale'=>app()->currentLocale()]) }}">
                             <div class="card-body absolute inset-0 justify-end">
                                 <div class="text-center">
                                     <h2 class="font-bold text-white text-2xl uppercase">
@@ -54,11 +54,11 @@
                                         <div
                                             class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                             <figure class="h-[28rem] w-full">
-                                                <img src="{{ optional($featuredExpedition->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                <img loading="lazy" decoding="async" src="{{ optional($featuredExpedition->featureImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                     alt="{{ $featuredExpedition->title }} Cover Image"
                                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                             </figure>
-                                            <a href="{{ route('show_expedition', $featuredExpedition->id) }}">
+                                            <a href="{{ route('show_expedition', ['id'=>$featuredExpedition->id, 'locale'=>app()->currentLocale()]) }}">
                                                 <div class="card-body absolute inset-0 justify-end">
                                                     <div class="text-center">
                                                         <h2 class="font-bold text-white text-2xl uppercase">

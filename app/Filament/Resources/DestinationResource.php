@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\DestinationResource\Pages;
 use App\Filament\Resources\DestinationResource\RelationManagers;
 use App\Filament\Resources\DestinationResource\Widgets\DestinationExpeditionTable;
-use App\Filament\Resources\DestinationResource\Widgets\DestinationServiceTable;
 use App\Filament\Resources\DestinationResource\Widgets\DestinationToursTable;
 use App\Filament\Resources\DestinationResource\Widgets\DestinationTrekTable;
 use App\Models\Destination;
@@ -39,7 +38,7 @@ class DestinationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-map-pin';
 
-    protected static ?int $navigationSort = 6;
+    protected static ?int $navigationSort = 7;
 
     protected static ?string $navigationGroup = 'Content';
 
@@ -62,7 +61,6 @@ class DestinationResource extends Resource
                             ->searchable()
                             ->required(),
                             RichEditor::make('description')
-                            ->columnSpan(3)
                             ->required()
                             ->toolbarButtons([
                                 // 'attachFiles',
@@ -79,7 +77,9 @@ class DestinationResource extends Resource
                                 // 'strike',
                                 'underline',
                                 'undo',
-                            ]),
+                            ])
+                            ->translatable()
+                            ->columnSpan(3),
                             Map::make('location')
                                 ->label('Location')
                                 ->columnSpan(2)
@@ -180,7 +180,6 @@ class DestinationResource extends Resource
     public static function getWidgets(): array
     {
         return [
-            DestinationServiceTable::class,
             DestinationToursTable::class,
             DestinationExpeditionTable::class,
             DestinationTrekTable::class,

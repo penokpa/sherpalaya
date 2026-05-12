@@ -9,14 +9,14 @@
             <div class="carousel-slide  snap-center">
                 <div class="bg-base-200/50 flex h-full justify-center w-full">
                     <div class="card image-full sm:max-w-sm rounded-none border-none shadow-none ">
-                        <figure><img src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/02.jpg') }}"
+                        <figure><img loading="lazy" decoding="async" src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/02.jpg') }}"
                                 alt="overlay image" /></figure>
                         <div class="card-body text-center pt-[20rem] ">
                             <h2 class="font-bold uppercase tracking-widest text-xl">Treks</h2>
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link hover:link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
                                         style="width: 48px; height: 48px;">
@@ -30,14 +30,14 @@
             <div class="carousel-slide  snap-center">
                 <div class="bg-base-200/50 flex h-full justify-center w-full">
                     <div class="card image-full sm:max-w-sm rounded-none border-none shadow-none">
-                        <figure><img src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/05.jpg') }}"
+                        <figure><img loading="lazy" decoding="async" src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/05.jpg') }}"
                                 alt="overlay image" /></figure>
                         <div class="card-body text-center pt-[20rem]">
                             <h2 class="font-bold uppercase tracking-widest text-xl">Treks</h2>
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
                                         style="width: 48px; height: 48px;">
@@ -51,14 +51,14 @@
             <div class="carousel-slide  snap-center">
                 <div class="bg-base-200/50 flex h-full justify-center w-full">
                     <div class="card image-full sm:max-w-sm rounded-none border-none shadow-none">
-                        <figure><img src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/03.jpg') }}"
+                        <figure><img loading="lazy" decoding="async" src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/03.jpg') }}"
                                 alt="overlay image" /></figure>
                         <div class="card-body text-center pt-[20rem]">
                             <h2 class="font-bold uppercase tracking-widest text-xl">Treks</h2>
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
 
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
@@ -73,14 +73,14 @@
             <div class="carousel-slide  snap-center">
                 <div class="bg-base-200/50 flex h-full justify-center w-full">
                     <div class="card image-full sm:max-w-sm rounded-none border-none shadow-none">
-                        <figure><img src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/04.jpg') }}"
+                        <figure><img loading="lazy" decoding="async" src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/04.jpg') }}"
                                 alt="overlay image" /></figure>
                         <div class="card-body text-center pt-[20rem]">
                             <h2 class="font-bold uppercase tracking-widest text-xl">Treks</h2>
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
                                         style="width: 48px; height: 48px;">
@@ -94,14 +94,14 @@
             <div class="carousel-slide  snap-center">
                 <div class="bg-base-200/50 flex h-full justify-center w-full">
                     <div class="card image-full sm:max-w-sm rounded-none border-none shadow-none">
-                        <figure><img src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/06.jpg') }}"
+                        <figure><img loading="lazy" decoding="async" src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/06.jpg') }}"
                                 alt="overlay image" /></figure>
                         <div class="card-body text-center pt-[20rem]">
                             <h2 class="font-bold uppercase tracking-widest text-xl">Treks</h2>
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
                                         style="width: 48px; height: 48px;">
@@ -115,14 +115,14 @@
             <div class="carousel-slide  snap-center">
                 <div class="bg-base-200/50 flex h-full justify-center w-full">
                     <div class="card image-full sm:max-w-sm rounded-none border-none shadow-none">
-                        <figure><img src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/08.jpg') }}"
+                        <figure><img loading="lazy" decoding="async" src="{{ asset('images/swisnl/filament-backgrounds/curated-by-swis/08.jpg') }}"
                                 alt="overlay image" /></figure>
                         <div class="card-body text-center pt-[20rem]">
                             <h2 class="font-bold uppercase tracking-widest text-xl">Treks</h2>
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle] "
                                         style="width: 48px; height: 48px;">

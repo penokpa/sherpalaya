@@ -30,7 +30,7 @@ class HomePageCarousel extends Component
                     'title' => $trek->title,
                     'description' => $trek->highest_altitude . 'm',
                     'image' => $trek->featureImage,
-                    'url' => "/treks/" . $trek->id,
+                    'url' => "/" . app()->currentLocale() . "/treks/" . $trek->id,
                 ];
             })->unique();
 
@@ -42,7 +42,7 @@ class HomePageCarousel extends Component
         //             'id' => $peak->id,
         //             'title' => $peak->title,
         //             'image' => $peak->featureImage,
-        //             'url' => "/peaks/" . $peak->id,
+        //             'url' => "/" . app()->currentLocale() . "/peaks/" . $peak->id,
         //         ];
         //     })->unique();
 
@@ -55,7 +55,7 @@ class HomePageCarousel extends Component
                     'title' => $expedition->title,
                     'description' => $expedition->highest_altitude . 'm',
                     'image' => $expedition->featureImage,
-                    'url' => "/expeditions/" . $expedition->id,
+                    'url' => "/" . app()->currentLocale() . "/expeditions/" . $expedition->id,
                 ];
             })->unique();
 
@@ -68,7 +68,7 @@ class HomePageCarousel extends Component
                     'title' => $tour->title,
                     'description' =>null,
                     'image' => $tour->featureImage,
-                    'url' => "/tours/" . $tour->id,
+                    'url' => "/" . app()->currentLocale() . "/tours/" . $tour->id,
 
                 ];
             })->unique();

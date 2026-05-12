@@ -1,12 +1,12 @@
 <div class="bg-blue-100/50">
-    <div class="card--rounded-none image-full  bg-blue-100/50 h-[80vh]">
-        <figure class="h-[80vh] w-full">
-            <x-curator-glider class="h-[80vh] w-full object-cover brightness-50" :media="$pageSetting->expedition_page_cover_image_id" :fallback="asset('/photos/banner.jpg')"
+    <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh]">
+        <figure class="h-[80dvh] w-full">
+            <x-curator-glider class="h-[80dvh] w-full object-cover brightness-75" :media="$pageSetting->expedition_page_cover_image_id" :fallback="asset('/photos/banner.jpg')"
                 loading="lazy" />
         </figure>
         <div class="card-body ">
             <div
-                class="absolute 2xl:bottom-52 2xl:left-32  bottom-52 left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
+                class="absolute 2xl:bottom-52 xl:left-32  bottom-52 left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
                 <div class="">
                     <h2 class="card-title mb-2.5  text-white text-3xl md:text-6xl uppercase font-bold">
                         Expeditions
@@ -21,7 +21,7 @@
     <x-breadcrumb :breadcrumbs="[
         [
             'name' => 'Home',
-            'url' => url('/home'),
+            'url' => url('/' . app()->currentLocale() . '/home'),
         ],
         [
             'name' => 'Expedition',
@@ -30,15 +30,17 @@
 
     <div class="bg-blue-100/50">
         <div class="h-8 "></div>
-        <div class="2xl:mx-32 mx-4 text-left">
+        <div class="xl:mx-32 mx-4 text-left">
             <h1
                 class="text-2xl lg:text-4xl  font-light  line-clamp-2 tracking-wider text-primary uppercase wrap text-pretty">
                 Expedition In Nepal
             </h1>
             <p
-                class="text-md mt-2 text-preety text-slate-800 lg:text-center 
+                class="text-md mt-2 text-preety text-slate-800 lg:text-center
                  first-line:uppercase first-line:font-light">
-                {!! $landingPageSetting->expedition_activity_content !!}
+                {!! app()->currentLocale() == 'fr'
+                    ? $landingPageSetting->expedition_activity_content_fr
+                    : $landingPageSetting->expedition_activity_content_en !!}
             </p>
         </div>
         <div class="h-12 "></div>
@@ -52,7 +54,7 @@
     <div class="h-12"></div>
 
 
-    <div class="2xl:mx-32 mx-4">
+    <div class="xl:mx-32 mx-4">
         @foreach ($expeditionsRegion as $expeditionRegion)
             @if ($expeditionRegion->expeditions->isNotEmpty())
                 <div id="region-{{ $expeditionRegion->id }}">
@@ -65,11 +67,11 @@
                             <div
                                 class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                 <figure class="h-[25rem] max-w-sm">
-                                    <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                    <img loading="lazy" decoding="async" src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                         alt="{{ $expedition->title }} Cover Image"
                                         class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
                                 </figure>
-                                <a href="{{ route('show_expedition', $expedition->id) }}">
+                                <a href="{{ route('show_expedition', ['id'=>$expedition->id, 'locale'=>app()->currentLocale()]) }}">
                                     <div class="card-body absolute inset-0 justify-end">
                                         <div class="text-center">
                                             <h2 class="font-bold text-white text-2xl uppercase">
@@ -98,11 +100,11 @@
                                         <div
                                             class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
                                             <figure class="h-[28rem] max-w-sm">
-                                                <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
+                                                <img loading="lazy" decoding="async" src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                                     alt="{{ $expedition->title }} Cover Image"
                                                     class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
                                             </figure>
-                                            <a href="{{ route('show_expedition', $expedition->id) }}">
+                                            <a href="{{ route('show_expedition', ['id'=>$expedition->id, 'locale'=>app()->currentLocale()]) }}">
                                                 <div class="card-body absolute inset-0 justify-end">
                                                     <div class="text-center">
                                                         <h2 class="font-bold text-white text-2xl uppercase">

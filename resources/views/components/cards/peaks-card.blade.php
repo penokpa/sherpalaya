@@ -2,7 +2,7 @@
 
 <div class="card group hover:shadow sm:max-w-sm">
     <figure>
-        <img src="https://cdn.flyonui.com/fy-assets/components/card/image-8.png" alt="Shoes"
+        <img loading="lazy" decoding="async" src="https://cdn.flyonui.com/fy-assets/components/card/image-8.png" alt="Shoes"
             class="transition-transform duration-500 group-hover:scale-110" />
     </figure>
     <div class="card-body">
@@ -17,7 +17,7 @@
 </div>
 <div class="card group hover:shadow sm:max-w-sm">
     <figure>
-        <img src="https://cdn.flyonui.com/fy-assets/components/card/image-8.png" alt="Shoes"
+        <img loading="lazy" decoding="async" src="https://cdn.flyonui.com/fy-assets/components/card/image-8.png" alt="Shoes"
             class="transition-transform duration-500 group-hover:scale-110" />
     </figure>
     <div class="card-body">

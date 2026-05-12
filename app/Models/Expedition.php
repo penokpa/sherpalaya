@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Collection;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\Translatable\HasTranslations;
 
 class Expedition extends Model implements CanBeEasySearched, CanBeInquiried
@@ -27,7 +28,6 @@ class Expedition extends Model implements CanBeEasySearched, CanBeInquiried
     use HasInquiries;
     use HasTranslations;
     use HasCategory;
-
 
 
     protected $fillable = [
@@ -63,6 +63,18 @@ class Expedition extends Model implements CanBeEasySearched, CanBeInquiried
         'costs_include' => 'array',
     ];
 
+    // SEO
+
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            title: $this->title,
+            description: $this->description,
+            image: $this->searchResultImage()?->url,
+            author: "Sherpalaya",
+        );
+    }
+
     // Easy Search
 
     public function searchType(): SearchType
@@ -78,7 +90,7 @@ class Expedition extends Model implements CanBeEasySearched, CanBeInquiried
 
     public function searchResultUrl(): string
     {
-        return '/expeditions/' . $this->id;
+        return '/' . app()->currentLocale() . '/expeditions/' . $this->id;
     }
 
     public function searchResultImage(): ?Media
@@ -120,8 +132,8 @@ class Expedition extends Model implements CanBeEasySearched, CanBeInquiried
     {
         return $this->belongsToMany(
             OurSherpa::class,
-            'our_sherpa_expedition'
-        )->using(OurSherpaExpedition::class)
+            'expedition_our_sherpa'
+        )->using(ExpeditionOurSherpa::class)
             ->withPivot([
                 'order'
             ]);

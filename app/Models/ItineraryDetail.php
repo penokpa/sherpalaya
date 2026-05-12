@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\ItineraryTypes;
+use App\Enums\ItineraryType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
@@ -23,7 +23,7 @@ class ItineraryDetail extends Model
     ];
 
     protected $casts = [
-        'type' => ItineraryTypes::class,
+        'type' => ItineraryType::class,
     ];
 
     public function itinerary()

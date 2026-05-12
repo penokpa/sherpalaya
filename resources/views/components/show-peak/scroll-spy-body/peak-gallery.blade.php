@@ -14,8 +14,8 @@
                         class="card cursor-pointer rounded-none image-full h-52 w-full relative items-end  card-side group hover:shadow border single-peak hidden"
                         aria-haspopup="dialog" aria-expanded="false" aria-controls="peak-gallery-modal"
                         data-overlay="#peak-gallery-modal" onclick="changeCarouselSlide({{ $loop->index }})" data-aos="fade-down" data-aos-duration="1200">
-                        <figure class="h-full w-full brightness-90">
-                            <img src="{{ $galleryImage->url }}" alt="overlay image"
+                        <figure class="h-full w-full brightness-75">
+                            <img loading="lazy" decoding="async" src="{{ $galleryImage->url }}" alt="overlay image"
                                 class="transition-transform duration-500 group-hover:scale-110 h-full w-full object-cover brightness-95 contrast-120" />
                         </figure>
                     </button>

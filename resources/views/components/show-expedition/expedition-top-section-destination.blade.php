@@ -41,7 +41,7 @@
                                         <div class="bg-base-200/50 flex h-full justify-center">
                                             <span class="self-start w-full">
                                                 <figure>
-                                                    <img src="{{ $destinationImage?->url ?? asset('/photos/banner.jpg') }}"
+                                                    <img loading="lazy" decoding="async" src="{{ $destinationImage?->url ?? asset('/photos/banner.jpg') }}"
                                                         alt="{{ $destination->name }} Cover Image"
                                                         class="h-44 object-cover brightness-75" />
                                                 </figure>

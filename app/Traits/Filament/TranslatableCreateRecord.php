@@ -2,7 +2,7 @@
 namespace App\Traits\Filament;
 
 trait TranslatableCreateRecord{
-    use \Filament\Resources\Pages\CreateRecord\Concerns\Translatable;
+    // use \Filament\Resources\Pages\CreateRecord\Concerns\Translatable;
 
     protected function getHeaderActions(): array
     {
@@ -13,7 +13,7 @@ trait TranslatableCreateRecord{
         }
         return [
             ...$additionalActions,
-            \Filament\Actions\LocaleSwitcher::make(),
+            // \Filament\Actions\LocaleSwitcher::make(),
         ];
     }
 

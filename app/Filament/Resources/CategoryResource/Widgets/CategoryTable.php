@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\CategoryResource\Widgets;
 
-use App\Enums\CategoryTypes;
+use App\Enums\CategoryType;
 use App\Models\Category;
 use App\Models\Expedition;
 use App\Models\Tour;
@@ -28,9 +28,9 @@ class CategoryTable extends BaseWidget
     protected function getTableQuery(): Builder
     {
         return match ($this->record->type) {
-            CategoryTypes::EXPEDITION => Expedition::query()->where('category_id', $this->record->id),
-            CategoryTypes::TREK => Trek::query()->where('category_id', $this->record->id),
-            CategoryTypes::TOUR => Tour::query()->where('category_id', $this->record->id),
+            CategoryType::EXPEDITION => Expedition::query()->where('category_id', $this->record->id),
+            CategoryType::TREK => Trek::query()->where('category_id', $this->record->id),
+            CategoryType::TOUR => Tour::query()->where('category_id', $this->record->id),
         };
     }
     public function table(Table $table): Table
