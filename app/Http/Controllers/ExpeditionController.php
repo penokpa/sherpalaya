@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\CategoryTypes;
+use App\Enums\CategoryType;
 use App\Models\Category;
 use App\Models\Expedition;
 use App\Models\Region;
 use App\Settings\PageSetting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class ExpeditionController extends Controller
 {
@@ -19,7 +20,7 @@ class ExpeditionController extends Controller
         $pageSetting = app(PageSetting::class);
         $allExpeditions = Category::with([
             'expeditions'
-        ])->where('type', CategoryTypes::EXPEDITION)
+        ])->where('type', CategoryType::EXPEDITION)
             ->get();
 
         return view('website.expeditions', [
@@ -32,9 +33,14 @@ class ExpeditionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, string $id)
+    public function show(Request $request, string $locale, string $id)
     {
+        $pageSetting = app(PageSetting::class);
         $expedition = Expedition::findOrFail($id);
-        return view('website.id_pages.show_expedition', compact('expedition'));
+
+        return view('website.id_pages.show_expedition', [
+            'expedition'=>$expedition,
+            'seoData' => $expedition->getDynamicSEOData(),
+        ]);
     }
 }

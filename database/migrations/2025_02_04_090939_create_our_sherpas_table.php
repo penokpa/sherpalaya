@@ -16,7 +16,10 @@ return new class extends Migration
             $table->id();
             $table->string('name')
                     ->required();
-            $table->longText('title');
+            $table->string('title')
+                    ->required();
+            $table->longText('language');
+            $table->longText('experience');
             $table->longText('description');
             $table->timestamps();
         });

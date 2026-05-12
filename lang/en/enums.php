@@ -2,9 +2,9 @@
 
 return [
     'category-type' => [
-        'trek' => 'Trek',
         'expedition' => 'Expedition',
-        'peak' => 'Peak',
+        'trek' => 'Trek',
+        'tour' => 'Tour',
     ],
     'trek-difficulty' => [
         'easy' => 'Easy',

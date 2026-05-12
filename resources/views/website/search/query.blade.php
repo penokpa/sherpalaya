@@ -29,15 +29,15 @@
     </div> --}}
 
     <div class="bg-blue-100/40">
-        {{-- <div class="card--rounded-none image-full  bg-blue-100/50 h-[80vh] w-full">
-            <figure class="h-[80vh] w-full">
+        {{-- <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh] w-full">
+            <figure class="h-[80dvh] w-full">
                 
                 <img src="{{ asset('/photos/mountain1.jpg') }}"
-                    class="h-[80vh] w-full object-cover object-center brightness-50" alt="">
+                    class="h-[80dvh] w-full object-cover object-center brightness-75" alt="">
             </figure>
             <div class="card-body">
                 <div
-                    class="absolute bottom-1/3 2xl:left-32   left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
+                    class="absolute bottom-1/3 xl:left-32   left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
                     <div class=" max-w-[92%] 2xl:max-w-[100%]">
                         <h5 class="card-title mb-2.5 text-warning text-2xl md:text-4xl uppercase font-medium ">
                             Search Result For
@@ -49,28 +49,28 @@
                 </div>
             </div>
         </div> --}}
-        <div class="card--rounded-none image-full  h-[80vh] relative">
-            <figure class="h-[80vh] w-full">
+        <div class="card--rounded-none image-full  h-[80dvh] relative">
+            <figure class="h-[80dvh] w-full">
                 <img src="{{ asset('/photos/mountain1.jpg') }}"
-                    class="h-[80vh] w-full object-cover object-center brightness-50" alt="background-image">
+                    class="h-[80dvh] w-full object-cover object-center brightness-75" alt="background-image">
             </figure>
             <div class="card-body absolute inset-0 flex items-center justify-start">
-                <div class="absolute bottom-1/4  left-4 lg:left-4 2xl:left-32 transform translate-y-1/2 overflow-hidden"
+                <div class="absolute bottom-1/4  left-4 lg:left-4 xl:left-32 transform translate-y-1/2 overflow-hidden"
                     data-aos="fade-down" data-aos-duration="1200">
-                    <h5
-                        class="card-title mb-2 text-blue-50 text-xl sm:text-2xl  uppercase font-oswald  font-medium tracking-wider opacity-75">
-                        Search Result For ...
-                    </h5>
                     <h2
-                        class="card-title mb-2 text-warning text-4xl sm:text-5xl md:text-6xl  uppercase font-card font-semibold tracking-tight text-wrap  leading-[1.3]  overflow-hidden opacity-75">
-                        {{ $query }}
+                        class="card-title mb-2 text-blue-50 text-xl sm:text-2xl  uppercase font-oswald  font-semibold tracking-wider opacity-100 animate-bounce">
+                        Search Result For ...
                     </h2>
+                    <h1
+                        class="card-title mb-2 text-warning text-4xl sm:text-5xl md:text-6xl  uppercase font-card font-bold tracking-tight text-wrap  leading-[1.3]  overflow-hidden opacity-100">
+                        {{ $query }}
+                    </h1>
                 </div>
             </div>
         </div>
-        <div class="2xl:mx-32 mx-4 ">
+        <div class="xl:mx-32 mx-4 ">
             <div class="h-8"></div>
-            <div class="md:grid md:grid-cols-2  xl:grid-cols-3 gap-4 flex flex-col ">
+            <div class="md:grid md:grid-cols-2  xl:grid-cols-3 gap-2 flex flex-col ">
                 @forelse ($results ?? [] as $resultType => $resultDatas)
                     {{-- bg-blue-100/20 --}}
                     {{-- <div class="w-full "> --}}

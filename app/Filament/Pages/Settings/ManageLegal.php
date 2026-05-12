@@ -4,6 +4,7 @@ namespace App\Filament\Pages\Settings;
 
 use App\Settings\LegalSetting;
 use App\Traits\HasSettingsSidebar;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Tabs;
@@ -12,6 +13,8 @@ use Filament\Pages\SettingsPage;
 
 class ManageLegal extends SettingsPage
 {
+    use HasPageShield;
+
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
 
     protected static string $settings = LegalSetting::class;
@@ -31,21 +34,30 @@ class ManageLegal extends SettingsPage
                     ->schema([
                         Tabs\Tab::make('Privacy Policy')
                             ->schema([
-                                RichEditor::make('privacy_policy')
+                                RichEditor::make('privacy_policy_en')
                                     ->hiddenLabel()
-                                    ->required()
+                                    ->required(),
+                                RichEditor::make('privacy_policy_fr')
+                                    ->hiddenLabel()
+                                    ->required(),
                             ]),
                             Tabs\Tab::make('Terms and Condition')
                             ->schema([
-                                RichEditor::make('terms_and_condition')
+                                RichEditor::make('terms_and_condition_en')
                                     ->hiddenLabel()
-                                    ->required()
+                                    ->required(),
+                                RichEditor::make('terms_and_condition_fr')
+                                    ->hiddenLabel()
+                                    ->required(),
                             ]),
                             Tabs\Tab::make('Cookie Policy')
                             ->schema([
-                                RichEditor::make('cookie_policy')
+                                RichEditor::make('cookie_policy_en')
                                     ->hiddenLabel()
-                                    ->required()
+                                    ->required(),
+                                RichEditor::make('cookie_policy_fr')
+                                    ->hiddenLabel()
+                                    ->required(),
                             ]),
                     ])
             ]);

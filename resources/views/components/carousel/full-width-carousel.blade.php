@@ -20,7 +20,7 @@
                         <!-- Previous Slide -->
                         <button type="button"
                             class="carousel-prev bg-green-300">
-                            <span class="icon-[tabler--chevron-left] size-8 cursor-pointer bg-green-950 backdrop-brightness-50" ></span>
+                            <span class="icon-[tabler--chevron-left] size-8 cursor-pointer bg-green-950 backdrop-brightness-75" ></span>
                         </button>
                         <!-- Next Slide -->
                         <button type="button"

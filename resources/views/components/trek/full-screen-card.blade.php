@@ -12,7 +12,7 @@
                 Boost your brand through targeted Lorem ipsum dolor
 
             </p>
-            <a href="/treks" class=" hover:link-primary text-white mt-12">
+            <a href="/{{ app()->currentLocale() }}/treks" class=" hover:link-primary text-white mt-12">
                 <span class="icon-[line-md--chevron-right-circle]" style="width: 48px; height: 48px;"></span>
             </a>
         </div>

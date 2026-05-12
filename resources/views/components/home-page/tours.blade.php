@@ -19,7 +19,7 @@
                     signature
                     Air
                     cushioning technology in the sole.</p>
-                <a href="/tours">
+                <a href="/{{ app()->currentLocale() }}/tours">
                     <div class="card-actions flex gap-5 flex-row items-center">
                         <span class="text-primary font-medium">Explore</span>
                         <span class="icon-[material-symbols--arrow-right-alt-rounded] link link-primary"
@@ -42,7 +42,7 @@
                     signature
                     Air
                     cushioning technology in the sole.</p>
-                <a href="/tours">
+                <a href="/{{ app()->currentLocale() }}/tours">
                     <div class="card-actions flex gap-5 flex-row items-center">
                         <span class="text-primary font-medium">Explore</span>
                         <span class="icon-[material-symbols--arrow-right-alt-rounded] link link-primary"

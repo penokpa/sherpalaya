@@ -5,19 +5,53 @@ namespace App\Helpers;
 use App\Contracts\EnumHasTranslation;
 use BackedEnum;
 use Exception;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Tabs\Tab;
+use Filament\Forms\Set;
 use Filament\Tables\Columns\TextColumn;
 
 class FilamentEnumFieldHelper
 {
 
-    public static function makeSelectField(string $field, string $enum): Select
+    public static function makeSelectField(string $field, string $enum, ?callable $selectField = null): Tabs
     {
+        $availableLocales = config('app.locales');
+
+        $tabs = [];
+
+        foreach ($availableLocales as $index => $locale) {
+            $select = Select::make($field . '_' . $locale);
+
+            if (!is_null($selectField)) {
+                $select = $selectField($select);
+            }
+
+            array_push(
+                $tabs,
+                Tab::make($locale == 'en' ? 'English' : 'French')
+                    ->schema([
+                        Hidden::make($field)
+                            ->afterStateHydrated(function ($state, Set $set) use ($field, $locale) {
+                                $set($field . '_' . $locale, $state);
+                            }),
+                        $select
+                            ->options(function () use ($enum, $locale) {
+                                return $enum::getAllTranslatedOptions($locale);
+                            })
+                            ->afterStateUpdated(function ($state, Set $set) use ($field) {
+                                $set($field, $state);
+                            })
+                            ->dehydrated(false),
+                    ])
+            );
+        }
         self::validateEnum($enum);
-        return  Select::make($field)
-            ->options(function (\Livewire\Component $livewire) use ($enum) {
-                return $enum::getAllTranslatedOptions($livewire->activeLocale);
-            });
+
+        return Tabs::make()
+            ->reactive()
+            ->schema($tabs);
     }
 
     public static function makeTextColumn(string $field, string $enum): TextColumn

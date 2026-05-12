@@ -1,6 +1,6 @@
 <div class="w-full h-full bg-blue-50">
     <div class="h-64 ">
-        <form action="/search/query" method="GET">
+        <form action="/{{ app()->currentLocale() }}/search/query" method="GET">
             <div class="flex flex-col sm:flex-row items-center sm:items-end w-full gap-6">
                 <div class="flex-1 w-full sm:max-w-md">
                     {{-- <label for="">

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\CategoryTypes;
+use App\Enums\CategoryType;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -20,7 +20,7 @@ class Category extends Model
         'order',
     ];
     protected $casts = [
-        'type' => CategoryTypes::class
+        'type' => CategoryType::class
     ];
 
     public $translatable = [

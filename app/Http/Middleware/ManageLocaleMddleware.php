@@ -17,16 +17,28 @@ class ManageLocaleMddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!$request->routeIs('website.change_locale')){
-            $locale = Session::get('current_locale', 'en');
-            if (! in_array($locale, ['en', 'fr'])) {
-                $locale = 'en';
-            }
-            if (!App::isLocale($locale)) {
-                App::setLocale($locale);
+
+        // Get the route locale prefix
+        $prefix = $request->route('locale', 'en');
+
+        if (! in_array($prefix, ['en', 'fr'])) {
+            $prefix = 'en';
+        }
+
+        // Store it in the request (optional)
+        $request->attributes->set('locale', $prefix);
+
+
+        // Set locale
+        if (!$request->routeIs('website.change_locale')) {
+            if (!App::isLocale($prefix)) {
+                App::setLocale($prefix);
             }
         }
 
-        return $next($request);
+
+        $response = $next($request);
+
+        return $response;
     }
 }

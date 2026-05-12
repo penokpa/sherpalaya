@@ -1,4 +1,4 @@
-<div id="home-page-carousel-container" class=" w-full">
+<section id="home-page-carousel-container" class="h-dvh w-full">
     <div id="snap"
         data-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true, "speed": 10000, "isCentered": true, "dotsItemClasses": "carousel-dot border shadow-black bg-warning bg-opacity-20 carousel-active:bg-warning carousel-active:bg-opacity-70", "isInfiniteLoop": true}'
         class="relative h-full w-full ">
@@ -7,8 +7,8 @@
                 <!-- Slide 1 -->
                 @foreach ($featuredData as $featured)
                     <div class="carousel-slide snap-center rounded-none ">
-                        <x-cards.carousel-card :id="$featured->id" :title="$featured->title" :url="$featured->url"
-                            :image="$featured->image" :description="$featured->description" />
+                        <x-cards.carousel-card :id="$featured->id" :title="$featured->title" :url="$featured->url" :image="$featured->image"
+                            :description="$featured->description" />
                     </div>
                 @endforeach
             </div>
@@ -24,10 +24,10 @@
             class="icon-[tabler--chevron-right] carousel-next size-10 cursor-pointer rtl:rotate-180 hover:text-warning text-white  hidden xl:flex absolute top-1/2 right-1 opacity-50 hover:opacity-100"></span>
         <span class="sr-only">Next</span>
     </div>
-</div>
+</section>
 
 
-
+{{-- our-teamound --}}
 {{-- <div id="indicators" data-carousel='{ "loadingClasses": "opacity-0", "dotsItemClasses": "carousel-dot" }'
     class="relative w-full">
     <div class="carousel h-screen rounded-none">

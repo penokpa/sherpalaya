@@ -1,13 +1,13 @@
 <div class="bg-blue-100/50">
 
-    <div class="card--rounded-none image-full  bg-blue-100/50 h-[80vh]">
-        <figure class="h-[80vh] w-full">
+    <div class="card--rounded-none image-full  bg-blue-100/50 h-[80dvh]">
+        <figure class="h-[80dvh] w-full">
             <img src="{{ $trek->coverImage?->url ?? '/photos/banner.jpg' }}" alt="Trekking background image"
-                class="h-[80vh] w-full object-cover brightness-50" />
+                class="h-[80dvh] w-full object-cover brightness-75" />
         </figure>
         <div class="card-body relative">
             <div
-                class="absolute 2xl:bottom-52 2xl:left-32  bottom-40 left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
+                class="absolute 2xl:bottom-52 xl:left-32  bottom-40 left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
                 <div class=" max-w-[92%] 2xl:max-w-[100%]">
                     <h5 class="card-title mb-2.5 text-warning text-2xl md:text-4xl uppercase font-extrabold ">
                         Our
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="h-8 "></div>
-    <div class="2xl:mx-32 mx-4 text-left">
+    <div class="xl:mx-32 mx-4 text-left">
         <h1
             class="text-2xl lg:text-5xl  font-light  line-clamp-2 tracking-wider text-primary uppercase wrap text-pretty">
             Our Services In Nepal
@@ -44,7 +44,7 @@
     <x-breadcrumb :breadcrumbs="[
         [
             'name' => 'Home',
-            'url' => url('/home'),
+            'url' => url('/' . app()->currentLocale() . '/home'),
         ],
         [
             'name' => 'Services',
@@ -55,7 +55,7 @@
 
 
     {{-- Showing <strong>{{ $serviceDestination->services->count() }}</strong> --}}
-    <div class="2xl:mx-32 mx-4">
+    <div class="xl:mx-32 mx-4">
 
         @foreach ($servicesRegion as $serviceRegion)
             @if (!empty($serviceRegion->name))

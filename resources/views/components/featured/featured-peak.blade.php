@@ -9,7 +9,7 @@
                 <h3 class="text-4xl  tracking-widest text-center ">Peaks</h3>
                 <p
                     class="text-md mt-2 text-slate-600 text-preety text-balance md:text-wrap md:text-center first-line:uppercase first-line:tracking-widest tracking-wide ">
-                    {{ $landingPageSetting->peak_activity_content }}
+                    {{ app()->currentLocale() == 'fr' ?$landingPageSetting->peak_activity_content_fr:$landingPageSetting->peak_activity_content_en }}
                 </p>
             </div>
             <div class="">
@@ -116,7 +116,7 @@
 
 
 <div class="bg-blue-100/10">
-    <div class="2xl:mx-32 mx-4 font-oswald">
+    <div class="xl:mx-32 mx-4 font-oswald">
         <div class="h-10 md:h-20"></div>
         <div class=" " data-aos="fade-down" data-aos-duration="1200">
             <h5
@@ -125,9 +125,9 @@
             </h5>
             {{-- <h3 class="text-3xl tracking-wider text-accent lg:text-center ">With Sherpalaya</h3> --}}
             <p
-                class="text-xl md:hidden font-light mt-2 text-preety text-slate-800 lg:text-center 
+                class="text-xl md:hidden font-light mt-2 text-preety text-slate-800 lg:text-center
                  tracking-wide">
-                {{ $landingPageSetting->peak_activity_content }}
+                {{ app()->currentLocale() == 'fr' ?$landingPageSetting->peak_activity_content_fr:$landingPageSetting->peak_activity_content_en }}
             </p>
             <div class="h-12"></div>
         </div>
@@ -178,7 +178,7 @@
                                 <h5
                                     class="relative text-2xl font-light line-clamp-2 tracking-wider text-black md:text-left ">
                                     {{ $featuredPeak->title }}
-                                    
+
                                 </h5>
                                 <p
                                     class="text-md mt-2 text-preety text-slate-800 break-all first-line:uppercase tracking-wide line-clamp-[14]">

@@ -19,11 +19,11 @@
                     <x-breadcrumb :breadcrumbs="[
                         [
                             'name' => 'Home',
-                            'url' => url('/home'),
+                            'url' => url('/' . app()->currentLocale() . '/home'),
                         ],
                         [
                             'name' => 'Peaks',
-                            'url' => url('/peaks'),
+                            'url' => url('/' . app()->currentLocale() . '/peaks'),
                         ],
                         [
                             'name' => $peak->title,
@@ -31,7 +31,7 @@
                     ]" />
 
 
-                    <div class="2xl:mx-32 mx-4 text-left">
+                    <div class="xl:mx-32 mx-4 text-left">
 
                         {{-- description --}}
                         <x-show-peak.peak-description :peak="$peak" />
@@ -61,7 +61,7 @@
                 {{-- scrollspy body --}}
 
                 <div class="bg-transparent">
-                    <div class=" mx-4 2xl:mx-32 gap-2 max-w-full ">
+                    <div class=" mx-4 xl:mx-32 gap-2 max-w-full ">
                         <div class="xl:grid grid-cols-3  gap-6">
                             <div class="xl:col-span-2 ">
                                 {{-- key_highlights --}}

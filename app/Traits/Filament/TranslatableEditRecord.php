@@ -4,7 +4,7 @@ namespace App\Traits\Filament;
 
 trait TranslatableEditRecord
 {
-    use \Filament\Resources\Pages\EditRecord\Concerns\Translatable;
+    // use \Filament\Resources\Pages\EditRecord\Concerns\Translatable;
 
     protected function getHeaderActions(): array
     {
@@ -15,7 +15,7 @@ trait TranslatableEditRecord
         }
         return [
             ...$additionalActions,
-            \Filament\Actions\LocaleSwitcher::make(),
+            // \Filament\Actions\LocaleSwitcher::make(),
         ];
     }
 }

@@ -4,7 +4,8 @@ return [
     'category-type' => [
         'trek' => 'Randonnée',
         'expedition' => 'Expédition',
-        'peak' => 'Sommet',
+        // 'peak' => 'Sommet',
+        'tour' => 'Tour'
     ],
     'trek-difficulty' => [
         'easy' => 'Facile',

@@ -4,7 +4,7 @@ namespace App\Traits\Filament;
 
 trait TranslatableViewRecord
 {
-    use \Filament\Resources\Pages\ViewRecord\Concerns\Translatable;
+    // use \Filament\Resources\Pages\ViewRecord\Concerns\Translatable;
 
     protected function getHeaderActions(): array
     {
@@ -15,7 +15,7 @@ trait TranslatableViewRecord
         }
         return [
             ...$additionalActions,
-            \Filament\Actions\LocaleSwitcher::make(),
+            // \Filament\Actions\LocaleSwitcher::make(),
         ];
     }
 }

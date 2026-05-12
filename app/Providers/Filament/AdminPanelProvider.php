@@ -2,11 +2,12 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\Settings\ManageLangingPage;
+use App\Filament\Pages\SettingPage;
+use App\Filament\Pages\Settings\ManageLandingPage;
 use App\Filament\Resources\DestinationResource;
 use App\Filament\Resources\ExpeditionResource;
+use App\Filament\Resources\OurSherpaResource;
 use App\Filament\Resources\RegionResource;
-use App\Filament\Resources\ServiceResource;
 use App\Filament\Resources\TrekResource;
 use App\Filament\Resources\TourResource;
 use App\Filament\Resources\CategoryResource;
@@ -33,6 +34,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Outerweb\FilamentTranslatableFields\Filament\Plugins\FilamentTranslatableFieldsPlugin;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -80,34 +82,40 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 SpatieLaravelTranslatablePlugin::make()
-                ->defaultLocales(['en', 'fr']),
+                    ->defaultLocales(['en', 'fr']),
+
+                FilamentTranslatableFieldsPlugin::make()
+                    ->supportedLocales([
+                        'en' => 'English',
+                        'fr' => 'French',
+                    ]),
                 OverlookPlugin::make()
-                ->columns(4)
-                ->includes([
+                    ->columns(4)
+                    ->includes([
                         ExpeditionResource::class,
                         TrekResource::class,
                         TourResource::class,
+                        OurSherpaResource::class,
+                        MediaResource::class,
                         CategoryResource::class,
                         RegionResource::class,
                         DestinationResource::class,
-                        ServiceResource::class,
-                        MediaResource::class,
                     ]),
                 FilamentShieldPlugin::make(),
                 FilamentBackgroundsPlugin::make()
-                ->showAttribution(false),
+                    ->showAttribution(false),
                 \Awcodes\Curator\CuratorPlugin::make()
-                ->label('Media')
-                ->pluralLabel('Media')
-                ->navigationIcon('heroicon-o-photo')
-                ->navigationGroup('Content')
-                ->navigationSort(8)
-                // ->navigationCountBadge()
-                ->registerNavigation(true)
+                    ->label('Media')
+                    ->pluralLabel('Media')
+                    ->navigationIcon('heroicon-o-photo')
+                    ->navigationGroup('Content')
+                    ->navigationSort(5)
+                    // ->navigationCountBadge()
+                    ->registerNavigation(true)
             ])
             ->navigationItems([
                 NavigationItem::make('Sherpalaya Home')
-                    ->url('/home', shouldOpenInNewTab: true)
+                    ->url('/en/home', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-chevron-double-up'),
             ])
             ->navigationGroups([
@@ -119,7 +127,7 @@ class AdminPanelProvider extends PanelProvider
             ->userMenuItems([
                 MenuItem::make()
                     ->label('Users')
-                    ->url(fn (): string => UserResource::getUrl())
+                    ->url(fn(): string => UserResource::getUrl())
                     ->icon('heroicon-o-users'),
                 MenuItem::make()
                     ->label('Roles')
@@ -127,7 +135,7 @@ class AdminPanelProvider extends PanelProvider
                     ->icon('heroicon-o-tag'),
                 MenuItem::make()
                     ->label('Settings')
-                    ->url(fn (): string => ManageLangingPage::getUrl())
+                    ->url(fn(): string => SettingPage::getUrl())
                     ->icon('heroicon-o-cog'),
             ]);
     }

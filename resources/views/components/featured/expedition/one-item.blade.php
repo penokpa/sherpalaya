@@ -3,7 +3,7 @@
 @endphp
 @if ($featuredExpeditions->count() === 1)
     <div class="bg-blue-100/60">
-        <div class="2xl:mx-32 mx-4 ">
+        <div class="xl:mx-32 mx-4 ">
             <div class="h-14"></div>
             <div class="lg:grid grid-cols-3 md:gap-8 flex flex-col gap-2 bg-blue-100/10">
                 <div class="col-span-1">
@@ -12,7 +12,7 @@
                     <p
                         class="text-md mt-2 text-preety text-slate-800 lg:text-right lg:text-wrap
                          first-line:uppercase first-line:font-light">
-                        {{ $landingPageSetting->expedition_activity_content }}
+                        {{ app()->currentLocale() == 'fr' ? $landingPageSetting->expedition_activity_content_fr : $landingPageSetting->expedition_activity_content_en }}
                     </p>
                     <div class="h-4"></div>
                 </div>

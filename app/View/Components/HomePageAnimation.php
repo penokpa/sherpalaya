@@ -7,6 +7,7 @@ use Awcodes\Curator\Models\Media;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\App;
 use Illuminate\View\Component;
 
 class HomePageAnimation extends Component
@@ -28,7 +29,21 @@ class HomePageAnimation extends Component
     {
         $landingPageSetting = $this->landingPageSetting = app(LandingPageSetting::class);
 
-        $this->animationSections = collect($this->landingPageSetting->animation_sections ?? []);
+        $this->animationSections = collect($this->landingPageSetting->animation_sections ?? [])
+            ->map(function ($animationSection) {
+                if (app()->currentLocale() == 'fr') {
+                    $animationSection['title'] = $animationSection['title_fr'];
+                    $animationSection['content'] = $animationSection['content_fr'];
+                }else{
+                    $animationSection['title'] = $animationSection['title_en'];
+                    $animationSection['content'] = $animationSection['content_en'];
+                }
+                unset($animationSection['title_en']);
+                unset($animationSection['title_fr']);
+                unset($animationSection['content_en']);
+                unset($animationSection['content_fr']);
+                return $animationSection;
+            });
 
         $mediaIds = collect([])
             ->merge($this->animationSections->pluck('image_id'))
@@ -53,16 +68,16 @@ class HomePageAnimation extends Component
             ->toArray();
 
         $this->askForAnimation = [
-            'title' => $landingPageSetting->ask_for_animation_title,
-            'content' => $landingPageSetting->ask_for_animation_content,
+            'title' => App::currentLocale() == 'fr' ? $landingPageSetting->ask_for_animation_title_fr : $landingPageSetting->ask_for_animation_title_en,
+            'content' => App::currentLocale() == 'fr' ? $landingPageSetting->ask_for_animation_content_fr : $landingPageSetting->ask_for_animation_content_en,
             'image_id' => $landingPageSetting->ask_for_animation_image_id,
-            'positive_response' => $landingPageSetting->ask_for_animation_positive_response,
-            'negative_response' => $landingPageSetting->ask_for_animation_negative_response,
+            'positive_response' => App::currentLocale() == 'fr' ? $landingPageSetting->ask_for_animation_positive_response_fr : $landingPageSetting->ask_for_animation_positive_response_en,
+            'negative_response' => App::currentLocale() == 'fr' ? $landingPageSetting->ask_for_animation_negative_response_fr : $landingPageSetting->ask_for_animation_negative_response_en,
         ];
 
         $this->animationButton = [
             'icon_id' => $landingPageSetting->animation_button_icon_id,
-            'text' => $landingPageSetting->animation_button_text,
+            'text' => App::currentLocale() == 'fr' ? $landingPageSetting->animation_button_text_fr : $landingPageSetting->animation_button_text_en,
         ];
 
         $this->parallaxAudioUrl = Media::find($landingPageSetting->animation_sound_id)?->url ?? asset('audio/background-music.mp3');

@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class WebsiteLayout extends Component
 {
@@ -14,6 +15,7 @@ class WebsiteLayout extends Component
     public function __construct(
         public bool $showFooter = true,
         public bool $initAOS = true,
+        public ?SEOData $seoData = null,
     ) {
         //
     }

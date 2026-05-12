@@ -3,14 +3,9 @@
 namespace App\View\Components;
 
 use App\Models\DestinationExpedition;
-use App\Models\DestinationPeak;
-use App\Models\DestinationService;
 use App\Models\DestinationTour;
 use App\Models\DestinationTrek;
 use App\Models\Expedition;
-use App\Models\Peak;
-use App\Models\Region;
-use App\Models\Service;
 use App\Models\Tour;
 use App\Models\Trek;
 use Closure;
@@ -56,7 +51,6 @@ class ShowRecommendation extends Component
         $expeditionsQuery = DestinationExpedition::whereIn('destination_id', $destinationIds);
         // $peaksQuery = DestinationPeak::whereIn('destination_id', $destinationIds);
         $toursQuery = DestinationTour::whereIn('destination_id', $destinationIds);
-        $servicesQuery = DestinationService::whereIn('destination_id', $destinationIds);
 
         if ($this->recommendFor instanceof Trek) {
             $treksQuery = $treksQuery->where('trek_id', '<>', $this->recommendFor->id);
@@ -71,22 +65,15 @@ class ShowRecommendation extends Component
         if ($this->recommendFor instanceof Tour) {
             $toursQuery = $toursQuery->where('tour_id', '<>', $this->recommendFor->id);
         }
-        if ($this->recommendFor instanceof Service) {
-            $servicesQuery = $servicesQuery->where('service_id', '<>', $this->recommendFor->id);
-        }
 
         $trekIds = $treksQuery->get(['id'])->pluck('id');
         $expeditionIds = $expeditionsQuery->get(['id'])->pluck('id');
         // $peakIds = $peaksQuery->get(['id'])->pluck('id');
 
         $tourIds = $toursQuery->get(['id'])->pluck('id');
-        $serviceIds = $servicesQuery->get(['id'])->pluck('id');
 
         $tours = Tour::with('coverImage')
             ->whereIn('id', $tourIds)
-            ->get();
-        $services = Service::with('coverImage')
-            ->whereIn('id', $serviceIds)
             ->get();
 
         $treks = Trek::with('coverImage')
@@ -109,7 +96,7 @@ class ShowRecommendation extends Component
                         'title' => $trek->title,
                         'duration' => $trek->duration . ' Days',
                         'description' => Str::words($trek->description, 30),
-                        'url' => '/treks/' . $trek->id,
+                        'url' => '/' . app()->currentLocale() . '/treks/' . $trek->id,
                         'coverImage' => $trek->coverImage->url,
                     ];
                 }),
@@ -122,7 +109,7 @@ class ShowRecommendation extends Component
                         'title' => $expedition->title,
                         'duration' => $expedition->duration . ' Days',
                         'description' => Str::words($expedition->description),
-                        'url' => '/expeditions/' . $expedition->id,
+                        'url' => '/' . app()->currentLocale() . '/expeditions/' . $expedition->id,
                         'coverImage' => $expedition->coverImage->url,
 
                     ];
@@ -136,7 +123,7 @@ class ShowRecommendation extends Component
                         'title' => $tour->title,
                         'duration' => $tour->duration,
                         'description' => Str::words($tour->description),
-                        'url' => '/tours/' . $tour->id,
+                        'url' => '/' . app()->currentLocale() . '/tours/' . $tour->id,
                         'coverImage' => $tour->coverImage->url,
 
                     ];
@@ -155,20 +142,6 @@ class ShowRecommendation extends Component
 
             //         ];
             //     }),
-            'Services' => $services
-                ->filter(function (Service $service) {
-                    return !is_null($service->coverImage);
-                })
-                ->map(function (Service $service) {
-                    return (object)[
-                        'title' => $service->title,
-                        'duration' => null,
-                        'description' => Str::words($service->description),
-                        'url' => '/services/' . $service->id,
-                        'coverImage' => $service->coverImage->url,
-
-                    ];
-                }),
         ]);
     }
 
@@ -179,7 +152,6 @@ class ShowRecommendation extends Component
             'Treks',
             // 'Peaks',
             'Tours',
-            'Services',
         ];
 
         $top = match (get_class($this->recommendFor)) {
@@ -187,7 +159,6 @@ class ShowRecommendation extends Component
             "App\Models\Trek" => "Treks",
             // "App\Models\Peak" => "Peaks",
             "App\Models\Tour" => "Tours",
-            "App\Models\Service" => "Services",
         };
 
         $sorted = [

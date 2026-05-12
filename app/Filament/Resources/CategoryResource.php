@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources;
 
-use App\Enums\CategoryTypes;
+use App\Enums\CategoryType;
 use App\Filament\Resources\CategoryResource\Pages;
 use App\Filament\Resources\CategoryResource\RelationManagers;
 use App\Filament\Resources\CategoryResource\Widgets\CategoryTable;
@@ -36,7 +36,7 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationGroup = 'Content';
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 6;
 
 
     public static function form(Form $form): Form
@@ -47,9 +47,11 @@ class CategoryResource extends Resource
                     ->hiddenOn('view')
                     ->schema([
                         TextInput::make('name')
-                            ->required(),
-                            FilamentEnumFieldHelper::makeSelectField('type', CategoryTypes::class)
-                                ->required(),
+                            ->required()
+                            ->translatable(),
+                        FilamentEnumFieldHelper::makeSelectField('type', CategoryType::class, function ($select) {
+                            return $select->required();
+                        }),
                     ])
             ]);
     }
@@ -60,15 +62,15 @@ class CategoryResource extends Resource
             ->columns([
                 Split::make([
                     TextColumn::make('name')
-                    ->size(TextColumn\TextColumnSize::Large)
-                    ->weight(FontWeight::Bold),
+                        ->size(TextColumn\TextColumnSize::Large)
+                        ->weight(FontWeight::Bold),
                 ]),
-                // FilamentEnumFieldHelper::makeTextColumn('type', CategoryTypes::class),
+                // FilamentEnumFieldHelper::makeTextColumn('type', CategoryType::class),
             ])
             ->contentGrid([
-                'sm' =>2,
+                'sm' => 2,
                 'md' => 2,
-                'lg' =>3,
+                'lg' => 3,
             ])
             ->filters([
                 //

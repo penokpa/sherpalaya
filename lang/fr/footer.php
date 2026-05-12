@@ -5,11 +5,12 @@ return [
     'expeditions' => 'Expéditions',
     'treks' => 'Treks',
     'activities' => 'Activités',
-    'services' => 'Services',
+    'teams' => 'Teams',
 
     'company' => 'Entreprise',
     'about-us' => 'À propos de nous',
     'our-team' => 'Notre Équipe',
+    'contact' => 'Contact',
 
     'legal' => 'Légal',
     'terms-of-use' => 'Conditions d\'utilisation',

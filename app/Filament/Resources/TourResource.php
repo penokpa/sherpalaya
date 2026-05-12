@@ -2,14 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use App\Enums\CategoryTypes;
-use App\Enums\ItineraryTypes;
+use App\Enums\CategoryType;
+use App\Enums\ItineraryType;
 use App\Enums\TourType;
 use App\Enums\TrekDifficulty;
 use App\Filament\Resources\TourResource\Pages;
 use App\Filament\Resources\TourResource\RelationManagers;
 use App\Models\Tour;
 use App\Filament\Fields\CuratorPicker;
+use App\Filament\Fields\TranslatableRepeater;
 use App\Traits\Filament\TranslatableResource;
 use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms;
@@ -29,7 +30,6 @@ use Filament\Tables\Columns\Layout\Split;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Icetalker\FilamentTableRepeater\Forms\Components\TableRepeater;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use RalphJSmit\Filament\Components\Forms\Sidebar;
@@ -48,6 +48,13 @@ class TourResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-swatch';
     protected static ?string $navigationGroup = 'Content';
 
+    public static function getRepeaterFields(): array
+    {
+        return [
+            'costs_include',
+            'costs_exclude',
+        ];
+    }
 
     public static function form(Form $form): Form
     {
@@ -63,18 +70,10 @@ class TourResource extends Resource
                                     ->columns(2)
                                     ->schema([
                                         TextInput::make('title')
-                                            ->hiddenOn('view')
-                                            ->required(),
-                                        Select::make('category_id')
-                                        ->relationship(
-                                            'category',
-                                            'name',
-                                            modifyQueryUsing: fn ($query) => $query->where('type', CategoryTypes::TOUR) 
-                                            )
-                                            ->native(false)
-                                            ->columnSpan(1),
+                                            ->required()
+                                            ->translatable()
+                                            ->columnSpanFull(),
                                         RichEditor::make('description')
-                                            ->columnSpanFull()
                                             ->required()
                                             ->toolbarButtons([
                                                 // 'attachFiles',
@@ -91,7 +90,18 @@ class TourResource extends Resource
                                                 // 'strike',
                                                 'underline',
                                                 'undo',
-                                            ]),
+                                            ])
+                                            ->translatable()
+                                            ->columnSpanFull(),
+
+                                        Select::make('category_id')
+                                            ->relationship(
+                                                'category',
+                                                'name',
+                                                modifyQueryUsing: fn($query) => $query->where('type', CategoryType::TOUR)
+                                            )
+                                            ->native(false)
+                                            ->columnSpan(1)
                                     ]),
                             ], [
                                 Section::make()
@@ -131,34 +141,48 @@ class TourResource extends Resource
                                             ->searchable(['name', 'location'])
                                             ->native(false),
                                     ]),
-                                    Section::make('Key Highlights')
+                                Section::make('Key Highlights')
                                     ->schema([
-                                        TableRepeater::make('key_highlights')
+                                        Repeater::make('keyHighlights')
                                             ->label('Key Highlights')
                                             ->relationship('keyHighlights')
+                                            ->reorderable()
                                             ->schema([
-                                                TextInput::make('title')->label('Title')->required(),
-                                                TextArea::make('description')->label('Description')->autosize()->required(),
-                                            ])->reorderable()
+                                                TextInput::make('title')
+                                                    ->required()
+                                                    ->translatable(),
+                                                TextArea::make('description')
+                                                    ->required()
+                                                    ->autosize()
+                                                    ->translatable(),
+                                            ]),
                                     ]),
                                 Section::make('Essential Tips')
                                     ->schema([
-                                        TableRepeater::make('essential_tips')
+                                        Repeater::make('essentialTips')
                                             ->label('Essential Tips')
                                             ->relationship('essentialTips')
+                                            ->reorderable()
                                             ->schema([
-                                                TextInput::make('title')->label('Title')->required(),
-                                                TextArea::make('description')->label('Description')->autosize()->required(),
-                                            ])->reorderable()
+                                                TextInput::make('title')
+                                                    ->required()
+                                                    ->translatable(),
+                                                TextArea::make('description')
+                                                    ->required()
+                                                    ->autosize()
+                                                    ->translatable(),
+
+                                            ]),
                                     ]),
                             ], [
                                 Section::make()
                                     ->columns(2)
                                     ->schema([
                                         TextArea::make('best_time_for_tour')
-                                            ->columnSpanFull()
                                             ->required()
-                                            ->label('Best Time For Tour'),
+                                            ->label('Best Time For Tour')
+                                            ->translatable()
+                                            ->columnSpanFull(),
                                         TextInput::make('duration')
                                             ->required(),
                                         TextInput::make('grade')
@@ -200,24 +224,25 @@ class TourResource extends Resource
                         ->schema([
                             Section::make('Costs Include')
                                 ->schema([
-                                    Repeater::make('costs_include')
-                                        ->hiddenLabel()
-                                        ->simple(
-                                            TextInput::make('costs_include')
+                                    TranslatableRepeater::make('costs_include')
+                                        ->field(function ($field) {
+                                            return $field
                                                 ->prefixIcon('heroicon-o-check-badge')
-                                                ->prefixIconColor('success')
-
-                                        )
+                                                ->prefixIconColor('success');
+                                        })
+                                        ->simple(TextInput::class)
+                                        ->hiddenLabel(),
                                 ]),
                             Section::make('Costs Exclude')
                                 ->schema([
-                                    Repeater::make('costs_exclude')
-                                        ->hiddenLabel()
-                                        ->simple(
-                                            TextInput::make('costs_exclude')
+                                    TranslatableRepeater::make('costs_exclude')
+                                        ->field(function ($field) {
+                                            return $field
                                                 ->prefixIcon('heroicon-o-x-circle')
-                                                ->prefixIconColor('danger')
-                                        )
+                                                ->prefixIconColor('danger');
+                                        })
+                                        ->simple(TextInput::class)
+                                        ->hiddenLabel(),
                                 ]),
                         ]),
                     Wizard\Step::make('Itinerary')
@@ -232,9 +257,11 @@ class TourResource extends Resource
                                         ->relationship('itineraries')
                                         ->columns(7)
                                         ->schema([
-                                            TextInput::make('title')
-                                                ->columnSpan(3)
-                                                ->required(),
+                                            Textarea::make('title')
+                                                ->autosize()
+                                                ->required()
+                                                ->translatable()
+                                                ->columnSpan(3),
                                             Select::make('destinations')
                                                 ->relationship('destinations', 'name')
                                                 ->multiple()
@@ -242,18 +269,22 @@ class TourResource extends Resource
                                                 ->searchable()
                                                 ->columnSpan(4)
                                                 ->native(false),
-                                            TableRepeater::make('itineraryDetails')
+                                            Repeater::make('itineraryDetails')
                                                 ->relationship('itineraryDetails')
-                                                ->schema([
-                                                    Select::make('type')
-                                                        ->options(ItineraryTypes::class)
-                                                        ->native(false),
-                                                    Textarea::make('description')
-                                                        ->rows(1)
-                                                        ->autosize(),
-                                                ])
                                                 ->reorderable()
                                                 ->cloneable()
+                                                ->columnSpanFull()
+                                                ->schema([
+                                                    Select::make('type')
+                                                        ->options(ItineraryType::class)
+                                                        ->native(false)
+                                                        ->required(),
+                                                    Textarea::make('description')
+                                                        ->required()
+                                                        ->rows(1)
+                                                        ->autosize()
+                                                        ->translatable(),
+                                                ]),
                                         ])
                                 ]),
                         ]),
@@ -272,6 +303,7 @@ class TourResource extends Resource
                         ->size(200),
                     Stack::make([
                         TextColumn::make('title')
+                            ->searchable()
                             ->size(TextColumn\TextColumnSize::Large)
                             ->weight(FontWeight::Bold),
                         TextColumn::make('duration')
@@ -283,6 +315,9 @@ class TourResource extends Resource
                     ]),
 
                 ]),
+            ])
+            ->groups([
+                'category.name'
             ])
             ->contentGrid([
                 'sm' => 1,

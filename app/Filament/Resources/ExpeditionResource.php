@@ -2,13 +2,14 @@
 
 namespace App\Filament\Resources;
 
-use App\Enums\CategoryTypes;
-use App\Enums\ItineraryTypes;
+use App\Enums\CategoryType;
+use App\Enums\ItineraryType;
 use App\Enums\TrekDifficulty;
 use App\Filament\Resources\ExpeditionResource\Pages;
 use App\Filament\Resources\ExpeditionResource\RelationManagers;
 use App\Models\Expedition;
 use App\Filament\Fields\CuratorPicker;
+use App\Filament\Fields\TranslatableRepeater;
 use App\Traits\Filament\TranslatableResource;
 use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms;
@@ -29,7 +30,6 @@ use Filament\Tables\Columns\Layout\Split;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Icetalker\FilamentTableRepeater\Forms\Components\TableRepeater;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use RalphJSmit\Filament\Components\Forms\Sidebar;
@@ -43,6 +43,14 @@ class ExpeditionResource extends Resource
     protected static ?int $navigationSort = 1;
 
     protected static ?string $navigationIcon = 'heroicon-o-moon';
+
+    public static function getRepeaterFields(): array
+    {
+        return [
+            'costs_include',
+            'costs_exclude',
+        ];
+    }
 
     public static function form(Form $form): Form
     {
@@ -59,25 +67,11 @@ class ExpeditionResource extends Resource
                                         ->columns(6)
                                         ->schema([
                                             TextInput::make('title')
-                                                ->columnSpanFull()
                                                 ->required()
-                                                ->hiddenOn('view'),
-                                            Select::make('region_id')
-                                                ->label('Region')
-                                                ->relationship('region', 'name')
-                                                ->native(false)
-                                                ->required()
-                                                ->columnSpan(3),
-                                            Select::make('category_id')
-                                            ->relationship(
-                                                'category',
-                                                'name',
-                                                modifyQueryUsing: fn ($query) => $query->where('type', CategoryTypes::EXPEDITION)
-                                                )
-                                                ->native(false)
-                                                ->columnSpan(3),
+                                                ->translatable()
+                                                ->columnSpanFull(),
+
                                             RichEditor::make('description')
-                                                ->columnSpanFull()
                                                 ->required()
                                                 ->toolbarButtons([
                                                     // 'attachFiles',
@@ -94,7 +88,24 @@ class ExpeditionResource extends Resource
                                                     // 'strike',
                                                     'underline',
                                                     'undo',
-                                                ]),
+                                                ])
+                                                ->translatable()
+                                                ->columnSpanFull(),
+
+                                            Select::make('region_id')
+                                                ->label('Region')
+                                                ->relationship('region', 'name')
+                                                ->native(false)
+                                                ->required()
+                                                ->columnSpan(3),
+                                            Select::make('category_id')
+                                                ->relationship(
+                                                    'category',
+                                                    'name',
+                                                    modifyQueryUsing: fn($query) => $query->where('type', CategoryType::EXPEDITION)
+                                                )
+                                                ->native(false)
+                                                ->columnSpan(3),
                                         ]),
                                 ], [
                                     Section::make('')
@@ -132,34 +143,48 @@ class ExpeditionResource extends Resource
                                                 ->searchable(['name', 'location'])
                                                 ->native(false),
                                         ]),
-                                        Section::make('Key Highlights')
+                                    Section::make('Key Highlights')
                                         ->schema([
-                                            TableRepeater::make('key_highlights')
+                                            Repeater::make('keyHighlights')
                                                 ->label('Key Highlights')
                                                 ->relationship('keyHighlights')
+                                                ->reorderable()
                                                 ->schema([
-                                                    TextInput::make('title')->label('Title')->required(),
-                                                    TextArea::make('description')->label('Description')->autosize()->required(),
-                                                ])->reorderable()
+                                                    TextInput::make('title')
+                                                        ->required()
+                                                        ->translatable(),
+                                                    TextArea::make('description')
+                                                        ->required()
+                                                        ->autosize()
+                                                        ->translatable(),
+                                                ]),
                                         ]),
                                     Section::make('Essential Tips')
                                         ->schema([
-                                            TableRepeater::make('essential_tips')
+                                            Repeater::make('essentialTips')
                                                 ->label('Essential Tips')
                                                 ->relationship('essentialTips')
+                                                ->reorderable()
                                                 ->schema([
-                                                    TextInput::make('title')->label('Title')->required(),
-                                                    TextArea::make('description')->label('Description')->autosize()->required(),
-                                                ])->reorderable()
+                                                    TextInput::make('title')
+                                                        ->required()
+                                                        ->translatable(),
+                                                    TextArea::make('description')
+                                                        ->required()
+                                                        ->autosize()
+                                                        ->translatable(),
+
+                                                ]),
                                         ]),
                                 ], [
                                     Section::make()
                                         ->columns(2)
                                         ->schema([
                                             TextArea::make('best_time_for_expedition')
-                                                ->columnSpanFull()
                                                 ->required()
-                                                ->label('Best Time For Expedition'),
+                                                ->label('Best Time For Expedition')
+                                                ->translatable()
+                                                ->columnSpanFull(),
                                             Select::make('expedition_difficulty')
                                                 ->label(label: 'Expedition Difficulty')
                                                 ->options(TrekDifficulty::class)
@@ -215,23 +240,25 @@ class ExpeditionResource extends Resource
                             ->schema([
                                 Section::make('Costs Include')
                                     ->schema([
-                                        Repeater::make('costs_include')
-                                            ->hiddenLabel()
-                                            ->simple(
-                                                TextInput::make('costs_include')
+                                        TranslatableRepeater::make('costs_include')
+                                            ->field(function ($field) {
+                                                return $field
                                                     ->prefixIcon('heroicon-o-check-badge')
-                                                    ->prefixIconColor('success')
-                                            )
+                                                    ->prefixIconColor('success');
+                                            })
+                                            ->simple(TextInput::class)
+                                            ->hiddenLabel(),
                                     ]),
                                 Section::make('Costs Exclude')
                                     ->schema([
-                                        Repeater::make('costs_exclude')
-                                            ->hiddenLabel()
-                                            ->simple(
-                                                TextInput::make('costs_exclude')
+                                        TranslatableRepeater::make('costs_exclude')
+                                            ->field(function ($field) {
+                                                return $field
                                                     ->prefixIcon('heroicon-o-x-circle')
-                                                    ->prefixIconColor('danger')
-                                            )
+                                                    ->prefixIconColor('danger');
+                                            })
+                                            ->simple(TextInput::class)
+                                            ->hiddenLabel(),
                                     ]),
                             ]),
                         Tabs\Tab::make('Itinerary')
@@ -244,9 +271,11 @@ class ExpeditionResource extends Resource
                                             ->relationship('itineraries')
                                             ->columns(7)
                                             ->schema([
-                                                TextInput::make('title')
-                                                    ->columnSpan(3)
-                                                    ->required(),
+                                                Textarea::make('title')
+                                                    ->required()
+                                                    ->autosize()
+                                                    ->translatable()
+                                                    ->columnSpan(3),
                                                 Select::make('destinations')
                                                     ->relationship('destinations', 'name')
                                                     ->multiple()
@@ -254,18 +283,22 @@ class ExpeditionResource extends Resource
                                                     ->searchable()
                                                     ->columnSpan(4)
                                                     ->native(false),
-                                                TableRepeater::make('itineraryDetails')
+                                                Repeater::make('itineraryDetails')
                                                     ->relationship('itineraryDetails')
-                                                    ->schema([
-                                                        Select::make('type')
-                                                            ->options(ItineraryTypes::class)
-                                                            ->native(false),
-                                                        Textarea::make('description')
-                                                            ->rows(1)
-                                                            ->autosize(),
-                                                    ])
                                                     ->reorderable()
                                                     ->cloneable()
+                                                    ->columnSpanFull()
+                                                    ->schema([
+                                                        Select::make('type')
+                                                            ->options(ItineraryType::class)
+                                                            ->native(false)
+                                                            ->required(),
+                                                        Textarea::make('description')
+                                                            ->required()
+                                                            ->rows(1)
+                                                            ->autosize()
+                                                            ->translatable(),
+                                                    ]),
                                             ])
                                     ]),
                             ]),

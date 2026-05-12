@@ -1,13 +1,8 @@
 <?php
 
 namespace App\Models;
-
-use App\Contracts\CanBeEasySearched;
-use App\Enums\SearchType;
-use App\Traits\EasySearch;
-use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
+
 
 class Region extends Model
 {

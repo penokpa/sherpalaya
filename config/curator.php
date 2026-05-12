@@ -1,5 +1,7 @@
 <?php
 
+use App\GliderFallbacks\DefaultGliderFallback;
+
 return [
     'accepted_file_types' => [
         'image/jpeg',
@@ -8,6 +10,14 @@ return [
         'image/gif',
         'image/svg+xml',
         'application/pdf',
+        'audio/vnd.wav',
+        'audio/mpeg',
+        'audio/mp4',
+        'video/mp4',
+        'audio/x-hx-aac-adts',
+        'audio/x-m4a',
+        'audio/m4a',
+        'audio/aac',
     ],
     'cloud_disks' => [
         's3',
@@ -31,7 +41,9 @@ return [
     'disk' => env('FILAMENT_FILESYSTEM_DISK', 'public'),
     'glide' => [
         'server' => \Awcodes\Curator\Glide\DefaultServerFactory::class,
-        'fallbacks' => [],
+        'fallbacks' => [
+            DefaultGliderFallback::class,
+        ],
         'route_path' => 'curator',
     ],
     'image_crop_aspect_ratio' => null,
@@ -41,7 +53,7 @@ return [
     'is_limited_to_directory' => false,
     'is_tenant_aware' => true,
     'tenant_ownership_relationship_name' => 'tenant',
-    'max_size' => 5000,
+    'max_size' => 20480,
     'model' => \Awcodes\Curator\Models\Media::class,
     'min_size' => 0,
     'path_generator' => null,

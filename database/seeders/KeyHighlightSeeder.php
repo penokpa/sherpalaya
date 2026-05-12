@@ -692,6 +692,184 @@ class KeyHighlightSeeder extends Seeder
             ],
         ];
 
+        $kathmandu_cultural_tour = [
+            [
+                'title' => [
+                    'en' => 'Watching Sunrise at Swayambhunath Stupa',
+                    'fr' => 'Assister au lever du soleil au stupa de Swayambhunath',
+                ],
+                'description' => [
+                    'en' => 'The golden light hitting the ancient stupa while prayer flags flutter and monks chant in the background.',
+                    'fr' => 'La lumière dorée frappant l\'ancien stupa pendant que les drapeaux de prière flottent et que les moines chantent en arrière-plan.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Exploring the Hidden Courtyards of Patan Durbar Square',
+                    'fr' => 'Explorer les cours cachées de la place Durbar de Patan',
+                ],
+                'description' => [
+                    'en' => 'Walking through centuries-old courtyards, admiring intricate Newari architecture and stone carvings.',
+                    'fr' => 'Se promener dans des cours centenaires, admirer l\'architecture newari complexe et les sculptures sur pierre.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Tasting Local Street Food in Ason Bazaar',
+                    'fr' => 'Déguster la cuisine de rue locale au bazar d\'Ason',
+                ],
+                'description' => [
+                    'en' => 'The spicy aroma of chatpate, freshly fried sel roti, and the bustle of Kathmandu’s oldest marketplace.',
+                    'fr' => 'L\'arôme épicé du chatpate, du sel roti fraîchement frit et l\'agitation du plus ancien marché de Katmandou.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Witnessing the Evening Aarti at Pashupatinath',
+                    'fr' => 'Assister à l\'Aarti du soir à Pashupatinath',
+                ],
+                'description' => [
+                    'en' => 'A mesmerizing sight of priests performing fire rituals by the sacred Bagmati River as chants fill the air.',
+                    'fr' => 'Un spectacle envoûtant de prêtres accomplissant des rituels du feu au bord du fleuve sacré Bagmati pendant que les chants emplissent l\'air.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Getting Lost in the Alleyways of Thamel',
+                    'fr' => 'Se perdre dans les ruelles de Thamel',
+                ],
+                'description' => [
+                    'en' => 'Discovering hidden bookshops, vibrant handicraft stores, and cozy cafés in Kathmandu’s famous backpacker hub.',
+                    'fr' => 'Découvrir des librairies cachées, des boutiques d\'artisanat dynamiques et des cafés confortables dans le célèbre quartier des routards de Katmandou.',
+                ],
+            ],
+        ];
+
+        $service_activity = [
+            [
+                'title' => [
+                    'en' => 'Tasting Local Street Food in Ason Bazaar',
+                    'fr' => 'Déguster la cuisine de rue locale au bazar d\'Ason',
+                ],
+                'description' => [
+                    'en' => 'The spicy aroma of chatpate, freshly fried sel roti, and the bustle of Kathmandu’s oldest marketplace.',
+                    'fr' => 'L\'arôme épicé du chatpate, du sel roti fraîchement frit et l\'agitation du plus ancien marché de Katmandou.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Getting Lost in the Alleyways of Thamel',
+                    'fr' => 'Se perdre dans les ruelles de Thamel',
+                ],
+                'description' => [
+                    'en' => 'Discovering hidden bookshops, vibrant handicraft stores, and cozy cafés in Kathmandu’s famous backpacker hub.',
+                    'fr' => 'Découvrir des librairies cachées, des boutiques d\'artisanat dynamiques et des cafés confortables dans le célèbre quartier des routards de Katmandou.',
+                ],
+            ],
+        ];
+        $ultimate_photography = [
+            [
+                'title' => [
+                    'en' => 'Sunrise over Mount Everest',
+                    'fr' => 'Lever de soleil sur le mont Everest',
+                ],
+                'description' => [
+                    'en' => 'Capture the golden glow on the world’s highest peak from Kala Patthar.',
+                    'fr' => 'Saisissez l’éclat doré sur le plus haut sommet du monde depuis Kala Patthar.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Bengal Tiger in Chitwan',
+                    'fr' => 'Tigre du Bengale à Chitwan',
+                ],
+                'description' => [
+                    'en' => 'Snap a rare shot of a tiger emerging from the jungle shadows.',
+                    'fr' => 'Prenez une photo rare d’un tigre émergeant des ombres de la jungle.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Phewa Lake Reflections',
+                    'fr' => 'Réflexions sur le lac Phewa',
+                ],
+                'description' => [
+                    'en' => 'Photograph the Annapurna range mirrored in Pokhara’s serene waters.',
+                    'fr' => 'Photographiez la chaîne de l’Annapurna reflétée dans les eaux calmes de Pokhara.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Dashain Festival Colors',
+                    'fr' => 'Couleurs du festival Dashain',
+                ],
+                'description' => [
+                    'en' => 'Document the vibrant rituals and family gatherings of Nepal’s biggest Hindu festival.',
+                    'fr' => 'Documentez les rituels vibrants et les rassemblements familiaux du plus grand festival hindou du Népal.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Sherpa Life in Khumbu',
+                    'fr' => 'Vie des Sherpas à Khumbu',
+                ],
+                'description' => [
+                    'en' => 'Capture the weathered faces and prayer flags of Sherpa villages.',
+                    'fr' => 'Saisissez les visages burinés et les drapeaux de prière des villages Sherpas.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Poon Hill Sunrise',
+                    'fr' => 'Lever de soleil à Poon Hill',
+                ],
+                'description' => [
+                    'en' => 'Shoot the fiery dawn over Annapurna and Dhaulagiri peaks.',
+                    'fr' => 'Photographiez l’aube ardente sur les sommets de l’Annapurna et du Dhaulagiri.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Boudhanath Stupa at Dawn',
+                    'fr' => 'Stupa de Boudhanath à l’aube',
+                ],
+                'description' => [
+                    'en' => 'Photograph monks and incense smoke as the sun rises over this iconic stupa.',
+                    'fr' => 'Photographiez les moines et la fumée d’encens au lever du soleil sur ce stupa emblématique.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Upper Mustang’s Red Cliffs',
+                    'fr' => 'Falaises rouges de l’Upper Mustang',
+                ],
+                'description' => [
+                    'en' => 'Capture the surreal desert landscapes and ancient monasteries.',
+                    'fr' => 'Saisissez les paysages désertiques surréalistes et les anciens monastères.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Rhino Bathing in Chitwan',
+                    'fr' => 'Rhinocéros se baignant à Chitwan',
+                ],
+                'description' => [
+                    'en' => 'Snap a one-horned rhino enjoying a mud bath in the jungle.',
+                    'fr' => 'Prenez une photo d’un rhinocéros unicorne profitant d’un bain de boue dans la jungle.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Langtang Valley Panoramas',
+                    'fr' => 'Panoramas de la vallée de Langtang',
+                ],
+                'description' => [
+                    'en' => 'Photograph sweeping Himalayan views from Kyanjin Ri with fewer crowds.',
+                    'fr' => 'Photographiez des vues panoramiques de l’Himalaya depuis Kyanjin Ri avec moins de foule.',
+                ],
+            ],
+        ];
+
         $this->createKeyHighlights(
             Trek::first(),
             $everest_base_camp_trek
@@ -748,7 +926,42 @@ class KeyHighlightSeeder extends Seeder
             Trek::find(14),
             $kanchanjunga_highlights
         );
-
+        $this->createKeyHighlights(
+            Trek::find(15),
+            $everest_base_camp_trek
+        );
+        $this->createKeyHighlights(
+            Trek::find(16),
+            $annapurna_base_camp_trek
+        );
+        $this->createKeyHighlights(
+            Trek::find(17),
+            $annapurna_base_camp_trek
+        );
+        $this->createKeyHighlights(
+            Trek::find(18),
+            $annapurna_base_camp_trek
+        );
+        $this->createKeyHighlights(
+            Trek::find(19),
+            $manaslu_circuit_trek
+        );
+        $this->createKeyHighlights(
+            Trek::find(20),
+            $manaslu_circuit_trek
+        );
+        $this->createKeyHighlights(
+            Trek::find(21),
+            $langtang_highlights
+        );
+        $this->createKeyHighlights(
+            Trek::find(22),
+            $langtang_highlights
+        );
+        $this->createKeyHighlights(
+            Trek::find(23),
+            $kanchanjunga_highlights
+        );
 
 
         $this->createKeyHighlights(
@@ -896,7 +1109,7 @@ class KeyHighlightSeeder extends Seeder
         );
 
 
-        
+
         $this->createKeyHighlights(
             Tour::first(),
             $kathmandu_cultural_tour
@@ -911,7 +1124,7 @@ class KeyHighlightSeeder extends Seeder
         );
         $this->createKeyHighlights(
             Tour::find(4),
-            $kathmandu_cultural_tour
+            $ultimate_photography
         );
         $this->createKeyHighlights(
             Tour::find(5),
@@ -920,6 +1133,10 @@ class KeyHighlightSeeder extends Seeder
         $this->createKeyHighlights(
             Tour::find(6),
             $kathmandu_cultural_tour
+        );
+        $this->createKeyHighlights(
+            Tour::find(7),
+            $service_activity
         );
     }
     protected function createKeyHighlights(Model $model, array $points): void

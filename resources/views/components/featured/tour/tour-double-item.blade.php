@@ -1,7 +1,7 @@
 @if ($featuredTours->count() === 2)
 
     <div class="bg-blue-100/10">
-        <div class="2xl:mx-32 mx-4 " data-aos="fade-down" data-aos-duration="1200">
+        <div class="xl:mx-32 mx-4 " data-aos="fade-down" data-aos-duration="1200">
             <div class="h-14"></div>
 
             <div class="hidden lg:grid grid-cols-3 gap-2 bg-blue-100/10" data-aos="fade-down" data-aos-duration="1200">
@@ -14,7 +14,7 @@
                                 alt="{{ $featuredTour->title }} Cover Image"
                                 class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                         </figure>
-                        <a href="{{ route('show_tour', $featuredTour->id) }}">
+                        <a href="{{ route('show_tour', ['id'=>$featuredTour->id, 'locale'=>app()->currentLocale()]) }}">
                             <div class="card-body absolute inset-0 justify-end">
                                 <div class="text-center">
                                     <h2 class="font-bold text-white text-2xl uppercase">
@@ -34,7 +34,7 @@
                     <p
                         class="text-md mt-2 text-preety text-slate-800 text-balance md:text-wrap
                             md:text-justify first-line:uppercase first-line:tracking-widest first-line:font-light">
-                            {{ $landingPageSetting->tour_activity_content }}
+                            {{ app()->currentLocale() == 'fr' ?$landingPageSetting->tour_activity_content_fr:$landingPageSetting->tour_activity_content_en }}
                     </p>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <p
                     class="text-md mt-2 text-preety text-slate-800 text-balance md:text-wrap
                         md:text-justify first-line:uppercase first-line:tracking-widest first-line:font-light pr-2">
-                        {{ $landingPageSetting->tour_activity_content }}
+                        {{ app()->currentLocale() == 'fr' ?$landingPageSetting->tour_activity_content_fr:$landingPageSetting->tour_activity_content_en }}
                 </p>
                 <div id="multi-slide"
                     data-carousel='{ "loadingClasses": "opacity-0","isInfiniteLoop": true, "slidesQty": { "xs": 1.1, "sm": 1.5, "md":2 } }'
@@ -65,7 +65,7 @@
                                                         alt="{{ $featuredTour->title }} Cover Image"
                                                         class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                                 </figure>
-                                                <a href="{{ route('show_tour', $featuredTour->id) }}">
+                                                <a href="{{ route('show_tour', ['id'=>$featuredTour->id, 'locale'=>app()->currentLocale()]) }}">
                                                     <div class="card-body absolute inset-0 justify-end">
                                                         <div class="text-center">
                                                             <h2 class="font-bold text-white text-2xl uppercase">

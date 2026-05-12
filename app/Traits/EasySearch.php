@@ -11,7 +11,7 @@ trait EasySearch
 
     public function toSearchResult(): Collection
     {
-        return collect([
+        return collect((object)[
             'id' => $this->id,
             'type' => $this->searchType(),
             'title' => $this->searchResultTitle(),

@@ -16,7 +16,7 @@
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link hover:link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
                                         style="width: 48px; height: 48px;">
@@ -37,7 +37,7 @@
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
                                         style="width: 48px; height: 48px;">
@@ -58,7 +58,7 @@
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
 
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
@@ -80,7 +80,7 @@
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
                                         style="width: 48px; height: 48px;">
@@ -101,7 +101,7 @@
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle]"
                                         style="width: 48px; height: 48px;">
@@ -122,7 +122,7 @@
                             <p class="font-normal tracking-widest">Boost your brand's visibility and engagement
                                 through targeted
                                 marketing strategies.</p>
-                            <a href="/treks">
+                            <a href="/{{ app()->currentLocale() }}/treks">
                                 <div class="pt-10 link link-info">
                                     <span class="icon-[line-md--chevron-right-circle] "
                                         style="width: 48px; height: 48px;">

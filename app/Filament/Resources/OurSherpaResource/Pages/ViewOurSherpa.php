@@ -24,7 +24,7 @@ class ViewOurSherpa extends ViewRecord
     protected function getFooterWidgets(): array
     {
         return [
-            SherpaMultiWidget::class,
+            // SherpaMultiWidget::class,
 
         ];
     }

@@ -13,16 +13,7 @@ class FaqSeeder extends Seeder
      */
     public function run(): void
     {
-        Faq::create([
-            'question' => [
-                'en' => 'What is the problem?',
-                'fr' => 'Quel est le problème ?',
-            ],
-            'answer' => [
-                'en' => 'Question is the solution, Answer is the key.',
-                'fr' => 'La question est la solution, la réponse est la clé.',
-            ],
-        ]);
+
 
         Faq::create([
             'question' => [

@@ -1,4 +1,4 @@
-<x-website-layout>
+<x-website-layout :seoData="$seoData">
     <div class="bg-blue-100/10 font-oswald">
         <div data-scrollspy-scrollable-parent="#scrollspy-scrollable-parent-1" class="">
             <div id="scrollspy-scrollable-parent-1" class="">
@@ -8,14 +8,14 @@
                     <x-show-tour.tour-top-section-card :tour="$tour" />
                     {{-- end-section-card --}}
 
-                   <x-breadcrumb :breadcrumbs="[
+                    <x-breadcrumb :breadcrumbs="[
                         [
                             'name' => 'Home',
-                            'url' => url('/home'),
+                            'url' => url('/' . app()->currentLocale() . '/home'),
                         ],
                         [
                             'name' => 'Tours',
-                            'url' => url('/tours'),
+                            'url' => url('/' . app()->currentLocale() . '/tours'),
                         ],
                         [
                             'name' => $tour->title,
@@ -23,14 +23,14 @@
                     ]" />
                     <div class="h-4"></div>
 
-                    <div class="2xl:mx-32 mx-4 text-left">
+                    <div class="xl:mx-32 mx-4 text-left">
                         {{-- description --}}
                         <x-show-tour.tour-description :tour="$tour" />
                         {{-- end description --}}
                         <div class="h-4  "></div>
 
-                        
-                       
+
+
                     </div>
 
                     <div class="h-12 "></div>
@@ -40,7 +40,7 @@
 
 
                 {{-- mobile section tour --}}
-                <x-booking.mobile-booking-section :bookingFor="$tour"/>
+                <x-booking.mobile-booking-section :bookingFor="$tour" />
 
 
                 {{-- stat-mobile --}}
@@ -55,8 +55,8 @@
                 {{-- scrollspy body --}}
 
                 <div class="bg-blue-100/10">
-                    <div class=" mx-4 2xl:mx-32 gap-2 max-w-full ">
-                        <div class="xl:grid grid-cols-3  gap-6">
+                    <div class=" mx-4 xl:mx-32 gap-2 max-w-full ">
+                        <main class="xl:grid grid-cols-3  gap-6">
                             <div class="xl:col-span-2 ">
                                 {{-- key_highlights --}}
                                 <x-show-tour.scroll-spy-body.tour-key-highlight :tour="$tour" />
@@ -79,24 +79,24 @@
                                 {{-- destinations --}}
                                 {{-- <x-show-tour.scroll-spy-body.tour-destination :tour="$tour" /> --}}
 
-                                
+
 
                                 <div class="h-10 "></div>
                             </div>
 
-                            <div class=" ">
+                            <aside class=" ">
                                 <div class="h-8"></div>
                                 <div class="sticky top-20 hidden xl:block">
                                     {{-- stat --}}
                                     <x-show-tour.tour-stat-section :tour="$tour" />
 
                                     {{-- booking-section --}}
-                                    <x-booking.booking-section :bookingFor="$tour"/>
+                                    <x-booking.booking-section :bookingFor="$tour" />
 
                                     <div class="h-10"></div>
                                 </div>
-                            </div>
-                        </div>
+                            </aside>
+                        </main>
                         <x-show-recommendation :recommendFor="$tour" />
 
                     </div>

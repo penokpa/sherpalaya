@@ -2,14 +2,11 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {{-- {{ config('app.name') }} --}}
-        sherpalaya
-    </title>
-    <link rel="icon" type="image/png" href="{{ asset('photos/logo.png') }}">
 
+    {!! seo(isset($seoData) ? $seoData : null) !!}
 
     @vite('resources/css/app.css')
     @livewireStyles
@@ -20,8 +17,7 @@
 
 <body class="bg-white font-mono">
 
-    <div
-    class="h-screen w-screen overflow-hidden flex flex-col justify-center items-center" id="page-loading-container">
+    <div class="h-screen w-screen overflow-hidden flex flex-col justify-center items-center" id="page-loading-container">
         <span class="loading loading-spinner loading-lg"></span>
     </div>
 
@@ -61,7 +57,7 @@
             pageLoadingContainer.classList.remove('h-screen');
             pageLoadingContainer.classList.add('h-0');
             pageLoadingContainer.classList.add('hidden');
-            });
+        });
     </script>
 
     @stack('scripts')

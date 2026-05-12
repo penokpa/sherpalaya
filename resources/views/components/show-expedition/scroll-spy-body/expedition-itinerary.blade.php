@@ -1,11 +1,11 @@
-<div id="itineraries" class="card 2xl:max-w-full rounded-none bg-blue-50/10">
+<section id="itineraries" class="card 2xl:max-w-full rounded-none bg-blue-50/10">
     @if ($expedition->itineraries->isNotEmpty())
         <div class="h-6">
         </div>
         <div class="card-header px-2" data-aos="fade-down" data-aos-duration="1200">
-            <h5 class="card-title text-black uppercase tracking-normal font-body font-medium text-3xl">
-                Itineraries
-            </h5>
+            <h3 class="card-title text-black uppercase tracking-normal font-body font-bold text-3xl">
+                {{ __('show-page.itinerary') }}
+            </h3>
         </div>
         <div class="card-body mx-0 px-2">
             <div class="accordion">
@@ -15,11 +15,11 @@
                             <button
                                 class="accordion-toggle inline-flex items-center gap-x-4 text-start text-black font-normal font-body tracking-wide  px-0"
                                 aria-controls="itinerary-{{ $itinerary->id }}-collapse" aria-expanded="false">
-                                <div class="card flex flex-row gap-2 bg-blue-100/40 m-0 p-2 text-lg">
+                                <h4 class="card flex flex-row gap-2 bg-blue-100/40 m-0 p-2 text-lg">
                                     <span
                                         class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
                                     {{ $itinerary->title }}
-                                </div>
+                                </h4>
                             </button>
                             <div id="itinerary-{{ $itinerary->id }}-collapse"
                                 class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
@@ -49,12 +49,12 @@
                                                     $type = $detail->type->value;
                                                     $icon = $icons[$type] ?? 'icon-[tabler--help-circle]'; // Default icon if type is missing
                                                 @endphp
-                                                <h5
+                                                <h3
                                                     class="card-title flex gap-2 mb-2  text-lg/7 items-center  text-black capitalize font-medium font-body">
                                                     <span
                                                         class="{{ $icon }} accordion-item-active:rotate-90 size-6 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
-                                                    <p> {{ $detail->type->getLabel() }}</p>
-                                                </h5>
+                                                    <span> {{ $detail->type->getLabel() }}</span>
+                                                </h3>
                                                 <p
                                                     class="mb-6 px-8 text-black font-body font-light tracking-wide text-lg/7 break-all">
                                                     {{ $detail->description }}
@@ -62,14 +62,14 @@
                                             @endforeach
                                         </div>
                                     </div>
-                                    <div>
+                                    {{-- <div>
                                         @if (!empty($itinerary->destinations))
                                             <div class="card-body bg-transparent w-full p-0">
                                                 <div class="flex items-center gap-2 justify-start text-black">
                                                     <span class="icon-[tabler--sun-high] size-6"></span>
                                                     <div>
                                                         <h5
-                                                            class="card-title uppercase text-xl/7 font-body font-medium tracking-tight ">
+                                                            class="card-title uppercase text-lg/7 font-body font-medium tracking-tight ">
                                                             Highlighted Places
                                                         </h5>
                                                     </div>
@@ -107,7 +107,7 @@
                                                 @endforeach
                                             </div>
                                         @endif
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         @endif
@@ -118,4 +118,4 @@
         <div class="h-6">
         </div>
     @endif
-</div>
+</section>

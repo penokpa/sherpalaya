@@ -1,17 +1,26 @@
 <div class="md:grid grid-cols-2 ">
-    @if (!empty($expedition->costs_include))
+    @php
+        $costsInclude = array_filter($expedition->costs_include, function ($costInc) {
+            return !is_null($costInc[app()->currentLocale()]);
+        });
+        $costsExclude = array_filter($expedition->costs_exclude, function ($costExc) {
+            return !is_null($costExc[app()->currentLocale()]);
+        });
+    @endphp
+    @if (!empty($costsInclude))
 
-        <div id="costs_include" class="card 2xl:max-w-full rounded-none bg-blue-100/40">
+        <section id="costs_include" class="card 2xl:max-w-full rounded-none bg-blue-100/40">
             <div class="h-8">
             </div>
             <div class="card-header p-2" data-aos="fade-down" data-aos-duration="1200">
-                <h5 class="card-title text-black uppercase font-body tracking-normal font-medium text-2xl">Cost
-                    Includes
-                </h5>
+                <h3 class="card-title text-black uppercase font-body tracking-normal font-bold text-2xl">
+                    {{ __('show-page.costs_include') }}
+                </h3>
             </div>
-            <div class="card-body p-2 mt-4 font-body">
+            <aside class="card-body p-2 mt-4 font-body">
                 <ul class="space-y-5 ">
-                    @foreach ($expedition->costs_include as $cost_include)
+
+                    @foreach ($costsInclude as $cost_include)
                         <li class="flex items-center space-x-3 rtl:space-x-reverse  ">
                             <span class="bg-transparent text-success flex items-center justify-center rounded-full p-1">
                                 <span class="icon-[eva--done-all-fill] size-5"></span>
@@ -22,27 +31,27 @@
                         </li>
                     @endforeach
                 </ul>
-            </div>
+            </aside>
             <div class="h-8">
 
             </div>
-        </div>
+        </section>
     @endif
 
-    @if (!empty($expedition->costs_exclude))
+    @if (!empty($costsExclude))
         {{-- cost exclude --}}
-        <div id="costs_exclude" class="card 2xl:max-w-full  rounded-none bg-red-100/40">
+        <section id="costs_exclude" class="card 2xl:max-w-full  rounded-none bg-red-100/40">
             <div class="h-8">
 
             </div>
             <div class="card-header p-2" data-aos="fade-down" data-aos-duration="1200">
-                <h5 class="card-title text-black uppercase font-body tracking-normal font-medium text-2xl">Cost
-                    Excludes
-                </h5>
+                <h3 class="card-title text-black uppercase font-body tracking-normal font-bold text-2xl">
+                    {{ __('show-page.costs_exclude') }}
+                </h3>
             </div>
-            <div class="card-body p-2 mt-4 font-body">
+            <aside class="card-body p-2 mt-4 font-body">
                 <ul class="space-y-5">
-                    @foreach ($expedition->costs_exclude as $cost_exclude)
+                    @foreach ($costsExclude as $cost_exclude)
                         <li class="flex items-center space-x-3 rtl:space-x-reverse">
                             <span class="bg-transparent text-red-300 flex items-center justify-center rounded-full ">
                                 <span class="icon-[tabler--exclamation-circle] size-5"></span>
@@ -53,10 +62,10 @@
                         </li>
                     @endforeach
                 </ul>
-            </div>
+            </aside>
             <div class="h-8">
 
             </div>
-        </div>
+        </section>
     @endif
 </div>

@@ -1,4 +1,4 @@
-<x-website-layout>
+<x-website-layout :seoData="$seoData">
     <div class="bg-blue-100/10 font-body">
         <div data-scrollspy-scrollable-parent="#scrollspy-scrollable-parent-1">
             <div id="scrollspy-scrollable-parent-1 overflow-x-hidden">
@@ -13,23 +13,23 @@
                     <x-breadcrumb :breadcrumbs="[
                         [
                             'name' => 'Home',
-                            'url' => url('/home'),
+                            'url' => url('/' . app()->currentLocale() . '/home'),
                         ],
                         [
                             'name' => 'Treks',
-                            'url' => url('/treks'),
+                            'url' => url('/' . app()->currentLocale() . '/treks'),
                         ],
                         [
                             'name' => $trek->title,
                         ],
                     ]" />
 
-                    <div class="2xl:mx-32 mx-4 text-left">
+                    <div class="xl:mx-32 mx-4 text-left">
                         {{-- description --}}
                         <x-show-trek.description :trek="$trek" />
                         {{-- end description --}}
                         <div class="h-4  "></div>
-                        
+
                     </div>
 
                     <div class="h-12 "></div>
@@ -59,8 +59,8 @@
 
                 {{-- scrollspy body --}}
                 <div class="bg-transparent">
-                    <div class="mx-4 2xl:mx-32 gap-2 max-w-full ">
-                        <div class="xl:grid grid-cols-3  gap-6">
+                    <div class="mx-4 xl:mx-32 gap-2 max-w-full ">
+                        <main class="xl:grid grid-cols-3  gap-6">
                             <div class="xl:col-span-2 ">
                                 {{-- key_highlights --}}
                                 <x-show-trek.scroll-spy-body.key-highlight :trek="$trek" />
@@ -87,7 +87,7 @@
                                 <div class="h-10"></div>
                             </div>
 
-                            <div class=" ">
+                            <aside class=" ">
                                 <div class="h-8"></div>
                                 <div class="sticky top-20 hidden xl:block">
                                     {{-- stat --}}
@@ -98,8 +98,8 @@
 
                                     <div class="h-10"></div>
                                 </div>
-                            </div>
-                        </div>
+                            </aside>
+                        </main>
                         <x-show-recommendation :recommendFor="$trek" />
 
                     </div>

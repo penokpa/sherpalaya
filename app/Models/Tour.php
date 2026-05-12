@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Collection;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\Translatable\HasTranslations;
 
 
@@ -56,6 +57,18 @@ class Tour extends Model implements CanBeEasySearched, CanBeInquiried
         'costs_exclude',
     ];
 
+    // SEO
+
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            title: $this->title,
+            description: $this->description,
+            image: $this->searchResultImage()?->url,
+            author: "Sherpalaya",
+        );
+    }
+
     // Easy Search
 
     public function searchType(): SearchType
@@ -71,7 +84,7 @@ class Tour extends Model implements CanBeEasySearched, CanBeInquiried
 
     public function searchResultUrl(): string
     {
-        return '/tours/' . $this->id;
+        return '/' . app()->currentLocale() . '/tours/' . $this->id;
     }
 
     public function searchResultImage(): ?Media

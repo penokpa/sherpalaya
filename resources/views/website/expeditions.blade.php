@@ -1,34 +1,34 @@
 <x-website-layout>
     <div class="bg-blue-100/10 font-body">
-        <div class="card--rounded-none image-full  h-[80vh] relative">
-            <figure class="h-[80vh] w-full">
-                <x-curator-glider class="h-[80vh] w-full object-cover brightness-50" :media="$pageSetting->expedition_page_cover_image_id ?? null" :fallback="asset('/photos/banner.jpg')"
-                    loading="lazy" />
+        <header class="card--rounded-none image-full  h-[80dvh] relative">
+            <figure class="h-[80dvh] w-full">
+                <x-curator-glider class="h-[80dvh] w-full object-cover brightness-75" :media="$pageSetting->expedition_page_cover_image_id ?? null" fallback="default"
+                    loading="lazy" alt="Expedition Cover Image" />
             </figure>
             <div class="card-body absolute inset-0 flex items-center justify-start">
-                <div class="absolute bottom-1/4  left-4 lg:left-4 2xl:left-32 transform translate-y-1/2 overflow-hidden"
+                <div class="absolute bottom-1/4  left-4 lg:left-4 xl:left-32 transform translate-y-1/2 overflow-hidden"
                     data-aos="fade-down" data-aos-duration="1200">
-                    <h5
-                        class="card-title mb-2 text-blue-50 text-xl sm:text-2xl  uppercase font-oswald  font-medium tracking-wider opacity-75">
-                        Conquer New Heights
-                    </h5>
                     <h2
                         class="card-title mb-2 text-blue-50 text-xl sm:text-2xl  uppercase font-oswald  font-medium tracking-wider opacity-75">
-                        Epic Expeditions 
+                        {{ app()->currentLocale() == 'fr' ? $pageSetting->expedition_page_title_up_fr : $pageSetting->expedition_page_title_up_en }}
                     </h2>
-                    <h5
+                    <h1
+                        class="card-title mb-2 text-warning text-4xl sm:text-5xl md:text-6xl  uppercase font-card font-bold tracking-tight text-wrap  leading-[1.3]  overflow-hidden opacity-100 antialiased">
+                        {{ app()->currentLocale() == 'fr' ? $pageSetting->expedition_page_main_title_fr : $pageSetting->expedition_page_main_title_en }}
+                    </h1>
+                    <h3
                         class="card-title  mb-8 text-blue-50 text-xl sm:text-2xl font-oswald  uppercase  font-medium tracking-wider opacity-75 ">
-                        Guided by Experience, Inspired by Nature
-                    </h5>
+                        {{ app()->currentLocale() == 'fr' ? $pageSetting->expedition_page_title_down_fr : $pageSetting->expedition_page_title_down_en }}
+                    </h3>
                 </div>
             </div>
-        </div>
+        </header>
 
         <div class="bg-blue-100/20">
             <x-breadcrumb :breadcrumbs="[
                 [
                     'name' => 'Home',
-                    'url' => url('/home'),
+                    'url' => url('/' . app()->currentLocale() . '/home'),
                 ],
                 [
                     'name' => 'Expedition',
@@ -36,15 +36,15 @@
             ]" />
             <div class="h-10">
             </div>
-            <div class="2xl:mx-32 mx-4 text-left">
-                <p class="text-left  mt-2  text-stone-600  font-body text-xl/7 font-light">
-                    {{ $pageSetting->expedition_page_content }}
-                </p>
-            </div>
+            <article class="xl:mx-32 mx-4 text-left">
+                <div class="text-justify  mt-2  text-stone-600  font-body text-lg/7 font-light">
+                    {{ app()->currentLocale() == 'fr' ? $pageSetting->expedition_page_content_fr : $pageSetting->expedition_page_content_en }}
+                </div>
+            </article>
             <div class="h-10"></div>
         </div>
 
-        <div class="2xl:mx-32 mx-4">
+        <div class="xl:mx-32 mx-4">
             <div class="h-4"></div>
             <nav class="sticky top-0 z-30 tabs  bg-white horizontal-scrollbar md:justify-end py-4 gap-2 md:gap-16"
                 aria-label="Tabs" role="tablist" aria-orientation="horizontal">
@@ -68,7 +68,7 @@
                 @endforeach
             </nav>
             <div class="h-10"></div>
-            <div class="bg-white">
+            <main class="bg-white">
                 <div id="expedition-tabs-center-all" role="tabpanel" aria-labelledby="expedition-tabs-center-item-all">
                     <div class="flex flex-col md:grid md:grid-cols-2 gap-2">
                         @foreach ($allExpeditions as $allExpedition)
@@ -76,20 +76,21 @@
                                 {{-- <div class="w-[70%] flex md:justify-center md:items-center"></div> --}}
                                 <div
                                     class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border ">
-                                    <figure class="h-[20rem] w-full">
+                                    <figure class="h-[40vh] w-full">
                                         <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                             alt="{{ $expedition->title }} Cover Image"
-                                            class="transition-transform brightness-50 duration-500 group-hover:scale-110 h-full w-full object-cover" />
+                                            class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                     </figure>
-                                    <a href="{{ route('show_expedition', $expedition->id) }}">
+                                    <a
+                                        href="{{ route('show_expedition', ['id' => $expedition->id, 'locale' => app()->currentLocale()]) }}">
                                         <div class="card-body absolute inset-0 justify-center ">
-                                            <div class="font-oswald tracking-wide font-normal text-center">
-                                                <h2 class=" text-blue-50 text-3xl uppercase group-hover:text-warning">
+                                            <div class="font-oswald tracking-wide font-medium text-center">
+                                                <h3 class=" text-blue-50 text-3xl uppercase group-hover:text-warning">
                                                     {{ $expedition->title }}
-                                                </h2>
-                                                <h2 class="text-blue-50 line-clamp-2 text-3xl group-hover:text-warning">
+                                                </h3>
+                                                <h4 class="text-blue-50 line-clamp-2 text-3xl group-hover:text-warning">
                                                     {{ $expedition->highest_altitude }} m
-                                                </h2>
+                                                </h4>
                                             </div>
                                         </div>
                                     </a>
@@ -106,21 +107,22 @@
                             @foreach ($expeditionCategory->expeditions as $expedition)
                                 <div
                                     class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border ">
-                                    <figure class="h-[20rem] w-full">
+                                    <figure class="h-[40vh] w-full">
                                         <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
                                             alt="{{ $expedition->title }} Cover Image"
-                                            class="transition-transform brightness-50 duration-500 group-hover:scale-110 h-full w-full object-cover" />
+                                            class="transition-transform brightness-75 duration-500 group-hover:scale-110 h-full w-full object-cover" />
                                     </figure>
-                                    <a href="{{ route('show_expedition', $expedition->id) }}">
+                                    <a
+                                        href="{{ route('show_expedition', ['id' => $expedition->id, 'locale' => app()->currentLocale()]) }}">
                                         <div class="card-body absolute inset-0 justify-center">
-                                            <div class="font-oswald tracking-wide font-normal text-center">
-                                                <h2 class=" text-blue-50 text-3xl uppercase group-hover:text-warning">
+                                            <div class="font-oswald tracking-wide font-medium text-center">
+                                                <h3 class=" text-blue-50 text-3xl uppercase group-hover:text-warning">
                                                     {{ $expedition->title }}
-                                                </h2>
-                                                <h2
+                                                </h3>
+                                                <h4
                                                     class=" text-blue-50 line-clamp-2 text-3xl group-hover:text-warning">
                                                     {{ $expedition->highest_altitude }} m
-                                                </h2>
+                                                </h4>
                                             </div>
                                         </div>
                                     </a>
@@ -129,104 +131,13 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
+            </main>
             <div class="h-10">
             </div>
 
-
-            {{-- old exp --}}
-
-            {{-- @foreach ($allExpeditions as $expeditionRegion)
-                @if ($expeditionRegion->expeditions->isNotEmpty())
-                    <div id="region-{{ $expeditionRegion->id }}">
-                        <h5 class="card-title mb-2.5 line-clamp-2 uppercase text-2xl md:text-3xl text-black text-left "
-                            >
-                            {{ $expeditionRegion->name }}
-                        </h5>
-                        <div class="h-4"></div>
-                        <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-2  gap-3">
-                            @foreach ($expeditionRegion->expeditions as $expedition)
-                                <div class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border "
-                                    >
-                                    <figure class="h-[20rem] w-full">
-                                        <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
-                                            alt="{{ $expedition->title }} Cover Image"
-                                            class="transition-transform brightness-50 duration-500 group-hover:scale-110 h-full w-full object-cover" />
-                                    </figure>
-                                    <a href="{{ route('show_expedition', $expedition->id) }}">
-                                        <div class="card-body absolute inset-0 justify-center">
-                                            <div class="text-center" >
-                                                <h2 class="font-bold text-blue-50 text-3xl uppercase">
-                                                    {{ $expedition->title }}
-                                                </h2>
-                                                <h2
-                                                    class="font-bold tracking-normal text-blue-50 line-clamp-2 text-3xl">
-                                                    {{ $expedition->highest_altitude }} m
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="h-4"></div>
-                    </div>
-                    <div class="bg-blue-100/60 md:hidden">
-                        <div id="multi-slide"
-                            data-carousel='{ "loadingClasses": "opacity-0","isInfiniteLoop": true, "slidesQty": { "xs": 1.1 } }'
-                            class="relative w-full ">
-                            <div class="carousel h-full rounded-none ">
-                                <div class="carousel-body h-full opacity-0 ">
-                                    <!-- Slide 1 -->
-                                    @foreach ($expeditionRegion->expeditions as $expedition)
-                                        <div class="carousel-slide max-w-sm px-1">
-                                            <div
-                                                class="card rounded-none image-full w-full relative flex items-center card-side group hover:shadow border">
-                                                <figure class="h-[28rem] max-w-sm">
-                                                    <img src="{{ optional($expedition->coverImage)->url ?? asset('photos/DSCF2600.JPG') }}"
-                                                        alt="{{ $expedition->title }} Cover Image"
-                                                        class="transition-transform brightness-50 duration-500 group-hover:scale-110 h-full max-w-sm object-cover" />
-                                                </figure>
-                                                <a href="{{ route('show_expedition', $expedition->id) }}">
-                                                    <div class="card-body absolute inset-0 justify-center">
-                                                        <div class="text-center">
-                                                            <h2 class="font-bold text-blue-50 text-2xl uppercase">
-                                                                {{ $expedition->title }}
-                                                            </h2>
-                                                            <h2
-                                                                class="font-bold tracking-normal text-blue-50 line-clamp-2 text-2xl">
-                                                                {{ $expedition->highest_altitude }} m
-                                                            </h2>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Previous Slide -->
-                        <button type="button" class="carousel-prev">
-                            <span
-                                class="hidden md:flex icon-[tabler--chevron-left] size-8 text-blue-50 cursor-pointer rtl:rotate-180"></span>
-                            <span class="sr-only">Previous</span>
-                        </button>
-                        <!-- Next Slide -->
-                        <button type="button" class="carousel-next">
-                            <span class="sr-only">Next</span>
-                            <span
-                                class="hidden md:flex icon-[tabler--chevron-right] size-8 text-blue-50 cursor-pointer rtl:rotate-180"></span>
-                        </button>
-                    </div>
-                    <div class="h-14"></div>
-                @endif
-            @endforeach --}}
-
-
-
             <div class="h-12"></div>
+            <x-whatsapp-icon />
+
         </div>
     </div>
 </x-website-layout>
