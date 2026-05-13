@@ -22,4 +22,8 @@ return [
     'journey' => 'Journey',
     'from' => 'From',
     'to' => 'To',
+
+    'starts' => 'Starts',
+    'ends' => 'Ends',
+    'overview' => 'Overview',
 ];

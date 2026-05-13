@@ -1,112 +1,81 @@
+@php
+    $locale = app()->currentLocale();
+
+    $tabs = [
+        ['href' => '#key_highlights', 'icon' => 'tabler--bulb', 'label' => __('show-page.key')],
+        ['href' => '#itineraries',    'icon' => 'tabler--calendar-week', 'label' => __('show-page.itinerary')],
+        ['href' => '#costs_include',  'icon' => 'tabler--check', 'label' => __('show-page.costs_include')],
+        ['href' => '#costs_exclude',  'icon' => 'tabler--x', 'label' => __('show-page.costs_exclude')],
+        ['href' => '#essential_tips', 'icon' => 'tabler--info-circle', 'label' => __('show-page.tips')],
+        ['href' => '#gallery',        'icon' => 'tabler--photo', 'label' => __('show-page.gallery')],
+    ];
+@endphp
+
 <x-website-layout :seoData="$seoData">
-    <div class="bg-blue-100/10 font-body">
-        <div data-scrollspy-scrollable-parent="#scrollspy-scrollable-parent-1">
-            <div id="scrollspy-scrollable-parent-1 overflow-x-hidden">
+    <x-detail.hero
+        :image="$trek->coverImage"
+        :eyebrow="optional($trek->category)->name"
+        :title="$trek->title"
+        :altitude="$trek->highest_altitude"
+        :duration="$trek->duration"
+        :difficulty="$trek->trek_difficulty"
+        :season="$trek->best_time_for_trek"
+    />
 
-                {{-- topsection --}}
-                <div class="bg-blue-100/20">
-                    {{-- top section card --}}
-                    <x-show-trek.top-section-card :trek="$trek" />
-                    {{-- end-section-card --}}
+    <x-breadcrumb :breadcrumbs="[
+        ['name' => 'Home', 'url' => url('/' . $locale . '/home')],
+        ['name' => __('footer.treks'), 'url' => url('/' . $locale . '/treks')],
+        ['name' => $trek->title],
+    ]" />
 
+    <x-detail.tab-nav targetId="scrollspy-1" :items="$tabs" />
 
-                    <x-breadcrumb :breadcrumbs="[
-                        [
-                            'name' => 'Home',
-                            'url' => url('/' . app()->currentLocale() . '/home'),
-                        ],
-                        [
-                            'name' => 'Treks',
-                            'url' => url('/' . app()->currentLocale() . '/treks'),
-                        ],
-                        [
-                            'name' => $trek->title,
-                        ],
-                    ]" />
+    <main id="scrollspy-1" class="bg-canvas">
+        <div class="mx-auto max-w-7xl px-6 py-14 lg:py-20 lg:px-12">
+            <div class="grid grid-cols-1 gap-10 xl:grid-cols-3 xl:gap-12">
 
-                    <div class="xl:mx-32 mx-4 text-left">
-                        {{-- description --}}
-                        <x-show-trek.description :trek="$trek" />
-                        {{-- end description --}}
-                        <div class="h-4  "></div>
+                {{-- Main content (2/3) --}}
+                <div class="xl:col-span-2 space-y-16">
+                    {{-- Overview / description --}}
+                    <section>
+                        <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-ink mb-5">
+                            {{ __('show-page.overview') }}
+                        </h2>
+                        <article id="trek-description-{{ $trek->id }}"
+                                 class="prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans">
+                            {!! $trek->description !!}
+                        </article>
+                        <x-read-more :componentId="'trek-description-' . $trek->id" />
+                    </section>
 
-                    </div>
-
-                    <div class="h-12 "></div>
-
+                    <x-show-trek.scroll-spy-body.key-highlight :trek="$trek" />
+                    <x-show-trek.scroll-spy-body.itinerary :trek="$trek" />
+                    <x-show-trek.scroll-spy-body.cost-info :trek="$trek" />
+                    <x-show-trek.scroll-spy-body.essential-tip :trek="$trek" />
+                    <x-show-trek.gallery :trek="$trek" />
                 </div>
 
-                {{-- end-top-section --}}
-
-
-                {{-- mobile-booking-section --}}
-
-                <x-booking.mobile-booking-section :bookingFor="$trek" />
-
-
-
-                {{-- stat-mobile --}}
-                <x-show-trek.mobile-stat :trek="$trek" />
-                {{-- end-stat-section --}}
-
-
-
-                {{-- scrollspy navigation --}}
-                <x-show-trek.scroll-spy-navigation />
-                {{-- end scrollspy navigation --}}
-
-
-
-                {{-- scrollspy body --}}
-                <div class="bg-transparent">
-                    <div class="mx-4 xl:mx-32 gap-2 max-w-full ">
-                        <main class="xl:grid grid-cols-3  gap-6">
-                            <div class="xl:col-span-2 ">
-                                {{-- key_highlights --}}
-                                <x-show-trek.scroll-spy-body.key-highlight :trek="$trek" />
-                                {{-- end_key_highlights --}}
-
-
-
-                                {{-- itineraries --}}
-                                <x-show-trek.scroll-spy-body.itinerary :trek="$trek" />
-
-                                {{-- cost-info --}}
-                                <x-show-trek.scroll-spy-body.cost-info :trek="$trek" />
-
-                                {{-- essential_tips --}}
-                                <x-show-trek.scroll-spy-body.essential-tip :trek="$trek" />
-
-                                {{-- gallery --}}
-                                <x-show-trek.gallery :trek="$trek" />
-
-                                {{-- destinations --}}
-                                {{-- <x-show-trek.scroll-spy-body.destination :trek="$trek" /> --}}
-
-                                {{-- recommendation --}}
-                                <div class="h-10"></div>
-                            </div>
-
-                            <aside class=" ">
-                                <div class="h-8"></div>
-                                <div class="sticky top-20 hidden xl:block">
-                                    {{-- stat --}}
-                                    <x-show-trek.stat-section :trek="$trek" />
-
-                                    {{-- booking-section --}}
-                                    <x-booking.booking-section :bookingFor="$trek" />
-
-                                    <div class="h-10"></div>
-                                </div>
-                            </aside>
-                        </main>
-                        <x-show-recommendation :recommendFor="$trek" />
-
+                {{-- Sticky sidebar (1/3) --}}
+                <aside class="xl:col-span-1">
+                    <div class="xl:sticky xl:top-24">
+                        <x-detail.sidebar
+                            :bookingFor="$trek"
+                            :altitude="$trek->highest_altitude"
+                            :duration="$trek->duration"
+                            :difficulty="$trek->trek_difficulty"
+                            :startPoint="$trek->starting_point"
+                            :endPoint="$trek->ending_point"
+                            :season="$trek->best_time_for_trek"
+                            :grade="$trek->grade"
+                        />
                     </div>
-                </div>
-                {{-- scrollspy-body -end --}}
+                </aside>
+            </div>
 
+            {{-- Recommendations --}}
+            <div class="mt-20">
+                <x-show-recommendation :recommendFor="$trek" />
             </div>
         </div>
-    </div>
+    </main>
 </x-website-layout>

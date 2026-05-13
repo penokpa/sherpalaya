@@ -1,106 +1,80 @@
+@php
+    $locale = app()->currentLocale();
+
+    $tabs = [
+        ['href' => '#key_highlights', 'icon' => 'tabler--bulb', 'label' => __('show-page.key')],
+        ['href' => '#itineraries',    'icon' => 'tabler--calendar-week', 'label' => __('show-page.itinerary')],
+        ['href' => '#costs_include',  'icon' => 'tabler--check', 'label' => __('show-page.costs_include')],
+        ['href' => '#costs_exclude',  'icon' => 'tabler--x', 'label' => __('show-page.costs_exclude')],
+        ['href' => '#essential_tips', 'icon' => 'tabler--info-circle', 'label' => __('show-page.tips')],
+        ['href' => '#gallery',        'icon' => 'tabler--photo', 'label' => __('show-page.gallery')],
+    ];
+@endphp
+
 <x-website-layout :seoData="$seoData">
-    <div class="bg-blue-100/10 font-body">
-        <div data-scrollspy-scrollable-parent="#scrollspy-scrollable-parent-1" class="">
-            <div id="scrollspy-scrollable-parent-1" class="">
-                {{-- topsection --}}
-                <div class="bg-blue-100/20">
-                    {{-- top section card --}}
+    <x-detail.hero
+        :image="$expedition->coverImage"
+        fallback="photos/trek1.JPG"
+        :eyebrow="optional($expedition->category)->name"
+        :title="$expedition->title"
+        :altitude="$expedition->highest_altitude"
+        :duration="$expedition->duration"
+        :difficulty="$expedition->expedition_difficulty"
+        :season="$expedition->best_time_for_expedition"
+    />
 
-                    <x-show-expedition.expedition-top-section-card :expedition="$expedition" />
+    <x-breadcrumb :breadcrumbs="[
+        ['name' => 'Home', 'url' => url('/' . $locale . '/home')],
+        ['name' => __('footer.expeditions'), 'url' => url('/' . $locale . '/expeditions')],
+        ['name' => $expedition->title],
+    ]" />
 
-                    {{-- end-section-card --}}
+    <x-detail.tab-nav targetId="scrollspy-1" :items="$tabs" />
 
+    <main id="scrollspy-1" class="bg-canvas">
+        <div class="mx-auto max-w-7xl px-6 py-14 lg:py-20 lg:px-12">
+            <div class="grid grid-cols-1 gap-10 xl:grid-cols-3 xl:gap-12">
 
-                    <x-breadcrumb :breadcrumbs="[
-                        [
-                            'name' => 'Home',
-                            'url' => url('/' . app()->currentLocale() . '/home'),
-                        ],
-                        [
-                            'name' => 'Expeditions',
-                            'url' => url('/' . app()->currentLocale() . '/expeditions'),
-                        ],
-                        [
-                            'name' => $expedition->title,
-                        ],
-                    ]" />
+                <div class="xl:col-span-2 space-y-16">
+                    <section>
+                        <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-ink mb-5">
+                            {{ __('show-page.overview') }}
+                        </h2>
+                        <article id="expedition-description-{{ $expedition->id }}"
+                                 class="prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans">
+                            {!! $expedition->description !!}
+                        </article>
+                        <x-read-more :componentId="'expedition-description-' . $expedition->id" />
+                    </section>
 
-                    <div class="xl:mx-32 mx-4 text-left">
-
-                        {{-- description --}}
-                        <x-show-expedition.expedition-description :expedition="$expedition" />
-                        {{-- end description --}}
-
-                        <div class="h-4  "></div>
-
-                    </div>
-
-                    <div class="h-12 "></div>
-
+                    <x-show-expedition.scroll-spy-body.expedition-key-highlight :expedition="$expedition" />
+                    <x-show-expedition.scroll-spy-body.expedition-itinerary :expedition="$expedition" />
+                    <x-show-expedition.scroll-spy-body.expedition-cost-info :expedition="$expedition" />
+                    <x-show-expedition.scroll-spy-body.expedition-essential-tip :expedition="$expedition" />
+                    <x-show-expedition.scroll-spy-body.expedition-gallery :expedition="$expedition" />
                 </div>
-                {{-- mobile-booking-section --}}
-                <x-booking.mobile-booking-section :bookingFor="$expedition" />
 
-                {{-- stat-mobile --}}
-
-                <x-show-expedition.expedition-mobile-stat :expedition="$expedition" />
-                {{-- end-stat-section --}}
-
-                {{-- scrollspy navigation --}}
-                <x-show-expedition.expedition-scroll-spy-navigation :expedition="$expedition" />
-
-
-                {{-- scrollspy body --}}
-
-                <div class="bg-transparent">
-                    <div class=" mx-4 xl:mx-32 gap-2 max-w-full ">
-                        <main class="xl:grid grid-cols-3  gap-6">
-                            <div class="xl:col-span-2 ">
-                                {{-- key_highlights --}}
-                                <x-show-expedition.scroll-spy-body.expedition-key-highlight :expedition="$expedition" />
-                                {{-- end_key_highlights --}}
-
-
-
-                                {{-- itineraries --}}
-                                <x-show-expedition.scroll-spy-body.expedition-itinerary :expedition="$expedition" />
-
-                                {{-- cost-info --}}
-                                <x-show-expedition.scroll-spy-body.expedition-cost-info :expedition="$expedition" />
-
-                                {{-- essential_tips --}}
-                                <x-show-expedition.scroll-spy-body.expedition-essential-tip :expedition="$expedition" />
-
-                                {{-- gallery --}}
-                                <x-show-expedition.scroll-spy-body.expedition-gallery :expedition="$expedition" />
-
-                                {{-- destinations --}}
-                                {{-- <x-show-expedition.scroll-spy-body.expedition-destination :expedition="$expedition" /> --}}
-
-                                <div class="h-10"></div>
-                            </div>
-
-                            <aside class=" ">
-                                <div class="h-8"></div>
-                                <div class="sticky top-20 hidden xl:block">
-                                    {{-- stat --}}
-                                    <x-show-expedition.expedition-stat-section :expedition="$expedition" />
-
-                                    {{-- booking-section --}}
-                                    <x-booking.booking-section :bookingFor="$expedition" />
-
-                                    <div class="h-10"></div>
-                                </div>
-                            </aside>
-                        </main>
-                        <x-show-recommendation :recommendFor="$expedition" />
-                        
-
+                <aside class="xl:col-span-1">
+                    <div class="xl:sticky xl:top-24">
+                        <x-detail.sidebar
+                            :bookingFor="$expedition"
+                            :altitude="$expedition->highest_altitude"
+                            :duration="$expedition->duration"
+                            :difficulty="$expedition->expedition_difficulty"
+                            :startPoint="$expedition->starting_point"
+                            :endPoint="$expedition->ending_point"
+                            :season="$expedition->best_time_for_expedition"
+                            :grade="$expedition->grade"
+                            :showBooking="false"
+                            :primaryCta="__('listing.inquire')"
+                        />
                     </div>
-                </div>
-                {{-- scrollspy-body -end --}}
+                </aside>
+            </div>
+
+            <div class="mt-20">
+                <x-show-recommendation :recommendFor="$expedition" />
             </div>
         </div>
-    </div>
-
+    </main>
 </x-website-layout>

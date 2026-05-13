@@ -25,4 +25,8 @@ return [
     'journey' => 'Voyage',
     'from' => 'De',
     'to' => 'À',
+
+    'starts' => 'Départ',
+    'ends' => 'Arrivée',
+    'overview' => 'Aperçu',
 ];
