@@ -2,8 +2,8 @@
 
 namespace App\View\Components;
 
+use App\Models\Media;
 use App\Settings\LandingPageSetting;
-use Awcodes\Curator\Models\Media;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
