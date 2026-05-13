@@ -1,121 +1,163 @@
-<div style="background-image: url('{{ asset('/photos/background1.jpg') }}');"
-    class="bg-cover bg-center w-full  object-top font-body">
-    <div class="backdrop-blur-md">
-        <div class="mx-4 xl:mx-32">
-            <div class="h-10"></div>
-            <footer class="footer">
-                <div class="gap-6">
-                    <a class="link text-base-content link-neutral  no-underline"
-                        href="/{{ app()->currentLocale() }}/home">
-                        <div class="flex items-center gap-2  text-base uppercase text-blue-100  text-wrap">
-                            <x-curator-glider alt="Sherpalaya Logo" class="w-7" :media="$companySetting->company_logo_id" fallback="default"
-                                loading="lazy" />
-                            <span
-                                class="font-card font-extrabold ">{{ app()->currentLocale() == 'fr' ? $companySetting->company_name_fr : $companySetting->company_name_en }}</span>
-                        </div>
-                    </a>
-                    <div class="flex items-center gap-4 text-base capitalize font-normal text-blue-100 text-wrap ">
-                        <span class="icon-[iconoir--map-pin] size-6 text-blue-100"></span>
-                        <span>{{ app()->currentLocale() == 'fr' ? $companySetting->company_address_fr : $companySetting->company_address_en }}</span>
-                    </div>
-                    <a class="link text-base-content link-neutral text-base font-semibold no-underline"
-                        href="mailto:{{ app()->currentLocale() == 'fr' ? $companySetting->company_email_fr : $companySetting->company_email_en }}">
-                        <div
-                            class="flex items-center gap-4 text-base lowercase font-normal text-blue-100 hover:underline">
-                            <span class="icon-[iconoir--mail] size-6"></span>
-                            <span>{{ app()->currentLocale() == 'fr' ? $companySetting->company_email_fr : $companySetting->company_email_en }}</span>
-                        </div>
-                    </a>
+@php
+    $locale = app()->currentLocale();
+    $companyName = $locale === 'fr' ? $companySetting->company_name_fr : $companySetting->company_name_en;
+    $companyAddress = $locale === 'fr' ? $companySetting->company_address_fr : $companySetting->company_address_en;
+    $companyEmail = $locale === 'fr' ? $companySetting->company_email_fr : $companySetting->company_email_en;
+    $companyPhone = $locale === 'fr' ? $companySetting->company_contact_number_fr : $companySetting->company_contact_number_en;
+@endphp
 
-                    <div class="flex items-center gap-4 text-base uppercase font-normal text-blue-100">
-                        <span class="icon-[iconoir--phone-income] size-6"></span>
-                        <span>{{ app()->currentLocale() == 'fr' ? $companySetting->company_contact_number_fr : $companySetting->company_contact_number_en }}</span>
-                    </div>
-                    {{-- <a class="link text-base-content link-neutral texl-lg font-semibold no-underline"> --}}
+{{-- ============ Pre-footer CTA band (terracotta) ============ --}}
+<section class="bg-terracotta text-white">
+    <div class="mx-auto max-w-7xl px-6 py-14 lg:px-12 lg:py-16">
+        <div class="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
+            <div class="max-w-2xl">
+                <p class="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] opacity-85">
+                    {{ __('footer.cta_eyebrow') }}
+                </p>
+                <h3 class="font-display text-3xl md:text-4xl font-medium leading-[1.1] tracking-tighter-display">
+                    {{ __('footer.cta_title') }}
+                </h3>
+                <p class="mt-3 text-[15px] leading-relaxed opacity-90 max-w-[55ch]">
+                    {{ __('footer.cta_desc') }}
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-3">
+                <a href="/{{ $locale }}/contact"
+                   class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-[14px] font-semibold text-terracotta transition hover:bg-canvas">
+                    Plan Your Trip
+                    <span class="icon-[tabler--arrow-right] size-4"></span>
+                </a>
+                @if (!empty(config('services.whatsapp.number')))
+                    <a href="https://wa.me/{{ config('services.whatsapp.number') }}" target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-[14px] font-semibold text-white transition hover:bg-white/10">
+                        <span class="icon-[tabler--brand-whatsapp] size-4"></span>
+                        WhatsApp
+                    </a>
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ============ Main footer ============ --}}
+<footer class="bg-forest text-canvas">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-12 lg:py-20">
+
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-10">
+
+            {{-- Brand + contact --}}
+            <div class="md:col-span-5">
+                <a href="/{{ $locale }}/home" class="inline-flex items-center gap-3 no-underline">
+                    <img src="{{ asset('photos/logo-mark-light.png') }}" alt="" aria-hidden="true" class="h-9 w-auto" />
+                    <span class="flex flex-col leading-[1.15]">
+                        <span class="font-display text-[22px] font-semibold tracking-tightish">Sherpalaya</span>
+                        <span class="mt-1 text-[9px] font-semibold uppercase tracking-[0.18em] opacity-70 whitespace-nowrap">
+                            Treks &amp; Expedition
+                        </span>
+                    </span>
+                </a>
+                <p class="mt-5 text-[14px] leading-relaxed text-canvas/75 max-w-[42ch]">
+                    {{ __('footer.tagline') }}
+                </p>
+
+                <ul class="mt-8 space-y-3 text-[14px] text-canvas/85">
+                    @if ($companyAddress)
+                        <li class="flex items-start gap-3">
+                            <span class="icon-[tabler--map-pin] size-4 mt-1 text-terracotta-100 shrink-0"></span>
+                            <span>{{ $companyAddress }}</span>
+                        </li>
+                    @endif
+                    @if ($companyEmail)
+                        <li class="flex items-start gap-3">
+                            <span class="icon-[tabler--mail] size-4 mt-1 text-terracotta-100 shrink-0"></span>
+                            <a href="mailto:{{ $companyEmail }}" class="hover:text-terracotta-100 transition">{{ $companyEmail }}</a>
+                        </li>
+                    @endif
+                    @if ($companyPhone)
+                        <li class="flex items-start gap-3">
+                            <span class="icon-[tabler--phone] size-4 mt-1 text-terracotta-100 shrink-0"></span>
+                            <a href="tel:{{ preg_replace('/\s+/', '', $companyPhone) }}" class="hover:text-terracotta-100 transition">{{ $companyPhone }}</a>
+                        </li>
+                    @endif
+                </ul>
+            </div>
+
+            {{-- Adventures --}}
+            <nav class="md:col-span-2">
+                <h6 class="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-terracotta-100">
+                    {{ __('footer.adventures') }}
+                </h6>
+                <ul class="space-y-3 text-[14px]">
+                    <li><a href="/{{ $locale }}/expeditions" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.expeditions') }}</a></li>
+                    <li><a href="/{{ $locale }}/treks" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.treks') }}</a></li>
+                    <li><a href="/{{ $locale }}/tours" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.activities') }}</a></li>
+                </ul>
+            </nav>
+
+            {{-- Company --}}
+            <nav class="md:col-span-2">
+                <h6 class="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-terracotta-100">
+                    {{ __('footer.company') }}
+                </h6>
+                <ul class="space-y-3 text-[14px]">
+                    <li><a href="/{{ $locale }}/about_us" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.about-us') }}</a></li>
+                    <li><a href="/{{ $locale }}/our-team" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.our-team') }}</a></li>
+                    <li><a href="/{{ $locale }}/contact" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.contact') }}</a></li>
+                </ul>
+            </nav>
+
+            {{-- Legal --}}
+            <nav class="md:col-span-3">
+                <h6 class="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-terracotta-100">
+                    {{ __('footer.legal') }}
+                </h6>
+                <ul class="space-y-3 text-[14px]">
+                    <li><a href="/{{ $locale }}/terms-and-conditions" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.terms-of-use') }}</a></li>
+                    <li><a href="/{{ $locale }}/privacy-policy" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.privacy-policy') }}</a></li>
+                    <li><a href="/{{ $locale }}/cookie-policy" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.cookie-policy') }}</a></li>
+                </ul>
+
+                {{-- Socials --}}
+                <h6 class="mt-10 mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-terracotta-100">
+                    {{ __('footer.follow-us') }}
+                </h6>
+                <div class="flex flex-wrap gap-2">
+                    @if (!empty($companySetting->facebook_url))
+                        <a href="{{ $companySetting->facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook"
+                           class="inline-flex size-9 items-center justify-center rounded-full border border-canvas/20 text-canvas/85 hover:border-canvas hover:text-canvas transition">
+                            <span class="icon-[tabler--brand-facebook] size-4"></span>
+                        </a>
+                    @endif
+                    @if (!empty($companySetting->instagram_url))
+                        <a href="{{ $companySetting->instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram"
+                           class="inline-flex size-9 items-center justify-center rounded-full border border-canvas/20 text-canvas/85 hover:border-canvas hover:text-canvas transition">
+                            <span class="icon-[tabler--brand-instagram] size-4"></span>
+                        </a>
+                    @endif
+                    @if (!empty($companySetting->youtube_url))
+                        <a href="{{ $companySetting->youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube"
+                           class="inline-flex size-9 items-center justify-center rounded-full border border-canvas/20 text-canvas/85 hover:border-canvas hover:text-canvas transition">
+                            <span class="icon-[tabler--brand-youtube] size-4"></span>
+                        </a>
+                    @endif
+                    @if (!empty($companySetting->tiktok_url))
+                        <a href="{{ $companySetting->tiktok_url }}" target="_blank" rel="noopener" aria-label="TikTok"
+                           class="inline-flex size-9 items-center justify-center rounded-full border border-canvas/20 text-canvas/85 hover:border-canvas hover:text-canvas transition">
+                            <span class="icon-[tabler--brand-tiktok] size-4"></span>
+                        </a>
+                    @endif
                 </div>
-                <nav class="text-base-content capitalize">
-                    <h6 class="footer-title font-bold text-blue-50 uppercase">
-                        {{ __('footer.adventures') }}
-                    </h6>
-                    <a href="/{{ app()->currentLocale() }}/expeditions"
-                        class="link link-hover text-blue-100 capitalize">
-                        {{ __('footer.expeditions') }}</a>
-                    {{-- <a href="/{{ app()->currentLocale() }}/services" class="link link-hover text-blue-100">
-                        {{ __('footer.services') }}</a> --}}
-                    <a href="/{{ app()->currentLocale() }}/treks" class="link link-hover text-blue-100">
-                        {{ __('footer.treks') }}</a>
-                    <a href="/{{ app()->currentLocale() }}/tours" class="link link-hover text-blue-100">
-                        {{ __('footer.activities') }}</a>
-                </nav>
-                <nav class="text-base-content capitalize">
-                    <h6 class="footer-title font-bold text-blue-50 uppercase">{{ __('footer.company') }}</h6>
-                    <a href="/{{ app()->currentLocale() }}/about_us"
-                        class="link link-hover text-blue-100">{{ __('footer.about-us') }}</a>
-                    <a href="/{{ app()->currentLocale() }}/our-team"
-                        class="link link-hover text-blue-100">{{ __('footer.our-team') }}</a>
-                    <a href="/{{ app()->currentLocale() }}/contact"
-                        class="link link-hover text-blue-100">{{ __('footer.contact') }}</a>
-                    {{-- <a href="/" class="link link-hover text-blue-100">Certificates</a> --}}
-
-                </nav>
-                <nav class="text-base-content">
-                    <h6 class="footer-title font-bold text-blue-50 uppercase">{{ __('footer.legal') }}</h6>
-                    <a href="/{{ app()->currentLocale() }}/terms-and-conditions"
-                        class="link link-hover text-blue-100">{{ __('footer.terms-of-use') }}</a>
-                    <a href="/{{ app()->currentLocale() }}/privacy-policy"
-                        class="link link-hover text-blue-100">{{ __('footer.privacy-policy') }}</a>
-                    <a href="/{{ app()->currentLocale() }}/cookie-policy"
-                        class="link link-hover text-blue-100">{{ __('footer.cookie-policy') }}</a>
-                </nav>
-                <nav class="text-base-content">
-                    <div class="flex items-center gap- text-base uppercase font-semibold text-blue-200  text-wrap">
-                        <span>{{ __('footer.follow-us') }}</span>
-                    </div>
-                    <div class="flex flex-col gap-4 text-blue-300 justify-center items-center">
-                        <div class="flex gap-4 justify-between">
-                            <a href="{{ $companySetting->facebook_url }}" target="_blank" class="link link-animated"
-                                aria-label="Facebook Link">
-                                <span class="icon-[tabler--brand-facebook] size-7 text-blue-500"></span>
-                            </a>
-                            <a href="{{ $companySetting->instagram_url }}" target="_blank" class="link link-animated"
-                                aria-label="Instagram Link">
-                                <span class="icon-[tabler--brand-instagram] size-7 text-red-300"></span>
-                            </a>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="{{ $companySetting->youtube_url }}" target="_blank" class="link link-animated"
-                                aria-label="Youtube Link">
-                                <span class="icon-[tabler--brand-youtube] size-7 text-red-500"></span>
-                            </a>
-                            <a href="{{ $companySetting->tiktok_url }}" target="_blank" class="link link-animated"
-                                aria-label="Tiktok Link">
-                                <span class="icon-[tabler--brand-tiktok] size-7 text-white/90"></span>
-                            </a>
-                        </div>
-                    </div>
-                    {{-- <div class="gap-4 hover:underline"> --}}
-                    {{-- <a href="https://wa.me/{{ config('services.whatsapp.number') }}">
-                        <div
-                            class="flex items-center gap-2 text-base uppercase font-semibold text-green-300  text-wrap">
-                            <span>{{ __('footer.reach-us') }}</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-base Capitalize font-normal text-green-300 mt-2">
-                            <span class="icon-[tabler--brand-whatsapp] size-7"></span>
-                            WhatsApp
-                        </div>
-                    </a> --}}
-                    {{-- </div> --}}
-                </nav>
-            </footer>
-            <footer class="footer footer-center bg-transparent rounded ">
-                <div class="h-2"></div>
-                <aside class="text-blue-300 xl:mb-8">
-                    <p>{{ __('footer.copyright') }}</p>
-                </aside>
-                <div class="h-10 xl:hidden"></div>
-
-            </footer>
+            </nav>
         </div>
 
+        {{-- Bottom strip --}}
+        <div class="mt-14 pt-8 border-t border-canvas/15 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p class="text-[13px] text-canvas/65">
+                {{ __('footer.copyright') }}
+            </p>
+            <p class="text-[12px] text-canvas/50 uppercase tracking-[0.18em]">
+                Bafal-13 · Kathmandu · Nepal
+            </p>
+        </div>
     </div>
-</div>
+</footer>
