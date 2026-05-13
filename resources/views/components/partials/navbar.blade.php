@@ -14,6 +14,15 @@
     #navbar .mark-dark { display: inline-block; }
     #navbar.top-navbar .mark-light { display: inline-block; }
     #navbar.top-navbar .mark-dark { display: none; }
+
+    /* White mark over photo: drop-shadow keeps figures legible on bright skies */
+    #navbar.top-navbar .mark-light {
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+    }
+    /* Same protection on the wordmark when over a photo */
+    #navbar.top-navbar .brand-wordmark {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
 </style>
 
 <header id="navbar"
@@ -28,11 +37,11 @@
                     <img src="{{ asset('photos/logo-mark-light.png') }}" alt="" aria-hidden="true" class="mark-light h-9 lg:h-10 w-auto" />
                     <img src="{{ asset('photos/logo-mark.png') }}" alt="" aria-hidden="true" class="mark-dark h-9 lg:h-10 w-auto" />
                     {{-- Wordmark --}}
-                    <span class="flex flex-col leading-[1.05]">
+                    <span class="brand-wordmark flex flex-col leading-[1.05]">
                         <span class="font-display text-[22px] lg:text-[26px] font-semibold tracking-tightish">
                             Sherpalaya
                         </span>
-                        <span class="text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.18em] opacity-65 whitespace-nowrap">
+                        <span class="text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.18em] opacity-80 whitespace-nowrap">
                             Treks &amp; Expedition
                         </span>
                     </span>
