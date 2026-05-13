@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Redirect to home page
 Route::redirect('/', '/en/home');
 
+// Design preview (dev only — remove or gate when going to production)
+Route::view('/style-preview', 'style-preview')->name('style.preview');
+
 Route::get('/change-locale/{locale}', [WebsiteController::class, 'changeLocale'])
     ->name('website.change_locale')
     ->middleware('lscache:no-cache');
