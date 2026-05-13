@@ -8,6 +8,12 @@
         background: rgba(255, 255, 255, 1) !important;
         color: black !important;
     }
+
+    /* Swap logo based on navbar state so it blends with both transparent and white modes */
+    #navbar .logo-light { display: none; }
+    #navbar .logo-dark { display: inline-block; }
+    #navbar.top-navbar .logo-light { display: inline-block; }
+    #navbar.top-navbar .logo-dark { display: none; }
 </style>
 
 <header id="navbar"
@@ -17,7 +23,8 @@
             <div class="flex items-center justify-between xl:ml-32 mx-4 ">
                 <a class="link text-base-content link-neutral text-lg font-semibold no-underline "
                     href="/{{ app()->currentLocale() }}/home">
-                    <img loading="lazy" decoding="async" src="{{ asset('photos/logo.png') }}" alt="Sherpalaya Logo" class=" w-12 lg:w-24">
+                    <img src="{{ asset('photos/logo-white.png') }}" alt="Sherpalaya Logo" class="logo-light w-12 lg:w-20" />
+                    <img src="{{ asset('photos/logo-transparent.png') }}" alt="Sherpalaya Logo" class="logo-dark w-12 lg:w-20" />
                 </a>
                 <div class="lg:hidden">
                     <div class="dropdown relative inline-flex [--placement:bottom-end] px-2 ">
