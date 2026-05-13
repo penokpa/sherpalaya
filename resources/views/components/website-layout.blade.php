@@ -8,6 +8,11 @@
 
     {!! seo(isset($seoData) ? $seoData : null) !!}
 
+    {{-- Design system fonts: Fraunces (display) + Inter (body) --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     @vite('resources/css/app.css')
     @livewireStyles
 
@@ -15,11 +20,7 @@
 
 </head>
 
-<body class="bg-white font-mono">
-
-    <div class="h-screen w-screen overflow-hidden flex flex-col justify-center items-center" id="page-loading-container">
-        <span class="loading loading-spinner loading-lg"></span>
-    </div>
+<body class="bg-canvas font-sans text-ink antialiased">
 
     {{-- top --}}
     <x-partials.navbar />
@@ -46,19 +47,6 @@
             });
         </script>
     @endif
-
-    <script>
-        let navbarComponent = document.querySelector("#navbar");
-        let pageLoadingContainer = document.querySelector("#page-loading-container");
-        navbarComponent.classList.add('hidden');
-        document.addEventListener("DOMContentLoaded", function() {
-            navbarComponent.classList.remove('hidden');
-
-            pageLoadingContainer.classList.remove('h-screen');
-            pageLoadingContainer.classList.add('h-0');
-            pageLoadingContainer.classList.add('hidden');
-        });
-    </script>
 
     @stack('scripts')
     @stack('modals')

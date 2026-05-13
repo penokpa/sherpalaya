@@ -445,20 +445,21 @@
 
 
 
-                        <li class=" hover:text-warning rounded-lg text-lg "><a
-                                href="/{{ app()->currentLocale() }}/contact" @class([
-                                    'text-warning' => request()->route()->getName() == 'website.contact',
-                                ])>
-                                {{ __('navbar.contact') }}
-                            </a>
-                        </li>
-
                         {{-- Search --}}
                         <li class=" hover:text-warning rounded-lg text-base ">
                             <button type="button" class="" aria-haspopup="dialog" aria-expanded="false"
                                 aria-controls="middle-center-modal" data-overlay="#middle-center-modal">
                                 <span class="icon-[tabler--search] size-5"></span>
                             </button>
+                        </li>
+
+                        {{-- Plan Your Trip CTA --}}
+                        <li class="ml-2">
+                            <a href="/{{ app()->currentLocale() }}/contact"
+                               class="inline-flex items-center gap-1.5 rounded-full bg-terracotta px-5 py-2.5 text-[14px] font-medium text-white no-underline transition hover:bg-terracotta-hover hover:text-white">
+                                {{ __('home.cta_plan') }}
+                                <span class="icon-[tabler--arrow-right] size-4"></span>
+                            </a>
                         </li>
 
                         {{-- Language Select --}}
