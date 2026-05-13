@@ -9,11 +9,11 @@
         color: black !important;
     }
 
-    /* Swap logo based on navbar state so it blends with both transparent and white modes */
-    #navbar .logo-light { display: none; }
-    #navbar .logo-dark { display: inline-block; }
-    #navbar.top-navbar .logo-light { display: inline-block; }
-    #navbar.top-navbar .logo-dark { display: none; }
+    /* Swap mark based on navbar state so it blends with both transparent and white modes */
+    #navbar .mark-light { display: none; }
+    #navbar .mark-dark { display: inline-block; }
+    #navbar.top-navbar .mark-light { display: inline-block; }
+    #navbar.top-navbar .mark-dark { display: none; }
 </style>
 
 <header id="navbar"
@@ -21,9 +21,21 @@
     <nav class="w-full" aria-label="Global">
         <div class=" relative lg:flex lg:items-center ">
             <div class="flex items-center justify-between xl:ml-32 mx-4 ">
-                <a class="inline-flex items-center no-underline" href="/{{ app()->currentLocale() }}/home" aria-label="Sherpalaya Treks &amp; Expedition — Home">
-                    <img src="{{ asset('photos/logo-white.png') }}" alt="Sherpalaya Treks &amp; Expedition" class="logo-light h-14 lg:h-16 w-auto" />
-                    <img src="{{ asset('photos/logo-transparent.png') }}" alt="Sherpalaya Treks &amp; Expedition" class="logo-dark h-14 lg:h-16 w-auto" />
+                <a class="inline-flex items-center gap-3 no-underline whitespace-nowrap"
+                   href="/{{ app()->currentLocale() }}/home"
+                   aria-label="Sherpalaya Treks &amp; Expedition — Home">
+                    {{-- Icon mark — silhouettes only, swaps per navbar state --}}
+                    <img src="{{ asset('photos/logo-mark-light.png') }}" alt="" aria-hidden="true" class="mark-light h-9 lg:h-10 w-auto" />
+                    <img src="{{ asset('photos/logo-mark.png') }}" alt="" aria-hidden="true" class="mark-dark h-9 lg:h-10 w-auto" />
+                    {{-- Wordmark --}}
+                    <span class="flex flex-col leading-[1.05]">
+                        <span class="font-display text-[22px] lg:text-[26px] font-semibold tracking-tightish">
+                            Sherpalaya
+                        </span>
+                        <span class="text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.18em] opacity-65 whitespace-nowrap">
+                            Treks &amp; Expedition
+                        </span>
+                    </span>
                 </a>
                 <div class="lg:hidden">
                     <div class="dropdown relative inline-flex [--placement:bottom-end] px-2 ">
