@@ -21,10 +21,13 @@
     <nav class="w-full" aria-label="Global">
         <div class=" relative lg:flex lg:items-center ">
             <div class="flex items-center justify-between xl:ml-32 mx-4 ">
-                <a class="link text-base-content link-neutral text-lg font-semibold no-underline "
+                <a class="flex items-center gap-3 no-underline"
                     href="/{{ app()->currentLocale() }}/home">
-                    <img src="{{ asset('photos/logo-white.png') }}" alt="Sherpalaya Logo" class="logo-light w-12 lg:w-20" />
-                    <img src="{{ asset('photos/logo-transparent.png') }}" alt="Sherpalaya Logo" class="logo-dark w-12 lg:w-20" />
+                    <img src="{{ asset('photos/logo-white.png') }}" alt="" aria-hidden="true" class="logo-light w-14 lg:w-16" />
+                    <img src="{{ asset('photos/logo-transparent.png') }}" alt="" aria-hidden="true" class="logo-dark w-14 lg:w-16" />
+                    <span class="font-display text-2xl lg:text-[28px] font-semibold tracking-tightish leading-none">
+                        Sherpalaya
+                    </span>
                 </a>
                 <div class="lg:hidden">
                     <div class="dropdown relative inline-flex [--placement:bottom-end] px-2 ">

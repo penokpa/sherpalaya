@@ -23,7 +23,7 @@ return [
     'why_4_title' => 'Du teahouse au sommet',
     'why_4_desc' => 'Du Poon Hill de 7 jours aux expéditions Everest de 60 jours — nous couvrons tout le spectre.',
 
-    'regions_eyebrow' => 'Explorez par région',
+    'regions_eyebrow' => 'Choisissez votre aventure',
     'regions_title' => 'Des villages de vallée aux sommets de 8000m.',
     'regions_treks' => 'Treks',
     'regions_treks_desc' => 'Marches en teahouse de plusieurs jours pour tous les niveaux.',

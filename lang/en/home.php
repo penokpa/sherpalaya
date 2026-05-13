@@ -23,7 +23,7 @@ return [
     'why_4_title' => 'Tea-house to summit',
     'why_4_desc' => 'From a 7-day Poon Hill stroll to 60-day Everest expeditions — we run the full spectrum.',
 
-    'regions_eyebrow' => 'Explore by region',
+    'regions_eyebrow' => 'Choose your adventure',
     'regions_title' => 'From valley villages to 8000m summits.',
     'regions_treks' => 'Treks',
     'regions_treks_desc' => 'Multi-day teahouse walks for every fitness level.',
