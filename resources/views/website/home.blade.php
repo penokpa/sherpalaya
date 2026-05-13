@@ -9,6 +9,8 @@
 
     <x-home-page.why-sherpalaya />
 
+    <x-home-page.founders />
+
     <x-home-page.region-tiles />
 
     <x-review />
