@@ -21,12 +21,16 @@
     <nav class="w-full" aria-label="Global">
         <div class=" relative lg:flex lg:items-center ">
             <div class="flex items-center justify-between xl:ml-32 mx-4 ">
-                <a class="flex items-center gap-3 no-underline"
-                    href="/{{ app()->currentLocale() }}/home">
-                    <img src="{{ asset('photos/logo-white.png') }}" alt="" aria-hidden="true" class="logo-light w-14 lg:w-16" />
-                    <img src="{{ asset('photos/logo-transparent.png') }}" alt="" aria-hidden="true" class="logo-dark w-14 lg:w-16" />
-                    <span class="font-display text-2xl lg:text-[28px] font-semibold tracking-tightish leading-none">
-                        Sherpalaya
+                <a class="flex items-center gap-3 no-underline" href="/{{ app()->currentLocale() }}/home">
+                    <img src="{{ asset('photos/logo-white.png') }}" alt="" aria-hidden="true" class="logo-light w-11 lg:w-12" />
+                    <img src="{{ asset('photos/logo-transparent.png') }}" alt="" aria-hidden="true" class="logo-dark w-11 lg:w-12" />
+                    <span class="flex flex-col leading-none">
+                        <span class="font-display text-xl lg:text-2xl font-semibold tracking-tightish">
+                            Sherpalaya
+                        </span>
+                        <span class="mt-1 text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.22em] opacity-70">
+                            Treks &amp; Expedition
+                        </span>
                     </span>
                 </a>
                 <div class="lg:hidden">
