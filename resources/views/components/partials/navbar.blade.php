@@ -37,11 +37,11 @@
                     <img src="{{ asset('photos/logo-mark-light.png') }}" alt="" aria-hidden="true" class="mark-light h-9 lg:h-10 w-auto" />
                     <img src="{{ asset('photos/logo-mark.png') }}" alt="" aria-hidden="true" class="mark-dark h-9 lg:h-10 w-auto" />
                     {{-- Wordmark --}}
-                    <span class="brand-wordmark flex flex-col leading-[1.05]">
-                        <span class="font-display text-[22px] lg:text-[26px] font-semibold tracking-tightish">
+                    <span class="brand-wordmark flex flex-col">
+                        <span class="font-display text-[22px] lg:text-[26px] font-semibold tracking-tightish leading-[1.15]">
                             Sherpalaya
                         </span>
-                        <span class="text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.18em] opacity-80 whitespace-nowrap">
+                        <span class="mt-1 text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.18em] opacity-80 whitespace-nowrap leading-none">
                             Treks &amp; Expedition
                         </span>
                     </span>
