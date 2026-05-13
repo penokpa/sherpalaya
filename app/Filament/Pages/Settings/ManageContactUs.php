@@ -36,6 +36,7 @@ class ManageContactUs extends SettingsPage
                         CuratorPicker::make('cover_image_id')
                                             ->label('Contact Page Cover Image')
                                             ->columnSpanFull()
+                                            ->coverImage()
                                             ->required(),
                         Section::make('English')
                         ->columnSpan(1)

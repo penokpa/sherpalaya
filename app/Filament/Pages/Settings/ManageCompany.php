@@ -36,7 +36,8 @@ class ManageCompany extends SettingsPage
                         CuratorPicker::make('company_logo_id')
                         ->required()
                         ->columnSpan(1)
-                        ->label('Logo'),
+                        ->label('Logo')
+                        ->logoImage(),
                     Section::make('Social Media')
                         ->columnSpan(1)
                         ->schema([

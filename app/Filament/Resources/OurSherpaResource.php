@@ -87,6 +87,7 @@ class OurSherpaResource extends Resource
                                     ->color('primary')
                                     ->label('Profile Picture')
                                     ->hint('for profile page')
+                                    ->portraitImage()
                                     ->relationship('profilePicture', 'id'),
 
                             ]),

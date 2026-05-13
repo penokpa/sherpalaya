@@ -111,10 +111,12 @@ class ServiceResource extends Resource
                             ->color('primary')
                             ->label('Cover Image')
                             ->hint('for service page')
+                            ->coverImage()
                             ->relationship('coverImage', 'id'),
                         CuratorPicker::make('images')
-                            ->multiple()
-                            ->label('Images')
+                                            ->multiple()
+                                            ->galleryImage()
+                                            ->label('Images')
                             ->hint('any other relevant images')
                             ->relationship('images', 'id'),
                         ]),

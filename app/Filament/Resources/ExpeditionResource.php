@@ -114,6 +114,7 @@ class ExpeditionResource extends Resource
                                                 ->color('primary')
                                                 ->label('Cover Image')
                                                 ->hint('for expedition page')
+                                                ->coverImage()
                                                 ->relationship('coverImage', 'id'),
                                         ]),
                                     Section::make('')
@@ -124,6 +125,7 @@ class ExpeditionResource extends Resource
                                                 ->color('primary')
                                                 ->label('Feature Image')
                                                 ->hint('for homepage')
+                                                ->featureImage()
                                                 ->relationship('featureImage', 'id'),
                                         ]),
                                 ]),
@@ -230,6 +232,7 @@ class ExpeditionResource extends Resource
                                     ->schema([
                                         CuratorPicker::make('images')
                                             ->multiple()
+                                            ->galleryImage()
                                             ->label('Images')
                                             ->hint('any other relevant images')
                                             ->relationship('images', 'id'),

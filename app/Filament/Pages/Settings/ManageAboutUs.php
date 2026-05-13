@@ -43,6 +43,7 @@ class ManageAboutUs extends SettingsPage
                                 CuratorPicker::make('cover_image_id')
                                     ->label('About Page Image')
                                     ->columnSpanFull()
+                                    ->coverImage()
                                     ->required(),
                                     Section::make('English')
                                     ->columnSpan(1)

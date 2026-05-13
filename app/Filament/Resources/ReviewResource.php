@@ -105,8 +105,9 @@ class ReviewResource extends Resource
                             ->schema([
                                 CuratorPicker::make('image_id')
                                     ->color('primary')
-                                    ->label('Review Image')
-                                    // ->hint('for expedition page')
+                                    ->label('Reviewer Avatar')
+                                    ->hint('optional')
+                                    ->squareImage(200)
                                     ->relationship('reviewImage', 'id'),
                             ]),
                     ]),

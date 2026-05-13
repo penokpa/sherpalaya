@@ -110,6 +110,7 @@ class TourResource extends Resource
                                             ->color('primary')
                                             ->label('Cover Image')
                                             ->hint('for tour page')
+                                            ->coverImage()
                                             ->relationship('coverImage', 'id'),
                                     ]),
                                 Section::make()
@@ -120,6 +121,7 @@ class TourResource extends Resource
                                             ->color('primary')
                                             ->label('Feature Image')
                                             ->hint('for homepage')
+                                            ->featureImage()
                                             ->relationship('featureImage', 'id'),
                                     ]),
 
@@ -210,8 +212,9 @@ class TourResource extends Resource
                             Section::make()
                                 ->schema([
                                     CuratorPicker::make('images')
-                                        ->multiple()
-                                        ->label('Images')
+                                            ->multiple()
+                                            ->galleryImage()
+                                            ->label('Images')
                                         ->hint('any other relevant images')
                                         ->relationship('images', 'id'),
                                 ]),

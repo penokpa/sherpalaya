@@ -119,6 +119,7 @@ class TrekResource extends Resource
                                                 ->color('primary')
                                                 ->label('Cover Image')
                                                 ->hint('for trek page')
+                                                ->coverImage()
                                                 ->relationship('coverImage', 'id'),
                                         ]),
 
@@ -129,6 +130,7 @@ class TrekResource extends Resource
                                             CuratorPicker::make('feature_image_id')
                                                 ->label('Feature Image')
                                                 ->hint('for home page')
+                                                ->featureImage()
                                                 ->relationship('featureImage', 'id'),
                                         ]),
 
@@ -236,6 +238,7 @@ class TrekResource extends Resource
                                     ->schema([
                                         CuratorPicker::make('images')
                                             ->multiple()
+                                            ->galleryImage()
                                             ->label('Images')
                                             ->hint('any other relevant images')
                                             ->relationship('images', 'id'),
