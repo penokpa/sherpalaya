@@ -1,340 +1,247 @@
-{{-- <div class="card--rounded-none image-full h-[80dvh] relative ">
-            <figure class="h-[80dvh] w-full ">
-                <img loading="lazy" decoding="async" src="{{ asset('/photos/mountain2.jpg') }}" alt="Trekking background image"
-                    class="h-[80dvh] w-full object-cover brightness-75" />
-            </figure>
-            <div
-                class="card-body absolute bottom-1/4 left-[50%]  translate-x-[-50%] translate-y-[10%] flex flex-col items-center gap-8 ">
-                <div class="overflow-hidden  justify-center" data-aos="fade-down" data-aos-duration="1200">
-                    <img class="h-[28vh] w-full object-cover rounded-full" src="{{ $sherpa->profilePicture->url }}"
-                        alt="picture" />
-                </div>
-                <div class="text-center w-full font-oswald" data-aos="fade-down" data-aos-duration="1200">
-                    <h5 class="card-title mb-1 text-warning  text-2xl md:text-2xl uppercase font-semibold ">
-                        {{ $sherpa->name }}
-                    </h5>
-                    <h5 class="card-title text-white text-sm md:text-xl lowercase font-oswald font-semisemibold ">
-                        {{ $sherpa->title }}
-                    </h5>
-                </div>
-            </div>
-        </div> --}}
-
+@php
+    $locale = app()->currentLocale();
+    $sherpaTitle = is_string($sherpa->title) ? $sherpa->title : ($sherpa->getTranslation('title', $locale) ?? $sherpa->getTranslation('title', 'en'));
+@endphp
 
 <x-website-layout :seoData="$seoData">
-    <div class="bg-blue-50 font-body">
-        <header>
-            <div style="background-image: url('{{ asset('/photos/qualitymount1.png') }}');"
-                class="bg-cover bg-center w-full  object-top font-body ">
-                <div class="card-body flex flex-col items-center justify-center gap-8 backdrop-blur-md h-[80dvh]">
-                    <div class="overflow-hidden  justify-center" data-aos="fade-down" data-aos-duration="1200">
-                        <img class="h-[28vh] w-[30vw] object-cover object-center rounded-2xl border-white border-4"
-                            src="{{ $sherpa->profilePicture->url }}" alt="picture" />
-                    </div>
-                    <div class="text-center w-full font-card" data-aos="fade-down" data-aos-duration="1200">
-                        <h1
-                            class="card-title mb-1 text-warning  tracking-wider text-2xl md:text-2xl uppercase font-semibold text-balance">
-                            {{ $sherpa->name }}
-                        </h1>
-                        <h2
-                            class="card-title text-white text-sm md:text-xl capitalize  font-normal tracking-wide text-balance">
-                            {{ $sherpa->title }}
-                        </h2>
+
+    {{-- Editorial-style hero: large portrait left, name + title right --}}
+    <section class="bg-canvas">
+        <div class="mx-auto max-w-7xl px-6 pt-12 lg:pt-16 lg:px-12">
+            <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="aspect-[3/4] overflow-hidden rounded-2xl bg-hairline ring-1 ring-hairline">
+                        <img loading="eager" decoding="async"
+                             src="{{ $sherpa->profilePicture->url ?? asset('photos/P1030127.JPG') }}"
+                             alt="{{ $sherpa->name }}"
+                             class="h-full w-full object-cover" />
                     </div>
                 </div>
-            </div>
-        </header>
+                <div class="lg:col-span-7">
+                    <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-terracotta">{{ $sherpaTitle }}</p>
+                    <h1 class="mt-3 font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05] tracking-tighter-display text-ink">
+                        {{ $sherpa->name }}
+                    </h1>
 
-        <x-breadcrumb :breadcrumbs="[
-            [
-                'name' => 'Home',
-                'url' => url('/' . app()->currentLocale() . '/home'),
-            ],
-            [
-                'name' => 'Our Team',
-                'url' => url('/' . app()->currentLocale() . '/our-team'),
-            ],
-            [
-                'name' => $sherpa->name,
-            ],
-        ]" />
-
-
-        <section class="mx-4 xl:mx-32">
-            <div class="h-4"></div>
-            <div
-                class="text-lg/8 mt-6 text-justify text-black  md:mx-8 lg:mx-16  xl:mx-28
-                         font-light font-body tracking-normal ">
-                {!! $sherpa->description !!}
-            </div>
-            <div class="h-10"></div>
-        </section>
-
-        <section class="bg-blue-100/20">
-            <div class="mx-4 xl:mx-32">
-                @if (count($sherpa->language) > 0)
-                    <article class="md:mx-8 lg:mx-16 xl:mx-28 ">
-                        <div class="h-10"></div>
-                        <div class="">
-                            <h3 class="card-title font-semibold uppercase text-2xl text-black tracking-wide mx-0 text-left"
-                                data-aos="fade-up" data-aos-duration="1200">
-                                {{ __('team.languages') }}
-                            </h3>
-                            <div class="h-4"></div>
+                    @if (count($sherpa->language ?? []) > 0)
+                        <div class="mt-6 flex flex-wrap gap-2">
                             @foreach ($sherpa->language as $lang)
-                                <p class="text-black uppercase items-center badge badge-warning  px-1 py-0 text-xs">
+                                <span class="inline-flex items-center rounded-full border border-hairline bg-surface px-3.5 py-1.5 text-[12px] font-medium text-ink-muted uppercase tracking-wide">
                                     {{ $lang }}
-                                </p>
-                            @endforeach
-                        </div>
-                        <div class="h-10"></div>
-                    </article>
-                @endif
-            </div>
-        </section>
-        {{-- <div class="my-1 text-pretty text-black font-light font-body text-lg/7">
-                {!! $sherpa->description !!}
-            </div> --}}
-
-        <main class="bg-blue-100/10">
-            <div class="mx-4 xl:mx-32">
-                @if (count($sherpa->expeditions) > 0)
-                    <div class="h-10"></div>
-                    <h3 class="card-title font-semibold uppercase text-2xl  text-black tracking-wide mx-0 text-left md:mx-8 lg:mx-16 xl:mx-28"
-                        data-aos="fade-down" data-aos-duration="1200">
-                        {{ __('footer.expeditions') }}
-                    </h3>
-                    <div class="h-4"></div>
-                    <div class="overflow-x-scroll horizontal-scrollbar md:mx-8 lg:mx-16 xl:mx-28">
-                        <table class="table-striped-columns table font-body ">
-                            <thead>
-                                <tr class="text-2xl ">
-                                    <th>{{ __('team.exped-table') }}</th>
-                                    <th>{{ __('team.altitude') }}</th>
-                                    <th>{{ __('team.count') }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($sherpa->expeditions as $expedition)
-                                    <tr class="font-light">
-                                        <td class="text-nowrap">{{ $expedition->title }}</td>
-                                        <td>{{ $expedition->highest_altitude }} M</td>
-                                        <td>
-                                            <span class="badge badge-soft badge-success text-xs">
-                                                {{ $expedition->pivot?->count ?? '1' }}
-                                            </span>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="h-10"></div>
-                @endif
-            </div>
-        </main>
-        <main class="bg-blue-100/10">
-            <div class="mx-4 xl:mx-32">
-                @if (count($sherpa->treks) > 0)
-                    <div class="h-10"></div>
-                    <h3 class="card-title font-semibold uppercase text-2xl  text-black tracking-wide mx-0 text-left md:mx-8 lg:mx-16 xl:mx-28"
-                        data-aos="fade-down" data-aos-duration="1200">
-                        {{ __('footer.treks') }}
-                    </h3>
-                    <div class="h-4"></div>
-                    <div class="md:mx-8 lg:mx-16 xl:mx-28">
-                        <table class="table-striped-columns table font-body">
-                            <thead>
-                                <tr class="text-2xl">
-                                    <th>{{ __('team.trek-table') }}</th>
-                                    <th>{{ __('team.altitude') }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($sherpa->treks as $trek)
-                                    <tr class="font-light">
-                                        <td class="text-nowrap">{{ $trek->title }}</td>
-                                        <td>{{ $trek->highest_altitude }} M</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="h-10"></div>
-                @endif
-            </div>
-        </main>
-        <main class="bg-blue-100/10">
-            <div class="mx-4 xl:mx-32">
-                @if (count($sherpa->tours) > 0)
-                    <div class="h-10"></div>
-
-                    <h3 class="card-title font-semibold uppercase text-2xl  text-black tracking-wide mx-0 text-left md:mx-8 lg:mx-16 xl:mx-28"
-                        data-aos="fade-down" data-aos-duration="1200">
-                        {{ __('footer.activities') }}
-                    </h3>
-                    <div class="h-4"></div>
-
-                    <div class="md:mx-8 lg:mx-16 xl:mx-28">
-                        <table class="table-striped-columns table font-body">
-                            <thead>
-                                <tr class="text-2xl">
-                                    <th>{{ __('team.activity-table') }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($sherpa->tours as $tour)
-                                    <tr class="font-light">
-                                        <td class="text-nowrap">{{ $tour->title }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="h-10"></div>
-                @endif
-            </div>
-        </main>
-
-
-        {{-- $sherpa->experience  --}}
-
-        <section class="bg-blue-100/20">
-            <div class="mx-4 xl:mx-32">
-                @if (count($sherpa->experience) > 0)
-                    <div class="h-10"></div>
-
-                    <div class=" md:mx-8 lg:mx-16  xl:mx-28">
-                        <div class="mx-2">
-                            <h4 class="card-title font-semibold uppercase text-2xl  text-black tracking-wide mx-0 text-left "
-                                data-aos="fade-down" data-aos-duration="1200">
-                                {{ __('team.experiences') }}
-                            </h4>
-                            <div class="h-4"></div>
-                            <ul class="list-inside list-disc tracking-wide">
-                                @foreach ($sherpa->experience as $exp)
-                                    <li class="mb-2 tracking-wide font-light">{{ $exp }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="h-10"></div>
-                @endif
-            </div>
-        </section>
-
-        <section class="bg-blue-100/10">
-            <div class="mx-4 xl:mx-32">
-                <div class="col-span-2 md:mx-8 lg:mx-16 xl:mx-28">
-                    <div class="h-10"></div>
-
-                    @if ($sherpa->awardsAndCertificates->count() > 0)
-                        <h5 class="card-title font-bold uppercase text-2xl text-black tracking-normal mx-0 text-left"
-                            data-aos="fade-up" data-aos-duration="1200">
-                            {{ __('team.awards') }}
-                        </h5>
-                        <div class="h-10"></div>
-                        <div class="card-actions   sm:grid grid-cols-2 lg:grid-cols-3 flex flex-col gap-2 md:gap-4 mb-0 skeleton animate-pulse min-h-52"
-                            id="all-awards">
-                            @foreach ($sherpa->awardsAndCertificates as $awardAndCertificate)
-                                <button type="button"
-                                    class="w-full h-full uppercase single-award hidden group hover:shadow"
-                                    aria-haspopup="dialog" aria-expanded="false" aria-controls="award-modal"
-                                    data-overlay="#award-modal" onclick="changeCarouselSlide({{ $loop->index }})">
-                                    <img class="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-75"
-                                        src="{{ $awardAndCertificate->url }}" alt="Award And Certificate" loading="lazy"/>
-                                </button>
+                                </span>
                             @endforeach
                         </div>
                     @endif
-                    <div class="h-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <x-breadcrumb :breadcrumbs="[
+        ['name' => 'Home', 'url' => url('/' . $locale . '/home')],
+        ['name' => __('footer.our-team'), 'url' => url('/' . $locale . '/our-team')],
+        ['name' => $sherpa->name],
+    ]" />
+
+    {{-- Bio --}}
+    @if ($sherpa->description)
+        <section class="bg-canvas">
+            <div class="mx-auto max-w-4xl px-6 py-12 lg:py-16 lg:px-12">
+                <article class="prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans">
+                    {!! $sherpa->description !!}
+                </article>
+            </div>
+        </section>
+    @endif
+
+    {{-- Expeditions table --}}
+    @if (count($sherpa->expeditions) > 0)
+        <section class="bg-forest text-canvas">
+            <div class="mx-auto max-w-7xl px-6 py-16 lg:py-20 lg:px-12">
+                <div class="mb-8 flex items-end justify-between gap-4">
+                    <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-canvas">{{ __('footer.expeditions') }}</h2>
+                    <p class="text-[12px] uppercase tracking-[0.16em] text-canvas/60">{{ count($sherpa->expeditions) }} summits</p>
+                </div>
+                <div class="overflow-x-auto rounded-xl ring-1 ring-canvas/10">
+                    <table class="w-full text-left text-canvas">
+                        <thead class="text-[11px] uppercase tracking-[0.14em] text-canvas/70 bg-canvas/5">
+                            <tr>
+                                <th class="px-5 py-4 font-semibold">{{ __('team.exped-table') }}</th>
+                                <th class="px-5 py-4 font-semibold">{{ __('team.altitude') }}</th>
+                                <th class="px-5 py-4 font-semibold">{{ __('team.count') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-[14px] divide-y divide-canvas/10">
+                            @foreach ($sherpa->expeditions as $expedition)
+                                <tr class="hover:bg-canvas/5">
+                                    <td class="px-5 py-3.5 whitespace-nowrap">{{ $expedition->title }}</td>
+                                    <td class="px-5 py-3.5 text-canvas/80">{{ $expedition->highest_altitude }} m</td>
+                                    <td class="px-5 py-3.5">
+                                        <span class="inline-flex items-center rounded-full bg-terracotta/15 text-terracotta-100 px-2.5 py-0.5 text-[11px] font-semibold">
+                                            ×{{ $expedition->pivot?->count ?? 1 }}
+                                        </span>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
+    @endif
 
-
-        <div class="h-10"></div>
-        <x-whatsapp-icon />
-
-
-        @push('modals')
-            <div id="award-modal" class="overlay modal overlay-open:opacity-100 hidden p-0" role="dialog"
-                tabindex="-1">
-                <div class="modal-dialog overlay-open:opacity-100 max-w-[100vw] ">
-                    <div class="modal-content h-full max-h-[100vh] justify-center  bg-transparent backdrop-blur-lg">
-                        <div class="modal-header">
-                            <button type="button" class="btn btn-text btn-circle btn-sm absolute end-3 top-3"
-                                aria-label="Close" data-overlay="#award-modal">
-                                <span class="icon-[tabler--x] size-6 p-0 m-0 text-warning"></span>
-                            </button>
-                        </div>
-                        <div class="modal-body ">
-                            <div id="image-carousel"
-                                data-carousel='{ "loadingClasses": "opacity-0","isInfiniteLoop": true }'
-                                class="relative w-full">
-                                <div class="carousel">
-                                    <div class="carousel-body h-full opacity-0">
-                                        <!-- Slide 1 -->
-                                        @foreach ($sherpa->awardsAndCertificates as $award)
-                                            <div class="carousel-slide">
-                                                <div class="flex h-full justify-center ">
-                                                    <img loading="lazy" decoding="async" src="{{ $award->url }}"
-                                                        class="h-[90vh] w-full object-contain  " alt="game" />
-                                                </div>
-                                            </div>
+    {{-- Treks + Tours tables --}}
+    @if (count($sherpa->treks) > 0 || count($sherpa->tours) > 0)
+        <section class="bg-canvas">
+            <div class="mx-auto max-w-7xl px-6 py-16 lg:py-20 lg:px-12">
+                <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
+                    @if (count($sherpa->treks) > 0)
+                        <div>
+                            <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-ink mb-6">{{ __('footer.treks') }}</h2>
+                            <div class="overflow-x-auto rounded-xl ring-1 ring-hairline">
+                                <table class="w-full text-left text-ink">
+                                    <thead class="text-[11px] uppercase tracking-[0.14em] text-ink-muted bg-canvas">
+                                        <tr>
+                                            <th class="px-5 py-4 font-semibold">{{ __('team.trek-table') }}</th>
+                                            <th class="px-5 py-4 font-semibold">{{ __('team.altitude') }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-[14px] bg-surface divide-y divide-hairline">
+                                        @foreach ($sherpa->treks as $trek)
+                                            <tr>
+                                                <td class="px-5 py-3.5 whitespace-nowrap">{{ $trek->title }}</td>
+                                                <td class="px-5 py-3.5 text-ink-muted">{{ $trek->highest_altitude }} m</td>
+                                            </tr>
                                         @endforeach
-                                    </div>
-                                </div>
-                                <!-- Previous Slide -->
-                                <button type="button" class="carousel-prev">
-                                    <span
-                                        class="size-9.5 bg-blue-200 hidden lg:flex items-center justify-center rounded-full shadow">
-                                        <span
-                                            class="icon-[tabler--chevron-left] size-5 cursor-pointer rtl:rotate-180"></span>
-                                    </span>
-                                    <span class="sr-only">Previous</span>
-                                </button>
-                                <!-- Next Slide -->
-                                <button type="button" class="carousel-next">
-                                    <span class="sr-only">Next</span>
-                                    <span
-                                        class="size-9.5 bg-blue-200 hidden lg:flex items-center justify-center rounded-full shadow">
-                                        <span
-                                            class="icon-[tabler--chevron-right] size-5 cursor-pointer rtl:rotate-180"></span>
-                                    </span>
-                                </button>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            {{-- <button type="button" class="btn btn-soft btn-secondary"
-                                    data-overlay="#award-modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button> --}}
+                    @endif
+
+                    @if (count($sherpa->tours) > 0)
+                        <div>
+                            <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-ink mb-6">{{ __('footer.activities') }}</h2>
+                            <div class="overflow-x-auto rounded-xl ring-1 ring-hairline">
+                                <table class="w-full text-left text-ink">
+                                    <thead class="text-[11px] uppercase tracking-[0.14em] text-ink-muted bg-canvas">
+                                        <tr>
+                                            <th class="px-5 py-4 font-semibold">{{ __('team.activity-table') }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-[14px] bg-surface divide-y divide-hairline">
+                                        @foreach ($sherpa->tours as $tour)
+                                            <tr>
+                                                <td class="px-5 py-3.5">{{ $tour->title }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </section>
+    @endif
+
+    {{-- Experience --}}
+    @if (count($sherpa->experience ?? []) > 0)
+        <section class="bg-canvas">
+            <div class="mx-auto max-w-4xl px-6 pb-16 lg:pb-20 lg:px-12">
+                <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-ink mb-6">{{ __('team.experiences') }}</h2>
+                <ul class="space-y-3 text-[15px] text-ink/85 leading-relaxed">
+                    @foreach ($sherpa->experience as $exp)
+                        <li class="flex gap-3">
+                            <span class="icon-[tabler--check] size-5 mt-0.5 text-terracotta shrink-0"></span>
+                            <span>{{ $exp }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </section>
+    @endif
+
+    {{-- Awards --}}
+    @if ($sherpa->awardsAndCertificates->count() > 0)
+        <section class="bg-canvas">
+            <div class="mx-auto max-w-7xl px-6 pb-20 lg:px-12">
+                <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-ink mb-6">{{ __('team.awards') }}</h2>
+                <div id="all-awards" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 skeleton animate-pulse min-h-52">
+                    @foreach ($sherpa->awardsAndCertificates as $i => $award)
+                        <button type="button"
+                                class="single-award hidden group aspect-[3/4] overflow-hidden rounded-lg bg-hairline"
+                                aria-haspopup="dialog" aria-expanded="false"
+                                aria-controls="award-modal"
+                                data-overlay="#award-modal"
+                                onclick="changeCarouselSlide({{ $i }})">
+                            <img loading="lazy" decoding="async" src="{{ $award->url }}" alt="Award"
+                                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                        </button>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <x-whatsapp-icon />
+
+    @push('modals')
+        <div id="award-modal" class="overlay modal overlay-open:opacity-100 hidden p-0" role="dialog" tabindex="-1">
+            <div class="modal-dialog overlay-open:opacity-100 max-w-[100vw]">
+                <div class="modal-content h-full max-h-[100vh] justify-center bg-ink/95 backdrop-blur-md">
+                    <div class="modal-header">
+                        <button type="button" class="btn btn-text btn-circle btn-sm absolute end-3 top-3 text-canvas"
+                                aria-label="Close" data-overlay="#award-modal">
+                            <span class="icon-[tabler--x] size-6"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="image-carousel" data-carousel='{ "loadingClasses": "opacity-0","isInfiniteLoop": true }' class="relative w-full">
+                            <div class="carousel">
+                                <div class="carousel-body h-full opacity-0">
+                                    @foreach ($sherpa->awardsAndCertificates as $award)
+                                        <div class="carousel-slide">
+                                            <div class="flex h-full justify-center">
+                                                <img loading="lazy" decoding="async" src="{{ $award->url }}"
+                                                     class="h-[90vh] w-full object-contain" alt="award" />
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <button type="button" class="carousel-prev">
+                                <span class="size-10 bg-canvas/90 hidden lg:flex items-center justify-center rounded-full shadow">
+                                    <span class="icon-[tabler--chevron-left] size-5 text-ink"></span>
+                                </span>
+                                <span class="sr-only">Previous</span>
+                            </button>
+                            <button type="button" class="carousel-next">
+                                <span class="sr-only">Next</span>
+                                <span class="size-10 bg-canvas/90 hidden lg:flex items-center justify-center rounded-full shadow">
+                                    <span class="icon-[tabler--chevron-right] size-5 text-ink"></span>
+                                </span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-        @endpush
+        </div>
+    @endpush
 
-        @push('scripts')
-            <script>
-                window.addEventListener('load', function() {
-                    const awardsAndCertificatesDiv = document.querySelector('#all-awards');
-                    const singleAwardCollection = document.querySelectorAll('.single-award');
-                    awardsAndCertificatesDiv.classList.remove('skeleton');
-                    awardsAndCertificatesDiv.classList.remove('animate-pulse');
+    @push('scripts')
+        <script>
+            window.addEventListener('load', function() {
+                const wrapper = document.querySelector('#all-awards');
+                if (!wrapper) return;
+                wrapper.classList.remove('skeleton', 'animate-pulse');
+                document.querySelectorAll('.single-award').forEach(el => el.classList.remove('hidden'));
+            });
 
-                    singleAwardCollection.forEach(singleAward => {
-                        singleAward.classList.remove('hidden');
-                    });
-                });
-
-                function changeCarouselSlide(index) {
-                    const carousel = new HSCarousel(document.querySelector('#image-carousel'))
-                    carousel.goTo(index)
-                }
-            </script>
-        @endpush
-
-    </div>
+            function changeCarouselSlide(index) {
+                const el = document.querySelector('#image-carousel');
+                if (el && window.HSCarousel) new HSCarousel(el).goTo(index);
+            }
+        </script>
+    @endpush
 </x-website-layout>

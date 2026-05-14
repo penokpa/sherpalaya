@@ -1,45 +1,25 @@
-<x-website-layout>
-    <div class="bg-blue-100/10 font-body">
-        <header class="card--rounded-none image-full  bg-blue-100/50 h-[70dvh]">
-            <figure class="h-[70dvh] w-full">
-                <img loading="lazy" decoding="async" src="{{ asset('/photos/mountain2.jpg') }}" alt="Terms & Conditions image"
-                    class="h-[70dvh] w-full object-cover brightness-75" />
-            </figure>
-            <div class="card-body">
-                <div
-                    class="absolute bottom-1/2 xl:left-32  left-4   max-w-full  2xl:max-w-full overflow-hidden border-none ">
-                    <div class="">
-                        <h2 class="card-title mb-2 text-blue-50 text-xl sm:text-2xl  uppercase font-oswald  font-semibold tracking-wider opacity-75">
-                            Sherpalaya's
-                        </h2>
-                        <h1 class="card-title mb-2 text-warning text-4xl sm:text-5xl md:text-6xl  uppercase font-card font-bold tracking-tight text-wrap  leading-[1.3]  overflow-hidden opacity-100 antialiased">
-                            Terms & Conditions
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <x-breadcrumb :breadcrumbs="[
-            [
-                'name' => 'Home',
-                'url' => url('/' . app()->currentLocale() . '/home'),
-            ],
-            [
-                'name' => 'Terms And Condition',
-                // 'url' => url('/terms-and-conditions'),
-            ],
-            // [
-            //     'name' => $trek->title,
-            // ],
-        ]" />
-        <div class="h-8"></div>
-        <div class="mx-4 xl:mx-32">
-            <div class="bg-blue-transparent text-blue-600">
-                {!! $termsAndCondition !!}
-            </div>
-        </div>
-        <div class="h-8"></div>
-        <x-whatsapp-icon />
+@php $locale = app()->currentLocale(); @endphp
 
-    </div>
+<x-website-layout>
+    <x-listing.hero
+        :image="asset('photos/mountain2.jpg')"
+        eyebrow="Legal"
+        title="Terms & Conditions"
+        subtitle="The terms under which we offer our services."
+    />
+
+    <x-breadcrumb :breadcrumbs="[
+        ['name' => 'Home', 'url' => url('/' . $locale . '/home')],
+        ['name' => 'Terms & Conditions'],
+    ]" />
+
+    <section class="bg-canvas">
+        <div class="mx-auto max-w-4xl px-6 py-16 lg:py-20 lg:px-12">
+            <article class="prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans prose-headings:font-display prose-headings:text-ink prose-headings:font-medium prose-headings:tracking-tightish prose-a:text-forest hover:prose-a:text-terracotta">
+                {!! $termsAndCondition !!}
+            </article>
+        </div>
+    </section>
+
+    <x-whatsapp-icon />
 </x-website-layout>

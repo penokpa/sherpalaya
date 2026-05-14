@@ -1,86 +1,78 @@
+@php
+    use App\Models\Media;
+
+    $locale = app()->currentLocale();
+    $heroImage = $pageSetting->team_page_cover_image_id ? Media::find($pageSetting->team_page_cover_image_id) : null;
+    $heroEyebrow = $locale === 'fr' ? $pageSetting->team_page_title_up_fr : $pageSetting->team_page_title_up_en;
+    $heroTitle = $locale === 'fr' ? $pageSetting->team_page_main_title_fr : $pageSetting->team_page_main_title_en;
+    $heroSubtitle = $locale === 'fr' ? $pageSetting->team_page_title_down_fr : $pageSetting->team_page_title_down_en;
+    $contentTitle = $locale === 'fr' ? $pageSetting->team_page_content_title_fr : $pageSetting->team_page_content_title_en;
+    $content = $locale === 'fr' ? $pageSetting->team_page_content_fr : $pageSetting->team_page_content_en;
+@endphp
+
 <x-website-layout>
-    <div class="bg-blue-100/10 font-body">
-        <header class="card--rounded-none image-full  h-[80dvh] relative">
-            <figure class="h-[80dvh] w-full">
-                <x-curator-glider class="h-[80dvh] w-full object-cover brightness-75" :media="$pageSetting->team_page_cover_image_id" fallback="default"
-                    loading="lazy" alt="team cover image"/>
-            </figure>
-            <div class="card-body absolute inset-0 flex items-center justify-start">
-                <div class="absolute bottom-1/4  left-4 lg:left-4 xl:left-32 transform translate-y-1/2 overflow-hidden  "
-                    data-aos="fade-down" data-aos-duration="1200">
-                    <h2
-                        class="card-title mb-2 text-blue-50 text-xl sm:text-2xl  uppercase font-oswald  font-medium tracking-wider opacity-75">
-                        {{ app()->currentLocale() == 'fr' ? $pageSetting->team_page_title_up_fr : $pageSetting->team_page_title_up_en }}
-                    </h2>
-                    <h1
-                        class="card-title mb-2 text-warning text-4xl sm:text-5xl md:text-6xl  uppercase font-card font-bold tracking-tight text-wrap  leading-[1.3]  overflow-hidden opacity-100">
-                        {{ app()->currentLocale() == 'fr' ? $pageSetting->team_page_main_title_fr : $pageSetting->team_page_main_title_en }}
-                    </h1>
-                    <h3
-                        class="card-title  mb-8 text-blue-50 text-xl sm:text-2xl font-oswald  uppercase  font-medium tracking-wider opacity-75 ">
-                        {{ app()->currentLocale() == 'fr' ? $pageSetting->team_page_title_down_fr : $pageSetting->team_page_title_down_en }}
-                    </h3>
+    <x-listing.hero
+        :image="$heroImage"
+        fallback="photos/oursherpa1.jpg"
+        :eyebrow="$heroEyebrow ?: 'Our Team'"
+        :title="$heroTitle ?: 'The people behind every step.'"
+        :subtitle="$heroSubtitle"
+    />
+
+    <x-breadcrumb :breadcrumbs="[
+        ['name' => 'Home', 'url' => url('/' . $locale . '/home')],
+        ['name' => __('footer.our-team')],
+    ]" />
+
+    @if ($contentTitle || $content)
+        <section class="bg-canvas">
+            <div class="mx-auto max-w-7xl px-6 py-16 lg:py-20 lg:px-12">
+                <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
+                    @if ($contentTitle)
+                        <div>
+                            <h2 class="font-display text-3xl md:text-4xl font-medium leading-tight tracking-tighter-display text-ink max-w-[16ch]">
+                                {{ $contentTitle }}
+                            </h2>
+                        </div>
+                    @endif
+                    @if ($content)
+                        <div class="lg:col-span-2 prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans">
+                            {!! nl2br(e($content)) !!}
+                        </div>
+                    @endif
                 </div>
             </div>
-        </header>
+        </section>
+    @endif
 
-        <x-breadcrumb :breadcrumbs="[
-            [
-                'name' => 'Home',
-                'url' => url('/' . app()->currentLocale() . '/home'),
-            ],
-            [
-                'name' => 'Our Team',
-            ],
-        ]" />
-
-
-        {{--  --}}
-        <article class="xl:mx-32 mx-4 ">
-            <div class="h-8"></div>
-
-            <div class=" flex flex-col lg:justify-start lg:items-start">
-                <h4 class="text-3xl md:text-4xl font-body  font-medium uppercase tracking-normal text-black text-left"
-                    data-aos="fade-down" data-aos-duration="1200">
-                    {{ app()->currentLocale() == 'fr' ? $pageSetting->team_page_content_title_fr : $pageSetting->team_page_content_title_en }}
-                </h4>
-                <div
-                    class="text-lg/7 mt-4 text-preety text-black lg:text-justify
-                     font-light font-body lg:w-[80%]">
-                    {{-- {{ $pageSetting->about_us_page_content }} --}}
-                    {{ app()->currentLocale() == 'fr' ? $pageSetting->team_page_content_fr : $pageSetting->team_page_content_en }}
-
-            </div>
-                <div class="h-10 md:h-12"></div>
-            </div>
-        </article>
-
-        {{-- {{ dd($allSherpas) }} --}}
-
-        <aside class="mx-4 xl:mx-32">
-            <div class=" flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
-                @foreach ($allSherpas as $allSherpa)
-                    <a href="{{ route('show_team_member', ['id'=>$allSherpa->id,'locale'=>app()->currentLocale()]) }}">
-                        <div class="card w-full h-full ">
-                            <img loading="lazy" decoding="async" src="{{ $allSherpa->profilePicture->url ?? asset('photos/P1030127.JPG') }}"
-                                alt="{{ $allSherpa->title }} Cover Image" class="h-[20rem] object-cover " />
-                            <div class="card-body bg-blue-100/50 px-2 py-2 text-left">
-                                <h5
-                                    class="card-title mb-1 line-clamp-2 uppercase text-xl text-black font-medium tracking-wide font-body hover:text-warning hover:underline ">
-                                    {{ $allSherpa->name }}
-                                </h5>
-                                <h6
-                                    class="card-title  capitalize tracking-wide  text-xs badge badge-outline text-primary font-light  text-left py-4">
-                                    {{ $allSherpa->title }}
-                                </h6>
-                            </div>
+    <section class="bg-canvas">
+        <div class="mx-auto max-w-7xl px-6 pb-20 lg:px-12">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                @foreach ($allSherpas as $sherpa)
+                    @php
+                        $sherpaTitle = is_string($sherpa->title) ? $sherpa->title : ($sherpa->getTranslation('title', $locale) ?? $sherpa->getTranslation('title', 'en'));
+                    @endphp
+                    <a href="{{ route('show_team_member', ['id' => $sherpa->id, 'locale' => $locale]) }}"
+                       class="group block overflow-hidden rounded-2xl bg-surface shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-hairline">
+                            <img loading="lazy" decoding="async"
+                                 src="{{ $sherpa->profilePicture->url ?? asset('photos/P1030127.JPG') }}"
+                                 alt="{{ $sherpa->name }}"
+                                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-terracotta">{{ $sherpaTitle }}</p>
+                            <h3 class="mt-1 font-display text-xl font-medium tracking-tightish text-ink leading-snug">{{ $sherpa->name }}</h3>
+                            <span class="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-forest group-hover:text-terracotta transition">
+                                Read story
+                                <span class="icon-[tabler--arrow-right] size-4"></span>
+                            </span>
                         </div>
                     </a>
                 @endforeach
             </div>
-        </aside>
-        <x-whatsapp-icon />
+        </div>
+    </section>
 
-        <div class="h-20"></div>
-    </div>
+    <x-whatsapp-icon />
 </x-website-layout>
