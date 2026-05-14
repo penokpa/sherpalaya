@@ -19,22 +19,26 @@
     <img src="{{ $imageUrl }}" alt="{{ $title }}"
          loading="eager" decoding="async" fetchpriority="high"
          class="absolute inset-0 h-full w-full object-cover" />
-    <div class="absolute inset-0 bg-gradient-to-b from-ink/25 via-ink/10 to-ink/75"></div>
+    {{-- Layered gradients for legibility regardless of photo brightness --}}
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/15 to-ink/80"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/60 via-ink/25 to-transparent md:via-ink/10"></div>
 
-    <div class="relative z-10 flex h-full items-end pb-14 md:pb-16">
+    <div class="relative z-10 flex h-full items-end pb-14 md:pb-16
+                [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
         <div class="mx-auto w-full max-w-7xl px-6 lg:px-12">
             @if ($eyebrow)
-                <p class="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/85">
+                <p class="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/95">
                     {{ $eyebrow }}
                 </p>
             @endif
-            <h1 class="font-display text-[clamp(2.2rem,5vw,4.5rem)] font-medium leading-[1.05] tracking-tighter-display text-white max-w-[24ch]">
+            <h1 class="font-display text-[clamp(2.2rem,5vw,4.5rem)] font-medium leading-[1.05] tracking-tighter-display text-white max-w-[24ch]
+                       [text-shadow:0_3px_24px_rgba(0,0,0,0.55)]">
                 {{ $title }}
             </h1>
 
             {{-- Quick facts strip --}}
             @if ($altitude || $duration || $difficultyLabel || $season)
-                <ul class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-white/90">
+                <ul class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-white">
                     @if ($altitude)
                         <li class="inline-flex items-center gap-2 text-[14px]">
                             <span class="icon-[tabler--mountain] size-5 text-terracotta-100"></span>
