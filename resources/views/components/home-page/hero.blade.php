@@ -1,6 +1,6 @@
 @php
     use App\Settings\LandingPageSetting;
-    use Awcodes\Curator\Models\Media;
+    use App\Models\Media;
 
     $landingPageSetting = app(LandingPageSetting::class);
     $locale = app()->getLocale() === 'fr' ? 'fr' : 'en';
