@@ -292,6 +292,8 @@ class WebsiteSettingSeeder extends Seeder
         $companySetting->company_contact_number_en = "+977 9801717177";
         $companySetting->company_contact_number_fr = "+977 9801717177";
 
+        $companySetting->company_whatsapp_number = "9779801717177";
+
         $companySetting->facebook_url = "https://www.facebook.com/sherpalaya.trek.1/";
         $companySetting->instagram_url = "https://www.instagram.com/sherpalaya/";
         $companySetting->youtube_url = "https://www.youtube.com/@sherpalaya";

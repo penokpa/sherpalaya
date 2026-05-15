@@ -17,6 +17,8 @@ class CompanySetting extends Settings
     public ?string $company_contact_number_en;
     public ?string $company_contact_number_fr;
 
+    public ?string $company_whatsapp_number;
+
     public ?string $facebook_url;
     public ?string $instagram_url;
     public ?string $youtube_url;

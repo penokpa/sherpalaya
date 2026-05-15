@@ -38,6 +38,19 @@ class ManageCompany extends SettingsPage
                         ->columnSpan(1)
                         ->label('Logo')
                         ->logoImage(),
+                    Section::make('WhatsApp')
+                        ->description('Digits only, with country code (e.g. 9779801717177). Used by the floating chat button and detail-page inquiries.')
+                        ->columnSpan(1)
+                        ->schema([
+                            TextInput::make('company_whatsapp_number')
+                                ->label('WhatsApp Number')
+                                ->placeholder('9779801717177')
+                                ->helperText('No "+", no spaces. Country code + number.')
+                                ->rule('regex:/^[0-9]+$/')
+                                ->minLength(10)
+                                ->maxLength(15)
+                                ->required(),
+                        ]),
                     Section::make('Social Media')
                         ->columnSpan(1)
                         ->schema([
