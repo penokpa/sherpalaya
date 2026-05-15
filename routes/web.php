@@ -5,9 +5,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ExpeditionController;
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\OurTeamController;
-// use App\Http\Controllers\PeakController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TrekController;
 use App\Http\Controllers\WebsiteController;
@@ -59,15 +57,6 @@ Route::middleware([
                 Route::get('/terms-and-conditions', 'termsAndConditions')->name('website.legal.term_and_condition');
             });
 
-        // Service Route
-        // Route::controller(ServiceController::class)
-        //     ->prefix('/services')
-        //     ->group(function () {
-        //         Route::get('/', 'index')->name('website.company.our_service');
-        //         Route::get('/{id}', 'show')->name('show_service');
-        //     });
-
-
         // Our Team Route
         Route::controller(OurTeamController::class)
             ->prefix('/our-team')
@@ -85,14 +74,6 @@ Route::middleware([
                 Route::get('/{id}', 'show')->name('show_trek');
             });
 
-
-        // // Peak Route
-        // Route::controller(PeakController::class)
-        //     ->prefix('/peaks')
-        //     ->group(function () {
-        //         Route::get('/', 'index')->name('website.peaks');
-        //         Route::get('/{id}', 'show')->name('show_peak');
-        //     });
 
         // Expedition Route
         Route::controller(ExpeditionController::class)
