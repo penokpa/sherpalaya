@@ -36,23 +36,12 @@
 
                 {{-- Main content (2/3) --}}
                 <div class="xl:col-span-2 space-y-16">
-                    {{-- Overview / description --}}
-                    <section>
-                        <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-ink mb-5">
-                            {{ __('show-page.overview') }}
-                        </h2>
-                        <article id="trek-description-{{ $trek->id }}"
-                                 class="prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans">
-                            {!! $trek->description !!}
-                        </article>
-                        <x-read-more :componentId="'trek-description-' . $trek->id" />
-                    </section>
-
-                    <x-show-trek.scroll-spy-body.key-highlight :trek="$trek" />
-                    <x-show-trek.scroll-spy-body.itinerary :trek="$trek" />
-                    <x-show-trek.scroll-spy-body.cost-info :trek="$trek" />
-                    <x-show-trek.scroll-spy-body.essential-tip :trek="$trek" />
-                    <x-show-trek.gallery :trek="$trek" />
+                    <x-detail.section.overview :item="$trek" />
+                    <x-detail.section.key-highlights :item="$trek" />
+                    <x-detail.section.itinerary :item="$trek" />
+                    <x-detail.section.cost-info :item="$trek" />
+                    <x-detail.section.essential-tips :item="$trek" />
+                    <x-detail.section.gallery :item="$trek" />
                 </div>
 
                 {{-- Sticky sidebar (1/3) --}}

@@ -34,22 +34,12 @@
             <div class="grid grid-cols-1 gap-10 xl:grid-cols-3 xl:gap-12">
 
                 <div class="xl:col-span-2 space-y-16">
-                    <section>
-                        <h2 class="font-display text-2xl md:text-3xl font-medium leading-tight tracking-tighter-display text-ink mb-5">
-                            {{ __('show-page.overview') }}
-                        </h2>
-                        <article id="tour-description-{{ $tour->id }}"
-                                 class="prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans">
-                            {!! $tour->description !!}
-                        </article>
-                        <x-read-more :componentId="'tour-description-' . $tour->id" />
-                    </section>
-
-                    <x-show-tour.scroll-spy-body.tour-key-highlight :tour="$tour" />
-                    <x-show-tour.scroll-spy-body.tour-itinerary :tour="$tour" />
-                    <x-show-tour.scroll-spy-body.tour-cost-info :tour="$tour" />
-                    <x-show-tour.scroll-spy-body.tour-essential-tip :tour="$tour" />
-                    <x-show-tour.scroll-spy-body.tour-gallery :tour="$tour" />
+                    <x-detail.section.overview :item="$tour" />
+                    <x-detail.section.key-highlights :item="$tour" />
+                    <x-detail.section.itinerary :item="$tour" />
+                    <x-detail.section.cost-info :item="$tour" />
+                    <x-detail.section.essential-tips :item="$tour" />
+                    <x-detail.section.gallery :item="$tour" />
                 </div>
 
                 <aside class="xl:col-span-1">
