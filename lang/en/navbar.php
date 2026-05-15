@@ -8,5 +8,6 @@ return [
     'expeditions' => 'Expeditions',
     'treks' => 'Treks',
     'activities' => 'Activities',
+    'journal' => 'Journal',
     'contact' => 'Contact'
 ];

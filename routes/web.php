@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ExpeditionController;
 use App\Http\Controllers\LegalController;
@@ -107,6 +108,14 @@ Route::middleware([
             ->group(function () {
                 Route::get('/', 'index')->name('website.tours');
                 Route::get('/{id}', 'show')->name('show_tour');
+            });
+
+        // Blog Route
+        Route::controller(BlogController::class)
+            ->prefix('/blog')
+            ->group(function () {
+                Route::get('/', 'index')->name('website.blog.index');
+                Route::get('/{slug}', 'show')->name('website.blog.show');
             });
 
         // Booking route

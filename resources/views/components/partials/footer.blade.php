@@ -102,6 +102,7 @@
                 <ul class="space-y-3 text-[14px]">
                     <li><a href="/{{ $locale }}/about_us" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.about-us') }}</a></li>
                     <li><a href="/{{ $locale }}/our-team" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.our-team') }}</a></li>
+                    <li><a href="/{{ $locale }}/blog" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.journal') }}</a></li>
                     <li><a href="/{{ $locale }}/contact" class="text-canvas/85 hover:text-canvas transition">{{ __('footer.contact') }}</a></li>
                 </ul>
             </nav>

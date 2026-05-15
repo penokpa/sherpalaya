@@ -10,6 +10,7 @@ return [
     'company' => 'Company',
     'about-us' => 'About Us',
     'our-team' => 'Our Team',
+    'journal' => 'Journal',
     'contact' => 'Contact',
 
     'legal' => 'Legal',

@@ -141,6 +141,14 @@
                                 {{ __('navbar.activities') }}
                             </a>
                         </li>
+                        <li class="hover:text-warning rounded-lg text-lg">
+                            <a href="/{{ app()->currentLocale() }}/blog"
+                                @class([
+                                    'text-warning' => request()->routeIs('website.blog.index') || request()->routeIs('website.blog.show'),
+                                ])>
+                                {{ __('navbar.journal') }}
+                            </a>
+                        </li>
                     </ul>
 
                     {{-- <div class="dropdown relative inline-flex rtl:[--placement:bottom-end]">

@@ -9,6 +9,7 @@ return [
     'treks' => 'Trek',
     'activities' => 'Activités',
     'services' => 'Services',
+    'journal' => 'Journal',
     'contact' => 'Contact'
 
 ];
