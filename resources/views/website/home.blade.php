@@ -16,4 +16,6 @@
     <x-review />
 
     <x-cards.about-card />
+
+    <x-whatsapp-icon />
 </x-website-layout>

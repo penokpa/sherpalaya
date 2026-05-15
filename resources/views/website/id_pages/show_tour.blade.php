@@ -71,4 +71,6 @@
             </div>
         </div>
     </main>
+
+    <x-whatsapp-icon :url="$tour->getWhatsappUrl()" />
 </x-website-layout>

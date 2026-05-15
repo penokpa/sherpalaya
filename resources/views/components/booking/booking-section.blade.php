@@ -18,13 +18,7 @@
     </div>
 </div>
 
-<a href="{{ $bookingFor->getWhatsappUrl() }}" class="fixed bottom-5 right-4  bg-opacity-80 " target="_blank">
-    <div class="flex flex-col justify-center items-center z-50">
-        <span class="icon-[ph--whatsapp-logo-duotone] size-15 text-green-500 hover:size-16 hover:text-green-600 animate-bounce"></span>
-        <span class="glass rounded-lg px-2 font-oswald">Get In Touch
-        </span>
-    </div>
-</a>
+<x-whatsapp-icon :url="$bookingFor->getWhatsappUrl()" />
 
 @push('modals')
     {{-- Booking form modal --}}

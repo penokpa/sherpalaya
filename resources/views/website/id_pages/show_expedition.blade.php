@@ -77,4 +77,6 @@
             </div>
         </div>
     </main>
+
+    <x-whatsapp-icon :url="$expedition->getWhatsappUrl()" />
 </x-website-layout>

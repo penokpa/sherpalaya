@@ -78,4 +78,6 @@
             </div>
         </div>
     </main>
+
+    <x-whatsapp-icon :url="$trek->getWhatsappUrl()" />
 </x-website-layout>

@@ -31,4 +31,6 @@ return [
     'regions_expeditions_desc' => 'Ascensions 6000m+ et sommets de 8000m entièrement encadrés.',
     'regions_activities' => 'Activités',
     'regions_activities_desc' => 'Excursions à la journée, vols en hélicoptère, expériences culturelles.',
+
+    'whatsapp_label' => 'Discuter sur WhatsApp',
 ];

@@ -31,4 +31,6 @@ return [
     'regions_expeditions_desc' => 'Fully-supported 6000m+ climbs and 8000m peaks.',
     'regions_activities' => 'Activities',
     'regions_activities_desc' => 'Day tours, helicopter scenics, cultural experiences.',
+
+    'whatsapp_label' => 'Chat on WhatsApp',
 ];
