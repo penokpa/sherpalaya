@@ -9,6 +9,8 @@
 
     <x-home-page.region-tiles />
 
+    <x-home-page.latest-journal />
+
     <x-review />
 
     <x-cards.about-card />
