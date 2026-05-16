@@ -39,4 +39,9 @@ return [
         'number' => env('WHATSAPP_NUMBER', '')
     ],
 
+    'cloudflare_analytics' => [
+        // Cloudflare Web Analytics site token. Leave empty in local/dev to skip injecting the beacon.
+        'token' => env('CLOUDFLARE_ANALYTICS_TOKEN', ''),
+    ],
+
 ];

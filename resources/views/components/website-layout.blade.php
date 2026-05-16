@@ -50,6 +50,11 @@
 
     @stack('scripts')
     @stack('modals')
+
+    @if ($cfAnalyticsToken = config('services.cloudflare_analytics.token'))
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+                data-cf-beacon='@json(["token" => $cfAnalyticsToken])'></script>
+    @endif
 </body>
 
 </html>
