@@ -106,7 +106,7 @@ class ManageLangingPage extends SettingsPage
                                     ->hiddenLabel()
                                     ->schema([
                                         Hidden::make('id')
-                                            ->default(fake()->regexify('[A-Za-z]{10}')),
+                                            ->default(fn () => Str::random(10)),
                                         Grid::make(2)
                                             ->schema([
                                                 CuratorPicker::make('images')

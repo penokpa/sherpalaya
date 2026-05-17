@@ -142,7 +142,7 @@ class ManageLandingPage extends SettingsPage
                                     ->columns(2)
                                     ->schema([
                                         Hidden::make('id')
-                                            ->default(fake()->regexify('[A-Za-z]{10}')),
+                                            ->default(fn () => Str::random(10)),
 
                                         Section::make('English')
                                             ->columnSpan(1)
