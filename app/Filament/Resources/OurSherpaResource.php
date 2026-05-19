@@ -15,7 +15,7 @@ use App\Traits\Filament\TranslatableResource;
 use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\RichEditor;
+use App\Filament\Fields\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
@@ -101,22 +101,6 @@ class OurSherpaResource extends Resource
                                             ->columnSpan(2),
 
                                         RichEditor::make('description')
-                                            ->toolbarButtons([
-                                                // 'attachFiles',
-                                                'blockquote',
-                                                'bold',
-                                                'bulletList',
-                                                // 'codeBlock',
-                                                'h2',
-                                                'h3',
-                                                'italic',
-                                                'link',
-                                                'orderedList',
-                                                'redo',
-                                                // 'strike',
-                                                'underline',
-                                                'undo',
-                                            ])
                                             ->translatable(),
                                     ]),
                         Section::make('Sherpa Experience')

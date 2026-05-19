@@ -6,7 +6,7 @@ use App\Filament\Resources\ContactUsResource\Pages;
 use App\Filament\Resources\ContactUsResource\RelationManagers;
 use App\Models\ContactUs;
 use Filament\Forms;
-use Filament\Forms\Components\RichEditor;
+use App\Filament\Fields\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -63,23 +63,7 @@ class ContactUsResource extends Resource
                             ->maxLength(10),
                         RichEditor::make('message')
                             ->required()
-                            ->columnSpan(3)
-                            ->toolbarButtons([
-                                // 'attachFiles',
-                                'blockquote',
-                                'bold',
-                                'bulletList',
-                                // 'codeBlock',
-                                'h2',
-                                'h3',
-                                'italic',
-                                'link',
-                                'orderedList',
-                                'redo',
-                                // 'strike',
-                                'underline',
-                                'undo',
-                            ]),
+                            ->columnSpan(3),
                     ]),
             ]);
     }

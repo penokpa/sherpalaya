@@ -10,7 +10,7 @@ use App\Models\Review;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\RichEditor;
+use App\Filament\Fields\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -79,20 +79,7 @@ class ReviewResource extends Resource
                                     ->required(),
                                 RichEditor::make('description')
                                     ->required()
-                                    ->columnSpanFull()
-                                    ->toolbarButtons([
-                                        'blockquote',
-                                        'bold',
-                                        'bulletList',
-                                        'h2',
-                                        'h3',
-                                        'italic',
-                                        'link',
-                                        'orderedList',
-                                        'redo',
-                                        'underline',
-                                        'undo',
-                                    ]),
+                                    ->columnSpanFull(),
                                 TextInput::make('review_url')
                                     ->label('Original Review URL')
                                     ->url()

@@ -15,7 +15,7 @@ use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\RichEditor;
+use App\Filament\Fields\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
@@ -78,22 +78,6 @@ class TrekResource extends Resource
 
                                             RichEditor::make('description')
                                                 ->required()
-                                                ->toolbarButtons([
-                                                    // 'attachFiles',
-                                                    'blockquote',
-                                                    'bold',
-                                                    'bulletList',
-                                                    // 'codeBlock',
-                                                    'h2',
-                                                    'h3',
-                                                    'italic',
-                                                    'link',
-                                                    'orderedList',
-                                                    'redo',
-                                                    // 'strike',
-                                                    'underline',
-                                                    'undo',
-                                                ])
                                                 ->translatable()
                                                 ->columnSpanFull(),
 

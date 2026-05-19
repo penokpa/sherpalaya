@@ -7,7 +7,7 @@ use App\Filament\Resources\FaqResource\RelationManagers;
 use App\Models\Faq;
 use App\Traits\Filament\TranslatableResource;
 use Filament\Forms;
-use Filament\Forms\Components\RichEditor;
+use App\Filament\Fields\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
@@ -52,22 +52,6 @@ class FaqResource extends Resource
                             ->translatable(),
                         RichEditor::make('answer')
                             ->required()
-                            ->toolbarButtons([
-                                // 'attachFiles',
-                                'blockquote',
-                                'bold',
-                                'bulletList',
-                                // 'codeBlock',
-                                'h2',
-                                'h3',
-                                'italic',
-                                'link',
-                                'orderedList',
-                                'redo',
-                                // 'strike',
-                                'underline',
-                                'undo',
-                            ])
                             ->translatable(),
                     ]),
             ]);

@@ -8,7 +8,7 @@ use App\Models\Post;
 use App\Traits\Filament\TranslatableResource;
 use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\RichEditor;
+use App\Filament\Fields\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -61,19 +61,6 @@ class PostResource extends Resource
 
                     RichEditor::make('body')
                         ->required()
-                        ->toolbarButtons([
-                            'blockquote',
-                            'bold',
-                            'bulletList',
-                            'h2',
-                            'h3',
-                            'italic',
-                            'link',
-                            'orderedList',
-                            'redo',
-                            'underline',
-                            'undo',
-                        ])
                         ->translatable(),
                 ]),
 

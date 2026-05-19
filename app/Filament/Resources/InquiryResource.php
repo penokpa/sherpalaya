@@ -11,7 +11,7 @@ use App\Models\Tour;
 use App\Models\Trek;
 use Filament\Forms;
 use Filament\Forms\Components\Radio;
-use Filament\Forms\Components\RichEditor;
+use App\Filament\Fields\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -60,23 +60,7 @@ class InquiryResource extends Resource
                         
                         RichEditor::make('message')
                             ->required()
-                            ->columnSpan(3)
-                            ->toolbarButtons([
-                                // 'attachFiles',
-                                'blockquote',
-                                'bold',
-                                'bulletList',
-                                // 'codeBlock',
-                                'h2',
-                                'h3',
-                                'italic',
-                                'link',
-                                'orderedList',
-                                'redo',
-                                // 'strike',
-                                'underline',
-                                'undo',
-                            ]),
+                            ->columnSpan(3),
 
                     ]),
                 Section::make()
