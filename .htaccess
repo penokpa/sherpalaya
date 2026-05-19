@@ -1,6 +1,12 @@
 # --- START ---
 
 RewriteEngine On
+
+# Redirect www → non-www (preserves path + query, 301 for SEO)
+RewriteCond %{HTTP_HOST} ^www\.sherpalaya\.com$ [NC]
+RewriteRule ^(.*)$ https://sherpalaya.com/$1 [R=301,L]
+
+# Route requests to public/ (Laravel docroot pattern for cPanel + LiteSpeed)
 RewriteCond %{REQUEST_URI} !^/public/
 RewriteRule ^(.*)$ /public/$1 [L]
 
