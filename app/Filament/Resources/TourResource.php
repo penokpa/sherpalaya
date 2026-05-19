@@ -97,6 +97,26 @@ class TourResource extends Resource
                                             ->coverImage()
                                             ->relationship('coverImage', 'id'),
                                     ]),
+                                Section::make('Publishing')
+                                    ->schema([
+                                        \Filament\Forms\Components\Radio::make('publish_status')
+                                            ->label('Status')
+                                            ->options([
+                                                'published' => 'Published',
+                                                'draft' => 'Draft',
+                                            ])
+                                            ->inline()
+                                            ->required()
+                                            ->dehydrated(false)
+                                            ->formatStateUsing(fn ($record) => $record && $record->published_at ? 'published' : 'draft')
+                                            ->afterStateUpdated(function ($state, callable $set) {
+                                                $set('published_at', $state === 'published' ? now() : null);
+                                            })
+                                            ->default('published')
+                                            ->live(),
+                                        \Filament\Forms\Components\Hidden::make('published_at'),
+                                    ]),
+
                                 Section::make()
                                     ->schema([
                                         Toggle::make('is_featured')
@@ -311,11 +331,11 @@ class TourResource extends Resource
                 'md' => 2,
                 'xl' => 2,
             ])
+            ->recordUrl(fn ($record) => static::getUrl('edit', ['record' => $record]))
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([

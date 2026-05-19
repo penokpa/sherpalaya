@@ -19,7 +19,7 @@ class ExpeditionController extends Controller
     {
         $pageSetting = app(PageSetting::class);
         $allExpeditions = Category::with([
-            'expeditions'
+            'expeditions' => fn ($q) => $q->published(),
         ])->where('type', CategoryType::EXPEDITION)
             ->get();
 
@@ -36,7 +36,7 @@ class ExpeditionController extends Controller
     public function show(Request $request, string $locale, string $id)
     {
         $pageSetting = app(PageSetting::class);
-        $expedition = Expedition::findOrFail($id);
+        $expedition = Expedition::published()->findOrFail($id);
 
         return view('website.id_pages.show_expedition', [
             'expedition'=>$expedition,

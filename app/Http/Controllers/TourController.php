@@ -16,7 +16,7 @@ class TourController extends Controller
     public function index()
     {
         $allTours = Category::with([
-            'tours'
+            'tours' => fn ($q) => $q->published(),
         ])->where('type', CategoryType::TOUR)
             ->get();
 
@@ -33,7 +33,7 @@ class TourController extends Controller
      */
     public function show(Request $request, string $locale, string $id)
     {
-        $tour = Tour::findOrFail($id);
+        $tour = Tour::published()->findOrFail($id);
         return view('website.id_pages.show_tour', [
             'tour' => $tour,
             'seoData' => $tour->getDynamicSEOData(),

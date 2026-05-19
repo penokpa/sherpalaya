@@ -43,11 +43,23 @@ class Tour extends Model implements CanBeEasySearched, CanBeInquiried
         'costs_include',
         'costs_exclude',
         'is_featured',
+        'published_at',
     ];
     protected $casts = [
         'costs_exclude' => 'array',
         'costs_include' => 'array',
+        'published_at' => 'datetime',
     ];
+
+    public function scopePublished($query)
+    {
+        return $query->whereNotNull('published_at')->where('published_at', '<=', now());
+    }
+
+    public function isPublished(): bool
+    {
+        return $this->published_at !== null && $this->published_at->isPast();
+    }
 
     public $translatable = [
         'title',

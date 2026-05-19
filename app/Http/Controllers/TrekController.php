@@ -19,7 +19,7 @@ class TrekController extends Controller
         $pageSetting = app(PageSetting::class);
 
         $allTreks = Category::with([
-            'treks',
+            'treks' => fn ($q) => $q->published(),
         ])->where('type', CategoryType::TREK)
             ->get();
 
@@ -35,12 +35,13 @@ class TrekController extends Controller
      */
     public function show(Request $request, string $locale, string $id)
     {
-        $trek = Trek::with([
-            'coverImage',
-            'itineraries.destinations',
-            'destinations.destinationImages',
-            'images',
-        ])
+        $trek = Trek::published()
+            ->with([
+                'coverImage',
+                'itineraries.destinations',
+                'destinations.destinationImages',
+                'images',
+            ])
             ->where('id', $id)
             ->firstOrFail();
         return view('website.id_pages.show_trek', [

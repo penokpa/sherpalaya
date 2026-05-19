@@ -22,10 +22,11 @@ return [
         'default' => [
             'heading', '|',
             'bold', 'italic', 'underline', 'strike', '|',
+            'color', 'highlight', '|',
+            'link', 'media', 'oembed', '|',
             'align-left', 'align-center', 'align-right', '|',
             'bullet-list', 'ordered-list', '|',
             'blockquote', 'hr', '|',
-            'link', 'media', '|',
             'undo', 'redo',
         ],
         // Original "everything" profile preserved if we ever want it again
