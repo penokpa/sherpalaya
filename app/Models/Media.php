@@ -19,8 +19,8 @@ use Intervention\Image\ImageManagerStatic as InterventionImage;
  */
 class Media extends BaseMedia
 {
-    /** Anything wider than this gets scaled down on upload. */
-    private const MAX_WIDTH = 1920;
+    /** Max for the longer side. Tall portraits get capped on height; landscapes on width. */
+    private const MAX_DIMENSION = 1920;
 
     /** JPEG/WebP quality. 82 is the sweet spot — visually identical to 100, ~70% smaller. */
     private const JPEG_QUALITY = 82;
@@ -66,9 +66,10 @@ class Media extends BaseMedia
         try {
             $image = InterventionImage::make($fullPath);
 
-            // Downscale only — never upscale a small image
-            if ($image->width() > self::MAX_WIDTH) {
-                $image->resize(self::MAX_WIDTH, null, function ($constraint) {
+            // Cap longest side. Fits both landscapes (1920×N) and portraits (N×1920) into
+            // a sensible web display range. Aspect ratio preserved; small images untouched.
+            if ($image->width() > self::MAX_DIMENSION || $image->height() > self::MAX_DIMENSION) {
+                $image->resize(self::MAX_DIMENSION, self::MAX_DIMENSION, function ($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 });
