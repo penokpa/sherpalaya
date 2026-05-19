@@ -24,7 +24,7 @@ return [
             'bold', 'italic', 'underline', 'strike', '|',
             'color', 'highlight', '|',
             'link', 'media', 'oembed', '|',
-            'align-left', 'align-center', 'align-right', '|',
+            'align-left', 'align-center', 'align-right', 'align-justify', '|',
             'bullet-list', 'ordered-list', '|',
             'blockquote', 'hr', '|',
             'undo', 'redo',
