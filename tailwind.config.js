@@ -15,6 +15,7 @@ export default {
     "./src/*.html",
   ],
   plugins: [
+    require('@tailwindcss/typography'),
     require('flyonui'),
     require('flyonui/plugin'),
     addDynamicIconSelectors()
