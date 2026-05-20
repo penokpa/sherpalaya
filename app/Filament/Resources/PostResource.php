@@ -43,7 +43,6 @@ class PostResource extends Resource
                 ->columns(1)
                 ->schema([
                     TextInput::make('title')
-                        ->required()
                         ->maxLength(200)
                         ->translatable(),
 
@@ -60,7 +59,6 @@ class PostResource extends Resource
                         ->translatable(),
 
                     RichEditor::make('body')
-                        ->required()
                         ->translatable(),
                 ]),
 

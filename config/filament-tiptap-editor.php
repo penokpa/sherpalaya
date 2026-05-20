@@ -97,10 +97,13 @@ return [
     |
     */
     'disable_floating_menus' => true,
-    'disable_bubble_menus' => true,
+    // Bubble menus stay ON so the image-edit popup appears when an image is selected
+    // (it's the only way to access resize / alt text / replace from inside the editor).
+    // The text-selection bubble is intentionally minimal to reduce Cmd+A annoyance.
+    'disable_bubble_menus' => false,
     'disable_toolbar_menus' => false,
 
-    'bubble_menu_tools' => ['bold', 'italic', 'strike', 'underline', 'superscript', 'subscript', 'lead', 'small', 'link'],
+    'bubble_menu_tools' => ['bold', 'italic', 'link'],
     'floating_menu_tools' => ['media', 'grid-builder', 'details', 'table', 'oembed', 'code-block', 'blocks'],
 
     /*

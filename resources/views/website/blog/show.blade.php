@@ -1,6 +1,6 @@
 @php
     $locale = app()->currentLocale();
-    $coverUrl = optional($post->coverImage)->url ?: asset('photos/basecamp.JPG');
+    $coverUrl = optional($post->coverImage)->url;
     $publishedLabel = optional($post->published_at)->translatedFormat('F j, Y');
     $readingMinutes = max(1, (int) ceil(str_word_count(strip_tags($post->body ?? '')) / 220));
     $seoData = method_exists($post, 'getDynamicSEOData') ? $post->getDynamicSEOData() : null;
