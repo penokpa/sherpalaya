@@ -1,6 +1,8 @@
 /.phpunit.cache
 /node_modules
-/public/build
+# Vite build output IS committed — production has no Node, so it ships the
+# compiled CSS/JS this way. Rebuild locally (`npm run build`) before each deploy.
+# /public/build
 /public/hot
 /public/storage
 /storage/*.key
