@@ -72,7 +72,24 @@ php artisan event:cache || true
 php artisan storage:link 2>/dev/null || true
 
 # ─── content seeders (all idempotent — safe to re-run) ───────────────────
-echo "▶ seeding regional media + Dolpo→Rara + Everest tier content"
+# Run order matters: structural seeders (which create / rename records) MUST
+# run before the content seeders, which match records by English title.
+echo "▶ seeding structural records (treks, expeditions, categories, regions)"
+php artisan db:seed --force --class='Database\Seeders\ExpeditionCategoryRestructureSeeder'
+php artisan db:seed --force --class='Database\Seeders\RegionAndTrekRestructureSeeder'
+php artisan db:seed --force --class='Database\Seeders\MissingHwwTreksSeeder'
+php artisan db:seed --force --class='Database\Seeders\EverestTierProductsSeeder'
+
+echo "▶ seeding region/trek/expedition tier copy"
+php artisan db:seed --force --class='Database\Seeders\RegionContentSeeder'
+php artisan db:seed --force --class='Database\Seeders\TrekContentSeeder'
+php artisan db:seed --force --class='Database\Seeders\ExpeditionTierContentSeeder'
+
+echo "▶ price match + media organization"
+php artisan db:seed --force --class='Database\Seeders\PriceMatchSeeder'
+php artisan db:seed --force --class='Database\Seeders\MediaOrganizationSeeder'
+
+echo "▶ regional media + Dolpo→Rara + Everest tier full content"
 php artisan db:seed --force --class='Database\Seeders\RegionalMediaSeeder'
 php artisan db:seed --force --class='Database\Seeders\DolpoToRaraTrekContentSeeder'
 php artisan db:seed --force --class='Database\Seeders\EverestTiersFullContentSeeder'
