@@ -44,7 +44,7 @@ class CuratorPicker extends FormsCuratorPicker
         return $this
             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
             ->maxSize(8 * 1024)
-            ->helperText('Recommended: landscape 16:9, min 2400×1350 px · JPG / PNG / WebP · max 8 MB. Keep subject centered (sides crop on mobile).');
+            ->helperText('Drop a file here or click the tile to open the library. Recommended: landscape 16:9, min 2400×1350 px · JPG / PNG / WebP · max 8 MB. Keep subject centered (sides crop on mobile).');
     }
 
     /**
@@ -55,7 +55,7 @@ class CuratorPicker extends FormsCuratorPicker
         return $this
             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
             ->maxSize(5 * 1024)
-            ->helperText('Recommended: landscape 16:9, min 1920×1080 px · JPG / PNG / WebP · max 5 MB. Keep subject centered.');
+            ->helperText('Drop a file here or click the tile to open the library. Recommended: landscape 16:9, min 1920×1080 px · JPG / PNG / WebP · max 5 MB. Keep subject centered.');
     }
 
     /**
@@ -66,7 +66,7 @@ class CuratorPicker extends FormsCuratorPicker
         return $this
             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
             ->maxSize(5 * 1024)
-            ->helperText('Recommended: landscape 4:3 or 3:2, min 1600×1200 px · JPG / PNG / WebP · max 5 MB.');
+            ->helperText('Drop a file here or click the tile to open the library. Recommended: landscape 4:3 or 3:2, min 1600×1200 px · JPG / PNG / WebP · max 5 MB.');
     }
 
     /**
@@ -77,7 +77,7 @@ class CuratorPicker extends FormsCuratorPicker
         return $this
             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
             ->maxSize(5 * 1024)
-            ->helperText('Any orientation · recommended min 1200 px on long edge · JPG / PNG / WebP · max 5 MB.');
+            ->helperText('Drop files here or click the tile to open the library. Any orientation · recommended min 1200 px on long edge · JPG / PNG / WebP · max 5 MB.');
     }
 
     /**
@@ -88,7 +88,7 @@ class CuratorPicker extends FormsCuratorPicker
         return $this
             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
             ->maxSize(4 * 1024)
-            ->helperText('Recommended: portrait 3:4, min 1200×1600 px · JPG / PNG / WebP · max 4 MB. Face/subject in the upper third.');
+            ->helperText('Drop a file here or click the tile to open the library. Recommended: portrait 3:4, min 1200×1600 px · JPG / PNG / WebP · max 4 MB. Face/subject in the upper third.');
     }
 
     /**
@@ -99,7 +99,7 @@ class CuratorPicker extends FormsCuratorPicker
         return $this
             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
             ->maxSize(2 * 1024)
-            ->helperText("Recommended: square 1:1, min {$minPx}×{$minPx} px · JPG / PNG / WebP · max 2 MB.");
+            ->helperText("Drop a file here or click the tile to open the library. Recommended: square 1:1, min {$minPx}×{$minPx} px · JPG / PNG / WebP · max 2 MB.");
     }
 
     /**
@@ -110,7 +110,7 @@ class CuratorPicker extends FormsCuratorPicker
         return $this
             ->acceptedFileTypes(['image/png', 'image/webp', 'image/svg+xml'])
             ->maxSize(500)
-            ->helperText('Square, transparent background · max 500 KB · PNG / WebP / SVG.');
+            ->helperText('Drop a file here or click the tile to open the library. Square, transparent background · max 500 KB · PNG / WebP / SVG.');
     }
 
     /**
@@ -121,6 +121,6 @@ class CuratorPicker extends FormsCuratorPicker
         return $this
             ->acceptedFileTypes(['image/png', 'image/webp', 'image/svg+xml'])
             ->maxSize(1024)
-            ->helperText('Transparent background · PNG / WebP / SVG · max 1 MB.');
+            ->helperText('Drop a file here or click the tile to open the library. Transparent background · PNG / WebP / SVG · max 1 MB.');
     }
 }

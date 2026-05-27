@@ -118,6 +118,48 @@ class SearchController extends Controller
     }
 
     /**
+     * Lightweight JSON endpoint for type-ahead suggestions.
+     * Returns up to 8 results across all SearchType variants (or restricted
+     * to a single type if `type` is provided). Used by the navbar search modal.
+     */
+    public function suggest(Request $request)
+    {
+        $q = trim((string) $request->query('q', ''));
+        $typeParam = $request->query('type');
+
+        if (mb_strlen($q) < 2) {
+            return response()->json(['results' => []]);
+        }
+
+        $types = collect(SearchType::cases());
+        $only = $typeParam ? SearchType::tryFrom($typeParam) : null;
+
+        if ($only) {
+            $types = collect([$only]);
+        }
+
+        $perType = $only ? 8 : 3;
+        $results = collect();
+
+        foreach ($types as $type) {
+            $hits = $type->search($q)->get()->take($perType);
+            foreach ($hits as $hit) {
+                $results->push([
+                    'id'    => $hit->id,
+                    'type'  => $type->getLabel(),
+                    'title' => $hit->searchResultTitle(),
+                    'url'   => $hit->searchResultUrl(),
+                    'image' => $hit->searchResultImage()?->thumbnail_url
+                        ?? $hit->searchResultImage()?->url,
+                ]);
+                if ($results->count() >= 8) break 2;
+            }
+        }
+
+        return response()->json(['results' => $results->values()]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)

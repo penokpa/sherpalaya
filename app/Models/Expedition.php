@@ -7,11 +7,13 @@ use App\Contracts\CanBeInquiried;
 use App\Enums\SearchType;
 use App\Enums\TrekDifficulty;
 use App\Helpers\CuratorModelHelper;
+use App\Observers\BackfillImageMetaObserver;
 use App\Traits\EasySearch;
 use App\Traits\HasInquiries;
 use App\Traits\HasCategories;
 use App\Traits\HasCategory;
 use Awcodes\Curator\Models\Media;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -21,6 +23,7 @@ use Illuminate\Support\Collection;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\Translatable\HasTranslations;
 
+#[ObservedBy(BackfillImageMetaObserver::class)]
 class Expedition extends Model implements CanBeEasySearched, CanBeInquiried
 {
     use EasySearch;
@@ -49,6 +52,7 @@ class Expedition extends Model implements CanBeEasySearched, CanBeInquiried
         'costs_exclude',
         'is_featured',
         'published_at',
+        'price_from',
     ];
     public $translatable = [
         'title',
@@ -63,7 +67,13 @@ class Expedition extends Model implements CanBeEasySearched, CanBeInquiried
         'costs_exclude' => 'array',
         'costs_include' => 'array',
         'published_at' => 'datetime',
+        'price_from' => 'decimal:2',
     ];
+
+    public function getPriceFromLabelAttribute(): ?string
+    {
+        return $this->price_from ? '$' . number_format((float) $this->price_from, 0) : null;
+    }
 
     public function scopePublished($query)
     {

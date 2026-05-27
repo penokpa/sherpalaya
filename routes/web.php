@@ -37,6 +37,7 @@ Route::middleware([
             ->group(function () {
                 Route::get('/', 'index');
                 Route::get('/query', 'query');
+                Route::get('/suggest', 'suggest')->name('website.search.suggest');
             });
 
         // Website Route
@@ -74,12 +75,22 @@ Route::middleware([
                 Route::get('/{id}', 'show')->name('show_trek');
             });
 
+        // Region Route — dedicated regions hub + per-region trek listing
+        Route::controller(\App\Http\Controllers\RegionController::class)
+            ->prefix('/regions')
+            ->group(function () {
+                Route::get('/', 'index')->name('website.regions');
+                Route::get('/{slug}', 'show')->name('show_region');
+            });
 
-        // Expedition Route
+
+        // Expedition Route — categorized like Seven Summit Treks
+        // (Everest Expeditions · 8000ers · 7000ers · 6000ers)
         Route::controller(ExpeditionController::class)
             ->prefix('/expeditions')
             ->group(function () {
                 Route::get('/', 'index')->name('website.expeditions');
+                Route::get('/category/{slug}', 'category')->name('expedition.category');
                 Route::get('/{id}', 'show')->name('show_expedition');
             });
 
