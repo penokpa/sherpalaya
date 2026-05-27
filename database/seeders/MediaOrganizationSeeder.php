@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Http\Controllers\PeakClimbingController;
 use App\Models\Expedition;
 use App\Models\Media;
 use App\Models\OurSherpa;
@@ -125,9 +124,17 @@ class MediaOrganizationSeeder extends Seeder
         }
     }
 
+    /**
+     * Anything below 7000m is treated as a "trekking peak" for media-folder
+     * routing (peak-climbing/ vs expeditions/). Was previously sourced from
+     * App\Http\Controllers\PeakClimbingController::PEAK_ALTITUDE_CEILING; that
+     * controller has been deleted so the value is inlined here.
+     */
+    private const PEAK_ALTITUDE_CEILING = 7000;
+
     private function collectExpeditions(array &$assignments): void
     {
-        $peakFloor = PeakClimbingController::PEAK_ALTITUDE_CEILING;
+        $peakFloor = self::PEAK_ALTITUDE_CEILING;
 
         foreach (Expedition::query()->get() as $exp) {
             $title = trim((string) $exp->getTranslation('title', 'en', false));

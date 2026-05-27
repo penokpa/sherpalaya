@@ -87,7 +87,10 @@ php artisan db:seed --force --class='Database\Seeders\ExpeditionTierContentSeede
 
 echo "▶ price match + media organization"
 php artisan db:seed --force --class='Database\Seeders\PriceMatchSeeder'
-php artisan db:seed --force --class='Database\Seeders\MediaOrganizationSeeder'
+# MediaOrganizationSeeder is a metadata-only reorg — non-critical to the deploy.
+# If it fails, log and keep going so the critical RegionalMediaSeeder still runs.
+php artisan db:seed --force --class='Database\Seeders\MediaOrganizationSeeder' || \
+    echo "⚠ MediaOrganizationSeeder skipped (non-fatal)"
 
 echo "▶ regional media + Dolpo→Rara + Everest tier full content"
 php artisan db:seed --force --class='Database\Seeders\RegionalMediaSeeder'
