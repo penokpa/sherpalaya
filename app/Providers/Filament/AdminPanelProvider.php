@@ -110,6 +110,7 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationIcon('heroicon-o-photo')
                     ->navigationGroup('Content')
                     ->navigationSort(5)
+                    ->resource(\App\Filament\Resources\MediaResource::class)
                     // ->navigationCountBadge()
                     ->registerNavigation(true)
             ])

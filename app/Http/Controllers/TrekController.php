@@ -18,14 +18,21 @@ class TrekController extends Controller
     {
         $pageSetting = app(PageSetting::class);
 
-        $allTreks = Category::with([
-            'treks' => fn ($q) => $q->published(),
-        ])->where('type', CategoryType::TREK)
-            ->get();
+        // /treks is now the regions hub (matches HWW's UX) — region cards first,
+        // click one to see its trek list. Only includes regions with at least one
+        // published trek.
+        $regions = Region::query()
+            ->with([
+                'coverImage',
+                'treks' => fn ($q) => $q->published()->with('coverImage'),
+            ])
+            ->get()
+            ->filter(fn ($r) => $r->treks->isNotEmpty())
+            ->sortBy('sort_order')
+            ->values();
 
-        // dd($allTreks);
         return view('website.trekking', [
-            'allTreks' => $allTreks,
+            'regions' => $regions,
             'pageSetting' => $pageSetting,
         ]);
     }

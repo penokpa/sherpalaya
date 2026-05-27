@@ -7,7 +7,6 @@ use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
 use App\Traits\Filament\TranslatableResource;
 use Awcodes\Curator\Components\Tables\CuratorColumn;
-use Filament\Forms\Components\DateTimePicker;
 use App\Filament\Fields\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
@@ -72,13 +71,25 @@ class PostResource extends Resource
             Section::make('Publishing')
                 ->columns(2)
                 ->schema([
-                    DateTimePicker::make('published_at')
-                        ->label('Publish date')
-                        ->seconds(false)
-                        ->helperText('Leave blank to keep as draft. Set a future date to schedule.'),
+                    \Filament\Forms\Components\Radio::make('publish_status')
+                        ->label('Status')
+                        ->options([
+                            'published' => 'Published',
+                            'draft' => 'Draft',
+                        ])
+                        ->inline()
+                        ->required()
+                        ->dehydrated(false)
+                        ->formatStateUsing(fn ($record) => $record && $record->published_at ? 'published' : 'draft')
+                        ->afterStateUpdated(function ($state, callable $set) {
+                            $set('published_at', $state === 'published' ? now() : null);
+                        })
+                        ->default('published')
+                        ->live(),
                     Toggle::make('is_featured')
                         ->label('Featured')
                         ->helperText('Featured posts appear in the highlighted slot on the blog listing.'),
+                    \Filament\Forms\Components\Hidden::make('published_at'),
                 ]),
         ]);
     }

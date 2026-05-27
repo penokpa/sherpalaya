@@ -1,4 +1,4 @@
-<x-website-layout :initAOS="false">
+<x-website-layout :initAOS="false" :overHero="true">
     <x-home-page.hero />
 
     <x-home-page.anchor-treks />

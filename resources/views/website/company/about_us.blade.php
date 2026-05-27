@@ -8,10 +8,16 @@
     $heroSubtitle = $locale === 'fr' ? $aboutUsSetting->title_down_fr : $aboutUsSetting->title_down_en;
     $contentTitle = $locale === 'fr' ? $aboutUsSetting->content_title_fr : $aboutUsSetting->content_title_en;
     $content = $locale === 'fr' ? $aboutUsSetting->content_fr : $aboutUsSetting->content_en;
-    $certificates = $aboutUsSetting->certificate_images ?? [];
+    // certificate_images is an array of media IDs. Resolve to Media records
+    // and drop any that no longer exist (e.g. deleted in admin).
+    $certificateIds = $aboutUsSetting->certificate_images ?? [];
+    $certificates = collect($certificateIds)
+        ->map(fn ($id) => Media::find($id))
+        ->filter()
+        ->values();
 @endphp
 
-<x-website-layout>
+<x-website-layout :overHero="true">
     <x-listing.hero
         :image="$heroImage"
         :eyebrow="$heroEyebrow ?: 'About Sherpalaya'"

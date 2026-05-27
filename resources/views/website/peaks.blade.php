@@ -1,4 +1,4 @@
-<x-website-layout>
+<x-website-layout :overHero="true">
     <div class="bg-blue-100/50">
         <div class="card--rounded-none image-full bg-blue-100/50 h-[80dvh] relative">
             <figure class="h-[80dvh] w-full">

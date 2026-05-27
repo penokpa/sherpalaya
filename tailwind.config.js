@@ -48,11 +48,14 @@ export default {
           100: '#DCE5DF',
           900: '#0F2018',
         },
+        // Brand accent — SST-style warm amber/gold. The Tailwind key is
+        // still `terracotta` so hundreds of `bg-terracotta` / `text-terracotta`
+        // class references keep working; only the hex values changed.
         terracotta: {
-          DEFAULT: '#C9684A',        // accent / CTAs
-          hover: '#B0573E',
-          50: '#FBEEE8',
-          100: '#F5D6C9',
+          DEFAULT: '#D4A036',        // amber gold — accent / CTAs
+          hover: '#B8862A',          // deeper gold on hover
+          50: '#FDF7E5',             // washed amber
+          100: '#F7E5B0',            // pale amber
         },
         hairline: '#E8E3DA',         // borders
       },
@@ -69,8 +72,8 @@ export default {
         mytheme: {
           primary: "#1F3D2E",        // forest — was "#00008B" navy
           secondary: "#1F3D2E",
-          accent: "#C9684A",         // terracotta — was "#A9A9A9" grey
-          warning: "#C9684A",        // map legacy "warning" calls to accent
+          accent: "#D4A036",         // amber gold — was terracotta
+          warning: "#D4A036",        // map legacy "warning" calls to accent
           success: "#1F3D2E",        // map legacy "success" calls to brand
           neutral: "#1C1C1A",
           "base-100": "#FAF8F4",     // page background

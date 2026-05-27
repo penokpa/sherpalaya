@@ -121,6 +121,17 @@ class ExpeditionResource extends Resource
                                             \Filament\Forms\Components\Hidden::make('published_at'),
                                         ]),
 
+                                    Section::make('Pricing')
+                                        ->schema([
+                                            TextInput::make('price_from')
+                                                ->label('Price from (USD)')
+                                                ->numeric()
+                                                ->prefix('$')
+                                                ->minValue(0)
+                                                ->step('0.01')
+                                                ->helperText('Per-person starting price shown on the listing card and detail page. Leave blank to hide.'),
+                                        ]),
+
                                     Section::make('')
                                         ->schema([
                                             Toggle::make('is_featured')

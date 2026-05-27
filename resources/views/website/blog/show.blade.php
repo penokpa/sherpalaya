@@ -51,13 +51,27 @@
 
     <main class="bg-canvas">
         <div class="mx-auto max-w-3xl px-6 py-14 lg:py-20">
-            <article class="prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans
+            <article class="post-body prose prose-lg max-w-none text-ink/85 leading-relaxed font-sans
                             prose-headings:font-display prose-headings:text-ink prose-headings:font-medium prose-headings:tracking-tightish
                             prose-a:text-forest hover:prose-a:text-terracotta
                             prose-blockquote:border-l-terracotta prose-blockquote:text-ink/80 prose-blockquote:not-italic
                             prose-img:rounded-xl">
                 {!! $post->body !!}
             </article>
+            <style>
+                /* Match the editor's inline image behavior: a run of consecutive imgs
+                   sits side-by-side. When two imgs are direct siblings (no text/br
+                   between them) each takes ~half-width so the pair fits the column. */
+                .post-body img { display: inline-block; max-width: 100%; vertical-align: top; }
+                .post-body :is(img:has(+ img), img + img) {
+                    width: calc(50% - 0.25rem);
+                    max-width: calc(50% - 0.25rem);
+                    height: auto;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                .post-body img + img { margin-left: 0.5rem; }
+            </style>
 
             <div class="mt-16 border-t border-ink/10 pt-8">
                 <a href="{{ url('/' . $locale . '/blog') }}"

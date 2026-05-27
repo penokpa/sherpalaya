@@ -20,7 +20,7 @@
     }
 @endphp
 
-<x-website-layout>
+<x-website-layout :overHero="true">
 
     <x-listing.hero
         :image="$heroImage"
@@ -55,6 +55,7 @@
                                 :eyebrow="$cat->name"
                                 :title="$tour->title"
                                 :duration="$tour->duration"
+                                :price="$tour->price_from_label"
                             />
                         </div>
                     @endforeach

@@ -12,7 +12,7 @@
     $workingHour = $locale === 'fr' ? $contactUsSetting->working_hour_fr : $contactUsSetting->working_hour_en;
 @endphp
 
-<x-website-layout>
+<x-website-layout :overHero="true">
     <x-listing.hero
         :image="$heroImage"
         :eyebrow="$heroEyebrow ?: __('home.cta_plan')"

@@ -11,7 +11,7 @@
     ];
 @endphp
 
-<x-website-layout :seoData="$seoData">
+<x-website-layout :seoData="$seoData" :overHero="true">
     <x-detail.hero
         :image="$tour->coverImage"
         fallback="photos/culture.jpg"
@@ -19,6 +19,7 @@
         :title="$tour->title"
         :duration="$tour->duration"
         :season="$tour->best_time_for_tour"
+        :price="$tour->price_from_label"
     />
 
     <x-breadcrumb :breadcrumbs="[

@@ -1,17 +1,20 @@
 @php
     $locale = app()->currentLocale();
 
-    $tabs = [
+    $hasTiers = filled(\App\Services\ExpeditionTiers::forExpedition($expedition));
+
+    $tabs = array_values(array_filter([
         ['href' => '#key_highlights', 'icon' => 'tabler--bulb', 'label' => __('show-page.key')],
         ['href' => '#itineraries',    'icon' => 'tabler--calendar-week', 'label' => __('show-page.itinerary')],
+        $hasTiers ? ['href' => '#service-tiers', 'icon' => 'tabler--stars', 'label' => 'Service Tiers'] : null,
         ['href' => '#costs_include',  'icon' => 'tabler--check', 'label' => __('show-page.costs_include')],
         ['href' => '#costs_exclude',  'icon' => 'tabler--x', 'label' => __('show-page.costs_exclude')],
         ['href' => '#essential_tips', 'icon' => 'tabler--info-circle', 'label' => __('show-page.tips')],
         ['href' => '#gallery',        'icon' => 'tabler--photo', 'label' => __('show-page.gallery')],
-    ];
+    ]));
 @endphp
 
-<x-website-layout :seoData="$seoData">
+<x-website-layout :seoData="$seoData" :overHero="true">
     <x-detail.hero
         :image="$expedition->coverImage"
         fallback="photos/trek1.JPG"
@@ -21,6 +24,7 @@
         :duration="$expedition->duration"
         :difficulty="$expedition->expedition_difficulty"
         :season="$expedition->best_time_for_expedition"
+        :price="$expedition->price_from_label ?? 'Price on request'"
     />
 
     <x-breadcrumb :breadcrumbs="[
@@ -39,6 +43,9 @@
                     <x-detail.section.overview :item="$expedition" />
                     <x-detail.section.key-highlights :item="$expedition" />
                     <x-detail.section.itinerary :item="$expedition" />
+                    <div id="service-tiers">
+                        <x-detail.section.service-tiers :item="$expedition" />
+                    </div>
                     <x-detail.section.cost-info :item="$expedition" />
                     <x-detail.section.essential-tips :item="$expedition" />
                     <x-detail.section.gallery :item="$expedition" />

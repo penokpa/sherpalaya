@@ -10,7 +10,7 @@
     $content = $locale === 'fr' ? $pageSetting->team_page_content_fr : $pageSetting->team_page_content_en;
 @endphp
 
-<x-website-layout>
+<x-website-layout :overHero="true">
     <x-listing.hero
         :image="$heroImage"
         fallback="photos/oursherpa1.jpg"

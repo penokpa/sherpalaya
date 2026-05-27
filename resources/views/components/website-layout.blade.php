@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="bg-canvas font-sans text-ink antialiased">
+<body class="bg-canvas font-sans text-ink antialiased @if($overHero) nav-over-hero @endif">
 
     {{-- top --}}
     <x-partials.navbar />

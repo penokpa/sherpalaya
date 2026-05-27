@@ -5,27 +5,55 @@ namespace App\Http\Controllers;
 use App\Enums\CategoryType;
 use App\Models\Category;
 use App\Models\Expedition;
-use App\Models\Region;
 use App\Settings\PageSetting;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 
 class ExpeditionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    /**
+     * Expedition landing page — grid of category tiles (Seven Summit Treks
+     * style). Each tile = one category (Everest Expeditions, 8000ers, etc.).
+     */
     public function index()
     {
         $pageSetting = app(PageSetting::class);
-        $allExpeditions = Category::with([
-            'expeditions' => fn ($q) => $q->published(),
-        ])->where('type', CategoryType::EXPEDITION)
-            ->get();
+
+        $categories = Category::query()
+            ->where('type', CategoryType::EXPEDITION)
+            ->with([
+                'coverImage',
+                'expeditions' => fn ($q) => $q->published()->with('coverImage'),
+            ])
+            ->orderBy('sort_order')
+            ->get()
+            ->filter(fn ($c) => $c->expeditions->isNotEmpty())
+            ->values();
 
         return view('website.expeditions', [
             'pageSetting' => $pageSetting,
-            'allExpeditions' => $allExpeditions
+            'categories'  => $categories,
+        ]);
+    }
+
+    /**
+     * Per-category landing — lists all expeditions in one category.
+     */
+    public function category(Request $request, string $locale, string $slug)
+    {
+        $category = Category::query()
+            ->where('type', CategoryType::EXPEDITION)
+            ->where('slug', $slug)
+            ->with([
+                'coverImage',
+                'expeditions' => fn ($q) => $q->published()->with(['coverImage', 'region']),
+            ])
+            ->firstOrFail();
+
+        return view('website.expedition_category', [
+            'category' => $category,
         ]);
     }
 

@@ -16,6 +16,10 @@ class WebsiteLayout extends Component
         public bool $showFooter = true,
         public bool $initAOS = true,
         public ?SEOData $seoData = null,
+        /** Set true on pages whose first section is a dark, full-bleed hero
+         *  image so the navbar fades to transparent over it. Default false
+         *  (solid dark) so internal pages with light backgrounds stay legible. */
+        public bool $overHero = false,
     ) {
         //
     }

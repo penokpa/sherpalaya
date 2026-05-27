@@ -11,7 +11,7 @@
     ];
 @endphp
 
-<x-website-layout :seoData="$seoData">
+<x-website-layout :seoData="$seoData" :overHero="true">
     <x-detail.hero
         :image="$trek->coverImage"
         :eyebrow="optional($trek->category)->name"
@@ -20,6 +20,7 @@
         :duration="$trek->duration"
         :difficulty="$trek->trek_difficulty"
         :season="$trek->best_time_for_trek"
+        :price="$trek->price_from_label"
     />
 
     <x-breadcrumb :breadcrumbs="[

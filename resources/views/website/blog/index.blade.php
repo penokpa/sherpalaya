@@ -1,6 +1,6 @@
 @php $locale = app()->currentLocale(); @endphp
 
-<x-website-layout>
+<x-website-layout :overHero="true">
     <x-listing.hero
         :image="asset('photos/mountain2.jpg')"
         :eyebrow="__('blog.eyebrow')"

@@ -8,3 +8,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Treks split layout: region rail (left) + trek cards (right) */
+.treks-rail-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.15s ease, background 0.15s ease;
+    border-right: 2px solid transparent;
+    cursor: pointer;
+}
+.treks-rail-item:hover,
+.treks-rail-item.is-active {
+    color: #D4A036;
+    border-right-color: #D4A036;
+    background: rgba(255, 255, 255, 0.02);
+}
+.treks-rail-item .icon-arrow {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+.treks-rail-item:hover .icon-arrow,
+.treks-rail-item.is-active .icon-arrow {
+    opacity: 1;
+}
+
