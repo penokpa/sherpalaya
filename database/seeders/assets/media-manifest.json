@@ -1,0 +1,2031 @@
+[
+    {
+        "name": "4cd4553b-f4bc-4f7f-a03b-6dbc10baca4d",
+        "filename": "4cd4553b-f4bc-4f7f-a03b-6dbc10baca4d.jpg",
+        "ext": "jpg",
+        "type": "image\/jpeg",
+        "width": 900,
+        "height": 600,
+        "size": 128734,
+        "title": "Threepasskumbu",
+        "alt": "Everest Three Passes Trek",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Everest Three Passes Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "0913714d-963b-4883-aaff-423ce129e2e3",
+        "filename": "0913714d-963b-4883-aaff-423ce129e2e3.jpg",
+        "ext": "jpg",
+        "type": "image\/jpeg",
+        "width": 1440,
+        "height": 959,
+        "size": 319382,
+        "title": "Mount Everest",
+        "alt": "Mt. Everest Expedition — Standard",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Everest Expedition — Standard",
+                "as": "cover"
+            },
+            {
+                "kind": "expedition",
+                "match": "Mt. Everest Expedition — Premium",
+                "as": "cover"
+            },
+            {
+                "kind": "expedition",
+                "match": "Mt. Everest Expedition — Luxury",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "152228cd-2c5c-45c4-8495-86fdf3cb8d64",
+        "filename": "152228cd-2c5c-45c4-8495-86fdf3cb8d64.jpg",
+        "ext": "jpg",
+        "type": "image\/jpeg",
+        "width": 800,
+        "height": 600,
+        "size": 146296,
+        "title": "Dolpo",
+        "alt": "Dolpo to Rara Trek",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Dolpo to Rara Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "bbc629ca-5292-4fcc-b3cd-83b486100d8b",
+        "filename": "bbc629ca-5292-4fcc-b3cd-83b486100d8b.jpg",
+        "ext": "jpg",
+        "type": "image\/jpeg",
+        "width": 800,
+        "height": 389,
+        "size": 71108,
+        "title": "annapurna1",
+        "alt": "Mt. Annapurna I Expedition",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Annapurna I Expedition",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "f7168999-3282-4108-b2e7-7e82a09cdf2d",
+        "filename": "f7168999-3282-4108-b2e7-7e82a09cdf2d.jpg",
+        "ext": "jpg",
+        "type": "image\/jpeg",
+        "width": 800,
+        "height": 600,
+        "size": 104274,
+        "title": "annapurna",
+        "alt": "Annapurna Circuit Trek",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Annapurna Circuit Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "9539a836-b5e8-485b-a01f-275be10d7e3f",
+        "filename": "9539a836-b5e8-485b-a01f-275be10d7e3f.jpg",
+        "ext": "jpg",
+        "type": "image\/jpeg",
+        "width": 800,
+        "height": 600,
+        "size": 86938,
+        "title": "Lobuche_1 Peak",
+        "alt": null,
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Lobuche Peak",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "5ab52ca5-7066-4b96-bd39-fd3c6c80c751",
+        "filename": "5ab52ca5-7066-4b96-bd39-fd3c6c80c751.jpg",
+        "ext": "jpg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 325386,
+        "title": "Everest_Base Camp_trek",
+        "alt": null,
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Everest Base Camp Trek ",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "a4d3f08d-542f-4afe-bf87-bb7a4f5c626b",
+        "filename": "a4d3f08d-542f-4afe-bf87-bb7a4f5c626b.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 736,
+        "height": 552,
+        "size": 82229,
+        "title": "Mount Everest",
+        "alt": "Mt. Everest Expedition - North",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Everest Expedition - North",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "k2-base-camp-trek",
+        "filename": "k2-base-camp-trek.jpg",
+        "ext": "jpg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 800,
+        "size": 220889,
+        "title": "k2-base-camp-trek-photo-gallery-images-05204",
+        "alt": "Mt. K2 Expedition",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. K2 Expedition",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "915c3fb9-ee2a-4ddb-a862-5197995ef3df",
+        "filename": "915c3fb9-ee2a-4ddb-a862-5197995ef3df.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 736,
+        "height": 406,
+        "size": 51067,
+        "title": "Kangchenjunga",
+        "alt": "Mt. Kanchenjunga Expedition",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Kanchenjunga Expedition",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "30c3af54-8bc3-4e8b-9562-4248f6f05560",
+        "filename": "30c3af54-8bc3-4e8b-9562-4248f6f05560.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 736,
+        "height": 490,
+        "size": 80860,
+        "title": "Mt_ Lhotse at sunset, Himalayas",
+        "alt": "Mt. Lhotse Expedition",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Lhotse Expedition",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "makalu",
+        "filename": "makalu.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 736,
+        "height": 552,
+        "size": 89900,
+        "title": "_ (20)",
+        "alt": "Mt. Makalu Expedition",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Makalu Expedition",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "annapurna-base-camp-trek-cover",
+        "filename": "annapurna-base-camp-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 216901,
+        "title": "Annapurna Base Camp Trek",
+        "alt": "Snow-covered Annapurna massif under blue sky, Annapurna Sanctuary, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Annapurna Base Camp Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "phoksundo-tea-house-trek-cover",
+        "filename": "phoksundo-tea-house-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 810994,
+        "title": "Shey Phoksundo Lake",
+        "alt": "Turquoise waters of Shey Phoksundo Lake framed by the cliffs of upper Dolpo, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Phoksundo Tea House Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "lower-dolpo-circuit-trek-cover",
+        "filename": "lower-dolpo-circuit-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 370613,
+        "title": "Lower Dolpo Landscape",
+        "alt": "Rugged high-altitude landscape of Lower Dolpo with ochre cliffs and pine forest, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Lower Dolpo Circuit Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "upper-dolpo-to-mustang-trek-cover",
+        "filename": "upper-dolpo-to-mustang-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 570085,
+        "title": "Upper Dolpo High Country",
+        "alt": "Remote high plateau of Upper Dolpo on the route to Mustang, with stark Tibetan-Plateau terrain, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Dolpo to Mustang Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "upper-mustang-classic-trek-cover",
+        "filename": "upper-mustang-classic-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 724718,
+        "title": "Upper Mustang Landscape",
+        "alt": "Eroded ochre cliffs and Tibetan-Buddhist village of Upper Mustang, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Mustang Classic Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "tiji-festival-upper-mustang-cover",
+        "filename": "tiji-festival-upper-mustang-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 632706,
+        "title": "Tiji Festival in Upper Mustang",
+        "alt": "Cultural scene from the Tiji Festival in Lo Manthang, Upper Mustang, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tiji Festival in Upper Mustang",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "yartung-horse-riding-festival-cover",
+        "filename": "yartung-horse-riding-festival-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 521569,
+        "title": "Yartung Horse Riding Festival",
+        "alt": "Horse riding scene from the Yartung Festival in Mustang, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Yartung Horse Riding Festival",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gosainkunda-trek-cover",
+        "filename": "langtang-gosainkunda-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1081,
+        "size": 397847,
+        "title": "Langtang & Gosainkunda Trek",
+        "alt": "Langtang Himal panorama on the Langtang-Gosainkunda combined trek, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Langtang Gosainkunda Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "tamang-heritage-trek-cover",
+        "filename": "tamang-heritage-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1081,
+        "size": 318397,
+        "title": "Tamang Heritage Trek",
+        "alt": "Tamang village landscape on the Tamang Heritage Trail, Langtang region, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tamang Heritage Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "gosainkunda-trek-cover",
+        "filename": "gosainkunda-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1081,
+        "size": 322773,
+        "title": "Gosainkunda Trek",
+        "alt": "Alpine view above the Gosainkunda lake region, Langtang National Park, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Gosainkunda Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "helambu-cultural-trek-cover",
+        "filename": "helambu-cultural-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1081,
+        "size": 214994,
+        "title": "Helambu Cultural Trek",
+        "alt": "Hill country and Sherpa-Tamang villages of the Helambu region, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Helambu Cultural Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-4-1",
+        "filename": "langtang-gallery-4-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 694237,
+        "title": "Langtang #1",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Langtang Gosainkunda Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-12-1",
+        "filename": "langtang-gallery-12-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 578112,
+        "title": "Langtang #1",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Langtang Valley Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-17-1",
+        "filename": "langtang-gallery-17-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 531031,
+        "title": "Langtang #1",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tamang Heritage Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-31-1",
+        "filename": "langtang-gallery-31-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 397973,
+        "title": "Langtang #1",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Gosainkunda Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-4-2",
+        "filename": "langtang-gallery-4-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 406414,
+        "title": "Langtang #2",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Langtang Gosainkunda Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-12-2",
+        "filename": "langtang-gallery-12-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 455766,
+        "title": "Langtang #2",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Langtang Valley Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-17-2",
+        "filename": "langtang-gallery-17-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 424331,
+        "title": "Langtang #2",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tamang Heritage Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-31-2",
+        "filename": "langtang-gallery-31-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 406910,
+        "title": "Langtang #2",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Gosainkunda Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-4-3",
+        "filename": "langtang-gallery-4-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 378336,
+        "title": "Langtang #3",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Langtang Gosainkunda Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-17-3",
+        "filename": "langtang-gallery-17-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 267004,
+        "title": "Langtang #3",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tamang Heritage Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-31-3",
+        "filename": "langtang-gallery-31-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 337040,
+        "title": "Langtang #3",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Gosainkunda Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-32-3",
+        "filename": "langtang-gallery-32-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1081,
+        "height": 1920,
+        "size": 218168,
+        "title": "Langtang #3",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Helambu Cultural Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "langtang-gallery-12-4",
+        "filename": "langtang-gallery-12-4.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1440,
+        "height": 1255,
+        "size": 320653,
+        "title": "Langtang #4",
+        "alt": "Langtang region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Langtang Valley Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-33-1",
+        "filename": "dolpo-gallery-33-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 856173,
+        "title": "Dolpo #1",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Phoksundo Tea House Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-35-1",
+        "filename": "dolpo-gallery-35-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 549494,
+        "title": "Dolpo #1",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Dolpo to Mustang Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-36-1",
+        "filename": "dolpo-gallery-36-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 589928,
+        "title": "Dolpo #1",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Dolpo to Rara Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-33-2",
+        "filename": "dolpo-gallery-33-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 550220,
+        "title": "Dolpo #2",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Phoksundo Tea House Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-34-2",
+        "filename": "dolpo-gallery-34-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 673890,
+        "title": "Dolpo #2",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Lower Dolpo Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-35-2",
+        "filename": "dolpo-gallery-35-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 645468,
+        "title": "Dolpo #2",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Dolpo to Mustang Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-36-2",
+        "filename": "dolpo-gallery-36-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 458346,
+        "title": "Dolpo #2",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Dolpo to Rara Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-33-3",
+        "filename": "dolpo-gallery-33-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 349370,
+        "title": "Dolpo #3",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Phoksundo Tea House Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-34-3",
+        "filename": "dolpo-gallery-34-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 372127,
+        "title": "Dolpo #3",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Lower Dolpo Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-35-3",
+        "filename": "dolpo-gallery-35-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 380984,
+        "title": "Dolpo #3",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Dolpo to Mustang Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-36-3",
+        "filename": "dolpo-gallery-36-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 298664,
+        "title": "Dolpo #3",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Dolpo to Rara Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-33-4",
+        "filename": "dolpo-gallery-33-4.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 359056,
+        "title": "Dolpo #4",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Phoksundo Tea House Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-34-4",
+        "filename": "dolpo-gallery-34-4.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 360978,
+        "title": "Dolpo #4",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Lower Dolpo Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-35-4",
+        "filename": "dolpo-gallery-35-4.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 226281,
+        "title": "Dolpo #4",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Dolpo to Mustang Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-36-4",
+        "filename": "dolpo-gallery-36-4.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 275149,
+        "title": "Dolpo #4",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Dolpo to Rara Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-33-5",
+        "filename": "dolpo-gallery-33-5.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 244367,
+        "title": "Dolpo #5",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Phoksundo Tea House Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-34-5",
+        "filename": "dolpo-gallery-34-5.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 583766,
+        "title": "Dolpo #5",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Lower Dolpo Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-35-5",
+        "filename": "dolpo-gallery-35-5.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 297574,
+        "title": "Dolpo #5",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Dolpo to Mustang Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-33-6",
+        "filename": "dolpo-gallery-33-6.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 192337,
+        "title": "Dolpo #6",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Phoksundo Tea House Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-34-6",
+        "filename": "dolpo-gallery-34-6.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 517541,
+        "title": "Dolpo #6",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Lower Dolpo Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-35-6",
+        "filename": "dolpo-gallery-35-6.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 394523,
+        "title": "Dolpo #6",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Dolpo to Mustang Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-33-7",
+        "filename": "dolpo-gallery-33-7.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 434882,
+        "title": "Dolpo #7",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Phoksundo Tea House Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-34-7",
+        "filename": "dolpo-gallery-34-7.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 335220,
+        "title": "Dolpo #7",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Lower Dolpo Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "dolpo-gallery-35-7",
+        "filename": "dolpo-gallery-35-7.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 400,
+        "height": 300,
+        "size": 26389,
+        "title": "Dolpo #7",
+        "alt": "Dolpo region, western Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Dolpo to Mustang Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "mustang-gallery-14-1",
+        "filename": "mustang-gallery-14-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 622029,
+        "title": "Mustang #1",
+        "alt": "Upper Mustang, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Upper Mustang Classic Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "mustang-gallery-38-1",
+        "filename": "mustang-gallery-38-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 376502,
+        "title": "Mustang #1",
+        "alt": "Upper Mustang, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Yartung Horse Riding Festival",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "mt-dhaulagiri-expedition-cover",
+        "filename": "mt-dhaulagiri-expedition-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1199,
+        "height": 799,
+        "size": 105997,
+        "title": "Mt. Dhaulagiri Expedition",
+        "alt": "Snow-covered summit of Mt. Dhaulagiri (8,167 m) — world's 7th highest peak, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Dhaulagiri Expedition",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "annapurna-dhaulagiri-trek-cover",
+        "filename": "annapurna-dhaulagiri-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 800,
+        "size": 107562,
+        "title": "Annapurna Dhaulagiri Trek",
+        "alt": "Mt. Dhaulagiri seen on the Annapurna-Dhaulagiri trek route, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Annapurna Dhaulagiri Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "dhaulagiri-circuit-trek-cover",
+        "filename": "dhaulagiri-circuit-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1020,
+        "height": 1003,
+        "size": 226975,
+        "title": "Dhaulagiri Circuit Trek",
+        "alt": "Glacier and pass on the Dhaulagiri Circuit Trek route, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Dhaulagiri Circuit Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "trekking-in-dhorpatan-cover",
+        "filename": "trekking-in-dhorpatan-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 734,
+        "height": 456,
+        "size": 57759,
+        "title": "Dhorpatan Hunting Reserve",
+        "alt": "Dhorpatan Hunting Reserve meadows in west Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Trekking in Dhorpatan",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "makalu-base-camp-trek-cover",
+        "filename": "makalu-base-camp-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1024,
+        "height": 1024,
+        "size": 150790,
+        "title": "Makalu Base Camp Trek",
+        "alt": "View toward Mt. Makalu (8,485 m) from the base camp trek, eastern Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Makalu Base Camp Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "arun-valley-trek-cover",
+        "filename": "arun-valley-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 960,
+        "height": 720,
+        "size": 174127,
+        "title": "Arun Valley Trek",
+        "alt": "Lush Arun Valley landscape in eastern Nepal, gateway to Makalu",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Arun Valley Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "mt-makalu-gallery-1",
+        "filename": "mt-makalu-gallery-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1152,
+        "height": 1920,
+        "size": 401605,
+        "title": "Mt. Makalu",
+        "alt": "Mt. Makalu massif, world's 5th highest peak, eastern Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Makalu Expedition",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "rolwaling-tashi-lapcha-trek-cover",
+        "filename": "rolwaling-tashi-lapcha-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 672,
+        "height": 372,
+        "size": 75347,
+        "title": "Rolwaling Tashi Lapcha Trek",
+        "alt": "Rolwaling valley landscape on the Tashi Lapcha pass route, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Rolwaling Tashi Lapcha Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "lapchi-hermitage-trek-cover",
+        "filename": "lapchi-hermitage-trek-cover.webp",
+        "ext": "webp",
+        "type": "image\/webp",
+        "width": 1200,
+        "height": 900,
+        "size": 354488,
+        "title": "Guru Milarepa Cave, Lapchi",
+        "alt": "Guru Milarepa hermitage cave in Lapchi, Rolwaling region, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Lapchi Hermitage Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "limi-valley-trek-cover",
+        "filename": "limi-valley-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 735,
+        "height": 490,
+        "size": 99317,
+        "title": "Limi Valley Trek",
+        "alt": "Tibetan-Buddhist village in the Limi Valley, Humla, far-west Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Limi Valley Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "jumla-to-rara-lake-trek-cover",
+        "filename": "jumla-to-rara-lake-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 960,
+        "height": 640,
+        "size": 145724,
+        "title": "Jumla",
+        "alt": "Town of Jumla in Karnali Province, gateway to the Rara Lake trek",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Jumla to Rara Lake Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "rara-lake-circuit-trek-cover",
+        "filename": "rara-lake-circuit-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1080,
+        "height": 1184,
+        "size": 239832,
+        "title": "Rara Lake Circuit Trek",
+        "alt": "Aerial view of Rara Lake, Nepal's largest lake, Mugu district",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Rara Lake Circuit Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "short-trek-to-rara-lake-cover",
+        "filename": "short-trek-to-rara-lake-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1000,
+        "height": 543,
+        "size": 127051,
+        "title": "Short Trek to Rara Lake",
+        "alt": "Shoreline view of Rara Lake on the short Rara trek route, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Short Trek to Rara Lake",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "limi-valley-trek-gallery-1",
+        "filename": "limi-valley-trek-gallery-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 628,
+        "size": 175589,
+        "title": "Limi Valley landscape",
+        "alt": "Remote valley landscape in Limi, Humla, far-west Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Limi Valley Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "rara-lake-circuit-trek-gallery-1",
+        "filename": "rara-lake-circuit-trek-gallery-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1024,
+        "height": 768,
+        "size": 160655,
+        "title": "Rara Lake",
+        "alt": "Rara Lake view in Mugu district, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Rara Lake Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "short-trek-to-rara-lake-gallery-1",
+        "filename": "short-trek-to-rara-lake-gallery-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1080,
+        "height": 1285,
+        "size": 278948,
+        "title": "Rara Lake, Mugu",
+        "alt": "Rara Lake from a viewpoint near Mugu village, Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Short Trek to Rara Lake",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "jumla-to-rara-lake-trek-gallery-1",
+        "filename": "jumla-to-rara-lake-trek-gallery-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 735,
+        "height": 386,
+        "size": 68310,
+        "title": "Rara Lake",
+        "alt": "Rara Lake reflections, far-west Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Jumla to Rara Lake Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "far-west-nepal-trek-gallery-1",
+        "filename": "far-west-nepal-trek-gallery-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1080,
+        "height": 717,
+        "size": 155996,
+        "title": "Far-west Nepal trail",
+        "alt": "Remote trail in far-west Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Limi Valley Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "tsum-valley-trek-cover",
+        "filename": "tsum-valley-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 571617,
+        "title": "Tsum Valley Trek",
+        "alt": "Tsum Valley landscape in the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tsum Valley Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "mt-manaslu-expedition-cover",
+        "filename": "mt-manaslu-expedition-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 556623,
+        "title": "Mt. Manaslu Expedition",
+        "alt": "Snow-covered Mt. Manaslu (8,163 m) — world's 8th highest peak, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Manaslu Expedition",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "vvip-manaslu-expedition-cover",
+        "filename": "vvip-manaslu-expedition-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 516251,
+        "title": "VVIP Manaslu Expedition",
+        "alt": "Mt. Manaslu massif viewed from the South Face approach, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "VVIP Manaslu Expedition",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-trek-3-1",
+        "filename": "manaslu-gallery-trek-3-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 425981,
+        "title": "Manaslu Circuit Trek photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Manaslu Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-trek-16-1",
+        "filename": "manaslu-gallery-trek-16-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 427550,
+        "title": "Tsum Valley Trek photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tsum Valley Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-exp-9-1",
+        "filename": "manaslu-gallery-exp-9-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 419081,
+        "title": "Mt. Manaslu Expedition photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Manaslu Expedition",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-exp-25-1",
+        "filename": "manaslu-gallery-exp-25-1.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 407927,
+        "title": "VVIP Manaslu Expedition photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "VVIP Manaslu Expedition",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-trek-3-2",
+        "filename": "manaslu-gallery-trek-3-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 363716,
+        "title": "Manaslu Circuit Trek photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Manaslu Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-trek-16-2",
+        "filename": "manaslu-gallery-trek-16-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 357370,
+        "title": "Tsum Valley Trek photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tsum Valley Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-exp-9-2",
+        "filename": "manaslu-gallery-exp-9-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 337681,
+        "title": "Mt. Manaslu Expedition photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mt. Manaslu Expedition",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-exp-25-2",
+        "filename": "manaslu-gallery-exp-25-2.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 304528,
+        "title": "VVIP Manaslu Expedition photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "VVIP Manaslu Expedition",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-trek-3-3",
+        "filename": "manaslu-gallery-trek-3-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 278430,
+        "title": "Manaslu Circuit Trek photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Manaslu Circuit Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "manaslu-gallery-trek-16-3",
+        "filename": "manaslu-gallery-trek-16-3.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1200,
+        "height": 1600,
+        "size": 264555,
+        "title": "Tsum Valley Trek photo",
+        "alt": "Photo from the Manaslu region, central Nepal",
+        "description": null,
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Tsum Valley Trek",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "kanchenjunga-circuit-trek-cover",
+        "filename": "kanchenjunga-circuit-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 515,
+        "size": 232677,
+        "title": "Kanchenjunga Circuit Trek",
+        "alt": "North aspect of Mt. Kangchenjunga with Ramthang Chang, far-east Nepal Himalaya",
+        "description": "Photo: Bruno Rijsman \/ Wikimedia Commons, CC BY 2.0",
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Kanchenjunga Circuit Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "kanchenjunga-north-base-camp-trek-cover",
+        "filename": "kanchenjunga-north-base-camp-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1079,
+        "size": 485416,
+        "title": "Kanchenjunga North Base Camp",
+        "alt": "Mt. Kangchenjunga seen from the NNW at Pang Pema, the North Base Camp of the Kanchenjunga trek, Nepal",
+        "description": "Photo: Tomabarker \/ Wikimedia Commons, CC BY 3.0",
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Kanchenjunga North Base Camp Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "kanchenjunga-south-base-camp-trek-cover",
+        "filename": "kanchenjunga-south-base-camp-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1098,
+        "height": 640,
+        "size": 113785,
+        "title": "Kanchenjunga South Base Camp",
+        "alt": "Southwest (Yalung) face of Mt. Kangchenjunga seen from Nepal — the South Base Camp approach",
+        "description": "Photo: Carsten.nebel \/ Wikimedia Commons, CC BY-SA 3.0",
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Kanchenjunga South Base Camp Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "olangchung-gola-trek-cover",
+        "filename": "olangchung-gola-trek-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1080,
+        "size": 464248,
+        "title": "Olangchung Gola",
+        "alt": "The remote Tibetan-Buddhist village of Olangchung Gola in Taplejung district, far-east Nepal",
+        "description": "Photo: PankajTh \/ Wikimedia Commons, CC0 (public domain)",
+        "attach": [
+            {
+                "kind": "trek",
+                "match": "Olangchung Gola Trek",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "mera-peak-summit-gallery",
+        "filename": "mera-peak-summit-gallery.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1026,
+        "size": 280802,
+        "title": "Summit view from Mera Peak",
+        "alt": "Panorama from the summit of Mera Peak (6,476 m) showing five 8,000 m+ peaks of the Mahalangur Himal, Nepal",
+        "description": "Photo: Sangyam adventurer \/ Wikimedia Commons, CC BY-SA 4.0",
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mera Peak Expedition",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "mera-peak-zatr-la-gallery",
+        "filename": "mera-peak-zatr-la-gallery.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1600,
+        "height": 1200,
+        "size": 362860,
+        "title": "Mera Peak from Zatr La",
+        "alt": "Mera Peak viewed from below the Zatr La pass, framed by rhododendron branches, Nepal",
+        "description": "Photo: Mark Horrell \/ Wikimedia Commons, CC BY-SA 4.0",
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mera Peak Expedition",
+                "as": "cover"
+            },
+            {
+                "kind": "expedition",
+                "match": "Mera Peak Expedition",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "mera-peak-base-camp-gallery",
+        "filename": "mera-peak-base-camp-gallery.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1280,
+        "height": 1920,
+        "size": 397209,
+        "title": "Mera Base Camp under the Milky Way",
+        "alt": "Night view of Mera Base Camp in Makalu Barun National Park, Nepal, with the Milky Way galaxy overhead",
+        "description": "Photo: Sangyam adventurer \/ Wikimedia Commons, CC BY-SA 4.0",
+        "attach": [
+            {
+                "kind": "expedition",
+                "match": "Mera Peak Expedition",
+                "as": "gallery"
+            }
+        ]
+    },
+    {
+        "name": "kathmandu-valley-sightseeing-tour-cover",
+        "filename": "kathmandu-valley-sightseeing-tour-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 885,
+        "size": 213770,
+        "title": "Boudhanath Stupa at dusk",
+        "alt": "Boudhanath Stupa in Kathmandu glowing at dusk, one of Nepal's most sacred Buddhist sites",
+        "description": "Photo: Goutam1962 \/ Wikimedia Commons, CC BY-SA 4.0",
+        "attach": [
+            {
+                "kind": "tour",
+                "match": "Kathmandu Valley Sightseeing Tour",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "ultimate-photography-tour-of-nepal-cover",
+        "filename": "ultimate-photography-tour-of-nepal-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1184,
+        "size": 463451,
+        "title": "Annapurna Range and Phewa Lake",
+        "alt": "The Annapurna Range reflected in Phewa Lake at Pokhara, Nepal — iconic Himalayan photography location",
+        "description": "Photo: Saroj Pandey \/ Wikimedia Commons, CC BY-SA 3.0",
+        "attach": [
+            {
+                "kind": "tour",
+                "match": "Ultimate Photography Tour of Nepal",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "cultural-tour-of-bhaktapur-cover",
+        "filename": "cultural-tour-of-bhaktapur-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1629,
+        "height": 1080,
+        "size": 506887,
+        "title": "Bhaktapur Durbar Square",
+        "alt": "Royal square of Bhaktapur with its historic Newari temple architecture, Kathmandu Valley, Nepal",
+        "description": "Photo: Bikram Pratap Singh \/ Wikimedia Commons, CC BY-SA 3.0",
+        "attach": [
+            {
+                "kind": "tour",
+                "match": "Cultural Tour of Bhaktapur",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "helicopter-rescue-service-cover",
+        "filename": "helicopter-rescue-service-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1280,
+        "size": 545336,
+        "title": "Himalayan Rescue Association, Pheriche",
+        "alt": "The Himalayan Rescue Association aid-post in Pheriche, Khumbu region — high-altitude rescue medicine in Nepal",
+        "description": "Photo: Vyacheslav Argenberg \/ Wikimedia Commons, CC BY 4.0",
+        "attach": [
+            {
+                "kind": "tour",
+                "match": "Helicopter Rescue Service",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "mountain-biking-kathmandu-valley-cover",
+        "filename": "mountain-biking-kathmandu-valley-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1280,
+        "size": 513229,
+        "title": "Mountain Biking in the Himalaya",
+        "alt": "Cyclist on a rugged mountain trail in Khangsar, Nepal with snow-capped Himalayan peaks behind",
+        "description": "Photo: Ashok Sharma \/ Pexels (free use)",
+        "attach": [
+            {
+                "kind": "tour",
+                "match": "Mountain Biking in Kathmandu Valley",
+                "as": "cover"
+            }
+        ]
+    },
+    {
+        "name": "helicopter-tour-to-everest-base-camp-cover",
+        "filename": "helicopter-tour-to-everest-base-camp-cover.jpeg",
+        "ext": "jpeg",
+        "type": "image\/jpeg",
+        "width": 1920,
+        "height": 1440,
+        "size": 506370,
+        "title": "Helicopter at high altitude, Nepal Himalayas",
+        "alt": "Helicopter and climbers at a high-altitude location in the Nepal Himalayas",
+        "description": "Photo: Sherine \/ Pexels (free use)",
+        "attach": [
+            {
+                "kind": "tour",
+                "match": "Helicopter Tour to Everest Base Camp",
+                "as": "cover"
+            }
+        ]
+    }
+]
