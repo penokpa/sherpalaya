@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Livewire\Curator\CuratorPanel;
 use App\Settings\CompanySetting;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Throwable;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,5 +28,7 @@ class AppServiceProvider extends ServiceProvider
         } catch (Throwable) {
             // Settings table not ready yet — env fallback applies.
         }
+
+        Livewire::component('curator-panel', CuratorPanel::class);
     }
 }

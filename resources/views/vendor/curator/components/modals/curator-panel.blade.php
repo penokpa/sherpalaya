@@ -78,14 +78,29 @@
             >
                 {{ trans('curator::views.panel.deselect_all') }}
             </x-filament::button>
-            @if($currentPage < $lastPage)
-            <x-filament::button
-                size="xs"
-                color="gray"
-                wire:click="loadMoreFiles()"
-            >
-                {{ trans('curator::views.panel.load_more') }}
-            </x-filament::button>
+            @if (blank($search) && $lastPage > 1)
+                <div class="flex items-center gap-2">
+                    <x-filament::button
+                        size="xs"
+                        color="gray"
+                        wire:click="gotoPrevPage()"
+                        :disabled="$currentPage <= 1"
+                    >
+                        &larr; Prev
+                    </x-filament::button>
+                    <span class="text-xs tabular-nums text-gray-700 dark:text-gray-300">
+                        {{ $currentPage }} / {{ $lastPage }}
+                        <span class="opacity-60">({{ $mediaCount }})</span>
+                    </span>
+                    <x-filament::button
+                        size="xs"
+                        color="gray"
+                        wire:click="gotoNextPage()"
+                        :disabled="$currentPage >= $lastPage"
+                    >
+                        Next &rarr;
+                    </x-filament::button>
+                </div>
             @endif
             @if ($isMultiple)
                 @if (config('curator.multi_select_key') === 'metaKey')
