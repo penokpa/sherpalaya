@@ -19,7 +19,6 @@
         :title="$tour->title"
         :duration="$tour->duration"
         :season="$tour->best_time_for_tour"
-        :price="$tour->price_from_label"
     />
 
     <x-breadcrumb :breadcrumbs="[

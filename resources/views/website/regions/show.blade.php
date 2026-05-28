@@ -36,7 +36,6 @@
                             :duration="$trek->duration"
                             :altitude="$trek->highest_altitude"
                             :difficulty="$trek->trek_difficulty"
-                            :price="$trek->price_from_label"
                         />
                     @endforeach
                 </div>

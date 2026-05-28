@@ -24,7 +24,6 @@
         :duration="$expedition->duration"
         :difficulty="$expedition->expedition_difficulty"
         :season="$expedition->best_time_for_expedition"
-        :price="$expedition->price_from_label ?? 'Price on request'"
     />
 
     <x-breadcrumb :breadcrumbs="[

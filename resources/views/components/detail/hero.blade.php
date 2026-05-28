@@ -7,7 +7,6 @@
     'duration' => null,
     'difficulty' => null,
     'season' => null,
-    'price' => null,        // formatted "$1,400" — shown as "From $X / person"
 ])
 
 @php
@@ -36,17 +35,6 @@
                        [text-shadow:0_3px_24px_rgba(0,0,0,0.55)]">
                 {{ $title }}
             </h1>
-            @if ($price && str_starts_with((string) $price, '$'))
-                <p class="mt-5 text-white/95 text-[15px] [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">
-                    From <span class="font-semibold text-white text-lg">{{ $price }}</span>
-                    <span class="text-white/75">/ person</span>
-                </p>
-            @elseif ($price)
-                <p class="mt-5 text-white/95 text-[15px] font-semibold [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">
-                    {{ $price }}
-                </p>
-            @endif
-
             {{-- Quick facts strip --}}
             @if ($altitude || $duration || $difficultyLabel || $season)
                 <ul class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-white">

@@ -55,7 +55,6 @@
                                 :eyebrow="$cat->name"
                                 :title="$tour->title"
                                 :duration="$tour->duration"
-                                :price="$tour->price_from_label"
                             />
                         </div>
                     @endforeach

@@ -35,7 +35,6 @@
                             :title="$exp->title"
                             :duration="$exp->duration"
                             :difficulty="$exp->expedition_difficulty"
-                            :price="$exp->price_from_label ?? 'Price on request'"
                             :cta="__('listing.inquire')"
                         />
                     @endforeach

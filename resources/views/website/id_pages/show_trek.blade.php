@@ -20,7 +20,6 @@
         :duration="$trek->duration"
         :difficulty="$trek->trek_difficulty"
         :season="$trek->best_time_for_trek"
-        :price="$trek->price_from_label"
     />
 
     <x-breadcrumb :breadcrumbs="[

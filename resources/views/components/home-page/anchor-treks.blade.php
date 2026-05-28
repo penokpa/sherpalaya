@@ -71,12 +71,6 @@
                                     </span>
                                 @endif
                             </div>
-                            @if ($item->price_from_label)
-                                <p class="mt-4 text-[13px] text-ink-muted">
-                                    From <span class="font-semibold text-ink">{{ $item->price_from_label }}</span>
-                                    <span class="text-ink-muted/70">/ person</span>
-                                </p>
-                            @endif
                         </div>
                     </a>
                 @endforeach

@@ -7,7 +7,6 @@
     'duration' => null,     // e.g. "14 Days"
     'altitude' => null,     // e.g. "5,545" (m suffix added automatically)
     'difficulty' => null,   // enum or string
-    'price' => null,        // formatted price label like "$1,400" — shown as "From $X"
     'cta' => null,          // optional CTA label override (default: 'View details')
     'badge' => null,        // optional ribbon e.g. "Bestseller"
 ])
@@ -58,17 +57,7 @@
             </div>
         @endif
 
-        <div class="mt-5 flex items-center justify-between">
-            @if ($price && str_starts_with((string) $price, '$'))
-                <span class="text-[13px] text-ink-muted">
-                    From <span class="font-semibold text-ink">{{ $price }}</span>
-                    <span class="text-ink-muted/70">/ person</span>
-                </span>
-            @elseif ($price)
-                <span class="text-[13px] font-semibold text-ink">{{ $price }}</span>
-            @else
-                <span></span>
-            @endif
+        <div class="mt-5 flex items-center justify-end">
             <span class="text-[13px] font-semibold text-forest group-hover:text-terracotta transition">
                 {{ $ctaLabel }} →
             </span>
