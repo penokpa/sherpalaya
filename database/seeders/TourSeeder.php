@@ -25,41 +25,57 @@ class TourSeeder extends Seeder
                     'fr' => 'Visite touristique de la vallée de Katmandou',
                 ],
                 'description' => [
-                    'en' => 'Explore the cultural and historical sites of Kathmandu, including UNESCO World Heritage Sites like Swayambhunath (Monkey Temple), Pashupatinath Temple, Boudhanath Stupa, and Patan Durbar Square.',
-                    'fr' => 'Explorez les sites culturels et historiques de Katmandou, notamment les sites classés au patrimoine mondial de l\'UNESCO tels que Swayambhunath (temple des singes), le temple de Pashupatinath, le stupa de Boudhanath et la place Durbar de Patan.',
+                    'en' => 'A full-day private tour of the four most important UNESCO-listed sites in the Kathmandu Valley, with hotel pickup and a licensed English/French-speaking heritage guide. We start at Swayambhunath (the "Monkey Temple", a 2,000-year-old hilltop stupa with the all-seeing eyes of the Buddha and 360° views of the valley), continue to Boudhanath (one of the largest stupas in the world and the spiritual centre of the Tibetan diaspora in Nepal, ringed by monasteries and a 500-metre prayer-wheel kora), then to Pashupatinath (Nepal\'s holiest Hindu temple, on the banks of the Bagmati, where open-air cremation ghats run day and night), and finish at Patan Durbar Square (the medieval royal palace of the Malla kings, the 21-spired Krishna Mandir, and the Patan Museum — widely considered the finest museum in South Asia). Eight hours door to door, with a Newari lunch break in a Patan courtyard restaurant.',
+                    'fr' => 'Une journée complète privée à la découverte des quatre principaux sites classés à l\'UNESCO de la vallée de Katmandou, avec prise en charge à l\'hôtel et guide patrimonial diplômé anglophone et francophone. Nous commençons par Swayambhunath (le « temple des singes », stupa au sommet d\'une colline vieux de 2 000 ans, avec les yeux du Bouddha qui voient tout et une vue à 360° sur la vallée), puis Boudhanath (l\'un des plus grands stupas du monde et centre spirituel de la diaspora tibétaine au Népal, entouré de monastères et d\'un kora de 500 mètres avec ses moulins à prières), Pashupatinath (le temple hindou le plus sacré du Népal, sur les rives de la Bagmati, où les bûchers funéraires en plein air brûlent jour et nuit), et nous terminons à Patan Durbar Square (le palais royal médiéval des rois Malla, le Krishna Mandir aux 21 flèches et le Patan Museum — considéré comme le plus beau musée d\'Asie du Sud). Huit heures porte à porte, avec une pause déjeuner newari dans une cour-restaurant de Patan.',
                 ],
-                'duration' => '2 hours',
+                'duration' => '7-8 hours (full day)',
                 'category_id' => Category::find(11)->id,
                 'is_featured' => true,
                 'grade' => '6',
                 'starting_point' => 'Kathmandu',
                 'ending_point' => 'Kathmandu',
                 'best_time_for_tour' => [
-                    'en' => 'All Year Round',
-                    'fr' => 'Toute l\'année',
+                    'en' => 'October–April (clearest skies and lowest air pollution); avoid the June–September monsoon',
+                    'fr' => 'D\'octobre à avril (ciel le plus dégagé, pollution minimale) ; éviter la mousson de juin à septembre',
                 ],
                 'costs_include' => [
                     [
-                        'en' => 'Tour Guide',
-                        'fr' => 'Guide touristique',
+                        'en' => 'Licensed English/French-speaking heritage guide',
+                        'fr' => 'Guide patrimonial diplômé anglophone et francophone',
                     ],
                     [
-                        'en' => 'Transportation',
-                        'fr' => 'Transport',
+                        'en' => 'Hotel pickup and drop-off in Kathmandu by private vehicle',
+                        'fr' => 'Prise en charge et retour à l\'hôtel à Katmandou en véhicule privé',
                     ],
                     [
-                        'en' => 'Entry Tickets',
-                        'fr' => 'Billets d\'entrée',
+                        'en' => 'All UNESCO entry fees (Swayambhunath, Boudhanath, Pashupatinath, Patan Durbar Square — approx. NPR 4,500 / USD 35 total for foreigners)',
+                        'fr' => 'Tous les droits d\'entrée UNESCO (Swayambhunath, Boudhanath, Pashupatinath, Patan Durbar Square — environ 4 500 NPR / 35 USD au total pour les étrangers)',
+                    ],
+                    [
+                        'en' => 'Patan Museum entrance',
+                        'fr' => 'Entrée au Patan Museum',
+                    ],
+                    [
+                        'en' => 'Bottled water throughout the day',
+                        'fr' => 'Eau en bouteille tout au long de la journée',
                     ],
                 ],
                 'costs_exclude' => [
                     [
-                        'en' => 'Personal Expenses',
-                        'fr' => 'Dépenses personnelles',
+                        'en' => 'Lunch (typical Newari thali at a Patan courtyard restaurant, approx. USD 8–12 per person)',
+                        'fr' => 'Déjeuner (thali newari typique dans une cour-restaurant de Patan, environ 8 à 12 USD par personne)',
                     ],
                     [
-                        'en' => 'Lunch',
-                        'fr' => 'Déjeuner',
+                        'en' => 'Camera/video fee at the Pashupatinath inner cremation viewpoint (NPR 100 if you want to film)',
+                        'fr' => 'Droit photo/vidéo au point de vue intérieur des crémations de Pashupatinath (100 NPR si vous souhaitez filmer)',
+                    ],
+                    [
+                        'en' => 'Temple offerings, donations and personal expenses',
+                        'fr' => 'Offrandes au temple, dons et dépenses personnelles',
+                    ],
+                    [
+                        'en' => 'Tips and gratuities for the guide and driver',
+                        'fr' => 'Pourboires pour le guide et le chauffeur',
                     ],
                 ],
             ],
@@ -202,37 +218,57 @@ class TourSeeder extends Seeder
                     'fr' => 'Visite culturelle de Bhaktapur',
                 ],
                 'description' => [
-                    'en' => 'Immerse yourself in the rich culture of Bhaktapur, visiting ancient temples, Durbar Square, and experiencing traditional Newari art and cuisine.',
-                    'fr' => 'Imprégnez-vous de la riche culture de Bhaktapur, visitez des temples anciens, la place Durbar et découvrez l\'art et la cuisine traditionnels newari.',
+                    'en' => 'A half-day walk through the UNESCO-listed medieval city of Bhaktapur, 13 km east of Kathmandu, with a licensed Newari-speaking guide. We cover the four historic squares — Durbar Square (55-Window Palace, Golden Gate, Vatsala Temple), Taumadhi Square (Nyatapola Temple), Pottery Square at Talako, and Dattatreya Square with its Peacock Window — and finish with a tasting of juju dhau and a traditional samay baji platter in a 14th-century courtyard kitchen.',
+                    'fr' => 'Une demi-journée à pied dans la cité médiévale de Bhaktapur, classée au patrimoine mondial de l\'UNESCO, à 13 km à l\'est de Katmandou, avec un guide diplômé parlant newari. Nous parcourons les quatre places historiques — Durbar Square (palais aux 55 fenêtres, Porte d\'Or, temple Vatsala), Taumadhi Square (temple Nyatapola), la place des Potiers à Talako, et Dattatreya Square avec sa fenêtre du paon — puis dégustation de juju dhau et d\'un plateau traditionnel samay baji dans une cour-cuisine du XIVᵉ siècle.',
                 ],
-                'duration' => '2 hours',
+                'duration' => '4-5 hours',
                 'category_id' => Category::find(15)->id,
                 'is_featured' => false,
                 'grade' => '6',
                 'starting_point' => 'Bhaktapur',
                 'ending_point' => 'Bhaktapur',
                 'best_time_for_tour' => [
-                    'en' => 'All Year Round',
-                    'fr' => 'Toute l\'année',
+                    'en' => 'October–April (clearest skies); avoid the June–August monsoon',
+                    'fr' => 'D\'octobre à avril (ciel le plus dégagé) ; éviter la mousson de juin à août',
                 ],
                 'costs_include' => [
                     [
-                        'en' => 'Guide',
-                        'fr' => 'Guide',
+                        'en' => 'Licensed English/French/Newari-speaking cultural guide',
+                        'fr' => 'Guide culturel diplômé anglophone, francophone et newari',
                     ],
                     [
-                        'en' => 'Entry Fees',
-                        'fr' => 'Frais d\'entrée',
+                        'en' => 'Bhaktapur Durbar Square heritage entry fee (NPR 1,500 / approx. USD 12)',
+                        'fr' => 'Droit d\'entrée du site patrimonial de Durbar Square à Bhaktapur (1 500 NPR / environ 12 USD)',
+                    ],
+                    [
+                        'en' => 'Private vehicle transfer from Kathmandu and back',
+                        'fr' => 'Transfert privé aller-retour depuis Katmandou',
+                    ],
+                    [
+                        'en' => 'Juju dhau tasting (king curd in a clay bowl)',
+                        'fr' => 'Dégustation de juju dhau (caillé royal dans un bol en argile)',
+                    ],
+                    [
+                        'en' => 'Samay baji platter at a Newari home kitchen',
+                        'fr' => 'Plateau samay baji dans une cuisine familiale newari',
                     ],
                 ],
                 'costs_exclude' => [
                     [
-                        'en' => 'Personal Expenses',
-                        'fr' => 'Dépenses personnelles',
+                        'en' => 'Additional meals and drinks beyond the tasting',
+                        'fr' => 'Repas et boissons supplémentaires en dehors de la dégustation',
                     ],
                     [
-                        'en' => 'Meals',
-                        'fr' => 'Repas',
+                        'en' => 'Optional pottery wheel workshop at Talako (approx. USD 10 per person)',
+                        'fr' => 'Atelier optionnel de poterie au tour à Talako (environ 10 USD par personne)',
+                    ],
+                    [
+                        'en' => 'Personal shopping (wood carvings, thangka, textiles)',
+                        'fr' => 'Achats personnels (sculptures sur bois, thangka, textiles)',
+                    ],
+                    [
+                        'en' => 'Tips and gratuities for the guide and driver',
+                        'fr' => 'Pourboires pour le guide et le chauffeur',
                     ],
                 ],
             ],
@@ -242,41 +278,69 @@ class TourSeeder extends Seeder
                     'fr' => 'Excursion en hélicoptère au camp de base de l\'Everest',
                 ],
                 'description' => [
-                    'en' => 'A luxury helicopter tour that takes you to Everest Base Camp and Kala Patthar for stunning views of Mount Everest and the surrounding peaks.',
-                    'fr' => 'Une excursion en hélicoptère de luxe qui vous emmène au camp de base de l\'Everest et à Kala Patthar pour des vues imprenables sur le mont Everest et les sommets environnants.',
+                    'en' => 'An early-morning helicopter charter from Kathmandu into the Khumbu, with a brief landing at Kala Patthar (5,545 m) for unobstructed views of Mount Everest, Nuptse and Lhotse, followed by a buffet breakfast on the terrace of Hotel Everest View (3,880 m) at Syangboche. The route flies via Lukla and Pheriche, where the group is split into smaller shuttles so the aircraft can safely lift to altitude. Round-trip from Kathmandu in 4–5 hours, returning before midday.',
+                    'fr' => 'Vol privé en hélicoptère au départ de Katmandou, tôt le matin, jusqu\'au cœur du Khumbu, avec une brève escale à Kala Patthar (5 545 m) pour admirer le mont Everest, le Nuptse et le Lhotse, suivie d\'un petit-déjeuner buffet sur la terrasse de l\'Hôtel Everest View (3 880 m) à Syangboche. L\'itinéraire passe par Lukla puis Pheriche, où le groupe est divisé en navettes plus légères pour respecter les limites d\'altitude. Aller-retour depuis Katmandou en 4 à 5 heures, retour avant midi.',
                 ],
-                'duration' => '5 hours',
+                'duration' => '4-5 hours',
                 'category_id' => Category::find(11)->id,
                 'is_featured' => true,
                 'grade' => '9',
                 'starting_point' => 'Kathmandu',
                 'ending_point' => 'Kathmandu',
                 'best_time_for_tour' => [
-                    'en' => 'Autumn and Spring',
-                    'fr' => 'Automne et printemps',
+                    'en' => 'September–November (autumn) and March–May (spring)',
+                    'fr' => 'Septembre à novembre (automne) et mars à mai (printemps)',
                 ],
                 'costs_include' => [
                     [
-                        'en' => 'Helicopter Ride',
-                        'fr' => 'Vol en hélicoptère',
+                        'en' => 'Hotel–airport–hotel transfers in Kathmandu by private vehicle',
+                        'fr' => 'Transferts privés hôtel–aéroport–hôtel à Katmandou',
                     ],
                     [
-                        'en' => 'Guide',
-                        'fr' => 'Guide',
+                        'en' => 'Helicopter charter (Airbus AS350 B3 / H125) with pilot and fuel',
+                        'fr' => 'Affrètement de l\'hélicoptère (Airbus AS350 B3 / H125), pilote et carburant inclus',
                     ],
                     [
-                        'en' => 'Fuel Surcharge',
-                        'fr' => 'Supplément carburant',
+                        'en' => 'Kala Patthar landing (subject to weight, altitude and weather)',
+                        'fr' => 'Atterrissage à Kala Patthar (selon le poids, l\'altitude et la météo)',
+                    ],
+                    [
+                        'en' => 'Sagarmatha National Park entry permit',
+                        'fr' => 'Permis d\'entrée au parc national de Sagarmatha',
+                    ],
+                    [
+                        'en' => 'Khumbu Pasang Lhamu Rural Municipality fee',
+                        'fr' => 'Taxe de la municipalité rurale Khumbu Pasang Lhamu',
+                    ],
+                    [
+                        'en' => 'Domestic airport tax and landing fees',
+                        'fr' => 'Taxes d\'aéroport et redevances d\'atterrissage',
+                    ],
+                    [
+                        'en' => 'Supplementary oxygen and first-aid kit on board',
+                        'fr' => 'Oxygène d\'appoint et trousse de premiers secours à bord',
+                    ],
+                    [
+                        'en' => 'Government taxes and VAT',
+                        'fr' => 'Taxes gouvernementales et TVA',
                     ],
                 ],
                 'costs_exclude' => [
                     [
-                        'en' => 'Personal Insurance',
-                        'fr' => 'Assurance personnelle',
+                        'en' => 'Breakfast at Hotel Everest View (approx. USD 35 per person, paid on site)',
+                        'fr' => 'Petit-déjeuner à l\'Hôtel Everest View (environ 35 USD par personne, à régler sur place)',
                     ],
                     [
-                        'en' => 'Meals',
-                        'fr' => 'Repas',
+                        'en' => 'Travel insurance with high-altitude and helicopter evacuation cover',
+                        'fr' => 'Assurance voyage couvrant la haute altitude et l\'évacuation par hélicoptère',
+                    ],
+                    [
+                        'en' => 'Personal expenses, tips and gratuities',
+                        'fr' => 'Dépenses personnelles, pourboires et gratifications',
+                    ],
+                    [
+                        'en' => 'Any additional costs caused by weather delays or itinerary changes beyond our control',
+                        'fr' => 'Frais supplémentaires liés aux retards météo ou aux modifications d\'itinéraire indépendants de notre volonté',
                     ],
                 ],
             ],
@@ -286,10 +350,10 @@ class TourSeeder extends Seeder
                     'fr' => 'Service de secours héliporté d\'urgence',
                 ],
                 'description' => [
-                    'en' => 'Explore traditional and contemporary Nepali art at the Patan Museum. A must-visit event for art lovers.',
-                    'fr' => 'Explorez l\'art népalais traditionnel et contemporain au musée de Patan. Un événement incontournable pour les amateurs d\'art.',
+                    'en' => 'On-call helicopter evacuation and medical extraction across the Nepal Himalaya, coordinated 24/7 from our Kathmandu office. Most commonly used for acute mountain sickness (AMS), HACE/HAPE, traumatic injuries on technical climbs, or any condition where a rapid descent to a lower altitude or to hospital is required. We liaise with the pilot, the Himalayan Rescue Association aid posts (Pheriche, Manang, Macchermo) when available, and your insurer — so the rescue can launch the moment weather and authorisations allow. A valid travel insurance policy covering high-altitude helicopter evacuation is required before any rescue is initiated.',
+                    'fr' => 'Évacuation héliportée et extraction médicale d\'urgence dans tout l\'Himalaya népalais, coordonnées 24h/24 et 7j/7 depuis notre bureau de Katmandou. Indiquée pour le mal aigu des montagnes (MAM), l\'œdème cérébral (OCHA) ou pulmonaire (OPHA), les traumatismes en escalade technique, ou toute situation nécessitant une descente rapide ou une hospitalisation. Nous coordonnons l\'opération avec le pilote, les postes de secours de l\'Himalayan Rescue Association (Pheriche, Manang, Macchermo) lorsque disponibles, et votre assureur — pour que le décollage ait lieu dès que la météo et les autorisations le permettent. Une assurance voyage couvrant l\'évacuation héliportée en haute altitude est obligatoire avant toute opération.',
                 ],
-                'duration' => 'Emergency',
+                'duration' => 'On call, 24/7',
                 'category_id' => Category::find(16)->id,
                 'is_featured' => true,
                 'grade' => 'n/a',
@@ -301,26 +365,42 @@ class TourSeeder extends Seeder
                 ],
                 'costs_include' => [
                     [
-                        'en' => 'Helicopter Ride',
-                        'fr' => 'Vol en hélicoptère',
+                        'en' => 'Coordination with helicopter operators and the pilot at any hour',
+                        'fr' => 'Coordination avec les opérateurs et le pilote à toute heure',
                     ],
                     [
-                        'en' => 'Guide',
-                        'fr' => 'Guide',
+                        'en' => 'Communication with your travel insurer to confirm cover and authorise the flight',
+                        'fr' => 'Échanges avec votre assureur pour valider la prise en charge et autoriser le vol',
                     ],
                     [
-                        'en' => 'Fuel Surcharge',
-                        'fr' => 'Supplément carburant',
+                        'en' => 'Liaison with HRA aid posts and Kathmandu hospitals for ongoing care',
+                        'fr' => 'Liaison avec les postes de secours de l\'HRA et les hôpitaux de Katmandou pour la suite des soins',
+                    ],
+                    [
+                        'en' => 'Ground transfer from the receiving airport to a Kathmandu hospital',
+                        'fr' => 'Transfert terrestre de l\'aéroport d\'arrivée vers un hôpital de Katmandou',
+                    ],
+                    [
+                        'en' => 'English-speaking point of contact throughout the evacuation',
+                        'fr' => 'Interlocuteur anglophone tout au long de l\'évacuation',
                     ],
                 ],
                 'costs_exclude' => [
                     [
-                        'en' => 'Personal Insurance',
-                        'fr' => 'Assurance personnelle',
+                        'en' => 'Helicopter flight charges — recovered from your travel insurer or billed directly to you',
+                        'fr' => 'Frais du vol hélicoptère — récupérés auprès de votre assureur ou facturés directement',
                     ],
                     [
-                        'en' => 'Meals',
-                        'fr' => 'Repas',
+                        'en' => 'Hospital, doctor and medication costs',
+                        'fr' => 'Frais hospitaliers, honoraires médicaux et médicaments',
+                    ],
+                    [
+                        'en' => 'Personal travel insurance with high-altitude evacuation cover (mandatory)',
+                        'fr' => 'Assurance voyage personnelle couvrant l\'évacuation en haute altitude (obligatoire)',
+                    ],
+                    [
+                        'en' => 'Costs arising from rescues launched without prior insurance confirmation',
+                        'fr' => 'Frais liés à un sauvetage déclenché sans confirmation préalable de l\'assurance',
                     ],
                 ],
             ],

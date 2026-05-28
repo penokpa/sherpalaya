@@ -996,6 +996,98 @@ class EssentialTipsSeeder extends Seeder
             ],
         ];
 
+        $kathmandu_valley_sightseeing_tips = [
+            [
+                'title' => ['en' => 'Wear shoes you can slip off quickly', 'fr' => 'Portez des chaussures faciles à retirer'],
+                'description' => ['en' => 'Every temple inner courtyard requires removing footwear. Loafers, slip-ons or sneakers with elastic laces save 10 minutes per stop — and you do four stops in a day. Heavy boots and tight laces are the slowest setup.', 'fr' => 'Chaque cour intérieure de temple impose de se déchausser. Mocassins, chaussures sans lacets ou baskets à lacets élastiques font gagner 10 minutes par étape — et il y en a quatre dans la journée. Les grosses chaussures à lacets serrés sont la pire configuration.'],
+            ],
+            [
+                'title' => ['en' => 'Cover shoulders and knees', 'fr' => 'Couvrez épaules et genoux'],
+                'description' => ['en' => 'Pashupatinath in particular is conservative — women must cover shoulders and knees, and men in shorts can be refused at some inner courtyards. A lightweight scarf in your daypack solves it; rented temple shawls at the gate are dusty and rarely fit.', 'fr' => 'Pashupatinath est particulièrement conservateur — les femmes doivent couvrir épaules et genoux, et les hommes en short peuvent se voir refuser l\'accès à certaines cours intérieures. Un châle léger dans le sac à dos règle la question ; les pièces louées à l\'entrée sont poussiéreuses et rarement à la bonne taille.'],
+            ],
+            [
+                'title' => ['en' => 'Eat lunch in Patan, not at Pashupatinath', 'fr' => 'Déjeunez à Patan, pas à Pashupatinath'],
+                'description' => ['en' => 'There are no good restaurants near the cremation ghats and the smell does not pair with food. The natural break is at Patan, where courtyard cafés in the old town serve Newari thali — and you can sit for 45 minutes before the museum visit.', 'fr' => 'Il n\'y a pas de bonnes adresses près des ghats de crémation, et l\'odeur ne s\'accorde pas avec un repas. La pause naturelle se fait à Patan, où les cafés en cour intérieure servent le thali newari — vous pouvez vous y attabler 45 minutes avant la visite du musée.'],
+            ],
+            [
+                'title' => ['en' => 'Cremation ghats are real funerals', 'fr' => 'Les ghats de crémation sont de vraies funérailles'],
+                'description' => ['en' => 'Pashupatinath is not a spectacle. Photography is allowed only from the opposite bank, never close-up; some families ask for cameras to be put away and that is binding. Watch quietly, keep distance, follow the guide\'s cues.', 'fr' => 'Pashupatinath n\'est pas un spectacle. Les photos ne sont autorisées que depuis la rive opposée, jamais en gros plan ; certaines familles demandent que les appareils soient rangés, et cela s\'impose à tous. Observez en silence, gardez la distance, suivez les indications du guide.'],
+            ],
+            [
+                'title' => ['en' => 'Carry small Nepali rupee notes', 'fr' => 'Prévoyez de petites coupures en roupies népalaises'],
+                'description' => ['en' => 'UNESCO ticket booths take cash only. Bottled water, offerings, parking tips and the camera fee at Pashupatinath are also cash-only — NPR 100 and NPR 500 notes go furthest. Card terminals are sparse around the heritage sites and unreliable when they exist.', 'fr' => 'Les guichets des sites UNESCO n\'acceptent que les espèces. Eau en bouteille, offrandes, pourboires de parking et droit photo à Pashupatinath se règlent également en cash — les coupures de 100 et 500 NPR sont les plus utiles. Les terminaux de carte sont rares autour des sites patrimoniaux et peu fiables quand ils existent.'],
+            ],
+        ];
+
+        $bhaktapur_cultural_tour_tips = [
+            [
+                'title' => ['en' => 'Wear shoes that handle cobblestone', 'fr' => 'Portez des chaussures adaptées aux pavés'],
+                'description' => ['en' => 'Bhaktapur\'s brick lanes are uneven and become slippery in rain — flip-flops will ruin your ankles by the second hour. Closed shoes with a real sole, not sandals, for the whole walk.', 'fr' => 'Les ruelles pavées de Bhaktapur sont irrégulières et deviennent glissantes sous la pluie — les tongs vous massacreront les chevilles en deux heures. Chaussures fermées à semelle, pas de sandales, pour toute la marche.'],
+            ],
+            [
+                'title' => ['en' => 'Eat the juju dhau in its clay bowl', 'fr' => 'Mangez le juju dhau dans son bol d\'argile'],
+                'description' => ['en' => 'The "king curd" is served in unglazed terracotta that lets the whey wick out and thickens the yoghurt as you eat — the bowl is part of the dish, not packaging to discard. Eat the curd, keep the bowl as a souvenir.', 'fr' => 'Le « caillé royal » est servi dans une terre cuite non émaillée qui laisse le petit-lait s\'évacuer et épaissit le yaourt à mesure que vous mangez — le bol fait partie du plat, ce n\'est pas un emballage à jeter. Mangez le caillé, gardez le bol en souvenir.'],
+            ],
+            [
+                'title' => ['en' => 'Mornings beat afternoons', 'fr' => 'Le matin vaut mieux que l\'après-midi'],
+                'description' => ['en' => 'The squares fill with tour groups after 10:30. Start the walk by 9:00 for clean photos of the Nyatapola steps, the Golden Gate and Pottery Square without ten other lenses in frame.', 'fr' => 'Les places se remplissent de groupes après 10h30. Commencer la marche à 9h00 permet des photos propres des marches du Nyatapola, de la Porte d\'Or et de la place des Potiers sans dix autres objectifs dans le cadre.'],
+            ],
+            [
+                'title' => ['en' => 'The 2015 earthquake reshaped the city', 'fr' => 'Le séisme de 2015 a transformé la ville'],
+                'description' => ['en' => 'Some temples are reconstructions; others are still scaffolded a decade later. Ask your guide which are originals, which are post-quake rebuilds, and which are gone for good — it changes how you read the architecture.', 'fr' => 'Certains temples sont des reconstructions ; d\'autres sont encore en chantier dix ans après. Demandez à votre guide lesquels sont d\'origine, lesquels ont été refaits et lesquels ont disparu — cela change la lecture de l\'architecture.'],
+            ],
+            [
+                'title' => ['en' => 'Carry small Nepali rupee notes', 'fr' => 'Prévoyez de petites coupures en roupies népalaises'],
+                'description' => ['en' => 'The pottery wheel workshop, additional juju dhau bowls, temple offerings and bottled water are all cash-only in small amounts. NPR 100 and NPR 500 notes go further than counting on card terminals inside the old city.', 'fr' => 'L\'atelier de poterie, les bols supplémentaires de juju dhau, les offrandes au temple et l\'eau en bouteille se règlent uniquement en espèces, en petites coupures. Les billets de 100 et 500 NPR sont plus utiles que de compter sur les terminaux de carte dans la vieille ville.'],
+            ],
+        ];
+
+        $ebc_helicopter_tour_tips = [
+            [
+                'title' => ['en' => 'Dress in real layers', 'fr' => 'Habillez-vous en vraies couches'],
+                'description' => ['en' => 'The ten-minute Kala Patthar landing is windy and below freezing even in spring. A down jacket, hat and gloves stay essential — sneakers and a fleece are not enough.', 'fr' => 'L\'escale de dix minutes à Kala Patthar est venteuse et sous le point de congélation, même au printemps. Doudoune, bonnet et gants restent indispensables — des baskets et un polaire ne suffisent pas.'],
+            ],
+            [
+                'title' => ['en' => 'Eat light before flying', 'fr' => 'Mangez léger avant le vol'],
+                'description' => ['en' => 'Rapid altitude gain combined with an early heavy breakfast often triggers nausea. Hydrate well, eat lightly, and save the buffet for Hotel Everest View at 3,880 m.', 'fr' => 'Une prise d\'altitude rapide associée à un copieux petit-déjeuner matinal provoque souvent des nausées. Hydratez-vous bien, mangez léger et gardez le buffet pour l\'Hôtel Everest View à 3 880 m.'],
+            ],
+            [
+                'title' => ['en' => 'Body weight matters', 'fr' => 'Le poids compte'],
+                'description' => ['en' => 'Total passenger weight is recorded at check-in. At Pheriche the group is often split into smaller shuttles so the aircraft can safely lift to altitude — this is normal, not a downgrade.', 'fr' => 'Le poids total des passagers est enregistré à l\'enregistrement. À Pheriche, le groupe est souvent divisé en navettes plus légères pour que l\'appareil puisse monter en altitude en toute sécurité — c\'est une procédure normale, non un déclassement.'],
+            ],
+            [
+                'title' => ['en' => 'Sunglasses and high-SPF sunscreen', 'fr' => 'Lunettes de soleil et crème solaire haute protection'],
+                'description' => ['en' => 'UV at 5,500 m is intense and the snow glare on a clear morning is unforgiving. Category-3 or category-4 sunglasses and SPF 50 sunscreen on every exposed surface — including under the chin and inside the nose.', 'fr' => 'Les UV à 5 500 m sont intenses et la réverbération sur la neige par matinée dégagée est impitoyable. Lunettes de catégorie 3 ou 4 et crème solaire SPF 50 sur toutes les zones exposées — y compris sous le menton et l\'intérieur du nez.'],
+            ],
+            [
+                'title' => ['en' => 'Weather has the final say', 'fr' => 'La météo a le dernier mot'],
+                'description' => ['en' => 'Flights are weather-dependent. Rescheduling inside your trip window is normal; if the weather is closed for the whole window, the heli portion is refunded — but a forced reschedule is not.', 'fr' => 'Les vols dépendent de la météo. Un report à l\'intérieur de votre fenêtre de séjour est normal ; si le temps reste fermé pendant toute la fenêtre, la portion hélicoptère est remboursée — mais un simple report imposé ne l\'est pas.'],
+            ],
+        ];
+
+        $helicopter_rescue_tips = [
+            [
+                'title' => ['en' => 'Buy insurance with explicit heli-evacuation cover', 'fr' => 'Souscrivez une assurance avec couverture héliportée explicite'],
+                'description' => ['en' => 'Generic travel insurance is not enough. The policy must name high-altitude cover (6,000 m for most Nepal treks; higher for climbing) and helicopter extraction — without that, operators will refuse to fly.', 'fr' => 'Une assurance voyage standard ne suffit pas. La police doit mentionner explicitement la couverture haute altitude (6 000 m pour la plupart des treks au Népal, davantage pour l\'alpinisme) et l\'évacuation héliportée — sans cela, les opérateurs refuseront de voler.'],
+            ],
+            [
+                'title' => ['en' => 'Save our 24/7 number before you leave', 'fr' => 'Enregistrez notre numéro 24h/24 avant le départ'],
+                'description' => ['en' => 'Programme our number into your phone and your guide\'s phone before you start trekking. Rescues are launched by voice call, not email — minutes matter.', 'fr' => 'Enregistrez notre numéro sur votre téléphone et sur celui de votre guide avant le début du trek. Les évacuations se déclenchent par appel vocal, pas par email — chaque minute compte.'],
+            ],
+            [
+                'title' => ['en' => 'Don\'t wait for symptoms to worsen', 'fr' => 'N\'attendez pas que les symptômes s\'aggravent'],
+                'description' => ['en' => 'AMS, HACE and HAPE can deteriorate within hours. Severe headache, ataxia, confusion or breathlessness at rest are calls to descend immediately and contact us — not signals to push on for one more day.', 'fr' => 'Le MAM, l\'OCHA et l\'OPHA peuvent s\'aggraver en quelques heures. Mal de tête sévère, ataxie, confusion ou essoufflement au repos imposent une descente immédiate et un appel — ce ne sont pas des signaux pour tenir un jour de plus.'],
+            ],
+            [
+                'title' => ['en' => 'Carry insurance and passport copies', 'fr' => 'Emportez des copies de l\'assurance et du passeport'],
+                'description' => ['en' => 'The operator may ask for policy and passport details before lift-off if your insurer can\'t be reached immediately. A digital copy on your phone is the simplest backup.', 'fr' => 'L\'opérateur peut demander les détails de la police et du passeport avant le décollage si l\'assureur n\'est pas joignable immédiatement. Une copie numérique sur votre téléphone est la solution la plus simple.'],
+            ],
+            [
+                'title' => ['en' => 'False rescues are billed in full', 'fr' => 'Les fausses évacuations sont facturées intégralement'],
+                'description' => ['en' => 'Calling a helicopter for fatigue or to skip a day\'s walking is treated as a private charter, not a medical evacuation — your insurer will not pay and the full flight cost falls on you.', 'fr' => 'Faire venir un hélicoptère par fatigue ou pour sauter une étape est considéré comme un vol privé, non comme une évacuation médicale — votre assureur ne prendra pas en charge et le coût intégral du vol vous reviendra.'],
+            ],
+        ];
+
         $service = [
             [
                 'title' => [
@@ -1372,7 +1464,7 @@ class EssentialTipsSeeder extends Seeder
 
         $this->createEssentialTips(
             Tour::first(),
-            $kathmandu_cultural_tour_tips
+            $kathmandu_valley_sightseeing_tips
         );
         $this->createEssentialTips(
             Tour::find(2),
@@ -1388,15 +1480,15 @@ class EssentialTipsSeeder extends Seeder
         );
         $this->createEssentialTips(
             Tour::find(5),
-            $kathmandu_cultural_tour_tips
+            $bhaktapur_cultural_tour_tips
         );
         $this->createEssentialTips(
             Tour::find(6),
-            $kathmandu_cultural_tour_tips
+            $ebc_helicopter_tour_tips
         );
         $this->createEssentialTips(
             Tour::find(7),
-            $service
+            $helicopter_rescue_tips
         );
     }
     protected function createEssentialTips(Model $model, array $tips): void

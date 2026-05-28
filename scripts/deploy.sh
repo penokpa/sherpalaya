@@ -85,8 +85,9 @@ php artisan db:seed --force --class='Database\Seeders\RegionContentSeeder'
 php artisan db:seed --force --class='Database\Seeders\TrekContentSeeder'
 php artisan db:seed --force --class='Database\Seeders\ExpeditionTierContentSeeder'
 
-echo "▶ price match + media organization"
-php artisan db:seed --force --class='Database\Seeders\PriceMatchSeeder'
+echo "▶ media organization"
+# PriceMatchSeeder removed — prices are no longer displayed; the column stays
+# nullable and untouched. Reinstate this line only if pricing returns.
 # MediaOrganizationSeeder is a metadata-only reorg — non-critical to the deploy.
 # If it fails, log and keep going so the critical RegionalMediaSeeder still runs.
 php artisan db:seed --force --class='Database\Seeders\MediaOrganizationSeeder' || \
@@ -96,6 +97,9 @@ echo "▶ regional media + Dolpo→Rara + Everest tier full content"
 php artisan db:seed --force --class='Database\Seeders\RegionalMediaSeeder'
 php artisan db:seed --force --class='Database\Seeders\DolpoToRaraTrekContentSeeder'
 php artisan db:seed --force --class='Database\Seeders\EverestTiersFullContentSeeder'
+
+echo "▶ activity content fix (KTM Valley, Bhaktapur, EBC heli, rescue) + price wipe"
+php artisan db:seed --force --class='Database\Seeders\ActivityContentFixSeeder'
 
 # ─── permissions (in case freshly created files need them) ───────────────
 chmod -R ug+rwX storage bootstrap/cache 2>/dev/null || true

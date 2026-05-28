@@ -745,6 +745,94 @@ class KeyHighlightSeeder extends Seeder
             ],
         ];
 
+        $kathmandu_valley_sightseeing = [
+            [
+                'title' => ['en' => 'Swayambhunath — the Monkey Temple', 'fr' => 'Swayambhunath — le temple des singes'],
+                'description' => ['en' => 'Climbing the 365 east-side steps to a 2,000-year-old hilltop stupa, with the all-seeing eyes of the Buddha gazing across the valley in four directions, and a panorama that on a clear day reaches the Langtang and Ganesh Himal.', 'fr' => 'Monter les 365 marches du flanc est jusqu\'à un stupa vieux de 2 000 ans, surmonté des yeux du Bouddha qui balaient la vallée dans les quatre directions, avec une vue qui, par temps clair, atteint le Langtang et le Ganesh Himal.'],
+            ],
+            [
+                'title' => ['en' => 'Boudhanath — the largest stupa in the world', 'fr' => 'Boudhanath — le plus grand stupa du monde'],
+                'description' => ['en' => 'Joining the morning kora — the clockwise circumambulation — with Tibetan refugees, maroon-robed monks and Newari Buddhists turning hundreds of prayer wheels beneath the 36-metre dome. The surrounding ring of monasteries is the spiritual heart of the Tibetan diaspora in Nepal.', 'fr' => 'Rejoindre le kora du matin — la circumambulation dans le sens horaire — avec des réfugiés tibétains, des moines en robe pourpre et des bouddhistes newars qui font tourner des centaines de moulins à prières sous le dôme de 36 mètres. L\'anneau de monastères qui l\'entoure est le cœur spirituel de la diaspora tibétaine au Népal.'],
+            ],
+            [
+                'title' => ['en' => 'Pashupatinath — Nepal\'s holiest Hindu temple', 'fr' => 'Pashupatinath — le temple hindou le plus sacré du Népal'],
+                'description' => ['en' => 'Watching the funeral pyres on the Bagmati ghats from the opposite bank — a working cremation complex, not a tourist set — with sadhus in saffron, the resident monkey troop, and the smoke of the same fires that have burned here for more than a thousand years.', 'fr' => 'Observer depuis la rive opposée les bûchers funéraires sur les ghats de la Bagmati — un complexe de crémation en activité, et non un décor touristique — avec les sadhus en orange, la troupe de singes résidente, et la fumée des mêmes feux qui brûlent ici depuis plus de mille ans.'],
+            ],
+            [
+                'title' => ['en' => 'Patan Durbar Square — the Malla royal palace', 'fr' => 'Patan Durbar Square — le palais royal des Malla'],
+                'description' => ['en' => 'The Krishna Mandir with its 21 gilded spires carved entirely from stone (no two figures alike), the Royal Bath of Sundari Chowk, the Mul Chowk courtyard and the Taleju Bell — all built between the 14th and 17th centuries by the Malla kings.', 'fr' => 'Le Krishna Mandir aux 21 flèches dorées entièrement sculptées dans la pierre (aucune figure identique), le bain royal de Sundari Chowk, la cour de Mul Chowk et la cloche Taleju — tout cela bâti entre les XIVᵉ et XVIIᵉ siècles par les rois Malla.'],
+            ],
+            [
+                'title' => ['en' => 'Patan Museum — the finest in South Asia', 'fr' => 'Patan Museum — le plus beau d\'Asie du Sud'],
+                'description' => ['en' => 'A restored wing of the old royal palace housing the largest collection of Newar bronze, gilt and stone sculpture anywhere in the world — explained on legible bilingual panels, in galleries cool and quiet enough to actually read them. Plan for at least 45 minutes inside.', 'fr' => 'Une aile restaurée de l\'ancien palais royal abritant la plus grande collection de sculptures newars en bronze, doré et pierre du monde — expliquées sur des panneaux bilingues lisibles, dans des galeries assez fraîches et calmes pour vraiment les lire. Prévoir au moins 45 minutes à l\'intérieur.'],
+            ],
+        ];
+
+        $bhaktapur_cultural_tour = [
+            [
+                'title' => ['en' => 'Bhaktapur Durbar Square', 'fr' => 'Durbar Square de Bhaktapur'],
+                'description' => ['en' => 'The 55-Window Palace, the Golden Gate, and the Vatsala Bell on a square that once held twice as many temples before the 1934 earthquake — your guide points out which silhouettes were original and which were rebuilt.', 'fr' => 'Le palais aux 55 fenêtres, la Porte d\'Or et la cloche Vatsala sur une place qui comptait autrefois deux fois plus de temples avant le séisme de 1934 — votre guide vous montre lesquelles silhouettes sont d\'origine et lesquelles ont été reconstruites.'],
+            ],
+            [
+                'title' => ['en' => 'Nyatapola Temple at Taumadhi Square', 'fr' => 'Temple Nyatapola sur Taumadhi Square'],
+                'description' => ['en' => 'Climbing the steps of Nepal\'s tallest pagoda — five tiers, 30 metres high, flanked by stone wrestlers, elephants, lions, griffins and goddesses, each rank ten times stronger than the one below.', 'fr' => 'Monter les marches de la plus haute pagode du Népal — cinq étages, 30 mètres de haut, gardée par des lutteurs de pierre, des éléphants, des lions, des griffons et des déesses, chaque rang dix fois plus puissant que le précédent.'],
+            ],
+            [
+                'title' => ['en' => 'Pottery Square (Talako)', 'fr' => 'La place des Potiers (Talako)'],
+                'description' => ['en' => 'Open-air drying yards covered in unfired clay pots, with master potters throwing on traditional wooden wheels — and the option to try a wheel yourself with a Prajapati family member.', 'fr' => 'Des cours à ciel ouvert couvertes de poteries d\'argile crue, avec des maîtres potiers travaillant sur des tours en bois traditionnels — et la possibilité d\'essayer un tour avec un membre de la famille Prajapati.'],
+            ],
+            [
+                'title' => ['en' => 'Newari food tasting in a courtyard kitchen', 'fr' => 'Dégustation newari dans une cour-cuisine'],
+                'description' => ['en' => 'Juju dhau served in unfired clay bowls, plus a samay baji platter — beaten rice, smoked buffalo, black soybeans, ginger, chhoila and aila — in a family courtyard the textbooks won\'t show you.', 'fr' => 'Juju dhau servi dans des bols en argile crue, plus un plateau samay baji — riz battu, buffle fumé, soja noir, gingembre, chhoila et aila — dans une cour familiale que les guides ne mentionnent pas.'],
+            ],
+            [
+                'title' => ['en' => 'Dattatreya Square and the Peacock Window', 'fr' => 'Dattatreya Square et la fenêtre du paon'],
+                'description' => ['en' => 'The oldest quarter of the city, named after the 15th-century Dattatreya Temple built from the timber of a single tree, with the famous Peacock Window — the most photographed piece of wood-carving in Nepal.', 'fr' => 'Le quartier le plus ancien de la ville, nommé d\'après le temple Dattatreya du XVᵉ siècle, bâti à partir du bois d\'un seul arbre, avec la célèbre fenêtre du paon — la sculpture sur bois la plus photographiée du Népal.'],
+            ],
+        ];
+
+        $ebc_helicopter_tour = [
+            [
+                'title' => ['en' => 'Sunrise lift-off from Kathmandu', 'fr' => 'Décollage au lever du soleil depuis Katmandou'],
+                'description' => ['en' => 'An early start to beat the afternoon Khumbu winds, with the Kathmandu Valley still glowing under the Himalaya skyline as you climb out.', 'fr' => 'Un départ matinal pour devancer les vents de l\'après-midi dans le Khumbu, avec la vallée de Katmandou encore éclairée par la silhouette de l\'Himalaya à l\'horizon.'],
+            ],
+            [
+                'title' => ['en' => 'Landing on Kala Patthar (5,545 m)', 'fr' => 'Atterrissage à Kala Patthar (5 545 m)'],
+                'description' => ['en' => 'Eight to ten minutes on the highest point of the day, eye-level with the south face of Everest, Nuptse, Lhotse and Pumori.', 'fr' => 'Huit à dix minutes sur le point culminant de la journée, à hauteur d\'yeux avec la face sud de l\'Everest, le Nuptse, le Lhotse et le Pumori.'],
+            ],
+            [
+                'title' => ['en' => 'Aerial pass over Everest Base Camp and the Khumbu Icefall', 'fr' => 'Survol du camp de base de l\'Everest et de la cascade de glace du Khumbu'],
+                'description' => ['en' => 'See the actual climbers\' camp and the broken seracs of the Khumbu Icefall from above, without the eight-day trek to reach them.', 'fr' => 'Découvrez d\'en haut le camp des alpinistes et les séracs disloqués de la cascade de glace, sans la marche de huit jours pour y parvenir.'],
+            ],
+            [
+                'title' => ['en' => 'Breakfast at Hotel Everest View (3,880 m)', 'fr' => 'Petit-déjeuner à l\'Hôtel Everest View (3 880 m)'],
+                'description' => ['en' => 'Buffet breakfast on the terrace of one of the world\'s highest hotels, with Ama Dablam and the Everest amphitheatre directly in front of you.', 'fr' => 'Petit-déjeuner buffet sur la terrasse de l\'un des hôtels les plus hauts du monde, face à l\'Ama Dablam et à l\'amphithéâtre de l\'Everest.'],
+            ],
+            [
+                'title' => ['en' => 'Khumbu villages from the air', 'fr' => 'Les villages du Khumbu vus du ciel'],
+                'description' => ['en' => 'Lukla, Pheriche, Tengboche monastery and the Sherpa villages spread across the valley — all in a single morning, back in Kathmandu before midday.', 'fr' => 'Lukla, Pheriche, le monastère de Tengboche et les villages sherpas répartis dans la vallée — tout cela en une matinée, retour à Katmandou avant midi.'],
+            ],
+        ];
+
+        $helicopter_rescue_service = [
+            [
+                'title' => ['en' => '24/7 dispatch from Kathmandu', 'fr' => 'Coordination 24h/24 depuis Katmandou'],
+                'description' => ['en' => 'A single phone call from your guide on the trail triggers our coordination cell day or night — we own the call sequence from that moment until you reach hospital.', 'fr' => 'Un seul appel de votre guide sur le sentier déclenche notre cellule de coordination, de jour comme de nuit — nous prenons en charge la chaîne d\'appels jusqu\'à votre arrivée à l\'hôpital.'],
+            ],
+            [
+                'title' => ['en' => 'Insurance liaison handled for you', 'fr' => 'Liaison avec l\'assurance prise en charge pour vous'],
+                'description' => ['en' => 'We talk to your insurer in real time so the flight is authorised without you handling paperwork at altitude or chasing claim numbers from a tent.', 'fr' => 'Nous échangeons avec votre assureur en temps réel pour que le vol soit autorisé sans que vous ayez à gérer la paperasse en altitude ni à chercher un numéro de dossier depuis une tente.'],
+            ],
+            [
+                'title' => ['en' => 'HRA aid post integration', 'fr' => 'Intégration avec les postes de secours de l\'HRA'],
+                'description' => ['en' => 'Where the route allows, we coordinate with Himalayan Rescue Association doctors at Pheriche, Manang and Macchermo so the patient is stabilised before the heli arrives.', 'fr' => 'Lorsque l\'itinéraire le permet, nous coordonnons avec les médecins de l\'Himalayan Rescue Association à Pheriche, Manang et Macchermo afin de stabiliser le patient avant l\'arrivée de l\'hélicoptère.'],
+            ],
+            [
+                'title' => ['en' => 'Direct handover to a Kathmandu hospital', 'fr' => 'Transfert direct vers un hôpital de Katmandou'],
+                'description' => ['en' => 'Ground transfer from the receiving airport straight to a partner hospital in Kathmandu — no scramble on arrival, no triage on the tarmac.', 'fr' => 'Transfert terrestre de l\'aéroport d\'arrivée directement vers un hôpital partenaire à Katmandou — pas d\'improvisation à l\'arrivée, pas de triage sur le tarmac.'],
+            ],
+        ];
+
         $service_activity = [
             [
                 'title' => [
@@ -1112,7 +1200,7 @@ class KeyHighlightSeeder extends Seeder
 
         $this->createKeyHighlights(
             Tour::first(),
-            $kathmandu_cultural_tour
+            $kathmandu_valley_sightseeing
         );
         $this->createKeyHighlights(
             Tour::find(2),
@@ -1128,15 +1216,15 @@ class KeyHighlightSeeder extends Seeder
         );
         $this->createKeyHighlights(
             Tour::find(5),
-            $kathmandu_cultural_tour
+            $bhaktapur_cultural_tour
         );
         $this->createKeyHighlights(
             Tour::find(6),
-            $kathmandu_cultural_tour
+            $ebc_helicopter_tour
         );
         $this->createKeyHighlights(
             Tour::find(7),
-            $service_activity
+            $helicopter_rescue_service
         );
     }
     protected function createKeyHighlights(Model $model, array $points): void
