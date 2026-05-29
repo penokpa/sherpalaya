@@ -60,14 +60,28 @@ class RegionalMediaSeeder extends Seeder
 
             $relPath = 'media/' . $row['filename'];
 
-            // Ensure file is on the public disk
-            if (! $disk->exists($relPath)) {
-                $disk->put($relPath, file_get_contents($srcAsset));
+            // Hash the source asset BEFORE upload/optimization, so the same source
+            // bytes always resolve to the same Media row regardless of where the
+            // file path lives or what the manifest's `name` field happens to be.
+            $sourceHash = hash_file('sha256', $srcAsset);
+
+            // 1) Hash match — same source already in DB, use it.
+            $media = Media::query()->where('source_hash', $sourceHash)->first();
+
+            // 2) Legacy fallback for rows imported before source_hash existed.
+            if (! $media) {
+                $media = Media::query()->where('name', $row['name'])->first();
+                if ($media) {
+                    \DB::table($media->getTable())->where('id', $media->id)
+                        ->update(['source_hash' => $sourceHash]);
+                }
             }
 
-            // Upsert the Media row by `name` (slug)
-            $media = Media::query()->where('name', $row['name'])->first();
             if (! $media) {
+                // Ensure file is on the public disk before creating the row.
+                if (! $disk->exists($relPath)) {
+                    $disk->put($relPath, file_get_contents($srcAsset));
+                }
                 $media = Media::create([
                     'disk'        => 'public',
                     'directory'   => 'media',
@@ -82,6 +96,7 @@ class RegionalMediaSeeder extends Seeder
                     'title'       => $row['title'],
                     'alt'         => $row['alt'],
                     'description' => $row['description'],
+                    'source_hash' => $sourceHash,
                 ]);
                 $imported++;
             } else {

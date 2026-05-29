@@ -25,13 +25,27 @@ class CuratorSeederHelper
         $extension = pathinfo($filePath, PATHINFO_EXTENSION);
         $originalFilename = pathinfo($filePath, PATHINFO_BASENAME);
 
+        // Hash-based dedup. The old check used (title + description) which compared
+        // absolute file paths, so the same source file ran through the seeder on a
+        // different host (local vs prod, or after a directory move) bypassed the
+        // check and created a duplicate. Hashing the source content fixes this for
+        // good — same bytes => same source_hash => returns the existing Media row.
+        $sourceHash = hash_file('sha256', $filePath);
+        $media = Media::where('source_hash', $sourceHash)->first();
+        if ($media !== null) {
+            return $media;
+        }
+
+        // Legacy fallback for Media rows uploaded before source_hash existed:
+        // match the original (title + description) tuple. Backfills source_hash so
+        // future runs hit the fast path above.
         $media = Media::where('title', $originalFilename)
             ->where('description', $filePath)
             ->first();
-
-            if(!is_null($media)){
-                return $media;
-            }
+        if ($media !== null) {
+            \DB::table($media->getTable())->where('id', $media->id)->update(['source_hash' => $sourceHash]);
+            return $media;
+        }
 
         if (!$extension) {
             throw new Exception("File extension could not be identified: " . $filePath);
@@ -71,6 +85,7 @@ class CuratorSeederHelper
             'type' => $mimeType,
             'ext' => $extension,
             'exif' => $exifData,
+            'source_hash' => $sourceHash,
         ];
 
         try {
