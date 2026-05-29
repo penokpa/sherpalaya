@@ -39,7 +39,33 @@ class Media extends BaseMedia
     {
         static::created(function (self $media) {
             $media->optimizeUploadedImage();
+            $media->recomputeHash();
         });
+    }
+
+    /**
+     * Re-hash the file on disk after upload/optimization, so dedup tooling can
+     * spot exact byte-identical uploads. Cheap, idempotent, silent on failure.
+     */
+    public function recomputeHash(): void
+    {
+        if (blank($this->disk) || blank($this->path)) {
+            return;
+        }
+        try {
+            $disk = Storage::disk($this->disk);
+            if (! $disk->exists($this->path)) {
+                return;
+            }
+            $hash = hash_file('sha256', $disk->path($this->path));
+            if (! $hash) {
+                return;
+            }
+            \DB::table($this->getTable())->where('id', $this->id)->update(['hash' => $hash]);
+            $this->hash = $hash;
+        } catch (\Throwable $e) {
+            report($e);
+        }
     }
 
     /**
