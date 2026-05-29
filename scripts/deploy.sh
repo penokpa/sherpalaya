@@ -64,7 +64,10 @@ php artisan config:clear
 php artisan route:clear
 php artisan event:clear || true
 php artisan config:cache
-php artisan route:cache
+# NOTE: do NOT run `php artisan route:cache` on this project.
+# Filament admin uses closure-based routes that don't serialize cleanly;
+# caching them breaks /admin/login with 405 Method Not Allowed
+# (production incident 2026-05-19). Clearing the cache above is fine.
 php artisan view:cache
 php artisan event:cache || true
 
