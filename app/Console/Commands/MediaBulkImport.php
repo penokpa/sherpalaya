@@ -144,11 +144,13 @@ class MediaBulkImport extends Command
         $treks = $region ? Trek::where('region_id', $region->id)->get() : collect();
         $expeditions = $region ? Expedition::where('region_id', $region->id)->get() : collect();
 
+        $regionCoverSlugs = ['region', 'region-cover', $folderSlug, $folderSlug . '-cover', $folderSlug . '-region'];
+
         foreach ($this->files($path) as $file) {
             $slug = Str::slug(pathinfo($file, PATHINFO_FILENAME));
 
             // 1) Region cover
-            if (in_array($slug, ['region', 'region-cover', $folderSlug, $folderSlug . '-cover'], true)) {
+            if (in_array($slug, $regionCoverSlugs, true)) {
                 $media = $this->upload($file, $commit, $stats);
                 if ($region && $media && $commit) {
                     DB::table('regions')->where('id', $region->id)->update(['cover_image_id' => $media->id]);
@@ -158,63 +160,112 @@ class MediaBulkImport extends Command
                 continue;
             }
 
-            // 2) Trek cover (slug match)
-            $trek = $treks->first(fn ($t) => Str::slug($t->getTranslation('title', 'en')) === $slug);
-            if ($trek) {
-                $media = $this->upload($file, $commit, $stats);
-                if ($media && $commit) {
-                    DB::table('treks')->where('id', $trek->id)->update([
-                        'cover_image_id' => $media->id,
-                        'feature_image_id' => $media->id,
-                    ]);
+            // 2) Trek cover (exact slug match) OR Trek gallery (slug + numeric suffix)
+            $matchedTrek = null;
+            $trekGalleryOrder = null;
+            foreach ($treks as $t) {
+                $tSlug = Str::slug($t->getTranslation('title', 'en'));
+                if ($slug === $tSlug) {
+                    $matchedTrek = ['trek' => $t, 'role' => 'cover'];
+                    break;
                 }
-                $this->line('  → Trek "' . $trek->getTranslation('title', 'en') . '" cover+feature: ' . basename($file));
-                $stats['covered']++;
+                if (preg_match('/^' . preg_quote($tSlug, '/') . '-(\d+)$/', $slug, $m)) {
+                    $matchedTrek = ['trek' => $t, 'role' => 'gallery', 'order' => (int) $m[1]];
+                    break;
+                }
+            }
+            if ($matchedTrek) {
+                $trek = $matchedTrek['trek'];
+                $media = $this->upload($file, $commit, $stats);
+                if ($matchedTrek['role'] === 'cover') {
+                    if ($media && $commit) {
+                        DB::table('treks')->where('id', $trek->id)->update([
+                            'cover_image_id' => $media->id,
+                            'feature_image_id' => $media->id,
+                        ]);
+                    }
+                    $this->line('  → Trek "' . $trek->getTranslation('title', 'en') . '" cover+feature: ' . basename($file));
+                    $stats['covered']++;
+                } else {
+                    if ($media && $commit) {
+                        $this->attachPivot('media_trek', 'trek_id', $trek->id, $media->id, $matchedTrek['order']);
+                    }
+                    $this->line('  → Trek "' . $trek->getTranslation('title', 'en') . '" gallery #' . $matchedTrek['order'] . ': ' . basename($file));
+                    $stats['galleried']++;
+                }
                 continue;
             }
 
-            // 3) Expedition cover (slug match)
-            $exp = $expeditions->first(fn ($e) => Str::slug($e->getTranslation('title', 'en')) === $slug);
-            if ($exp) {
-                $media = $this->upload($file, $commit, $stats);
-                if ($media && $commit) {
-                    DB::table('expeditions')->where('id', $exp->id)->update([
-                        'cover_image_id' => $media->id,
-                        'feature_image_id' => $media->id,
-                    ]);
+            // 3) Expedition cover or gallery (same pattern)
+            $matchedExp = null;
+            foreach ($expeditions as $e) {
+                $eSlug = Str::slug($e->getTranslation('title', 'en'));
+                if ($slug === $eSlug) {
+                    $matchedExp = ['exp' => $e, 'role' => 'cover'];
+                    break;
                 }
-                $this->line('  → Expedition "' . $exp->getTranslation('title', 'en') . '" cover+feature: ' . basename($file));
-                $stats['covered']++;
+                if (preg_match('/^' . preg_quote($eSlug, '/') . '-(\d+)$/', $slug, $m)) {
+                    $matchedExp = ['exp' => $e, 'role' => 'gallery', 'order' => (int) $m[1]];
+                    break;
+                }
+            }
+            if ($matchedExp) {
+                $exp = $matchedExp['exp'];
+                $media = $this->upload($file, $commit, $stats);
+                if ($matchedExp['role'] === 'cover') {
+                    if ($media && $commit) {
+                        DB::table('expeditions')->where('id', $exp->id)->update([
+                            'cover_image_id' => $media->id,
+                            'feature_image_id' => $media->id,
+                        ]);
+                    }
+                    $this->line('  → Expedition "' . $exp->getTranslation('title', 'en') . '" cover+feature: ' . basename($file));
+                    $stats['covered']++;
+                } else {
+                    if ($media && $commit) {
+                        $this->attachPivot('expedition_media', 'expedition_id', $exp->id, $media->id, $matchedExp['order']);
+                    }
+                    $this->line('  → Expedition "' . $exp->getTranslation('title', 'en') . '" gallery #' . $matchedExp['order'] . ': ' . basename($file));
+                    $stats['galleried']++;
+                }
                 continue;
             }
 
-            // 4) Anything else → gallery for every trek + expedition in this region
+            // 4) Fallback: shared region gallery — attached to every trek + expedition.
+            // Use this for files like region-NN.jpg or unstructured scenery dumps.
             $media = $this->upload($file, $commit, $stats);
             if ($media && $commit) {
                 $order = (int) (microtime(true) * 1000) % 1000;
                 foreach ($treks as $t) {
-                    DB::table('media_trek')->insert([
-                        'trek_id' => $t->id,
-                        'media_id' => $media->id,
-                        'order' => $order,
-                        'created_at' => now(),
-                        'updated_at' => now(),
-                    ]);
+                    $this->attachPivot('media_trek', 'trek_id', $t->id, $media->id, $order);
                 }
                 foreach ($expeditions as $e) {
-                    DB::table('expedition_media')->insert([
-                        'expedition_id' => $e->id,
-                        'media_id' => $media->id,
-                        'order' => $order,
-                        'created_at' => now(),
-                        'updated_at' => now(),
-                    ]);
+                    $this->attachPivot('expedition_media', 'expedition_id', $e->id, $media->id, $order);
                 }
             }
             $count = $treks->count() + $expeditions->count();
             $this->line('  → gallery for ' . $count . ' records in region: ' . basename($file));
             $stats['galleried'] += $count;
         }
+    }
+
+    /** Insert a pivot row, but skip if a duplicate (same parent + same media) already exists. */
+    private function attachPivot(string $table, string $parentCol, int $parentId, int $mediaId, int $order): void
+    {
+        $exists = DB::table($table)
+            ->where($parentCol, $parentId)
+            ->where('media_id', $mediaId)
+            ->exists();
+        if ($exists) {
+            return;
+        }
+        DB::table($table)->insert([
+            $parentCol => $parentId,
+            'media_id' => $mediaId,
+            'order' => $order,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 
     /** tours/ subfolder: file slug must match a Tour title slug. */
@@ -319,11 +370,20 @@ class MediaBulkImport extends Command
             return null;
         }
 
+        // Same bytes already imported under any name? Reuse the existing row.
+        // This is the "ama-dablam.jpg in two places with different names" case:
+        // we want both cover assignments to point at the same Media id.
+        $sourceHash = hash_file('sha256', $srcPath);
+        $existing = Media::where('source_hash', $sourceHash)->first();
+        if ($existing) {
+            return $existing;
+        }
+
         $ext = pathinfo($srcPath, PATHINFO_EXTENSION);
         $slug = Str::slug(pathinfo($srcPath, PATHINFO_FILENAME));
         $relPath = 'media/' . $slug . '.' . strtolower($ext);
 
-        // If a row with this slug already exists (re-run), reuse it.
+        // Same slug already exists (idempotent re-run case)? Reuse.
         $existing = Media::where('name', $slug)->first();
         if ($existing) {
             return $existing;
@@ -344,6 +404,7 @@ class MediaBulkImport extends Command
             'size' => filesize($srcPath) ?: null,
             'type' => mime_content_type($srcPath) ?: null,
             'ext' => strtolower($ext),
+            'source_hash' => $sourceHash,
         ]);
 
         return $media;
