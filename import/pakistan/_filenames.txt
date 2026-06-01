@@ -1,0 +1,8 @@
+# Pakistan region — expected filenames
+
+region.jpg
+
+# Expeditions
+mt-k2-expedition.jpg
+
+# Anything else → gallery.

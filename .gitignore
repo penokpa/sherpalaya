@@ -36,3 +36,9 @@ public/photos/P1030127.JPG
 public/photos/P1030128.JPG
 
 deploy
+
+# Local media import staging — only the README and _filenames.txt lists are tracked
+/import/**
+!/import/README.md
+!/import/*/
+!/import/*/_filenames.txt

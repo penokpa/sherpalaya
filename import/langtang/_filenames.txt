@@ -1,0 +1,12 @@
+# Langtang, Gosainkunda region — expected filenames
+
+region.jpg
+
+# Treks
+langtang-gosainkunda-trek.jpg
+langtang-valley-trek.jpg
+tamang-heritage-trek.jpg
+gosainkunda-trek.jpg
+helambu-cultural-trek.jpg
+
+# Anything else → gallery for all Langtang treks.

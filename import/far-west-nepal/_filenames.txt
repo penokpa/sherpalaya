@@ -1,0 +1,12 @@
+# Far West Nepal region — expected filenames
+
+region.jpg
+
+# Treks
+limi-valley-trek.jpg
+jumla-to-rara-lake-trek.jpg
+simikot-raling-monastery-cultural-trek.jpg
+rara-lake-circuit-trek.jpg
+short-trek-to-rara-lake.jpg
+
+# Anything else → gallery.

@@ -1,0 +1,10 @@
+# Mustang region — expected filenames
+
+region.jpg
+
+# Treks
+upper-mustang-classic-trek.jpg
+tiji-festival-in-upper-mustang.jpg
+yartung-horse-riding-festival.jpg
+
+# Anything else → gallery.

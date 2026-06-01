@@ -1,0 +1,34 @@
+# Everest region — expected filenames (drop your image, rename to one of these)
+
+# Region cover (optional but recommended)
+region.jpg
+
+# Treks
+everest-base-camp-trek.jpg
+everest-view-panorama-trek.jpg
+gokyo-lake-trek.jpg
+everest-three-passes-trek.jpg
+renjo-la-pass-trek.jpg
+everest-base-camp-via-cho-la-pass-and-gokyo-lakes.jpg
+luxury-everest-base-camp-trek.jpg
+pikey-peak-trek.jpg
+salleri-to-everest-base-camp-trek.jpg
+ama-dablam-base-camp-trek.jpg
+everest-base-camp-trek-with-island-peak-climbing.jpg
+
+# Expeditions (including peaks based in the Khumbu)
+mt-everest-expedition-standard.jpg
+mt-everest-expedition-north.jpg
+mt-everest-expedition-premium.jpg
+mt-everest-expedition-luxury.jpg
+mt-lhotse-expedition.jpg
+mt-cho-oyu-expedition.jpg
+mt-pumori-expedition.jpg
+mt-baruntse-expedition.jpg
+mt-ama-dablam-expedition.jpg
+mera-peak-expedition.jpg
+island-peak-expedition-imja-tse.jpg
+lobuche-peak.jpg
+
+# Anything else you drop in this folder becomes a gallery image attached
+# to every Trek + Expedition above.

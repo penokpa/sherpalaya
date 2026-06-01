@@ -1,0 +1,15 @@
+# Dhaulagiri region — expected filenames
+
+region.jpg
+
+# Treks
+annapurna-dhaulagiri-trek.jpg
+dhaulagiri-circuit-trek.jpg
+gurja-khani-dhorpatan-circuit-trek.jpg
+gurja-khani-trek.jpg
+trekking-in-dhorpatan.jpg
+
+# Expeditions
+mt-dhaulagiri-expedition.jpg
+
+# Anything else → gallery.

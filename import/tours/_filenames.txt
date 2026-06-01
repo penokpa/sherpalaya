@@ -1,0 +1,10 @@
+# Tours / Activities — expected filenames
+
+kathmandu-valley-sightseeing-tour.jpg
+ultimate-photography-tour-of-nepal.jpg
+cultural-tour-of-bhaktapur.jpg
+helicopter-tour-to-everest-base-camp.jpg
+helicopter-rescue-service.jpg
+
+# Files that don't match a Tour title will be uploaded into the media
+# library but reported as unmatched.

@@ -1,0 +1,21 @@
+# Annapurna region — expected filenames
+
+region.jpg
+
+# Treks
+annapurna-base-camp-trek.jpg
+mardi-himal-trek.jpg
+annapurna-circuit-trek.jpg
+nar-phu-valley-trek-with-annapurna-circuit.jpg
+annapurna-excursion.jpg
+annapurna-sanctuary-trek.jpg
+dhampus-sarangkot-chitwan-pack.jpg
+poon-hill-ghorepani-trek.jpg
+annapurna-circuit-trek-via-tilicho-lake.jpg
+nar-phu-valley-and-mesokanto-pass-trek.jpg
+australian-camp-and-dhampus-trek.jpg
+
+# Expeditions
+mt-annapurna-i-expedition.jpg
+
+# Anything else → gallery for all of the above.

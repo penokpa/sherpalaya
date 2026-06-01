@@ -1,0 +1,9 @@
+# Rolwaling region — expected filenames
+
+region.jpg
+
+# Treks
+rolwaling-tashi-lapcha-trek.jpg
+lapchi-hermitage-trek.jpg
+
+# Anything else → gallery.

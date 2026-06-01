@@ -1,0 +1,14 @@
+# Kanchenjunga region — expected filenames
+
+region.jpg
+
+# Treks
+kanchenjunga-circuit-trek.jpg
+kanchenjunga-north-base-camp-trek.jpg
+kanchenjunga-south-base-camp-trek.jpg
+olangchung-gola-trek.jpg
+
+# Expeditions
+mt-kanchenjunga-expedition.jpg
+
+# Anything else → gallery.

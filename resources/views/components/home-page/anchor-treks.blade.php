@@ -53,7 +53,7 @@
                             <div class="mt-4 flex flex-wrap gap-4 text-[13px] text-ink-muted">
                                 @if ($item->duration)
                                     <span class="inline-flex items-center gap-1">
-                                        <span class="icon-[tabler--clock] size-4"></span>{{ $item->duration }}
+                                        <span class="icon-[tabler--clock] size-4"></span>{{ $item->duration }} days
                                     </span>
                                 @endif
                                 @if ($item->highest_altitude)

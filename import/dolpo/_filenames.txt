@@ -1,0 +1,11 @@
+# Dolpo region — expected filenames
+
+region.jpg
+
+# Treks
+phoksundo-tea-house-trek.jpg
+lower-dolpo-circuit-trek.jpg
+upper-dolpo-to-mustang-trek.jpg
+dolpo-to-rara-trek.jpg
+
+# Anything else → gallery.

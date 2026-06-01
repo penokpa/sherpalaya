@@ -1,0 +1,17 @@
+# Settings — page hero / parallax / cover images
+# Only these slugs are recognised; anything else will be flagged as
+# unmatched. See app/Console/Commands/MediaBulkImport.php SETTING_MAP
+# if you need more.
+
+page-treks-hero.jpg                  # /treks listing page hero
+page-expeditions-hero.jpg            # /expeditions listing page hero
+page-tours-hero.jpg                  # /tours listing page hero
+page-team-hero.jpg                   # /team page hero
+home-parallax.jpg                    # homepage mid-section parallax background
+home-ask-for-animation.jpg           # homepage "ask for more" lottie/animation slot
+landing-trek-activity.jpg            # homepage activity chip — Trek
+landing-expedition-activity.jpg      # homepage activity chip — Expedition
+landing-tour-activity.jpg            # homepage activity chip — Tour
+landing-peak-activity.jpg            # homepage activity chip — Peak Climbing
+about-us-cover.jpg                   # /about cover
+contact-us-cover.jpg                 # /contact cover

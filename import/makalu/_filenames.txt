@@ -1,0 +1,13 @@
+# Makalu region — expected filenames
+
+region.jpg
+
+# Treks
+makalu-base-camp-trek.jpg
+sherpani-col-pass-trek.jpg
+arun-valley-trek.jpg
+
+# Expeditions
+mt-makalu-expedition.jpg
+
+# Anything else → gallery.

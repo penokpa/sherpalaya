@@ -1,0 +1,13 @@
+# Manaslu region — expected filenames
+
+region.jpg
+
+# Treks
+manaslu-circuit-trek.jpg
+tsum-valley-trek.jpg
+
+# Expeditions
+mt-manaslu-expedition.jpg
+vvip-manaslu-expedition.jpg
+
+# Anything else → gallery for all of the above.
