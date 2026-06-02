@@ -104,6 +104,11 @@ php artisan db:seed --force --class='Database\Seeders\EverestTiersFullContentSee
 echo "▶ activity content fix (KTM Valley, Bhaktapur, EBC heli, rescue) + price wipe"
 php artisan db:seed --force --class='Database\Seeders\ActivityContentFixSeeder'
 
+echo "▶ catalog curation (hero-set demotion, duration normalization, media renames)"
+php artisan db:seed --force --class='Database\Seeders\HeroSetCurationSeeder'
+php artisan db:seed --force --class='Database\Seeders\TrekDurationNormalizationSeeder'
+php artisan db:seed --force --class='Database\Seeders\GenericMediaRenameSeeder'
+
 # ─── permissions (in case freshly created files need them) ───────────────
 chmod -R ug+rwX storage bootstrap/cache 2>/dev/null || true
 
