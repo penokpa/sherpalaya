@@ -6,43 +6,45 @@ use App\Models\Expedition;
 use App\Models\Media;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 /**
- * Some Everest expedition tiers (Premium, Luxury, North) were given covers
- * uploaded via the Filament admin that referenced UUID-named files which
- * never made it to production storage. Their cover_image_id is non-null, so
- * media:auto-cover skips them, but the file behind it is missing on disk —
- * the public site renders a broken image.
+ * Some Everest expedition tiers (Premium, Luxury, North) carried
+ * cover_image_ids that referenced UUID-named files uploaded via the
+ * Filament admin which never reached production storage — the public
+ * site rendered broken thumbnails. media:auto-cover skipped them
+ * because cover_image_id was non-null.
  *
- * This seeder detects expeditions whose current cover file is missing and
- * re-points them at the Standard Everest expedition's cover (which is
- * uploaded via the regular bulk-import / RegionalMediaSeeder pipeline).
+ * Re-points the broken covers at whatever cover the Standard Everest
+ * expedition is currently using (which lives in the bulk-import /
+ * RegionalMediaSeeder pipeline and is verified working).
  *
- * Idempotent: only touches expeditions whose current cover file is missing.
+ * Idempotent: only touches expeditions whose current cover file is
+ * missing from disk.
  */
 class BrokenEverestExpeditionCoversSeeder extends Seeder
 {
     public function run(): void
     {
-        $stdMediaId = Media::where('name', 'like', '%mt-everest-expedition-standard%')
-            ->value('id');
+        $standard = $this->findEverestExpedition(['standard']);
 
-        if (! $stdMediaId) {
-            $this->command?->warn('Standard Everest cover media not found; skipping.');
+        if (! $standard || ! $standard->cover_image_id) {
+            $this->command?->warn('Standard Everest expedition cover not found; skipping.');
             return;
         }
 
-        $expeditions = Expedition::query()
-            ->where(function ($q) {
-                $q->where('title->en', 'like', 'Mt. Everest Expedition%Premium')
-                    ->orWhere('title->en', 'like', 'Mt. Everest Expedition%Luxury')
-                    ->orWhere('title->en', 'like', 'Mt. Everest Expedition%North');
-            })
-            ->get();
+        $sourceCoverId = $standard->cover_image_id;
+        $targets = Expedition::all()->filter(function (Expedition $e) {
+            $title = $this->englishTitle($e);
+            if (stripos($title, 'everest') === false) {
+                return false;
+            }
+            return stripos($title, 'premium') !== false
+                || stripos($title, 'luxury') !== false
+                || stripos($title, 'north') !== false;
+        });
 
         $updated = 0;
-        foreach ($expeditions as $e) {
+        foreach ($targets as $e) {
             if (! $this->coverIsBroken($e)) {
                 continue;
             }
@@ -50,8 +52,8 @@ class BrokenEverestExpeditionCoversSeeder extends Seeder
             DB::table('expeditions')
                 ->where('id', $e->id)
                 ->update([
-                    'cover_image_id' => $stdMediaId,
-                    'feature_image_id' => $stdMediaId,
+                    'cover_image_id' => $sourceCoverId,
+                    'feature_image_id' => $sourceCoverId,
                     'updated_at' => now(),
                 ]);
             $updated++;
@@ -60,16 +62,40 @@ class BrokenEverestExpeditionCoversSeeder extends Seeder
         $this->command?->info("Fixed {$updated} broken Everest expedition cover(s).");
     }
 
+    private function findEverestExpedition(array $mustContain): ?Expedition
+    {
+        return Expedition::all()->first(function (Expedition $e) use ($mustContain) {
+            $title = $this->englishTitle($e);
+            if (stripos($title, 'everest') === false) {
+                return false;
+            }
+            foreach ($mustContain as $needle) {
+                if (stripos($title, $needle) === false) {
+                    return false;
+                }
+            }
+            return true;
+        });
+    }
+
+    private function englishTitle(Expedition $e): string
+    {
+        $raw = $e->getAttributes()['title'] ?? '';
+        $decoded = is_string($raw) ? json_decode($raw, true) : $raw;
+
+        return is_array($decoded) ? ($decoded['en'] ?? '') : (string) $raw;
+    }
+
     private function coverIsBroken(Expedition $e): bool
     {
         if (! $e->cover_image_id) {
             return true;
         }
-        $cover = Media::find($e->cover_image_id);
-        if (! $cover) {
+        $media = Media::find($e->cover_image_id);
+        if (! $media) {
             return true;
         }
 
-        return ! Storage::disk('public')->exists($cover->path);
+        return ! file_exists(public_path('storage/'.$media->path));
     }
 }
