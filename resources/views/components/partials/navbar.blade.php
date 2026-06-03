@@ -365,7 +365,9 @@
                                         <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
                                             @foreach ($expCategory->expeditions->take(6) as $exp)
                                                 @php
-                                                    $expImg = optional($exp->coverImage)->url ?? $expCategory->thumbnail_url;
+                                                    $expImg = optional($exp->coverImage)->url
+                                                        ?: ($expCategory->thumbnail_url
+                                                        ?: asset('photos/trek1.JPG'));
                                                 @endphp
                                                 <a href="{{ route('show_expedition', ['id' => $exp->id, 'locale' => app()->currentLocale()]) }}"
                                                    class="group relative overflow-hidden rounded-lg bg-white/5 hover:bg-white/10 transition ring-1 ring-white/10">
@@ -419,7 +421,9 @@
                                         <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
                                             @foreach ($region->treks->take(6) as $trek)
                                                 @php
-                                                    $trekImg = optional($trek->coverImage)->url ?? $region->thumbnail_url;
+                                                    $trekImg = optional($trek->coverImage)->url
+                                                        ?: ($region->thumbnail_url
+                                                        ?: asset('photos/trek1.JPG'));
                                                 @endphp
                                                 <a href="{{ route('show_trek', ['id' => $trek->id, 'locale' => app()->currentLocale()]) }}"
                                                    class="group relative overflow-hidden rounded-lg bg-white/5 hover:bg-white/10 transition ring-1 ring-white/10">
