@@ -162,25 +162,6 @@
         ]
     },
     {
-        "name": "k2-base-camp-trek",
-        "filename": "k2-base-camp-trek.jpg",
-        "ext": "jpg",
-        "type": "image\/jpeg",
-        "width": 1200,
-        "height": 800,
-        "size": 220889,
-        "title": "k2-base-camp-trek-photo-gallery-images-05204",
-        "alt": "Mt. K2 Expedition",
-        "description": null,
-        "attach": [
-            {
-                "kind": "expedition",
-                "match": "Mt. K2 Expedition",
-                "as": "cover"
-            }
-        ]
-    },
-    {
         "name": "915c3fb9-ee2a-4ddb-a862-5197995ef3df",
         "filename": "915c3fb9-ee2a-4ddb-a862-5197995ef3df.jpeg",
         "ext": "jpeg",
